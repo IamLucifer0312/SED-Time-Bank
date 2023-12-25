@@ -1,11 +1,20 @@
 [
-  {
-    "city": "Hanoi",
-    "email": "fewf@gmail.com",
-    "full_name": "Fut",
-    "home_address": "no",
-    "password": "123",
-    "phone_number": "0912",
-    "username": "Helu"
-  }
+    {
+        "city": "Hanoi",
+        "email": "fewf@gmail.com",
+        "full_name": "Fut",
+        "home_address": "no",
+        "password": "123",
+        "phone_number": "0912",
+        "username": "Helu"
+    },
+    {
+        "city": "saigon",
+        "email": "ddd@gmail.com",
+        "full_name": "ass",
+        "home_address": "123 Nguyen Van Linh",
+        "password": "ddd",
+        "phone_number": "129494",
+        "username": "ddd"
+    }
 ]
