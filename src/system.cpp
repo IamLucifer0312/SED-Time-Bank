@@ -7,8 +7,8 @@
 using json = nlohmann::json;
 
 // include user classes
-#include "Users/User/user.hpp"
-#include "Users/Member/member.hpp"
+#include "Users/User/user.cpp"
+#include "Users/Member/member.cpp"
 #include "Users/Admin/admin.hpp"
 
 enum LoginType
@@ -29,7 +29,7 @@ public:
     Database(const std::string &file_name) : member_file(file_name)
     {
         // Load data from file to members vector in constructor if needed
-        // this->load_data();
+        // this->loadData();
     }
 
     json serializeMembers(const std::vector<Users::Member> &members)
@@ -138,7 +138,6 @@ public:
         std::ifstream file(filename);
         // if (!file.is_open()) {
         //     std::cerr << "Error: Unable to open file: " << filename << std::endl;
-        //     return nullptr;
         // }
 
         json jsonArray;
@@ -398,7 +397,7 @@ public:
 
     void main_loop()
     {
-        Database database("member.json");
+        Database database("src/member.json");
         database.loadData();
         this->members = database.get_all_members();
         std::cout << "======================================\n"
