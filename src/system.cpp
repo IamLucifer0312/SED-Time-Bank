@@ -3,7 +3,7 @@
 #include <map>
 #include <vector>
 #include <fstream>
-#include "nlohmann/json.hpp"
+#include "../nlohmann/json.hpp"
 using json = nlohmann::json;
 
 // include user classes
