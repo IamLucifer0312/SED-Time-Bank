@@ -20,6 +20,7 @@ namespace Users
         string home_address;
         string email;
         string city;
+        float credit;
 
     public:
         // default constructor
@@ -40,7 +41,8 @@ namespace Users
             const string &phone_number,
             const string &home_address,
             const string &email,
-            const string &city);
+            const string &city,
+            const float &credit = 20);
         //     : User(username, password)
         // {
         //     this->full_name = full_name;
@@ -75,6 +77,21 @@ namespace Users
         // {
         //     return city;
         // }
+
+        const float get_credit() const;
+
+        // Setter methods
+        void set_full_name(const string &full_name);
+
+        void set_phone_number(const string &phone_number);
+
+        void set_home_address(const string &home_address);
+
+        void set_email(const string &email);
+
+        void set_city(const string &city);
+
+        void set_credit(const float &credit);
 
         // extract data from map
         void from_map(std::map<string, string> map);
@@ -126,7 +143,10 @@ namespace Users
         //     city = j.at("city").get<string>();
         //     // Deserialize other member variables
         // }
+
+        
     };
+
 } // namespace Users
 
 #endif // MEMBER_HPP
