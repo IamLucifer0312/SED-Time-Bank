@@ -7,9 +7,10 @@
 using json = nlohmann::json;
 
 // include user classes
-#include "Users/User/user.cpp"
-#include "Users/Member/member.cpp"
-#include "Users/Admin/admin.hpp"
+// #include "Users/User/user.cpp"
+// #include "Users/Member/member.cpp"
+// #include "Users/Admin/admin.hpp"
+#include "Database/MemberDatabase.cpp"
 
 enum LoginType
 {
@@ -19,153 +20,7 @@ enum LoginType
     ADMIN
 };
 
-class Database
-{
-private:
-    std::vector<Users::Member> members;
-    std::string member_file;
 
-public:
-    Database(const std::string &file_name) : member_file(file_name)
-    {
-        // Load data from file to members vector in constructor if needed
-        // this->loadData();
-    }
-
-    json serializeMembers(const std::vector<Users::Member> &members)
-    {
-        json jsonArray;
-        for (const auto &member : members)
-        {
-            json memberJson;
-            member.serialize(memberJson);
-            jsonArray.push_back(memberJson);
-        }
-        return jsonArray;
-    }
-
-    std::vector<Users::Member> deserializeMembers(const json &jsonArray)
-    {
-        std::vector<Users::Member> deserializedMembers;
-        for (const auto &memberJson : jsonArray)
-        {
-            Users::Member member;
-            member.deserialize(memberJson);
-            deserializedMembers.push_back(member);
-        }
-        return deserializedMembers;
-    }
-
-    // Function to save data to file
-    // void save_data()
-    // {
-    //     std::ofstream file(member_file, std::ios::binary);
-
-    //     if (!file.is_open())
-    //     {
-    //         std::cout << "Unable to open file.\n";
-    //         return;
-    //     }
-
-    //     for (const auto &member : members)
-    //     {
-    //         std::map<std::string, std::string> member_data = member.to_map_member();
-    //         for (const auto &data : member_data)
-    //         {
-    //             file << data.first << ":" << data.second << "\n";
-    //         }
-    //         file << "\n"; // Separate each member's data
-    //     }
-
-    //     file.close();
-    // }
-
-    // Function to load data from file
-    //     void load_data()
-    //     {
-    //         std::ifstream file(member_file);
-
-    //         if (!file.is_open())
-    //         {
-    //             std::cout << "Unable to open file.\n";
-    //             return;
-    //         }
-
-    //         members.clear(); // Clear existing data before loading new data
-
-    //         std::map<std::string, std::string> member_data;
-    //         std::string line;
-    //         while (std::getline(file, line))
-    //         {
-    //             if (line.empty())
-    //             {
-    //                 // Process member data
-    //                 Users::Member member;
-    //                 member.from_map(member_data);
-    //                 members.push_back(member);
-    //                 member_data.clear();
-    //             }
-    //             else
-    //             {
-    //                 // Split line into key-value pair
-    //                 size_t pos = line.find(':');
-    //                 if (pos != std::string::npos)
-    //                 {
-    //                     std::string key = line.substr(0, pos);
-    //                     std::string value = line.substr(pos + 1);
-    //                     member_data[key] = value;
-    //                 }
-    //             }
-    //         }
-
-    //         file.close();
-    //     }
-
-    // Function to add a member to the database
-    void add_member(const Users::Member &member)
-    {
-        members.push_back(member);
-    }
-
-    // Function to retrieve all members from the database
-    std::vector<Users::Member> get_all_members() const
-    {
-        return members;
-    }
-
-    std::vector<Users::Member> loadMembersFromFile(const std::string &filename)
-    {
-        std::ifstream file(filename);
-        // if (!file.is_open()) {
-        //     std::cerr << "Error: Unable to open file: " << filename << std::endl;
-        // }
-
-        json jsonArray;
-        file >> jsonArray;
-        file.close();
-        return deserializeMembers(jsonArray);
-    }
-
-    // Saving vector of Users::Member to a file
-
-    void saveMembersToFile(const std::vector<Users::Member> &members, const std::string &filename)
-    {
-        json jsonArray = serializeMembers(members);
-        std::ofstream file(filename);
-        file << std::setw(4) << jsonArray << std::endl;
-        file.close();
-    }
-
-    void saveData()
-    {
-        saveMembersToFile(members, member_file);
-    };
-
-    void loadData()
-    {
-        this->members = loadMembersFromFile(member_file);
-    };
-};
 
 class System
 {
@@ -176,19 +31,7 @@ private:
     Users::Admin admin;
 
 public:
-    // bool detected_database();
-    // void load_database(Database &database)
-    // {
-    //     database.loadMembersFromFile(member_file);
-    // }
-
-    // void save_database(Database &database)
-    // {
-    //     database.save_data();
-    // }
-
-    // void reset_database();
-
+    
     bool log_in(const std::string &username, const std::string &password, Database &database)
     {
         for (const auto &member : database.get_all_members())
@@ -301,8 +144,6 @@ public:
 
         std::cout << "Enter your new username: ";
         std::getline(std::cin, username);
-        std::cout << "Enter your new password: ";
-        std::getline(std::cin, password);
 
         for (const auto &member : this->members)
         {
@@ -312,6 +153,9 @@ public:
                 return false;
             }
         }
+
+        std::cout << "Enter your new password: ";
+        std::getline(std::cin, password);
 
         if (password.empty())
         {
