@@ -1,10 +1,14 @@
-#include "src/system.cpp"
+// #include "src/system.cpp"
 #include <fstream>
 
-int main()
+#include "src/Systems/Systems.hpp"
 
-{
-    System application;
-    application.main_loop();
+int main() {
+    
+    UserSystem user;
+    user.main_loop();
+
+    // System application;
+    // application.main_loop();
     return 0;
 }

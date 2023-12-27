@@ -1,4 +1,4 @@
-#include "member.hpp"
+#include "Member.hpp"
 
 // default constructor
 Users::Member::Member()
@@ -8,23 +8,28 @@ Users::Member::Member()
     this->home_address = "";
     this->email = "";
     this->city = "";
+    this->credit = 20;
 }
 
 // constructor
 Users::Member::Member(
     const string &username,
     const string &password,
-    const string &full_name = "",
-    const string &phone_number = "",
-    const string &home_address = "",
-    const string &email = "",
-    const string &city = "") : User(username, password)
+    const string &full_name,
+    const string &phone_number,
+    const string &home_address,
+    const string &email,
+    const string &city
+    // ,
+    // const float &credit
+    ) : User(username, password)
 {
     this->full_name = full_name;
     this->phone_number = phone_number;
     this->home_address = home_address;
     this->email = email;
     this->city = city;
+    this->credit = credit;
 }
 
 // Getter methods
@@ -53,6 +58,11 @@ const string Users::Member::get_city() const
     return city;
 }
 
+const float Users::Member::get_credit() const
+{
+    return credit;
+}
+
 // extract data from map
 void Users::Member::from_map(std::map<string, string> map)
 {
@@ -62,6 +72,7 @@ void Users::Member::from_map(std::map<string, string> map)
     this->home_address = map["home_address"];
     this->email = map["email"];
     this->city = map["city"];
+    this->credit = std::stof(map["credit"]);
 }
 
 // convert data to map
@@ -73,6 +84,7 @@ std::map<string, string> Users::Member::to_map_member() const
     map.emplace("home_address", this->home_address);
     map.emplace("email", this->email);
     map.emplace("city", this->city);
+    map.emplace("credit", std::to_string(this->credit));
     return map;
 }
 
@@ -86,7 +98,8 @@ void Users::Member::serialize(json &j) const
         {"phone_number", phone_number},
         {"home_address", home_address},
         {"email", email},
-        {"city", city}
+        {"city", city},
+        // {"credit", credit}
         // Add more member variables to serialize
     };
 }
@@ -101,5 +114,39 @@ void Users::Member::deserialize(const json &j)
     home_address = j.at("home_address").get<string>();
     email = j.at("email").get<string>();
     city = j.at("city").get<string>();
+    // credit = j.at("credit").get<float>();
     // Deserialize other member variables
 }
+
+// Setters:
+
+void Users::Member::set_full_name(const string &full_name)
+{
+    this->full_name = full_name;
+}
+
+void Users::Member::set_phone_number(const string &phone_number)
+{
+    this->phone_number = phone_number;
+}
+
+void Users::Member::set_home_address(const string &home_address)
+{
+    this->home_address = home_address;
+}
+
+void Users::Member::set_email(const string &email)
+{
+    this->email = email;
+}
+
+void Users::Member::set_city(const string &city)
+{
+    this->city = city;
+}
+
+void Users::Member::set_credit(const float &credit)
+{
+    this->credit = credit;
+}
+
