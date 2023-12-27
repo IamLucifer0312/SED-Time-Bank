@@ -9,6 +9,8 @@
 #define MENUSYSTEM_HPP
 
 // INCLUDES
+
+
 // user classes
 #include "../Users/Users.hpp"
 
@@ -37,7 +39,7 @@ public:
     void guest_menu(Database &database);
     
     // member menu
-    void member_menu(Database &database);
+    void member_menu(Database &database, UserSystem &user);
 
     // admin menu
     void admin_menu();

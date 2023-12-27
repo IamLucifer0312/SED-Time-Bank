@@ -1,3 +1,0 @@
-D:/Applications/Github/SED-Time-Bank/build/CMakeFiles/SED.dir
-D:/Applications/Github/SED-Time-Bank/build/CMakeFiles/edit_cache.dir
-D:/Applications/Github/SED-Time-Bank/build/CMakeFiles/rebuild_cache.dir
