@@ -153,6 +153,78 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SED.dir/build.make CMakeFiles/SED.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+src/Database/database.o: src/Database/database.cpp.o
+.PHONY : src/Database/database.o
+
+# target to build an object file
+src/Database/database.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SED.dir/build.make CMakeFiles/SED.dir/src/Database/database.cpp.o
+.PHONY : src/Database/database.cpp.o
+
+src/Database/database.i: src/Database/database.cpp.i
+.PHONY : src/Database/database.i
+
+# target to preprocess a source file
+src/Database/database.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SED.dir/build.make CMakeFiles/SED.dir/src/Database/database.cpp.i
+.PHONY : src/Database/database.cpp.i
+
+src/Database/database.s: src/Database/database.cpp.s
+.PHONY : src/Database/database.s
+
+# target to generate assembly for a file
+src/Database/database.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SED.dir/build.make CMakeFiles/SED.dir/src/Database/database.cpp.s
+.PHONY : src/Database/database.cpp.s
+
+src/Systems/menuSystem.o: src/Systems/menuSystem.cpp.o
+.PHONY : src/Systems/menuSystem.o
+
+# target to build an object file
+src/Systems/menuSystem.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SED.dir/build.make CMakeFiles/SED.dir/src/Systems/menuSystem.cpp.o
+.PHONY : src/Systems/menuSystem.cpp.o
+
+src/Systems/menuSystem.i: src/Systems/menuSystem.cpp.i
+.PHONY : src/Systems/menuSystem.i
+
+# target to preprocess a source file
+src/Systems/menuSystem.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SED.dir/build.make CMakeFiles/SED.dir/src/Systems/menuSystem.cpp.i
+.PHONY : src/Systems/menuSystem.cpp.i
+
+src/Systems/menuSystem.s: src/Systems/menuSystem.cpp.s
+.PHONY : src/Systems/menuSystem.s
+
+# target to generate assembly for a file
+src/Systems/menuSystem.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SED.dir/build.make CMakeFiles/SED.dir/src/Systems/menuSystem.cpp.s
+.PHONY : src/Systems/menuSystem.cpp.s
+
+src/Systems/userSystem.o: src/Systems/userSystem.cpp.o
+.PHONY : src/Systems/userSystem.o
+
+# target to build an object file
+src/Systems/userSystem.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SED.dir/build.make CMakeFiles/SED.dir/src/Systems/userSystem.cpp.o
+.PHONY : src/Systems/userSystem.cpp.o
+
+src/Systems/userSystem.i: src/Systems/userSystem.cpp.i
+.PHONY : src/Systems/userSystem.i
+
+# target to preprocess a source file
+src/Systems/userSystem.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SED.dir/build.make CMakeFiles/SED.dir/src/Systems/userSystem.cpp.i
+.PHONY : src/Systems/userSystem.cpp.i
+
+src/Systems/userSystem.s: src/Systems/userSystem.cpp.s
+.PHONY : src/Systems/userSystem.s
+
+# target to generate assembly for a file
+src/Systems/userSystem.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SED.dir/build.make CMakeFiles/SED.dir/src/Systems/userSystem.cpp.s
+.PHONY : src/Systems/userSystem.cpp.s
+
 src/Users/Member/member.o: src/Users/Member/member.cpp.o
 .PHONY : src/Users/Member/member.o
 
@@ -201,30 +273,6 @@ src/Users/User/user.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SED.dir/build.make CMakeFiles/SED.dir/src/Users/User/user.cpp.s
 .PHONY : src/Users/User/user.cpp.s
 
-src/system.o: src/system.cpp.o
-.PHONY : src/system.o
-
-# target to build an object file
-src/system.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SED.dir/build.make CMakeFiles/SED.dir/src/system.cpp.o
-.PHONY : src/system.cpp.o
-
-src/system.i: src/system.cpp.i
-.PHONY : src/system.i
-
-# target to preprocess a source file
-src/system.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SED.dir/build.make CMakeFiles/SED.dir/src/system.cpp.i
-.PHONY : src/system.cpp.i
-
-src/system.s: src/system.cpp.s
-.PHONY : src/system.s
-
-# target to generate assembly for a file
-src/system.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SED.dir/build.make CMakeFiles/SED.dir/src/system.cpp.s
-.PHONY : src/system.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -237,15 +285,21 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... src/Database/database.o"
+	@echo "... src/Database/database.i"
+	@echo "... src/Database/database.s"
+	@echo "... src/Systems/menuSystem.o"
+	@echo "... src/Systems/menuSystem.i"
+	@echo "... src/Systems/menuSystem.s"
+	@echo "... src/Systems/userSystem.o"
+	@echo "... src/Systems/userSystem.i"
+	@echo "... src/Systems/userSystem.s"
 	@echo "... src/Users/Member/member.o"
 	@echo "... src/Users/Member/member.i"
 	@echo "... src/Users/Member/member.s"
 	@echo "... src/Users/User/user.o"
 	@echo "... src/Users/User/user.i"
 	@echo "... src/Users/User/user.s"
-	@echo "... src/system.o"
-	@echo "... src/system.i"
-	@echo "... src/system.s"
 .PHONY : help
 
 

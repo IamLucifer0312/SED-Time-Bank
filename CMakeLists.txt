@@ -9,10 +9,15 @@ set(CMAKE_CXX_STANDARD 11)
 # Source files
 set(SOURCES
 
-    src/Users/Admin/admin.hpp
+    src/Users/Admin/Admin.hpp
     src/Users/Member/member.cpp
     src/Users/User/user.cpp
-    src/system.cpp
+
+    src/Database/database.cpp
+
+    src/Systems/userSystem.cpp
+    src/Systems/menuSystem.cpp
+
     main.cpp
 )
 
