@@ -1,4 +1,4 @@
-#include "member.hpp"
+#include "Member.hpp"
 
 // default constructor
 Users::Member::Member()
@@ -15,12 +15,14 @@ Users::Member::Member()
 Users::Member::Member(
     const string &username,
     const string &password,
-    const string &full_name = "",
-    const string &phone_number = "",
-    const string &home_address = "",
-    const string &email = "",
-    const string &city = "",
-    const float &credit = 20) : User(username, password)
+    const string &full_name,
+    const string &phone_number,
+    const string &home_address,
+    const string &email,
+    const string &city
+    // ,
+    // const float &credit
+    ) : User(username, password)
 {
     this->full_name = full_name;
     this->phone_number = phone_number;
@@ -97,7 +99,7 @@ void Users::Member::serialize(json &j) const
         {"home_address", home_address},
         {"email", email},
         {"city", city},
-        {"credit", credit}
+        // {"credit", credit}
         // Add more member variables to serialize
     };
 }
@@ -112,7 +114,7 @@ void Users::Member::deserialize(const json &j)
     home_address = j.at("home_address").get<string>();
     email = j.at("email").get<string>();
     city = j.at("city").get<string>();
-    credit = j.at("credit").get<float>();
+    // credit = j.at("credit").get<float>();
     // Deserialize other member variables
 }
 

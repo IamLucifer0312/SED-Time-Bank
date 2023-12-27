@@ -9,7 +9,7 @@ using json = nlohmann::json;
 // include user classes
 #include "../Users/User/user.cpp"
 #include "../Users/Member/member.cpp"
-#include "../Users/Admin/admin.hpp"
+#include "../Users/Admin/Admin.hpp"
 class Database
 {
 private:
