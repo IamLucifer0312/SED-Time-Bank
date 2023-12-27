@@ -1,3 +1,0 @@
-/Users/tranphantrongphuc/Downloads/SED-Time-Bank/build/CMakeFiles/SED.dir
-/Users/tranphantrongphuc/Downloads/SED-Time-Bank/build/CMakeFiles/edit_cache.dir
-/Users/tranphantrongphuc/Downloads/SED-Time-Bank/build/CMakeFiles/rebuild_cache.dir
