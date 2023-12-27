@@ -92,8 +92,6 @@
     "locale": "cpp",
     "stack": "cpp",
     "__nullptr": "cpp",
-    "__string": "cpp",
-    "queue": "cpp"
-  },
-  "cmake.configureOnOpen": true
+    "__string": "cpp"
+  }
 }

@@ -1,6 +1,6 @@
 CMakeFiles/SED.dir/src/Users/Member/member.cpp.o: \
  /Users/tranphantrongphuc/Downloads/SED-Time-Bank/src/Users/Member/member.cpp \
- /Users/tranphantrongphuc/Downloads/SED-Time-Bank/src/Users/Member/Member.hpp \
+ /Users/tranphantrongphuc/Downloads/SED-Time-Bank/src/Users/Member/member.hpp \
  /opt/homebrew/Cellar/gcc/13.2.0/include/c++/13/string \
  /opt/homebrew/Cellar/gcc/13.2.0/include/c++/13/bits/requires_hosted.h \
  /opt/homebrew/Cellar/gcc/13.2.0/include/c++/13/aarch64-apple-darwin22/bits/c++config.h \
@@ -282,4 +282,4 @@ CMakeFiles/SED.dir/src/Users/Member/member.cpp.o: \
  /opt/homebrew/Cellar/gcc/13.2.0/include/c++/13/bits/codecvt.h \
  /opt/homebrew/Cellar/gcc/13.2.0/include/c++/13/bits/locale_facets_nonio.tcc \
  /opt/homebrew/Cellar/gcc/13.2.0/include/c++/13/bits/locale_conv.h \
- /Users/tranphantrongphuc/Downloads/SED-Time-Bank/src/Users/Member/../User/User.hpp
+ /Users/tranphantrongphuc/Downloads/SED-Time-Bank/src/Users/Member/../User/user.hpp

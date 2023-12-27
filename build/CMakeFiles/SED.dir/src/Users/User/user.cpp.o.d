@@ -1,6 +1,6 @@
 CMakeFiles/SED.dir/src/Users/User/user.cpp.o: \
  /Users/tranphantrongphuc/Downloads/SED-Time-Bank/src/Users/User/user.cpp \
- /Users/tranphantrongphuc/Downloads/SED-Time-Bank/src/Users/User/User.hpp \
+ /Users/tranphantrongphuc/Downloads/SED-Time-Bank/src/Users/User/user.hpp \
  /opt/homebrew/Cellar/gcc/13.2.0/include/c++/13/string \
  /opt/homebrew/Cellar/gcc/13.2.0/include/c++/13/bits/requires_hosted.h \
  /opt/homebrew/Cellar/gcc/13.2.0/include/c++/13/aarch64-apple-darwin22/bits/c++config.h \

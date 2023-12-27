@@ -1,7 +1,7 @@
 #include <string>
 #include <map>
 #include "../../../nlohmann/json.hpp"
-#include "../User/User.hpp"
+#include "../User/user.hpp"
 
 using json = nlohmann::json;
 using std::string;
@@ -20,11 +20,17 @@ namespace Users
         string home_address;
         string email;
         string city;
-        float credit;
 
     public:
         // default constructor
         Member();
+        // {
+        //     this->full_name = "";
+        //     this->phone_number = "";
+        //     this->home_address = "";
+        //     this->email = "";
+        //     this->city = "";
+        // }
 
         // constructor
         Member(
@@ -34,10 +40,7 @@ namespace Users
             const string &phone_number,
             const string &home_address,
             const string &email,
-            const string &city
-            // ,
-            // const float &credit
-            );
+            const string &city);
         //     : User(username, password)
         // {
         //     this->full_name = full_name;
@@ -49,38 +52,67 @@ namespace Users
 
         // Getter methods
         const string get_full_name() const;
+        // {
+        //     return full_name;
+        // }
 
         const string get_phone_number() const;
+        // {
+        //     return phone_number;
+        // }
 
         const string get_home_address() const;
+        // {
+        //     return home_address;
+        // }
 
         const string get_email() const;
+        // {
+        //     return email;
+        // }
 
         const string get_city() const;
-
-        const float get_credit() const;
-
-        // Setter methods
-        void set_full_name(const string &full_name);
-
-        void set_phone_number(const string &phone_number);
-
-        void set_home_address(const string &home_address);
-
-        void set_email(const string &email);
-
-        void set_city(const string &city);
-
-        void set_credit(const float &credit);
+        // {
+        //     return city;
+        // }
 
         // extract data from map
         void from_map(std::map<string, string> map);
+        // {
+        //     User::from_map(map);
+        //     this->full_name = map["full_name"];
+        //     this->phone_number = map["phone_number"];
+        //     this->home_address = map["home_address"];
+        //     this->email = map["email"];
+        //     this->city = map["city"];
+        // }
 
         // convert data to map
         std::map<string, string> to_map_member() const;
+        // {
+        //     std::map<string, string> map = to_map_member();
+        //     map.emplace("full_name", this->full_name);
+        //     map.emplace("phone_number", this->phone_number);
+        //     map.emplace("home_address", this->home_address);
+        //     map.emplace("email", this->email);
+        //     map.emplace("city", this->city);
+        //     return map;
+        // }
 
         // Serialization function for Member class
         void serialize(json &j) const;
+        // {
+        //     j = {
+        //         {"username", username},
+        //         {"password", password},
+        //         {"full_name", full_name},
+        //         {"phone_number", phone_number},
+        //         {"home_address", home_address},
+        //         {"email", email},
+        //         {"city", city}
+        //         // Add more member variables to serialize
+        //     };
+        // }
 
         // Deserialization function for Member class
         void deserialize(const json &j);
@@ -95,7 +127,6 @@ namespace Users
         //     // Deserialize other member variables
         // }
     };
-
 } // namespace Users
 
 #endif // MEMBER_HPP

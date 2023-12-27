@@ -1,4 +1,4 @@
-#include "User.hpp"
+#include "user.hpp"
 
 // default constructor
 Users::User::User()

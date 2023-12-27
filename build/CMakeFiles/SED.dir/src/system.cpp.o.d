@@ -286,13 +286,9 @@ CMakeFiles/SED.dir/src/system.cpp.o: \
  /opt/homebrew/Cellar/gcc/13.2.0/include/c++/13/aarch64-apple-darwin22/bits/messages_members.h \
  /opt/homebrew/Cellar/gcc/13.2.0/include/c++/13/bits/locale_facets_nonio.tcc \
  /opt/homebrew/Cellar/gcc/13.2.0/include/c++/13/bits/locale_conv.h \
- /Users/tranphantrongphuc/Downloads/SED-Time-Bank/src/Users/Users.hpp \
- /Users/tranphantrongphuc/Downloads/SED-Time-Bank/src/Users/Admin/Admin.hpp \
- /Users/tranphantrongphuc/Downloads/SED-Time-Bank/src/Users/Admin/../User/User.hpp \
- /Users/tranphantrongphuc/Downloads/SED-Time-Bank/src/Users/User/User.hpp \
- /Users/tranphantrongphuc/Downloads/SED-Time-Bank/src/Users/Member/Member.hpp \
+ /Users/tranphantrongphuc/Downloads/SED-Time-Bank/src/Users/User/user.hpp \
+ /Users/tranphantrongphuc/Downloads/SED-Time-Bank/src/Users/Member/member.hpp \
  /Users/tranphantrongphuc/Downloads/SED-Time-Bank/src/Users/Member/../../../nlohmann/json.hpp \
- /Users/tranphantrongphuc/Downloads/SED-Time-Bank/src/Users/Member/../User/User.hpp \
- /Users/tranphantrongphuc/Downloads/SED-Time-Bank/src/Database/Database.hpp \
- /Users/tranphantrongphuc/Downloads/SED-Time-Bank/src/Database/../../nlohmann/json.hpp \
- /Users/tranphantrongphuc/Downloads/SED-Time-Bank/src/Database/../Users/Users.hpp
+ /Users/tranphantrongphuc/Downloads/SED-Time-Bank/src/Users/Member/../User/user.hpp \
+ /Users/tranphantrongphuc/Downloads/SED-Time-Bank/src/Users/Admin/admin.hpp \
+ /Users/tranphantrongphuc/Downloads/SED-Time-Bank/src/Users/Admin/../User/user.hpp

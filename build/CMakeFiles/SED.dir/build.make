@@ -97,52 +97,24 @@ CMakeFiles/SED.dir/src/Users/User/user.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SED.dir/src/Users/User/user.cpp.s"
 	/opt/homebrew/bin/aarch64-apple-darwin22-g++-13 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/tranphantrongphuc/Downloads/SED-Time-Bank/src/Users/User/user.cpp -o CMakeFiles/SED.dir/src/Users/User/user.cpp.s
 
-CMakeFiles/SED.dir/src/Database/database.cpp.o: CMakeFiles/SED.dir/flags.make
-CMakeFiles/SED.dir/src/Database/database.cpp.o: /Users/tranphantrongphuc/Downloads/SED-Time-Bank/src/Database/database.cpp
-CMakeFiles/SED.dir/src/Database/database.cpp.o: CMakeFiles/SED.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/tranphantrongphuc/Downloads/SED-Time-Bank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/SED.dir/src/Database/database.cpp.o"
-	/opt/homebrew/bin/aarch64-apple-darwin22-g++-13 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SED.dir/src/Database/database.cpp.o -MF CMakeFiles/SED.dir/src/Database/database.cpp.o.d -o CMakeFiles/SED.dir/src/Database/database.cpp.o -c /Users/tranphantrongphuc/Downloads/SED-Time-Bank/src/Database/database.cpp
+CMakeFiles/SED.dir/src/system.cpp.o: CMakeFiles/SED.dir/flags.make
+CMakeFiles/SED.dir/src/system.cpp.o: /Users/tranphantrongphuc/Downloads/SED-Time-Bank/src/system.cpp
+CMakeFiles/SED.dir/src/system.cpp.o: CMakeFiles/SED.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/tranphantrongphuc/Downloads/SED-Time-Bank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/SED.dir/src/system.cpp.o"
+	/opt/homebrew/bin/aarch64-apple-darwin22-g++-13 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SED.dir/src/system.cpp.o -MF CMakeFiles/SED.dir/src/system.cpp.o.d -o CMakeFiles/SED.dir/src/system.cpp.o -c /Users/tranphantrongphuc/Downloads/SED-Time-Bank/src/system.cpp
 
-CMakeFiles/SED.dir/src/Database/database.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SED.dir/src/Database/database.cpp.i"
-	/opt/homebrew/bin/aarch64-apple-darwin22-g++-13 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/tranphantrongphuc/Downloads/SED-Time-Bank/src/Database/database.cpp > CMakeFiles/SED.dir/src/Database/database.cpp.i
+CMakeFiles/SED.dir/src/system.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SED.dir/src/system.cpp.i"
+	/opt/homebrew/bin/aarch64-apple-darwin22-g++-13 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/tranphantrongphuc/Downloads/SED-Time-Bank/src/system.cpp > CMakeFiles/SED.dir/src/system.cpp.i
 
-CMakeFiles/SED.dir/src/Database/database.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SED.dir/src/Database/database.cpp.s"
-	/opt/homebrew/bin/aarch64-apple-darwin22-g++-13 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/tranphantrongphuc/Downloads/SED-Time-Bank/src/Database/database.cpp -o CMakeFiles/SED.dir/src/Database/database.cpp.s
-
-CMakeFiles/SED.dir/src/Systems/userSystem.cpp.o: CMakeFiles/SED.dir/flags.make
-CMakeFiles/SED.dir/src/Systems/userSystem.cpp.o: /Users/tranphantrongphuc/Downloads/SED-Time-Bank/src/Systems/userSystem.cpp
-CMakeFiles/SED.dir/src/Systems/userSystem.cpp.o: CMakeFiles/SED.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/tranphantrongphuc/Downloads/SED-Time-Bank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/SED.dir/src/Systems/userSystem.cpp.o"
-	/opt/homebrew/bin/aarch64-apple-darwin22-g++-13 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SED.dir/src/Systems/userSystem.cpp.o -MF CMakeFiles/SED.dir/src/Systems/userSystem.cpp.o.d -o CMakeFiles/SED.dir/src/Systems/userSystem.cpp.o -c /Users/tranphantrongphuc/Downloads/SED-Time-Bank/src/Systems/userSystem.cpp
-
-CMakeFiles/SED.dir/src/Systems/userSystem.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SED.dir/src/Systems/userSystem.cpp.i"
-	/opt/homebrew/bin/aarch64-apple-darwin22-g++-13 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/tranphantrongphuc/Downloads/SED-Time-Bank/src/Systems/userSystem.cpp > CMakeFiles/SED.dir/src/Systems/userSystem.cpp.i
-
-CMakeFiles/SED.dir/src/Systems/userSystem.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SED.dir/src/Systems/userSystem.cpp.s"
-	/opt/homebrew/bin/aarch64-apple-darwin22-g++-13 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/tranphantrongphuc/Downloads/SED-Time-Bank/src/Systems/userSystem.cpp -o CMakeFiles/SED.dir/src/Systems/userSystem.cpp.s
-
-CMakeFiles/SED.dir/src/Systems/menuSystem.cpp.o: CMakeFiles/SED.dir/flags.make
-CMakeFiles/SED.dir/src/Systems/menuSystem.cpp.o: /Users/tranphantrongphuc/Downloads/SED-Time-Bank/src/Systems/menuSystem.cpp
-CMakeFiles/SED.dir/src/Systems/menuSystem.cpp.o: CMakeFiles/SED.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/tranphantrongphuc/Downloads/SED-Time-Bank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/SED.dir/src/Systems/menuSystem.cpp.o"
-	/opt/homebrew/bin/aarch64-apple-darwin22-g++-13 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SED.dir/src/Systems/menuSystem.cpp.o -MF CMakeFiles/SED.dir/src/Systems/menuSystem.cpp.o.d -o CMakeFiles/SED.dir/src/Systems/menuSystem.cpp.o -c /Users/tranphantrongphuc/Downloads/SED-Time-Bank/src/Systems/menuSystem.cpp
-
-CMakeFiles/SED.dir/src/Systems/menuSystem.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SED.dir/src/Systems/menuSystem.cpp.i"
-	/opt/homebrew/bin/aarch64-apple-darwin22-g++-13 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/tranphantrongphuc/Downloads/SED-Time-Bank/src/Systems/menuSystem.cpp > CMakeFiles/SED.dir/src/Systems/menuSystem.cpp.i
-
-CMakeFiles/SED.dir/src/Systems/menuSystem.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SED.dir/src/Systems/menuSystem.cpp.s"
-	/opt/homebrew/bin/aarch64-apple-darwin22-g++-13 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/tranphantrongphuc/Downloads/SED-Time-Bank/src/Systems/menuSystem.cpp -o CMakeFiles/SED.dir/src/Systems/menuSystem.cpp.s
+CMakeFiles/SED.dir/src/system.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SED.dir/src/system.cpp.s"
+	/opt/homebrew/bin/aarch64-apple-darwin22-g++-13 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/tranphantrongphuc/Downloads/SED-Time-Bank/src/system.cpp -o CMakeFiles/SED.dir/src/system.cpp.s
 
 CMakeFiles/SED.dir/main.cpp.o: CMakeFiles/SED.dir/flags.make
 CMakeFiles/SED.dir/main.cpp.o: /Users/tranphantrongphuc/Downloads/SED-Time-Bank/main.cpp
 CMakeFiles/SED.dir/main.cpp.o: CMakeFiles/SED.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/tranphantrongphuc/Downloads/SED-Time-Bank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/SED.dir/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/tranphantrongphuc/Downloads/SED-Time-Bank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/SED.dir/main.cpp.o"
 	/opt/homebrew/bin/aarch64-apple-darwin22-g++-13 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SED.dir/main.cpp.o -MF CMakeFiles/SED.dir/main.cpp.o.d -o CMakeFiles/SED.dir/main.cpp.o -c /Users/tranphantrongphuc/Downloads/SED-Time-Bank/main.cpp
 
 CMakeFiles/SED.dir/main.cpp.i: cmake_force
@@ -157,9 +129,7 @@ CMakeFiles/SED.dir/main.cpp.s: cmake_force
 SED_OBJECTS = \
 "CMakeFiles/SED.dir/src/Users/Member/member.cpp.o" \
 "CMakeFiles/SED.dir/src/Users/User/user.cpp.o" \
-"CMakeFiles/SED.dir/src/Database/database.cpp.o" \
-"CMakeFiles/SED.dir/src/Systems/userSystem.cpp.o" \
-"CMakeFiles/SED.dir/src/Systems/menuSystem.cpp.o" \
+"CMakeFiles/SED.dir/src/system.cpp.o" \
 "CMakeFiles/SED.dir/main.cpp.o"
 
 # External object files for target SED
@@ -167,13 +137,11 @@ SED_EXTERNAL_OBJECTS =
 
 SED: CMakeFiles/SED.dir/src/Users/Member/member.cpp.o
 SED: CMakeFiles/SED.dir/src/Users/User/user.cpp.o
-SED: CMakeFiles/SED.dir/src/Database/database.cpp.o
-SED: CMakeFiles/SED.dir/src/Systems/userSystem.cpp.o
-SED: CMakeFiles/SED.dir/src/Systems/menuSystem.cpp.o
+SED: CMakeFiles/SED.dir/src/system.cpp.o
 SED: CMakeFiles/SED.dir/main.cpp.o
 SED: CMakeFiles/SED.dir/build.make
 SED: CMakeFiles/SED.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/tranphantrongphuc/Downloads/SED-Time-Bank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable SED"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/tranphantrongphuc/Downloads/SED-Time-Bank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable SED"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/SED.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
