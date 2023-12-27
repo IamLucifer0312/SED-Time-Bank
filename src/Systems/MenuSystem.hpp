@@ -39,7 +39,7 @@ public:
     void guest_menu(Database &database);
     
     // member menu
-    void member_menu(Database &database, UserSystem &user);
+    void member_menu(Database &database);
 
     // admin menu
     void admin_menu();
