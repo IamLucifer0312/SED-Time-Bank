@@ -1,1 +1,3 @@
-/opt/homebrew/bin/aarch64-apple-darwin22-g++-13 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -mmacosx-version-min=13.1 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/SED.dir/src/Users/Member/member.cpp.o CMakeFiles/SED.dir/src/Users/User/user.cpp.o CMakeFiles/SED.dir/src/Database/database.cpp.o CMakeFiles/SED.dir/src/Systems/userSystem.cpp.o CMakeFiles/SED.dir/src/Systems/menuSystem.cpp.o CMakeFiles/SED.dir/main.cpp.o -o SED 
+"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\SED.dir/objects.a
+C:\mingw64\bin\ar.exe qc CMakeFiles\SED.dir/objects.a @CMakeFiles\SED.dir\objects1.rsp
+C:\mingw64\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\SED.dir/objects.a -Wl,--no-whole-archive -o SED.exe -Wl,--out-implib,libSED.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\SED.dir\linkLibs.rsp

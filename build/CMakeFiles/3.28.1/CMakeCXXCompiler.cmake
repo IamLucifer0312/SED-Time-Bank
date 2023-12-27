@@ -1,4 +1,4 @@
-set(CMAKE_CXX_COMPILER "/opt/homebrew/bin/aarch64-apple-darwin22-g++-13")
+set(CMAKE_CXX_COMPILER "C:/mingw64/bin/g++.exe")
 set(CMAKE_CXX_COMPILER_ARG1 "")
 set(CMAKE_CXX_COMPILER_ID "GNU")
 set(CMAKE_CXX_COMPILER_VERSION "13.2.0")
@@ -14,22 +14,21 @@ set(CMAKE_CXX17_COMPILE_FEATURES "cxx_std_17")
 set(CMAKE_CXX20_COMPILE_FEATURES "cxx_std_20")
 set(CMAKE_CXX23_COMPILE_FEATURES "cxx_std_23")
 
-set(CMAKE_CXX_PLATFORM_ID "Darwin")
+set(CMAKE_CXX_PLATFORM_ID "MinGW")
 set(CMAKE_CXX_SIMULATE_ID "")
 set(CMAKE_CXX_COMPILER_FRONTEND_VARIANT "GNU")
 set(CMAKE_CXX_SIMULATE_VERSION "")
 
-set(CMAKE_CXX_COMPILER_SYSROOT "/Library/Developer/CommandLineTools/SDKs/MacOSX13.sdk/usr")
-set(CMAKE_COMPILER_SYSROOT "/Library/Developer/CommandLineTools/SDKs/MacOSX13.sdk/usr")
 
 
-set(CMAKE_AR "/usr/bin/ar")
-set(CMAKE_CXX_COMPILER_AR "/opt/homebrew/bin/aarch64-apple-darwin22-gcc-ar-13")
-set(CMAKE_RANLIB "/usr/bin/ranlib")
-set(CMAKE_CXX_COMPILER_RANLIB "/opt/homebrew/bin/aarch64-apple-darwin22-gcc-ranlib-13")
-set(CMAKE_LINKER "/usr/bin/ld")
+
+set(CMAKE_AR "C:/mingw64/bin/ar.exe")
+set(CMAKE_CXX_COMPILER_AR "C:/mingw64/bin/gcc-ar.exe")
+set(CMAKE_RANLIB "C:/mingw64/bin/ranlib.exe")
+set(CMAKE_CXX_COMPILER_RANLIB "C:/mingw64/bin/gcc-ranlib.exe")
+set(CMAKE_LINKER "C:/mingw64/bin/ld.exe")
 set(CMAKE_MT "")
-set(CMAKE_TAPI "/Library/Developer/CommandLineTools/usr/bin/tapi")
+set(CMAKE_TAPI "CMAKE_TAPI-NOTFOUND")
 set(CMAKE_COMPILER_IS_GNUCXX 1)
 set(CMAKE_CXX_COMPILER_LOADED 1)
 set(CMAKE_CXX_COMPILER_WORKS TRUE)
@@ -51,7 +50,7 @@ endforeach()
 
 set(CMAKE_CXX_LINKER_PREFERENCE 30)
 set(CMAKE_CXX_LINKER_PREFERENCE_PROPAGATES 1)
-set(CMAKE_CXX_LINKER_DEPFILE_SUPPORTED FALSE)
+set(CMAKE_CXX_LINKER_DEPFILE_SUPPORTED TRUE)
 
 # Save compiler ABI information.
 set(CMAKE_CXX_SIZEOF_DATA_PTR "8")
@@ -77,10 +76,10 @@ if(CMAKE_CXX_CL_SHOWINCLUDES_PREFIX)
 endif()
 
 
-set(CMAKE_CXX_SYSROOT_FLAG "-isysroot")
-set(CMAKE_CXX_OSX_DEPLOYMENT_TARGET_FLAG "-mmacosx-version-min=")
 
-set(CMAKE_CXX_IMPLICIT_INCLUDE_DIRECTORIES "/opt/homebrew/Cellar/gcc/13.2.0/include/c++/13;/opt/homebrew/Cellar/gcc/13.2.0/include/c++/13/aarch64-apple-darwin22;/opt/homebrew/Cellar/gcc/13.2.0/include/c++/13/backward;/opt/homebrew/Cellar/gcc/13.2.0/lib/gcc/current/gcc/aarch64-apple-darwin22/13/include;/opt/homebrew/Cellar/gcc/13.2.0/lib/gcc/current/gcc/aarch64-apple-darwin22/13/include-fixed;/Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include;/Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/System/Library/Frameworks")
-set(CMAKE_CXX_IMPLICIT_LINK_LIBRARIES "stdc++;emutls_w;gcc;gcc")
-set(CMAKE_CXX_IMPLICIT_LINK_DIRECTORIES "/opt/homebrew/Cellar/gcc/13.2.0/lib/gcc/current/gcc/aarch64-apple-darwin22/13;/opt/homebrew/Cellar/gcc/13.2.0/lib/gcc/current/gcc;/opt/homebrew/Cellar/gcc/13.2.0/lib/gcc/current;/Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/lib")
-set(CMAKE_CXX_IMPLICIT_LINK_FRAMEWORK_DIRECTORIES "/Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/System/Library/Frameworks")
+
+
+set(CMAKE_CXX_IMPLICIT_INCLUDE_DIRECTORIES "C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/c++;C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/c++/x86_64-w64-mingw32;C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/c++/backward;C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include;C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include-fixed;C:/mingw64/x86_64-w64-mingw32/include")
+set(CMAKE_CXX_IMPLICIT_LINK_LIBRARIES "stdc++;mingw32;gcc_s;gcc;moldname;mingwex;kernel32;pthread;advapi32;shell32;user32;kernel32;iconv;mingw32;gcc_s;gcc;moldname;mingwex;kernel32")
+set(CMAKE_CXX_IMPLICIT_LINK_DIRECTORIES "C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0;C:/mingw64/lib/gcc;C:/mingw64/x86_64-w64-mingw32/lib;C:/mingw64/lib")
+set(CMAKE_CXX_IMPLICIT_LINK_FRAMEWORK_DIRECTORIES "")
