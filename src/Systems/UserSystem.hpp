@@ -10,8 +10,6 @@
 
 // INCLUDES
 
-// menu system
-#include "MenuSystem.hpp"
 
 // user classes
 #include "../Users/Users.hpp"
@@ -34,23 +32,24 @@ private:
     LoginType login_type;
     std::vector<Users::Member> members;
     Users::Admin admin;
+    Database database;
 
 public:
+    // constructor
+    UserSystem();
+
+    // load and save database
+    void load_database();
+    void save_database();
 
     // log in
     bool log_in(const std::string &username, const std::string &password, Database &database);
-
-
-    void guest_view_supporter();
+    // validators:
+    // log in
+    bool validateLogin(const std::string &username, const std::string &password);
 
     // reigster member
-    bool register_member(Database &database);
-
-    // handle choices
-    static int prompt_choice(unsigned min, unsigned max);
-
-    // main loop
-    void main_loop();
+    void register_member( std::string username, std::string password, std::string full_name, std::string phone_number, std::string home_address, std::string email, std::string city);
 
     friend class MenuSystem;
 };

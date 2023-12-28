@@ -34,9 +34,8 @@ namespace Users
             const string &phone_number,
             const string &home_address,
             const string &email,
-            const string &city
-            // ,
-            // const float &credit
+            const string &city,
+            const float &credit
             );
         //     : User(username, password)
         // {

@@ -22,6 +22,8 @@ private:
     string member_file;
 
 public:
+    // default constructor
+    Database();
     // constructor
     Database(const string &file_name);
 
