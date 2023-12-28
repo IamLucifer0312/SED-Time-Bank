@@ -106,7 +106,7 @@ void MenuSystem::main_loop()
             break;
         case 0:
             this->quit = true;
-            std::cout << "FUCK YOU !!!!!!" << std::endl;
+            std::cout << "Have a nice day !!!" << std::endl;
         default:
             break;
         }

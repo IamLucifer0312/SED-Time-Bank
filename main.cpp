@@ -5,10 +5,8 @@
 
 int main() {
     
-   MenuSystem menuSystem;
+    MenuSystem menuSystem;
     menuSystem.main_loop();
 
-    // System application;
-    // application.main_loop();
     return 0;
 }
