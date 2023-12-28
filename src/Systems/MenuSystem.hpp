@@ -9,7 +9,7 @@
 #define MENUSYSTEM_HPP
 
 // INCLUDES
-#include "UserSystem.hpp"
+
 
 // user classes
 #include "../Users/Users.hpp"
@@ -25,9 +25,6 @@
 //     ADMIN
 // };
 
-// define class prototype
-class UserSystem;
-
 class MenuSystem
 {
 private:
@@ -42,7 +39,7 @@ public:
     void guest_menu(Database &database);
     
     // member menu
-    void member_menu(Database &database, UserSystem &system);
+    void member_menu(Database &database, UserSystem &user);
 
     // admin menu
     void admin_menu();

@@ -1,4 +1,5 @@
 #include "UserSystem.hpp"
+#include "MenuSystem.hpp"
 
 // login member
 bool UserSystem::log_in(const std::string &username, const std::string &password, Database &database)
@@ -157,7 +158,7 @@ void UserSystem::main_loop()
             menu.guest_menu(database);
             break;
         case 2:
-            menu.member_menu(database, *this);
+            menu.member_menu(database);
             break;
         case 3:
             menu.admin_menu();
