@@ -1,7 +1,7 @@
 #include "../MenuSystem.hpp"
 #include "../../UserSystem/UserSystem.hpp"
 
-void MenuSystem::login_menu() {
+void MenuSystem::login_menu(string role) {
         std::cout << "Enter your username: ";
         std::string username;
         std::getline(std::cin, username);
@@ -12,34 +12,21 @@ void MenuSystem::login_menu() {
 
         if (userSystem.validateLogin(username, password))
         {
-            bool loggedIn = true;
-
-            while (loggedIn)
+            loggedIn = true;
+            std::cout << "Login successfully!\n";
+            if (role == "admin")
             {
-                std::cout << "\nMember actions:\n"
-                            << "==============================\n"
-                            << "0. Logout.\n"
-                            << "1. View my information.\n"
-                            << "2. Add credit.\n"
-                            << "3. Block member.\n"
-                            << "4. View request. \n"
-                            << "5. Find supporter. \n"
-                            << "6. View the tutor. \n";
-
-                switch (prompt_choice(0, 6))
-                {
-                case 1:
-
-                    break;
-                case 2:
-
-                    break;
-                case 0:
-                    loggedIn = false;
-                    break;
-                }
+                admin_menu();
             }
-        }    
+            else if (role == "member")
+            {
+                member_menu();
+            }
+        } else {
+            std::cout << "Login failed\n";
+            return;
+        }   
+
  }
 // register menu
     void MenuSystem::register_menu() {

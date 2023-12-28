@@ -4,7 +4,8 @@
 // login
 bool UserSystem::validateLogin(const std::string &username, const std::string &password)
 {
-    for (const auto &member : database.get_all_members())
+
+    for (Users::Member &member : database.get_all_members())
     {
         if (member.get_username() == username && member.authenticate(password))
         {

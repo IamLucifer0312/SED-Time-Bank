@@ -9,6 +9,7 @@
 MenuSystem::MenuSystem()
 {
     this->userSystem = UserSystem();
+    this->loggedIn = false;
 }
 
 
@@ -93,10 +94,10 @@ void MenuSystem::main_loop()
             guest_menu();
             break;
         case 2:
-            member_menu();
+            login_menu("member");
             break;
         case 3:
-            admin_menu();
+            login_menu("admin");
             break;
         case 0:
             this->quit = true;

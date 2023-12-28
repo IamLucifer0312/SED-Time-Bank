@@ -24,6 +24,7 @@ private:
     std::vector<Users::Member> members;
     Users::Admin admin;
     UserSystem userSystem;
+    bool loggedIn;
 
 public:
     // constructor
@@ -33,7 +34,7 @@ public:
 
     void main_loop();
 
-    void login_menu();
+    void login_menu(string role);
     void register_menu();
 
     void guest_view_supporter();
@@ -46,6 +47,9 @@ public:
 
     // admin menu
     void admin_menu();
+
+    // show members
+    void show_members();
 
     friend class UserSystem;
 

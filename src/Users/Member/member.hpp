@@ -37,14 +37,6 @@ namespace Users
             const string &city,
             const float &credit
             );
-        //     : User(username, password)
-        // {
-        //     this->full_name = full_name;
-        //     this->phone_number = phone_number;
-        //     this->home_address = home_address;
-        //     this->email = email;
-        //     this->city = city;
-        // }
 
         // Getter methods
         const string get_full_name() const;
@@ -83,16 +75,9 @@ namespace Users
 
         // Deserialization function for Member class
         void deserialize(const json &j);
-        // {
-        //     username = j.at("username").get<string>();
-        //     password = j.at("password").get<string>();
-        //     full_name = j.at("full_name").get<string>();
-        //     phone_number = j.at("phone_number").get<string>();
-        //     home_address = j.at("home_address").get<string>();
-        //     email = j.at("email").get<string>();
-        //     city = j.at("city").get<string>();
-        //     // Deserialize other member variables
-        // }
+        
+        // show member info
+        void show_member_info();
     };
 
 } // namespace Users

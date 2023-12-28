@@ -55,6 +55,9 @@ public:
     // reigster member
     void register_member( std::string username, std::string password, std::string full_name, std::string phone_number, std::string home_address, std::string email, std::string city);
 
+    // getters
+    std::vector<Users::Member> get_members();
+
     friend class MenuSystem;
 };
 
