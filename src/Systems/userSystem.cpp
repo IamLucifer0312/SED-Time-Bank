@@ -130,7 +130,7 @@ void UserSystem::main_loop()
 
     MenuSystem menu;
 
-    std::cout << "\n\n\n\n\n\n"
+    std::cout << "\n"
               << "======================================\n"
               << "EEET2482/COSC2082 ASSIGNMENT\n"
               << "TIME BANK APPLICATION\n"

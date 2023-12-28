@@ -34,7 +34,7 @@ private:
     LoginType login_type;
     std::vector<Users::Member> members;
     Users::Admin admin;
-
+    //Users::Member currentMember;
 public:
 
     // log in
