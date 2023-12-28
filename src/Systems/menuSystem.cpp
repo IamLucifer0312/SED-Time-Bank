@@ -65,16 +65,31 @@
                     {
                         std::cout << "\nMember actions:\n"
                                   << "==============================\n"
-                                  << "0. Logout.\n"
-                                  << "1. Perform member action 1.\n"
-                                  << "2. Perform member action 2.\n";
-
-                        switch (user.prompt_choice(0, 2))
+                                  << "0. Log out.\n"
+                                  << "1. View my information.\n"
+                                  << "2. Add credit.\n"
+                                  << "3. Block member.\n"
+                                  << "4. View request. \n"
+                                  << "5. Find supporter. \n"
+                                  << "6. View the tutor. \n";
+                        switch (user.prompt_choice(0, 6))
                         {
                         case 1:
 
                             break;
                         case 2:
+
+                            break;
+                        case 3:
+
+                            break;
+                        case 4:
+
+                            break;
+                        case 5:
+
+                            break;
+                        case 6:
 
                             break;
                         case 0:
