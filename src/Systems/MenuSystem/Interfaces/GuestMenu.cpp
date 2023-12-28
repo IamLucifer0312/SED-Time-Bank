@@ -18,10 +18,12 @@
             switch (prompt_choice(1, 3))
             {
             case 1:
+                clear_screen();
                 std::cout << "supporter's details \n";
                 guest_view_supporter();
                 break;
             case 2:
+                clear_screen();
                 std::cout << "Registered...\n";
                 register_menu();
                 break;

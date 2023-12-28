@@ -4,6 +4,7 @@
 #include "Interfaces/MemberMenu.cpp"
 #include "Interfaces/AdminMenu.cpp"
 #include "Interfaces/LoginRegisterMenu.cpp"
+#include "Methods/ClearScreen.cpp"
 
 // default constructor
 MenuSystem::MenuSystem()
@@ -65,6 +66,7 @@ void MenuSystem::main_loop()
 {
     userSystem.load_database();
     
+    clear_screen();
 
     std::cout << "\n"
               << "======================================\n"
@@ -91,12 +93,15 @@ void MenuSystem::main_loop()
         switch (prompt_choice(1, 5))
         {
         case 1:
+            clear_screen();
             guest_menu();
             break;
         case 2:
+            clear_screen();
             login_menu("member");
             break;
         case 3:
+            clear_screen();
             login_menu("admin");
             break;
         case 0:

@@ -26,6 +26,7 @@
 
                 break;
             case 6:
+                clear_screen();
                 show_members();
                 break;
             case 0:

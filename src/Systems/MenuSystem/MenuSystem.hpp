@@ -50,6 +50,8 @@ public:
 
     // show members
     void show_members();
+    // clear screen
+    void clear_screen();
 
     friend class UserSystem;
 
