@@ -12,10 +12,10 @@
 
 
 // user classes
-#include "../Users/Users.hpp"
+#include "../../Users/Users.hpp"
 
 // database class
-#include "../Database/Database.hpp"
+#include "../../Database/Database.hpp"
 
 enum LoginType
 {
@@ -47,6 +47,10 @@ public:
     // validators:
     // log in
     bool validateLogin(const std::string &username, const std::string &password);
+
+    bool checkUSername(const std::string &username);
+    bool checkPasswordEmpty(const std::string &password);
+    bool checkPasswordSpace(const std::string &password);
 
     // reigster member
     void register_member( std::string username, std::string password, std::string full_name, std::string phone_number, std::string home_address, std::string email, std::string city);

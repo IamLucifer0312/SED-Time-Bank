@@ -15,8 +15,10 @@ set(SOURCES
 
     src/Database/database.cpp
 
-    src/Systems/userSystem.cpp
-    src/Systems/menuSystem.cpp
+    src/Systems/UserSystem/userSystem.cpp
+    
+
+    src/Systems/MenuSystem/menuSystem.cpp
 
     main.cpp
 )

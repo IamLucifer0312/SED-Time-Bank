@@ -9,13 +9,11 @@
 #define MENUSYSTEM_HPP
 
 // INCLUDES
-#include "UserSystem.hpp" 
+#include "../UserSystem/UserSystem.hpp" 
 
 // user classes
-#include "../Users/Users.hpp"
+#include "../../Users/Users.hpp"
 
-// database class
-#include "../Database/Database.hpp"
 
 
 class MenuSystem
