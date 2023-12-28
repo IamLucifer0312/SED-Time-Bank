@@ -1,7 +1,36 @@
 #include "UserSystem.hpp"
 #include "MenuSystem.hpp"
 
-// login member
+// default constructor
+UserSystem::UserSystem()
+{}
+
+
+
+// Load and save data
+void UserSystem::load_database()
+{
+    Database database("../src/member.json");
+    database.loadData();
+}
+
+void UserSystem::save_database()
+{
+    database.saveData();
+}
+
+// login
+bool UserSystem::validateLogin(const std::string &username, const std::string &password)
+{
+    for (const auto &member : database.get_all_members())
+    {
+        if (member.get_username() == username && member.authenticate(password))
+        {
+            return true;
+        }
+    }
+    return false;
+}
 bool UserSystem::log_in(const std::string &username, const std::string &password, Database &database)
 {
     for (const auto &member : database.get_all_members())
@@ -17,157 +46,69 @@ bool UserSystem::log_in(const std::string &username, const std::string &password
 }
 
 // register member
-bool UserSystem::register_member(Database &database)
-{
-    std::string username, password, full_name, phone_number, home_address, email, city;
-
-    std::cout << "Enter your new username: ";
-    std::getline(std::cin, username);
-    std::cout << "Enter your new password: ";
-    std::getline(std::cin, password);
-
-    for (const auto &member : this->members)
-    {
-        if (member.get_username() == username)
-        {
-            std::cout << "Error: Username '" << username << "' already exists.\n";
-            return false;
-        }
-    }
-
-    if (password.empty())
-    {
-        std::cout << "Error: Your password cannot be empty.\n";
-        return false;
-    }
-
-    for (auto c : password)
-    {
-        if (c == ' ')
-        {
-            std::cout << "Error: Your password cannot contain space character.\n";
-            return false;
-        }
-    }
-
-    std::cout << "Enter your full name: ";
-    std::getline(std::cin, full_name);
-
-    std::cout << "Enter your phone number: ";
-    std::getline(std::cin, phone_number);
-
-    std::cout << "Enter your home address: ";
-    std::getline(std::cin, home_address);
-
-    std::cout << "Enter your email: ";
-    std::getline(std::cin, email);
-
-    std::cout << "Enter your city: ";
-    std::getline(std::cin, city);
-
-    this->members.emplace_back(username, password, full_name, phone_number, home_address, email, city);
-
-    database.add_member(Users::Member(username, password, full_name, phone_number, home_address, email, city));
-    // database.save_data();
+void UserSystem::register_member(std::string username, std::string password, std::string full_name, std::string phone_number, std::string home_address, std::string email, std::string city) {
+    database.add_member(Users::Member(username, password, full_name, phone_number, home_address, email, city, 20));
     database.saveData();
-    return true;
+    return;
 }
 
-// handle choices
-int UserSystem::prompt_choice(unsigned min, unsigned max)
-{
-    int choice = -1;
-    std::string buffer;
+// bool UserSystem::register_member(Database &database)
+// {
+//     std::string username, password, full_name, phone_number, home_address, email, city;
 
-    std::cout << "Enter your choice: ";
-    std::getline(std::cin, buffer);
-    try
-    {
-        choice = std::stoi(buffer);
-    }
-    catch (std::invalid_argument &e)
-    {
-        choice = -1;
-    }
-    catch (std::out_of_range &e)
-    {
-        choice = -1;
-    }
+//     std::cout << "Enter your new username: ";
+//     std::getline(std::cin, username);
+//     std::cout << "Enter your new password: ";
+//     std::getline(std::cin, password);
 
-    while (choice == -1)
-    {
-        std::cout << "Enter your choice: ";
-        std::getline(std::cin, buffer);
+//     for (const auto &member : this->members)
+//     {
+//         if (member.get_username() == username)
+//         {
+//             std::cout << "Error: Username '" << username << "' already exists.\n";
+//             return false;
+//         }
+//     }
 
-        if (choice < min || max < choice)
-            choice = -1;
-        try
-        {
-            choice = std::stoi(buffer);
-        }
-        catch (std::invalid_argument &e)
-        {
-            choice = -1;
-        }
-        catch (std::out_of_range &e)
-        {
-            choice = -1;
-        }
-    }
+//     if (password.empty())
+//     {
+//         std::cout << "Error: Your password cannot be empty.\n";
+//         return false;
+//     }
 
-    return choice;
-}
+//     for (auto c : password)
+//     {
+//         if (c == ' ')
+//         {
+//             std::cout << "Error: Your password cannot contain space character.\n";
+//             return false;
+//         }
+//     }
 
-// i dont know what this function do
-void UserSystem::guest_view_supporter() {}
+//     std::cout << "Enter your full name: ";
+//     std::getline(std::cin, full_name);
 
-// main loop
-void UserSystem::main_loop()
-{
-    Database database("../src/member.json");
-    database.loadData();
-    this->members = database.get_all_members();
+//     std::cout << "Enter your phone number: ";
+//     std::getline(std::cin, phone_number);
 
-    MenuSystem menu;
+//     std::cout << "Enter your home address: ";
+//     std::getline(std::cin, home_address);
 
-    std::cout << "\n\n\n\n\n\n"
-              << "======================================\n"
-              << "EEET2482/COSC2082 ASSIGNMENT\n"
-              << "TIME BANK APPLICATION\n"
-              << "\n"
-              << "Instructor: Mr. Tran Duc Linh\n"
-              << "Group: Group 2\n"
-              << "s4021255, Cu Duc Quang\n"
-              << "s3978616, Nguyen Trong Tien\n"
-              << "s4000948, Pham Hung Anh\n"
-              << "s3979081, Tran Phan Trong Phuc"
-              << "\n======================================\n\n";
+//     std::cout << "Enter your email: ";
+//     std::getline(std::cin, email);
 
-    while (!this->quit)
-    {
-        std::cout << "\nMAIN MENU\n"
-                  << "=========================\n"
-                  << "--> 0. Exit\n"
-                  << "--> 1. Login as Guest\n"
-                  << "--> 2. Login as Member\n"
-                  << "--> 3. Login as Admin\n";
+//     std::cout << "Enter your city: ";
+//     std::getline(std::cin, city);
 
-        switch (prompt_choice(1, 5))
-        {
-        case 1:
-            menu.guest_menu(database);
-            break;
-        case 2:
-            menu.member_menu(database);
-            break;
-        case 3:
-            menu.admin_menu();
-            break;
-        case 0:
-            this->quit = true;
-            std::cout << "FUCK YOU !!!!!!" << std::endl;
-        default:
-            break;
-        }
-    }
-}
+//     this->members.emplace_back(username, password, full_name, phone_number, home_address, email, city, 20);
+
+//     database.add_member(Users::Member(username, password, full_name, phone_number, home_address, email, city, 20));
+//     // database.save_data();
+//     database.saveData();
+//     return true;
+// }
+
+
+
+
+

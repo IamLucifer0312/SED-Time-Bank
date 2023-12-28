@@ -9,7 +9,7 @@
 #define MENUSYSTEM_HPP
 
 // INCLUDES
-
+#include "UserSystem.hpp" 
 
 // user classes
 #include "../Users/Users.hpp"
@@ -17,13 +17,6 @@
 // database class
 #include "../Database/Database.hpp"
 
-// enum LoginType
-// {
-//     NONE,
-//     GUEST,
-//     MEMBER,
-//     ADMIN
-// };
 
 class MenuSystem
 {
@@ -32,14 +25,26 @@ private:
     // LoginType login_type;
     std::vector<Users::Member> members;
     Users::Admin admin;
+    UserSystem userSystem;
 
 public:
+    // constructor
+    MenuSystem();
+
+    int prompt_choice(unsigned min, unsigned max);
+
+    void main_loop();
+
+    void login_menu();
+    void register_menu();
+
+    void guest_view_supporter();
 
     // guess menu
-    void guest_menu(Database &database);
+    void guest_menu();
     
     // member menu
-    void member_menu(Database &database, UserSystem &user);
+    void member_menu();
 
     // admin menu
     void admin_menu();
