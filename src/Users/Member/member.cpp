@@ -19,9 +19,8 @@ Users::Member::Member(
     const string &phone_number,
     const string &home_address,
     const string &email,
-    const string &city
-    // ,
-    // const float &credit
+    const string &city,
+    const float &credit
     ) : User(username, password)
 {
     this->full_name = full_name;
@@ -99,7 +98,7 @@ void Users::Member::serialize(json &j) const
         {"home_address", home_address},
         {"email", email},
         {"city", city},
-        // {"credit", credit}
+        {"credit", credit}
         // Add more member variables to serialize
     };
 }
@@ -114,7 +113,7 @@ void Users::Member::deserialize(const json &j)
     home_address = j.at("home_address").get<string>();
     email = j.at("email").get<string>();
     city = j.at("city").get<string>();
-    // credit = j.at("credit").get<float>();
+    credit = j.at("credit").get<float>();
     // Deserialize other member variables
 }
 
@@ -149,4 +148,3 @@ void Users::Member::set_credit(const float &credit)
 {
     this->credit = credit;
 }
-

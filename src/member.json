@@ -1,6 +1,7 @@
 [
     {
         "city": "Hanoi",
+        "credit": 25.0,
         "email": "fewf@gmail.com",
         "full_name": "Fut",
         "home_address": "no",
@@ -10,11 +11,22 @@
     },
     {
         "city": "saigon",
+        "credit": 30.0,
         "email": "ddd@gmail.com",
         "full_name": "ass",
         "home_address": "123 Nguyen Van Linh",
         "password": "ddd",
         "phone_number": "129494",
         "username": "ddd"
+    },
+    {
+        "city": "Saigon",
+        "credit": 20.0,
+        "email": "test@gmail.com",
+        "full_name": "NTT",
+        "home_address": "Hihi",
+        "password": "123456",
+        "phone_number": "0932166716",
+        "username": "TT"
     }
 ]

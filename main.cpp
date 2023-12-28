@@ -3,12 +3,15 @@
 
 #include "src/Systems/Systems.hpp"
 
-int main() {
+int main() {   
+    #ifdef _WIN32
+        system("cls");
+    #else
+        system("clear");
+    #endif
     
-    UserSystem user;
-    user.main_loop();
 
-    // System application;
-    // application.main_loop();
+    MenuSystem menuSystem;
+    menuSystem.main_loop();
     return 0;
 }

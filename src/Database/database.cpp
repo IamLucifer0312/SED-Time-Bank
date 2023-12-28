@@ -1,6 +1,7 @@
 #include "Database.hpp"
 
 // constructor
+Database::Database() {}
 Database::Database(const string &file_name) : member_file(file_name)
 {
     // Load data from file to members vector in constructor if needed
