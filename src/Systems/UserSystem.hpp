@@ -9,6 +9,7 @@
 #define USERSYSTEM_HPP
 
 // INCLUDES
+#include "MenuSystem.hpp"
 
 // menu system
 #include "MenuSystem.hpp"
@@ -34,6 +35,7 @@ private:
     LoginType login_type;
     std::vector<Users::Member> members;
     Users::Admin admin;
+    Users::Member currentMember;
 
 public:
 

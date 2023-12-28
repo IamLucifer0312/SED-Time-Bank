@@ -1,11 +1,10 @@
 #include "MenuSystem.hpp"
-#include "UserSystem.hpp"
 
     // guess menu
     void MenuSystem::guest_menu(Database &database)
     {
         bool back = false;
-        UserSystem user;
+        UserSystem system;
 
         while (!back)
         {
@@ -15,15 +14,15 @@
                          "1. View all supporter details.\n"
                          "2. Register as member account.\n";
 
-            switch (user.prompt_choice(1, 3))
+            switch (system.prompt_choice(1, 3))
             {
             case 1:
                 std::cout << "supporter's details \n";
-                user.guest_view_supporter();
+                system.guest_view_supporter();
                 break;
             case 2:
                 std::cout << "Registered...\n";
-                user.register_member(database);
+                system.register_member(database);
                 break;
             case 0:
                 back = true;
@@ -33,10 +32,9 @@
     }
 
     // member menu
-    void MenuSystem::member_menu(Database &database)
+    void MenuSystem::member_menu(Database &database, UserSystem &system)
     {
         bool back = false;
-        UserSystem user;
 
         while (!back)
         {
@@ -45,7 +43,7 @@
                       << "0. Back.\n"
                       << "1. Log in.\n";
 
-            switch (user.prompt_choice(0, 1))
+            switch (system.prompt_choice(0, 1))
             {
             case 1:
             {
@@ -57,7 +55,7 @@
                 std::string password;
                 std::getline(std::cin, password);
 
-                if (user.log_in(username, password, database))
+                if (system.log_in(username, password, database))
                 {
                     bool loggedIn = true;
 
@@ -69,7 +67,7 @@
                                   << "1. Perform member action 1.\n"
                                   << "2. Perform member action 2.\n";
 
-                        switch (user.prompt_choice(0, 2))
+                        switch (system.prompt_choice(0, 2))
                         {
                         case 1:
 
