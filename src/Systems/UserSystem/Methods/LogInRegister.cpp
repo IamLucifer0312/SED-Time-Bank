@@ -9,6 +9,7 @@ bool UserSystem::validateLogin(const std::string &username, const std::string &p
     {
         if (member.get_username() == username && member.authenticate(password))
         {
+            set_current_member(member);
             return true;
         }
     }

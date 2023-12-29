@@ -33,6 +33,7 @@ private:
     std::vector<Users::Member> members;
     Users::Admin admin;
     Database database;
+    Users::Member current_member;
 
 public:
     // constructor
@@ -57,6 +58,11 @@ public:
 
     // getters
     std::vector<Users::Member> get_members();
+    Users::Member& get_current_member();
+    // setters
+    void set_current_member(Users::Member &member);
+    void update_current_member();
+
 
     friend class MenuSystem;
 };

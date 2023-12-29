@@ -80,3 +80,17 @@ void Database::loadData()
 {
     this->members = loadMembersFromFile(member_file);
 };
+
+void Database::update_member(const Users::Member &member)
+{
+    for (auto &m : members)
+    {
+        if (m.get_username() == member.get_username())
+        {
+            m = member;
+            return;
+        }
+    }
+    std::cerr << "Error: Member not found." << std::endl;
+    return;
+}

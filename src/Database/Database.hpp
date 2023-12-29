@@ -50,6 +50,9 @@ public:
 
     // Load data from file
     void loadData();
+
+    // Setters
+    void update_member(const Users::Member &member);
 };
 
 #endif // DATABASE_HPP

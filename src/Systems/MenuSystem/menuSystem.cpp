@@ -9,6 +9,7 @@
 // default constructor
 MenuSystem::MenuSystem()
 {
+    this->quit = false;
     this->userSystem = UserSystem();
     this->loggedIn = false;
 }

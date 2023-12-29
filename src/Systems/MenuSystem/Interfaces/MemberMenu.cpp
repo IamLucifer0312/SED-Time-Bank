@@ -1,12 +1,13 @@
 #include "../MenuSystem.hpp"
 #include "../Methods/ShowMembers.cpp"
 #include "../../UserSystem/UserSystem.hpp"
+#include "UpdateInfo.cpp"
 // member menu
     void MenuSystem::member_menu()
     {
-
-        Users::Member *current_member;    
-
+        std::string field;
+        std::string answer;
+        Users::Member current_member = userSystem.get_current_member();
         while (loggedIn)
         {
             std::cout << "\nMember actions:\n"
@@ -22,13 +23,19 @@
             switch (prompt_choice(0, 6))
             {
             case 1:
-                std::cout << "\nUsername: " << current_member->get_username() << "\n"
-                          << "Full name: " << current_member->get_full_name() << "\n"
-                          << "Last name: " << current_member->get_phone_number() << "\n"
-                          << "Phone number: " << current_member->get_home_address() << "\n"
-                          << "email: " << current_member->get_email() << "\n"
-                          << "city: " << current_member->get_city() << "\n"
-                          << "credit: " << current_member->get_credit() << "\n";
+                current_member.show_member_info();
+                std::cout << "Do you want to change information (Y/N): ";
+                std::getline(std::cin, answer);
+                if (answer == "Y"){
+                    std::cout << "Which field do you want to update: ";
+                    std::getline(std::cin, field);
+                    update_member_info(field);
+                    current_member = userSystem.get_current_member();
+                } else if (answer == "N"){
+                    break;
+                } else {
+                    std::cout << "Invalid input.\n";
+                }
                 break;
             case 2:
 
