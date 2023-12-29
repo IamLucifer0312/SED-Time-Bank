@@ -10,7 +10,7 @@ void MenuSystem::login_menu(string role) {
         std::string password;
         std::getline(std::cin, password);
 
-        if (userSystem.validateLogin(username, password))
+        if (userSystem.validateLogin(username, password, role))
         {
             loggedIn = true;
             std::cout << "Login successfully!\n";

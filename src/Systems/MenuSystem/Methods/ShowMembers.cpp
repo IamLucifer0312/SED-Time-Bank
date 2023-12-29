@@ -1,20 +1,11 @@
 #include "../MenuSystem.hpp"
 #include "../../UserSystem/UserSystem.hpp"
 
-void MenuSystem::show_members()
+void MenuSystem::show_members(std::string role)
 {
     for (auto& member : userSystem.get_members())
     {
-        member.show_member_info();
-    }
-    
-}
-
-void MenuSystem::show_members_for_admin()
-{
-    for (auto& member : userSystem.get_members())
-    {
-        member.show_member_info_for_admin();
+        member.show_member_info(role);
     }
     
 }

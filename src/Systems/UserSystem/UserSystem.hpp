@@ -45,7 +45,7 @@ public:
 
     // validators:
     // log in
-    bool validateLogin(const std::string &username, const std::string &password);
+    bool validateLogin(const std::string &username, const std::string &password, std::string role);
 
     bool checkUSername(const std::string &username);
     bool checkPasswordEmpty(const std::string &password);
@@ -59,6 +59,7 @@ public:
     Users::Member& get_current_member();
     // setters
     void set_current_member(Users::Member &member);
+    void set_admin(Users::Admin &admin);
     void update_current_member();
 
     friend class MenuSystem;

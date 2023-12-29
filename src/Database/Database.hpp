@@ -19,28 +19,33 @@ class Database
 {
 private:
     vector<Users::Member> members;
+    vector<Users::Admin> admins;
+    string admin_file = "../src/admin.json";
     string member_file;
 
 public:
     // default constructor
     Database();
     // constructor
-    Database(const string &file_name);
+    Database(const string &member_file_name);
 
     // Serialize member vector to json
     json serializeMembers(const vector<Users::Member> &members);
 
     // Deserialize json to member vector
     vector<Users::Member> deserializeMembers(const json &jsonArray);
+    vector<Users::Admin> deserializeAdmins(const json &jsonArray);
 
     // Add a member to the database object
     void add_member(const Users::Member &member);
 
     // Retrieve all members from the database object
     vector<Users::Member> get_all_members() const;
+    vector<Users::Admin> get_all_admins() const;
 
     // Load members from data file
     vector<Users::Member> loadMembersFromFile(const string &filename);
+    vector<Users::Admin> loadAdminsFromFile(const string &filename);
 
     // Saving members to data file
     void saveMembersToFile(const vector<Users::Member> &members, const string &filename);

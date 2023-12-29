@@ -2,7 +2,7 @@
 
 // constructor
 Database::Database() {}
-Database::Database(const string &file_name) : member_file(file_name)
+Database::Database(const string &member_file_name) : member_file(member_file_name)
 {
     // Load data from file to members vector in constructor if needed
     // this->loadData();
@@ -22,6 +22,18 @@ json Database::serializeMembers(const vector<Users::Member> &members)
 }
 
 // Deserialize json to member vector
+vector<Users::Admin> Database::deserializeAdmins(const json &jsonArray)
+{
+    vector<Users::Admin> deserializedAdmins;
+    for (const auto &adminJson : jsonArray)
+    {
+        Users::Admin admin;
+        admin.deserialize(adminJson);
+        deserializedAdmins.push_back(admin);
+    }
+    return deserializedAdmins;
+}
+
 vector<Users::Member> Database::deserializeMembers(const json &jsonArray)
 {
     vector<Users::Member> deserializedMembers;
@@ -46,7 +58,25 @@ vector<Users::Member> Database::get_all_members() const
     return members;
 }
 
+vector<Users::Admin> Database::get_all_admins() const
+{
+    return admins;
+}
+
 // Load members from data file
+vector<Users::Admin> Database::loadAdminsFromFile(const string &filename)
+{
+    std::ifstream file(filename);
+    if (!file.is_open()) {
+        std::cerr << "Error: Unable to open file: " << filename << std::endl;
+    }
+
+    json jsonArray;
+    file >> jsonArray;
+    file.close();
+    return deserializeAdmins(jsonArray);
+}
+
 vector<Users::Member> Database::loadMembersFromFile(const string &filename)
 {
     std::ifstream file(filename);
@@ -79,6 +109,7 @@ void Database::saveData()
 void Database::loadData()
 {
     this->members = loadMembersFromFile(member_file);
+    this->admins = loadAdminsFromFile(admin_file);
 };
 
 void Database::update_member(const Users::Member &member)

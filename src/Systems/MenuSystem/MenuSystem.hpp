@@ -49,12 +49,14 @@ public:
     void admin_menu();
 
     // show members
-    void show_members();
-    void show_members_for_admin();
+    void show_members(std::string role);
     // clear screen
     void clear_screen();
 
     void update_member_info(std::string information);
+
+    // interfaces
+    void member_view_my_info(Users::Member current_member, std::string information);
 
     friend class UserSystem;
 

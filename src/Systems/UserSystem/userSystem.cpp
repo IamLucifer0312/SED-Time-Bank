@@ -33,6 +33,10 @@ void UserSystem::set_current_member(Users::Member &member){
     current_member = member;
 };
 
+void UserSystem::set_admin(Users::Admin &admin){
+    admin = admin;
+};
+
 
 
 

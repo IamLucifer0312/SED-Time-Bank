@@ -14,7 +14,7 @@ void MenuSystem::admin_menu()
         {
             case 1:
                 clear_screen();
-                show_members_for_admin();
+                show_members("admin");
                 std::cout << "Do you want to change password for any User ?\n"
                           << "1. Yes\n"
                           << "2. No\n";

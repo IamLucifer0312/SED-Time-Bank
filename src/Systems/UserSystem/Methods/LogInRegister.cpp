@@ -2,17 +2,31 @@
 
 
 // login
-bool UserSystem::validateLogin(const std::string &username, const std::string &password)
+bool UserSystem::validateLogin(const std::string &username, const std::string &password, const std::string role)
 {
-
-    for (Users::Member &member : database.get_all_members())
+    if (role == "member")
     {
-        if (member.get_username() == username && member.authenticate(password))
+        for (Users::Member &member : database.get_all_members())
         {
-            set_current_member(member);
-            return true;
+            if (member.get_username() == username && member.authenticate(password))
+            {
+                set_current_member(member);
+                return true;
+            }
         }
     }
+    else if (role == "admin")
+    {
+        for (Users::Admin &admin : database.get_all_admins())
+        {
+            if (admin.get_username() == username && admin.authenticate(password))
+            {
+                set_admin(admin);
+                return true;
+            }
+        }
+    }
+    
     return false;
 }
 
