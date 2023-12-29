@@ -83,11 +83,11 @@ void Database::loadData()
 
 void Database::update_member(const Users::Member &member)
 {
-    for (auto &m : members)
+    for (auto &new_member_infor : members)
     {
-        if (m.get_username() == member.get_username())
+        if (new_member_infor.get_username() == member.get_username())
         {
-            m = member;
+            new_member_infor = member;
             return;
         }
     }

@@ -53,7 +53,7 @@ public:
     // clear screen
     void clear_screen();
 
-    void update_member_info(std::string field);
+    void update_member_info(std::string information);
 
     friend class UserSystem;
 

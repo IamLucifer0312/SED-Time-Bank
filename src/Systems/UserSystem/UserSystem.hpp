@@ -43,8 +43,6 @@ public:
     void load_database();
     void save_database();
 
-    // log in
-    bool log_in(const std::string &username, const std::string &password, Database &database);
     // validators:
     // log in
     bool validateLogin(const std::string &username, const std::string &password);
