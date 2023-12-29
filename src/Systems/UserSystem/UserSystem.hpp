@@ -61,7 +61,6 @@ public:
     void set_current_member(Users::Member &member);
     void update_current_member();
 
-
     friend class MenuSystem;
 };
 

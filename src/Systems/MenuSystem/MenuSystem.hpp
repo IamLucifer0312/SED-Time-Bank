@@ -50,6 +50,7 @@ public:
 
     // show members
     void show_members();
+    void show_members_for_admin();
     // clear screen
     void clear_screen();
 

@@ -10,4 +10,4 @@ void UserSystem::update_current_member(){
     }
     database.update_member(current_member);
     database.saveData();
-};
+}

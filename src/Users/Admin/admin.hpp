@@ -10,10 +10,10 @@ namespace Users
     {
     public:
         // default constructor
-        Admin() : User("admin", "") {}
+        Admin();
 
         // constructor
-        Admin(const string &password) : User("admin", password) {}
+        Admin(const string &password);
     };
 } // namespace Users
 

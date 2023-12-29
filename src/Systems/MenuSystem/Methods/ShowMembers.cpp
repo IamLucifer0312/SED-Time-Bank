@@ -10,3 +10,11 @@ void MenuSystem::show_members()
     
 }
 
+void MenuSystem::show_members_for_admin()
+{
+    for (auto& member : userSystem.get_members())
+    {
+        member.show_member_info_for_admin();
+    }
+    
+}

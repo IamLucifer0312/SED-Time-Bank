@@ -78,6 +78,9 @@ namespace Users
         
         // show member info
         void show_member_info();
+
+        //show member info for admin
+        void show_member_info_for_admin();
     };
 
 } // namespace Users
