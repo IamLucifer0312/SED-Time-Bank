@@ -18,13 +18,14 @@ void MenuSystem::admin_menu()
                 std::cout << "Do you want to change password for any User ?\n"
                           << "1. Yes\n"
                           << "2. No\n";
-                    switch (prompt_choice(1,2)){
+                    switch (prompt_choice(0, 1)){
                         case 1: 
                             std::cout << "\nWhich user do you want to update password: ";
                             std::getline(std::cin, member_username);
+                            //if (member_username == Users::Member::username.get_username())
                             
                             break;
-                        case 2:
+                        case 0:
                             break;
                     }
                 break;
