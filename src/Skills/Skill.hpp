@@ -10,7 +10,7 @@ class Skill
 private:
     std::string skillName;
     float consumedPerHour;
-    float mininumRating;
+    float mininum_rating;
 
     float limitToRange(float number, float minVal, float maxVal) {
         return std::min(maxVal, std::max(minVal, number));
@@ -22,10 +22,10 @@ public:
     Skill(
         const std::string &skillName,
         const float &consumedPerHour,
-        const float &mininumRating
+        const float &mininum_rating
     );
 
-    void set_minimum_rating(const float &mininumRating);
+    void set_minimum_rating(const float &mininum_rating);
 
     // Getter methods
     const std::string get_skill_name() const;
