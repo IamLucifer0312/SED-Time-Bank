@@ -24,6 +24,7 @@ private:
     std::vector<Users::Member> members;
     Users::Admin admin;
     UserSystem userSystem;
+    Database database;
     bool loggedIn;
 
 public:
@@ -57,6 +58,10 @@ public:
 
     // interfaces
     void member_view_my_info(Users::Member current_member, std::string information);
+
+    //check username and change password of members for admin
+    bool check_member_username(const std::string &member_username);
+    void change_new_password(std::string new_password);
 
     friend class UserSystem;
 
