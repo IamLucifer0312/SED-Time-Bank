@@ -117,7 +117,7 @@ void Users::Member::serialize(json &j) const
         json singleSkill;
         singleSkill["skill_name"] = skill.get_skill_name();
         singleSkill["consumed_per_hour"] = skill.get_consumed_per_hour();
-        singleSkill["mininum_rating"] = skill.get_mininum_rating();
+        singleSkill["minimum_rating"] = skill.get_mininum_rating();
         skillsArray.push_back(singleSkill);
     }
 
