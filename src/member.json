@@ -10,12 +10,12 @@
     "skills": [
       {
         "consumed_per_hour": 5.199999809265137,
-        "mininum_rating": 3.5,
+        "minimum_rating": 3.5,
         "skill_name": "Programming"
       },
       {
         "consumed_per_hour": 4.099999904632568,
-        "mininum_rating": 2.5,
+        "minimum_rating": 2.5,
         "skill_name": "Cooking"
       }
     ],
