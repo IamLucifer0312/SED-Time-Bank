@@ -5,18 +5,18 @@ Skill::Skill()
 {
     this->skillName = "";
     this->consumedPerHour = 0;
-    this->mininum_rating = limitToRange(0, 0, 5);
+    this->mininumRating = limitToRange(0, 0, 5);
 }
 
 // constructor
 Skill::Skill(
     const std::string &skillName,
     const float &consumedPerHour,
-    const float &mininum_rating
+    const float &mininumRating
 ) {
     this->skillName = skillName;
     this->consumedPerHour = consumedPerHour;
-    this->mininum_rating = limitToRange(mininum_rating, 0, 5);
+    this->mininumRating = limitToRange(mininumRating, 0, 5);
 }
 
 // Getter methods
@@ -32,18 +32,18 @@ const float Skill::get_consumed_per_hour() const
 
 const float Skill::get_mininum_rating() const
 {
-    return mininum_rating;
+    return mininumRating;
 }
 
 std::string Skill::get_string() const
 {
     return "Skill: " + skillName + "\n" +
            "  Consumed per hour: " + std::to_string(consumedPerHour) + "\n" +
-           "  Minimum rating: " + std::to_string(mininum_rating) + "\n";
+           "  Minimum rating: " + std::to_string(mininumRating) + "\n";
 }
 
 
-void Skill::set_minimum_rating(const float &mininum_rating)
+void Skill::set_minimum_rating(const float &mininumRating)
 {
-    this->mininum_rating = limitToRange(mininum_rating, 0, 5);
+    this->mininumRating = limitToRange(mininumRating, 0, 5);
 }
