@@ -24,7 +24,6 @@ private:
     std::vector<Users::Member> members;
     Users::Admin admin;
     UserSystem userSystem;
-    Database database;
     bool loggedIn;
 
 public:
