@@ -19,6 +19,7 @@ set(SOURCES
     
 
     src/Systems/MenuSystem/menuSystem.cpp
+    src/Skills/skill.cpp
 
     main.cpp
 )

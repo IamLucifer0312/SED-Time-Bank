@@ -10,6 +10,7 @@ Users::Member::Member()
     this->email = "";
     this->city = "";
     this->credit = 20;
+    this->skills = {};
 }
 
 // constructor
@@ -30,6 +31,7 @@ Users::Member::Member(
     this->email = email;
     this->city = city;
     this->credit = credit;
+    this->skills = {};
 }
 
 // Getter methods
@@ -62,6 +64,12 @@ const float Users::Member::get_credit() const
 {
     return credit;
 }
+
+const std::vector<Skill> Users::Member::get_skills() const
+{
+    return skills;
+}
+
 
 // extract data from map
 void Users::Member::from_map(std::map<string, string> map)
@@ -102,6 +110,19 @@ void Users::Member::serialize(json &j) const
         {"credit", credit}
         // Add more member variables to serialize
     };
+
+    // Creating a JSON array for skills
+    json skillsArray;
+    for (const auto& skill : skills) {
+        json singleSkill;
+        singleSkill["skill_name"] = skill.get_skill_name();
+        singleSkill["consumed_per_hour"] = skill.get_consumed_per_hour();
+        singleSkill["mininum_rating"] = skill.get_mininum_rating();
+        skillsArray.push_back(singleSkill);
+    }
+
+    // Adding the skills array to the JSON object
+    j["skills"] = skillsArray;
 }
 
 // Deserialization function for Member class
@@ -116,6 +137,17 @@ void Users::Member::deserialize(const json &j)
     city = j.at("city").get<string>();
     credit = j.at("credit").get<float>();
     // Deserialize other member variables
+
+    // Deserialize skills array
+    if (j.find("skills") != j.end()) {
+        const json& skillsArray = j.at("skills");
+        for (const auto& skill : skillsArray) {
+            std::string skillName = skill.at("skill_name").get<std::string>();
+            float consumedPerHour = skill.at("consumed_per_hour").get<float>();
+            float minimumRating = skill.at("minimum_rating").get<float>();
+            skills.emplace_back(skillName, consumedPerHour, minimumRating);
+        }
+    }
 }
 
 // Setters:
@@ -150,6 +182,13 @@ void Users::Member::set_credit(const float &credit)
     this->credit = credit;
 }
 
+// add skill
+void Users::Member::add_skill(string &skill_name, float &consumed_per_hour, float &minimum_rating )
+{
+    Skill skill = Skill(skill_name, consumed_per_hour, minimum_rating);
+    this->skills.push_back(skill);
+}
+
 void Users::Member::show_member_info(std::string role) {
     if (role == "member") {    
         std::cout << "Username: " << this->username << std::endl;
@@ -158,6 +197,9 @@ void Users::Member::show_member_info(std::string role) {
         std::cout << "Home address: " << this->home_address << std::endl;
         std::cout << "Email: " << this->email << std::endl;
         std::cout << "City: " << this->city << std::endl;
+        for (Skill &skill : this->skills) {
+            std::cout << skill.get_string() << std::endl;
+        }
         std::cout << std::endl;
     } else if (role == "admin") {
         std::cout << "Username: " << this->username << std::endl;
@@ -168,6 +210,9 @@ void Users::Member::show_member_info(std::string role) {
         std::cout << "Email: " << this->email << std::endl;
         std::cout << "City: " << this->city << std::endl;
         std::cout << "Credit: " << this->credit << std::endl;
+        for (Skill &skill : this->skills) {
+            std::cout << skill.get_string() << std::endl;
+        }
         std::cout << std::endl;
     }
 

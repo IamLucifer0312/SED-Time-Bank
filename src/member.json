@@ -7,6 +7,18 @@
         "home_address": "no",
         "password": "123",
         "phone_number": "0912",
+        "skills": [
+            {
+                "consumed_per_hour": 5.199999809265137,
+                "mininum_rating": 3.5,
+                "skill_name": "Programming"
+            },
+            {
+                "consumed_per_hour": 4.099999904632568,
+                "mininum_rating": 2.5,
+                "skill_name": "Cooking"
+            }
+        ],
         "username": "Helu"
     },
     {
@@ -17,6 +29,18 @@
         "home_address": "123 Nguyen Van Linh",
         "password": "dd",
         "phone_number": "8328382",
+        "skills": [
+            {
+                "consumed_per_hour": 5.199999809265137,
+                "mininum_rating": 3.5,
+                "skill_name": "Programming"
+            },
+            {
+                "consumed_per_hour": 4.099999904632568,
+                "mininum_rating": 2.5,
+                "skill_name": "Cooking"
+            }
+        ],
         "username": "ddd"
     },
     {
@@ -27,6 +51,23 @@
         "home_address": "Hihi",
         "password": "123456",
         "phone_number": "123",
+        "skills": [
+            {
+                "consumed_per_hour": 5.199999809265137,
+                "mininum_rating": 3.5,
+                "skill_name": "Programming"
+            },
+            {
+                "consumed_per_hour": 4.099999904632568,
+                "mininum_rating": 2.5,
+                "skill_name": "Cooking"
+            },
+            {
+                "consumed_per_hour": 10.0,
+                "mininum_rating": 2.0,
+                "skill_name": "Teaching"
+            }
+        ],
         "username": "TT"
     },
     {
@@ -37,6 +78,18 @@
         "home_address": "abcd",
         "password": "123456",
         "phone_number": "0987654321",
+        "skills": [
+            {
+                "consumed_per_hour": 5.199999809265137,
+                "mininum_rating": 3.5,
+                "skill_name": "Programming"
+            },
+            {
+                "consumed_per_hour": 4.099999904632568,
+                "mininum_rating": 2.5,
+                "skill_name": "Cooking"
+            }
+        ],
         "username": "hung anh"
     }
 ]

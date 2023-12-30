@@ -1,7 +1,9 @@
 #include <string>
+#include <vector>
 #include <map>
 #include "../../../nlohmann/json.hpp"
 #include "../User/User.hpp"
+#include "../../Skills/Skill.hpp"
 
 using json = nlohmann::json;
 using std::string;
@@ -20,6 +22,7 @@ namespace Users
         string home_address;
         string email;
         string city;
+        std::vector<Skill> skills;
         float credit;
 
     public:
@@ -51,6 +54,10 @@ namespace Users
 
         const float get_credit() const;
 
+        const std::vector<Skill> get_skills() const;
+
+
+
         // Setter methods
         void set_full_name(const string &full_name);
 
@@ -63,6 +70,9 @@ namespace Users
         void set_city(const string &city);
 
         void set_credit(const float &credit);
+
+        // add skill
+        void add_skill(string &skill_name, float &consumed_per_hour, float &minimum_rating );
 
         // extract data from map
         void from_map(std::map<string, string> map);
