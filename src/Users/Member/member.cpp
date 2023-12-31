@@ -70,6 +70,11 @@ const std::vector<Skill> Users::Member::get_skills() const
     return skills;
 }
 
+const string Users::Member::get_password() const
+{
+    return password;
+}
+
 
 // extract data from map
 void Users::Member::from_map(std::map<string, string> map)
@@ -180,6 +185,11 @@ void Users::Member::set_city(const string &city)
 void Users::Member::set_credit(const float &credit)
 {
     this->credit = credit;
+}
+
+void Users::Member::set_password(const string &password)
+{
+    this->password = password;
 }
 
 // add skill

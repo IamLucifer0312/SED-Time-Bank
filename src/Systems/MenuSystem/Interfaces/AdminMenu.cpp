@@ -25,8 +25,7 @@ void MenuSystem::admin_menu()
                     case 1: 
                         std::cout << "\nWhich user do you want to update password: ";
                         std::getline(std::cin, member_username);
-                        check_member_username(member_username);
-                        std::getline(std::cin, new_password);
+                        check_member_username(member_username, new_password);
                         break;
                     case 0:
                         break;

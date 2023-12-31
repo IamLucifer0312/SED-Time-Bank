@@ -54,6 +54,8 @@ namespace Users
 
         const float get_credit() const;
 
+        const string get_password() const;
+
         const std::vector<Skill> get_skills() const;
 
 
@@ -70,6 +72,8 @@ namespace Users
         void set_city(const string &city);
 
         void set_credit(const float &credit);
+
+        void set_password(const string &password);
 
         // add skill
         void add_skill(string &skill_name, float &consumed_per_hour, float &minimum_rating );
