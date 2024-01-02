@@ -12,9 +12,9 @@ using std::vector;
 class AvailableJob
 {
 private:
-    Users::Member supporter;
+    const Users::Member* supporter;
     Period availableTime;
-    vector<Skill> skills;
+    Skill skill;
     public:
     // default constructor
     AvailableJob();
@@ -23,18 +23,18 @@ private:
     AvailableJob(
         const Users::Member &supporter,
         const Period &availableTime,
-        const vector<Skill> &skills
+        const Skill &skill
     );
 
     // setter
     void set_supporter(const Users::Member &supporter);
     void set_available_time(const Period &availableTime);
-    void set_skills(const vector<Skill> &skills);
+    void set_skill(const Skill &skill);
 
     // getter
     const Users::Member get_supporter() const;
     const Period get_available_time() const;
-    const vector<Skill> get_skills() const;
+    const Skill get_skill() const;
 
 
 
