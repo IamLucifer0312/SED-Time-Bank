@@ -6,10 +6,10 @@
 using std::vector;
 
 // Check if file is already included
-#ifndef AVAILABLEJOBS_HPP
-#define AVAILABLEJOBS_HPP
+#ifndef AVAILABLEJOB_HPP
+#define AVAILABLEJOB_HPP
 
-class AvailableJobs
+class AvailableJob
 {
 private:
     Users::Member supporter;
@@ -17,10 +17,10 @@ private:
     vector<Skill> skills;
     public:
     // default constructor
-    AvailableJobs();
+    AvailableJob();
 
     // constructor
-    AvailableJobs(
+    AvailableJob(
         const Users::Member &supporter,
         const Period &availableTime,
         const vector<Skill> &skills
@@ -34,11 +34,11 @@ private:
     // getter
     const Users::Member get_supporter() const;
     const Period get_available_time() const;
-    const Skill get_skills() const;
+    const vector<Skill> get_skills() const;
 
 
 
 };
 
-#endif // AVAILABLEJOBS_HPP
+#endif // AVAILABLEJOB_HPP
 
