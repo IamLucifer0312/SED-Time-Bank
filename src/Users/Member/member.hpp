@@ -3,7 +3,7 @@
 #include <map>
 #include "../../../nlohmann/json.hpp"
 #include "../User/User.hpp"
-#include "../../Skills/Skill.hpp"
+#include "../../Skill/Skill.hpp"
 
 using json = nlohmann::json;
 using std::string;
