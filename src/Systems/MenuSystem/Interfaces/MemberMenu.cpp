@@ -20,7 +20,7 @@
                         << "3. Block member.\n"
                         << "4. View request. \n"
                         << "5. Find supporter. \n"
-                        << "6. View the request. \n";
+                        << "6. View the tutor. \n";
 
             switch (prompt_choice(0, 6))
             {
@@ -39,7 +39,7 @@
                 break;
             case 5:
                 clear_screen();
-                find_supporter_interface();
+                find_supporter_interface("member");
                 break;
             case 6:
                 
