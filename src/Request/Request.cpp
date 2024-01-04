@@ -58,9 +58,9 @@ AvailableJob Request::get_job()
     return job;
 }
 
-Period Request::get_work_time()
+string Request::get_work_time()
 {
-    return workTime;
+    return workTime.get_start_time_string() + " - " + workTime.get_end_time_string();
 }
 
 Status Request::get_status()

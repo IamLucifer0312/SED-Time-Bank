@@ -8,10 +8,6 @@
 #include "../../Request/Request.hpp"
 #include "../../Period/Period.hpp"
 
-// temporary class
-class Request{};
-
-
 using json = nlohmann::json;
 using std::string;
 using std::vector;

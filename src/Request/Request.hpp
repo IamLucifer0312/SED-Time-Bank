@@ -43,7 +43,7 @@ public:
     string get_host();
     string get_supporter();
     AvailableJob get_job();
-    Period get_work_time();
+    string get_work_time();
     Status get_status();
     float get_total_credit();
 
