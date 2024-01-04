@@ -8,8 +8,13 @@
 #include "../../Request/Request.hpp"
 #include "../../Period/Period.hpp"
 
+// temporary class
+class Request{};
+
+
 using json = nlohmann::json;
 using std::string;
+using std::vector;
 
 // Check if the file is already included.
 #ifndef MEMBER_HPP
@@ -25,9 +30,11 @@ namespace Users
         string home_address;
         string email;
         string city;
-        std::vector<Skill> skills;
-        std::vector<AvailableJob> available_jobs;
-        std::vector<Request> requests;
+        vector<Skill> skills;
+        vector<AvailableJob> available_jobs;
+        vector<Request*> receivedRequests;
+        vector<Request*> sentRequests;
+
         float credit;
 
     public:
@@ -64,8 +71,10 @@ namespace Users
         const std::vector<Skill> get_skills() const;
 
         const std::vector<AvailableJob> get_available_jobs() const;
+        
+        const std::vector<Request*> get_received_requests() const;
 
-        const std::vector<Request> get_requests() const;
+        const std::vector<Request*> get_sent_requests() const;
 
 
 
