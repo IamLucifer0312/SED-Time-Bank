@@ -67,6 +67,9 @@ public:
     void find_supporter_city();
     void find_supporter_interface();
 
+    //view received request
+    void view_received_request();
+
     friend class UserSystem;
 
 };
