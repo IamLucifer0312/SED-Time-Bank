@@ -1,5 +1,4 @@
 #include "Period.hpp"
-#include <ctime>
 
 // default constructor
 Period::Period()
@@ -17,24 +16,6 @@ Period::Period(string startTime, string endTime)
 }
 
 // function to convert a date or time string to time_t.
-// time_t Period::parse_date_time(const string datetimeString)
-// {
-//     const string format = "%Y-%m-%d %H:%M:%S";
-//     struct tm tm;
-//     // function to convert a date or time string to time_t.
-//     if (strptime(datetimeString.c_str(), format.c_str(), &tm) != NULL)
-//     {
-//         time_t t = mktime(&tm);
-
-//         // Check if mktime() succeeded.
-//         if (t != (time_t)-1)
-//         {
-//             return t;
-//         }
-//     }
-//     return 0;
-// }
-
 
 time_t Period::parse_date_time(const string datetimeString) {
     const string format = "%Y-%m-%d %H:%M:%S";

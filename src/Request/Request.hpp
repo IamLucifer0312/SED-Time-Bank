@@ -1,6 +1,8 @@
-#include "../Users/Member/member.hpp"
 #include "../AvailableJob/AvailableJob.hpp"
 #include "../Period/Period.hpp"
+#include <string>
+
+using std::string;
 
 // Check if the file is already included
 #ifndef REQUEST_HPP
@@ -16,8 +18,8 @@ enum Status
 class Request
 {
 private:
-    const Users::Member *host;
-    const Users::Member *supporter;
+    string host;
+    string supporter;
     AvailableJob job;
     Period workTime;
     Status status;
@@ -28,18 +30,18 @@ public:
     Request();
 
     // constructor
-    Request(const Users::Member &host, AvailableJob &job, Period &workTime, Status &status);
+    Request(string &host, AvailableJob &job, Period &workTime, Status &status);
 
     // setter
-    void set_host(Users::Member &host);
+    void set_host(string &host);
     void set_job(AvailableJob job);
     void set_work_time(Period workTime);
     void set_status(Status status);
     void set_total_credit(float totalCredit);
 
     // getter
-    Users::Member get_host();
-    Users::Member get_supporter();
+    string get_host();
+    string get_supporter();
     AvailableJob get_job();
     Period get_work_time();
     Status get_status();

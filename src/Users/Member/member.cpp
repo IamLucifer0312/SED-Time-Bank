@@ -75,6 +75,15 @@ const string Users::Member::get_password() const
     return password;
 }
 
+const std::vector<AvailableJob> Users::Member::get_available_jobs() const
+{
+    return available_jobs;
+}
+
+const std::vector<Request> Users::Member::get_requests() const
+{
+    return requests;
+}
 
 // extract data from map
 void Users::Member::from_map(std::map<string, string> map)
