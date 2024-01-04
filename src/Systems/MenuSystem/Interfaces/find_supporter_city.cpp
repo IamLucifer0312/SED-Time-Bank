@@ -10,10 +10,10 @@ void MenuSystem::find_supporter_city()
 
     switch (prompt_choice(1, 2)){
         case 1:
-            
+            show_members_for_city("Ha noi", "member");
             break; 
         case 2:
-
+            show_members_for_city("Sai gon", "member");
             break;
     }
 }

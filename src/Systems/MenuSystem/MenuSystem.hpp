@@ -50,7 +50,7 @@ public:
 
     // show members
     void show_members(std::string role);
-    void show_members_for_city();
+    void show_members_for_city(std::string city, std::string role);
     // clear screen
     void clear_screen();
 
@@ -63,7 +63,9 @@ public:
     bool check_member_username(const std::string &member_username, std::string new_password);
     void change_new_password(std::string new_password);
 
+    //find supporter
     void find_supporter_city();
+    void find_supporter_interface();
 
     friend class UserSystem;
 
