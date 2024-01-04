@@ -22,8 +22,7 @@ Users::Member::Member(
     const string &home_address,
     const string &email,
     const string &city,
-    const float &credit
-    ) : User(username, password)
+    const float &credit) : User(username, password)
 {
     this->full_name = full_name;
     this->phone_number = phone_number;
@@ -80,9 +79,14 @@ const std::vector<AvailableJob> Users::Member::get_available_jobs() const
     return available_jobs;
 }
 
-const std::vector<Request> Users::Member::get_requests() const
+const vector<Request *> Users::Member::get_received_requests() const
 {
-    return requests;
+    return receivedRequests;
+}
+
+const std::vector<Request *> Users::Member::get_sent_requests() const
+{
+    return sentRequests;
 }
 
 // extract data from map
@@ -127,7 +131,8 @@ void Users::Member::serialize(json &j) const
 
     // Creating a JSON array for skills
     json skillsArray;
-    for (const auto& skill : skills) {
+    for (const auto &skill : skills)
+    {
         json singleSkill;
         singleSkill["skill_name"] = skill.get_skill_name();
         singleSkill["consumed_per_hour"] = skill.get_consumed_per_hour();
@@ -153,9 +158,11 @@ void Users::Member::deserialize(const json &j)
     // Deserialize other member variables
 
     // Deserialize skills array
-    if (j.find("skills") != j.end()) {
-        const json& skillsArray = j.at("skills");
-        for (const auto& skill : skillsArray) {
+    if (j.find("skills") != j.end())
+    {
+        const json &skillsArray = j.at("skills");
+        for (const auto &skill : skillsArray)
+        {
             std::string skillName = skill.at("skill_name").get<std::string>();
             float consumedPerHour = skill.at("consumed_per_hour").get<float>();
             float minimumRating = skill.at("minimum_rating").get<float>();
@@ -202,25 +209,30 @@ void Users::Member::set_password(const string &password)
 }
 
 // add skill
-void Users::Member::add_skill(string &skill_name, float &consumed_per_hour, float &minimum_rating )
+void Users::Member::add_skill(string &skill_name, float &consumed_per_hour, float &minimum_rating)
 {
     Skill skill = Skill(skill_name, consumed_per_hour, minimum_rating);
     this->skills.push_back(skill);
 }
 
-void Users::Member::show_member_info(std::string role) {
-    if (role == "member") {    
+void Users::Member::show_member_info(std::string role)
+{
+    if (role == "member")
+    {
         std::cout << "Username: " << this->username << std::endl;
         std::cout << "Full name: " << this->full_name << std::endl;
         std::cout << "Phone number: " << this->phone_number << std::endl;
         std::cout << "Home address: " << this->home_address << std::endl;
         std::cout << "Email: " << this->email << std::endl;
         std::cout << "City: " << this->city << std::endl;
-        for (Skill &skill : this->skills) {
+        for (Skill &skill : this->skills)
+        {
             std::cout << skill.get_string() << std::endl;
         }
         std::cout << std::endl;
-    } else if (role == "admin") {
+    }
+    else if (role == "admin")
+    {
         std::cout << "Username: " << this->username << std::endl;
         std::cout << "Password :" << this->password << std::endl;
         std::cout << "Full name: " << this->full_name << std::endl;
@@ -229,7 +241,8 @@ void Users::Member::show_member_info(std::string role) {
         std::cout << "Email: " << this->email << std::endl;
         std::cout << "City: " << this->city << std::endl;
         std::cout << "Credit: " << this->credit << std::endl;
-        for (Skill &skill : this->skills) {
+        for (Skill &skill : this->skills)
+        {
             std::cout << skill.get_string() << std::endl;
         }
         std::cout << std::endl;
