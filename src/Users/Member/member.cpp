@@ -89,6 +89,11 @@ const std::vector<Request *> Users::Member::get_sent_requests() const
     return sentRequests;
 }
 
+const std::vector<Period> Users::Member::get_available_times() const
+{
+    return available_times;
+}
+
 // extract data from map
 void Users::Member::from_map(std::map<string, string> map)
 {
@@ -142,6 +147,19 @@ void Users::Member::serialize(json &j) const
 
     // Adding the skills array to the JSON object
     j["skills"] = skillsArray;
+
+    // Creating a JSON array for available times
+    json availableTimesArray;
+    for (const Period &availableTime : available_times)
+    {
+        json singleAvailableTime;
+        singleAvailableTime["start_time"] =  availableTime.get_start_time_string();
+        singleAvailableTime["end_time"] =  availableTime.get_end_time_string();
+        availableTimesArray.push_back(singleAvailableTime);
+    }
+
+    // Adding the available times array to the JSON object
+    j["available_times"] = availableTimesArray;
 }
 
 // Deserialization function for Member class
@@ -167,6 +185,18 @@ void Users::Member::deserialize(const json &j)
             float consumedPerHour = skill.at("consumed_per_hour").get<float>();
             float minimumRating = skill.at("minimum_rating").get<float>();
             skills.emplace_back(skillName, consumedPerHour, minimumRating);
+        }
+    }
+
+    // Deserialize available times array
+    if (j.find("available_times") != j.end())
+    {
+        const json &availableTimesArray = j.at("available_times");
+        for (const auto &availableTime : availableTimesArray)
+        {
+            std::string startTime = availableTime.at("start_time").get<std::string>();
+            std::string endTime = availableTime.at("end_time").get<std::string>();
+            available_times.emplace_back(startTime, endTime);
         }
     }
 }
@@ -222,6 +252,14 @@ void Users::Member::add_available_job(Period &available_time, Skill &skill)
     this->available_jobs.push_back(availableJob);
 }
 
+// add available time
+void Users::Member::add_available_time(string &startTime, string &endTime)
+{
+    Period available_time = Period(startTime, endTime);
+    this->available_times.push_back(available_time);
+}
+
+
 void Users::Member::show_member_info(std::string role) {
     if (role == "member") {    
         std::cout << "Username: " << this->username << std::endl;
@@ -230,9 +268,20 @@ void Users::Member::show_member_info(std::string role) {
         std::cout << "Home address: " << this->home_address << std::endl;
         std::cout << "Email: " << this->email << std::endl;
         std::cout << "City: " << this->city << std::endl;
+        
+        std::cout << "Skills: " << std::endl;
         for (Skill &skill : this->skills)
         {
             std::cout << skill.get_string() << std::endl;
+            std::cout << std::endl;
+        }
+        std::cout << "Available times: " << std::endl;
+        for (Period &available_time : this->available_times)
+        {   
+            std::cout << "Period 1" << std::endl;
+            std::cout << available_time.get_start_time_string() << std::endl;
+            std::cout << available_time.get_end_time_string() << std::endl;
+            std::cout << std::endl;
         }
         std::cout << std::endl;
     }
@@ -246,9 +295,16 @@ void Users::Member::show_member_info(std::string role) {
         std::cout << "Email: " << this->email << std::endl;
         std::cout << "City: " << this->city << std::endl;
         std::cout << "Credit: " << this->credit << std::endl;
+        std::cout << "Skills: " << std::endl;
         for (Skill &skill : this->skills)
         {
             std::cout << skill.get_string() << std::endl;
+        }
+        std::cout << "Available times: " << std::endl;
+        for (Period &available_time : this->available_times)
+        {
+            std::cout << available_time.get_start_time_string() << std::endl;
+            std::cout << available_time.get_end_time_string() << std::endl;
         }
         std::cout << std::endl;
     }

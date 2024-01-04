@@ -8,7 +8,6 @@
 #include "../../Request/Request.hpp"
 #include "../../Period/Period.hpp"
 
-// temporary class
 
 
 using json = nlohmann::json;
@@ -31,6 +30,7 @@ namespace Users
         string city;
         vector<Skill> skills;
         vector<AvailableJob> available_jobs;
+        vector<Period> available_times;
         vector<Request*> receivedRequests;
         vector<Request*> sentRequests;
 
@@ -69,6 +69,8 @@ namespace Users
 
         const std::vector<Skill> get_skills() const;
 
+        const std::vector<Period> get_available_times() const;
+
         const std::vector<AvailableJob> get_available_jobs() const;
         
         const std::vector<Request*> get_received_requests() const;
@@ -95,6 +97,7 @@ namespace Users
         // add 
         void add_skill(string &skill_name, float &consumed_per_hour, float &minimum_rating );
         void add_available_job(Period &available_time, Skill &skill);
+        void add_available_time(string &startTime, string &endTime);
 
         // extract data from map
         void from_map(std::map<string, string> map);

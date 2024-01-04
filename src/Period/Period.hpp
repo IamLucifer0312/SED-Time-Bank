@@ -28,7 +28,7 @@ public:
     time_t parse_date_time(const string datetimeString);
 
     // function to convert a time_t to a date or time string.
-    string format_date_time(time_t time);
+    string format_date_time(time_t time) const;
 
     // function to calculate duration by hour
     float calculate_duration_by_hour();
@@ -39,9 +39,9 @@ public:
     void set_end_time(string endTime);
 
     // getter
-    string get_start_time_string();
+    const string get_start_time_string() const;
 
-    string get_end_time_string();
+    const string get_end_time_string() const;
 
     time_t get_start_time();
 
