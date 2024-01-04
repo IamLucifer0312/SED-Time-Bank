@@ -50,6 +50,7 @@ public:
 
     // show members
     void show_members(std::string role);
+    void show_members_for_city();
     // clear screen
     void clear_screen();
 
@@ -61,6 +62,8 @@ public:
     //check username and change password of members for admin
     bool check_member_username(const std::string &member_username, std::string new_password);
     void change_new_password(std::string new_password);
+
+    void find_supporter_city();
 
     friend class UserSystem;
 
