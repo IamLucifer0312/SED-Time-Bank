@@ -64,7 +64,7 @@ public:
     void change_new_password(std::string new_password);
 
     //find supporter
-    void find_supporter_city();
+    void find_supporter_city(std::string role);
     void find_supporter_interface(std::string role);
 
     friend class UserSystem;

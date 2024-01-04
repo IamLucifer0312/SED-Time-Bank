@@ -11,7 +11,7 @@ void MenuSystem::find_supporter_interface(std::string role){
         case 0:
             break;
         case 1:
-            find_supporter_city();
+            find_supporter_city(role);
             break;
         case 2:
             break;

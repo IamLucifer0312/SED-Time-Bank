@@ -9,7 +9,6 @@
 #include "../../Period/Period.hpp"
 
 // temporary class
-class Request{};
 
 
 using json = nlohmann::json;
