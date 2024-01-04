@@ -3,7 +3,6 @@
 void MenuSystem::admin_menu()
 {
     std::string member_username;
-    std::string new_password; 
     while (loggedIn)
     {
         std::cout << "\n\nAndmin action: \n"
@@ -25,7 +24,7 @@ void MenuSystem::admin_menu()
                     case 1: 
                         std::cout << "\nWhich user do you want to update password: ";
                         std::getline(std::cin, member_username);
-                        check_member_username(member_username, new_password);
+                        change_new_password(member_username);
                         break;
                     case 0:
                         break;

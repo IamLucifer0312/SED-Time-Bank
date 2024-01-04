@@ -34,7 +34,6 @@ private:
     Users::Admin admin;
     Database database;
     Users::Member current_member;
-    Users::Member newPassword;
 
 public:
     // constructor
@@ -58,10 +57,8 @@ public:
     // getters
     std::vector<Users::Member> get_members();
     Users::Member& get_current_member();
-    Users::Member& get_new_password();
     // setters
     void set_current_member(Users::Member &member);
-    void set_new_password(Users::Member &password);
     void set_admin(Users::Admin &admin);
     void update_current_member();
     void update_new_password();

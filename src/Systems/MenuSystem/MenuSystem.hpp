@@ -60,8 +60,7 @@ public:
     void member_view_my_info(Users::Member current_member, std::string information);
 
     //check username and change password of members for admin
-    bool check_member_username(const std::string &member_username, std::string new_password);
-    void change_new_password(std::string new_password);
+    void change_new_password(std::string member_username);
 
     //find supporter
     void find_supporter_city(std::string role);

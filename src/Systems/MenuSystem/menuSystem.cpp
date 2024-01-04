@@ -5,7 +5,7 @@
 #include "Interfaces/AdminMenu.cpp"
 #include "Interfaces/LoginRegisterMenu.cpp"
 #include "Methods/ClearScreen.cpp"
-#include "Interfaces/Member/checkMemberUsername.cpp"
+#include "Interfaces/change_new_password.cpp"
 
 // default constructor
 MenuSystem::MenuSystem()
