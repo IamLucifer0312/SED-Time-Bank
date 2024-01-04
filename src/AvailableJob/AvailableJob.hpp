@@ -27,9 +27,7 @@ private:
         const string &supporterName,
         const Period &availableTime,
         const Skill &skill
-    ) : supporterName(supporterName) {
-
-    }
+    ) {};
 
     // setter
     void set_supporter_name(const string &supporterName);

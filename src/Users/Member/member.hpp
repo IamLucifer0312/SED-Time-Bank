@@ -86,7 +86,7 @@ namespace Users
 
         // add 
         void add_skill(string &skill_name, float &consumed_per_hour, float &minimum_rating );
-        void add_available_job();
+        void add_available_job(Period &available_time, Skill &skill);
 
         // extract data from map
         void from_map(std::map<string, string> map);

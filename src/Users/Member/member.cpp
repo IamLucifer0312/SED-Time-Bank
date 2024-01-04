@@ -209,9 +209,9 @@ void Users::Member::add_skill(string &skill_name, float &consumed_per_hour, floa
 }
 
 // add available job
-void Users::Member::add_available_job(string &job_name, string &description, float &minimum_rating, float &salary_per_hour, string &start_time, string &end_time)
+void Users::Member::add_available_job(Period &available_time, Skill &skill)
 {
-    AvailableJob availableJob = AvailableJob();
+    AvailableJob availableJob = AvailableJob(this->username, available_time, skill);
     this->available_jobs.push_back(availableJob);
 }
 
