@@ -65,7 +65,7 @@ public:
 
     //find supporter
     void find_supporter_city();
-    void find_supporter_interface();
+    void find_supporter_interface(std::string role);
 
     friend class UserSystem;
 
