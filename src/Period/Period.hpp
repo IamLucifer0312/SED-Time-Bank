@@ -1,5 +1,8 @@
 #include <string>
 #include <ctime>
+#include <iostream>
+#include <sstream>
+#include <iomanip>
 
 using std::string;
 
