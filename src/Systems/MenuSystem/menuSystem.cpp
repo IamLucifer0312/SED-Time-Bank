@@ -60,8 +60,6 @@ int MenuSystem::prompt_choice(unsigned min, unsigned max)
 
     return choice;
 }
-// guest view supporter
-void MenuSystem::guest_view_supporter() {};
 
 // main loop
 void MenuSystem::main_loop()

@@ -18,3 +18,8 @@ void MenuSystem::find_supporter_interface(std::string role){
     }
 }
 
+// guest view supporter
+void MenuSystem::guest_view_supporter() 
+{
+    show_members("guest");   
+}
