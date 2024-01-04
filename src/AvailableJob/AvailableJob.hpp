@@ -20,14 +20,16 @@ private:
     Skill skill;
     public:
     // default constructor
-    AvailableJob() : supporterName("");
+    AvailableJob() : supporterName("") {};
 
     // constructor
     AvailableJob(
         const string &supporterName,
         const Period &availableTime,
         const Skill &skill
-    ) : supporterName(supporterName);
+    ) : supporterName(supporterName) {
+
+    }
 
     // setter
     void set_supporter_name(const string &supporterName);

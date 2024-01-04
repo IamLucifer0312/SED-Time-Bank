@@ -215,10 +215,15 @@ void Users::Member::add_skill(string &skill_name, float &consumed_per_hour, floa
     this->skills.push_back(skill);
 }
 
-void Users::Member::show_member_info(std::string role)
+// add available job
+void Users::Member::add_available_job()
 {
-    if (role == "member")
-    {
+    AvailableJob availableJob = AvailableJob();
+    this->available_jobs.push_back(availableJob);
+}
+
+void Users::Member::show_member_info(std::string role) {
+    if (role == "member") {    
         std::cout << "Username: " << this->username << std::endl;
         std::cout << "Full name: " << this->full_name << std::endl;
         std::cout << "Phone number: " << this->phone_number << std::endl;

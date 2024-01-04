@@ -6,6 +6,7 @@
 #include "../../Skill/Skill.hpp"
 #include "../../AvailableJob/AvailableJob.hpp"
 #include "../../Request/Request.hpp"
+#include "../../Period/Period.hpp"
 
 // temporary class
 class Request{};
@@ -94,7 +95,7 @@ namespace Users
 
         // add 
         void add_skill(string &skill_name, float &consumed_per_hour, float &minimum_rating );
-        void add_available_job(string &job_name, string &description, float &minimum_rating, float &salary_per_hour, string &start_time, string &end_time);
+        void add_available_job();
 
         // extract data from map
         void from_map(std::map<string, string> map);
