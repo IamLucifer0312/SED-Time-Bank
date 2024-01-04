@@ -12,3 +12,8 @@ void MenuSystem::show_members(std::string role)
     }
     
 }
+
+// void show_members_for_city()
+// {
+    
+// }

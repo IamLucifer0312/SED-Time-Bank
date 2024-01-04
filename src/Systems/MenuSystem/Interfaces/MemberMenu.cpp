@@ -3,6 +3,7 @@
 #include "../../UserSystem/UserSystem.hpp"
 #include "../Interfaces/Member/ViewAndUpdateInfo.cpp"
 #include "UpdateInfo.cpp"
+#include "find_supporter_city.cpp"
 // member menu
     void MenuSystem::member_menu()
     {
@@ -38,6 +39,21 @@
             case 5:
                 clear_screen();
                 show_members("member");
+                std::cout << "Do you want to search job for city or available time ?\n"
+                          << "1. city\n"
+                          << "2. available time\n"
+                          << "0. no\n";
+
+                switch (prompt_choice(0,2))
+                {
+                    case 0:
+                        break;
+                    case 1:
+                        find_supporter_city();
+                        break;
+                    case 2:
+                        break;
+                }
                 break;
             case 6:
                 
