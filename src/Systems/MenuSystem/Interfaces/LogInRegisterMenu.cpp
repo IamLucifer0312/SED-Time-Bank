@@ -69,13 +69,13 @@ void MenuSystem::login_menu(string role) {
 
         std::cout << "Which city do you want to register \n"
                   << "1. Ha noi\n"
-                  << "2. Sai Gon\n";
+                  << "2. Sai gon\n";
         switch (prompt_choice(1, 2)){
             case 1:
                 city = "Ha noi";
                 break;
             case 2:
-                city = "Sai Gon";
+                city = "Sai gon";
                 break;
         }
 
