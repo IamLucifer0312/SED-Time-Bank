@@ -6,10 +6,10 @@ Request::Request() : host(nullptr), supporter(nullptr), job(AvailableJob()), wor
 }
 
 // constructor
-Request::Request(const Users::Member &host, AvailableJob &job, Period &workTime, Status &status)
+Request::Request(string &host, AvailableJob &job, Period &workTime, Status &status)
 {
-    this->host = &host;
-    this->supporter = &job.get_supporter();
+    this->host = host;
+    this->supporter = job.get_supporter_name();
     this->job = job;
     this->workTime = workTime;
     this->status = status;
@@ -17,9 +17,9 @@ Request::Request(const Users::Member &host, AvailableJob &job, Period &workTime,
 }
 
 // setter
-void Request::set_host(Users::Member &host)
+void Request::set_host(string &host)
 {
-    this->host = &host;
+    this->host = host;
 }
 
 void Request::set_job(AvailableJob job)
@@ -43,14 +43,14 @@ void Request::set_total_credit(float totalCredit)
 }
 
 // getter
-Users::Member Request::get_host()
+string Request::get_host()
 {
-    return *host;
+    return host;
 }
 
-Users::Member Request::get_supporter()
+string Request::get_supporter()
 {
-    return *supporter;
+    return supporter;
 }
 
 AvailableJob Request::get_job()
