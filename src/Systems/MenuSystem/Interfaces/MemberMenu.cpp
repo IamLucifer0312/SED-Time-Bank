@@ -36,11 +36,11 @@
 
                 break;
             case 5:
-
-                break;
-            case 6:
                 clear_screen();
                 show_members("member");
+                break;
+            case 6:
+                
                 break;
             case 0:
                 loggedIn = false;
