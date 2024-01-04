@@ -16,23 +16,54 @@ Period::Period(string startTime, string endTime)
 }
 
 // function to convert a date or time string to time_t.
-time_t Period::parse_date_time(const string datetimeString)
-{
-    const string format = "%Y-%m-%d %H:%M:%S";
-    struct tm tm;
-    // function to convert a date or time string to time_t.
-    if (strptime(datetimeString.c_str(), format.c_str(), &tm) != NULL)
-    {
-        time_t t = mktime(&tm);
+// time_t Period::parse_date_time(const string datetimeString)
+// {
+//     const string format = "%Y-%m-%d %H:%M:%S";
+//     struct tm tm;
+//     // function to convert a date or time string to time_t.
+//     if (strptime(datetimeString.c_str(), format.c_str(), &tm) != NULL)
+//     {
+//         time_t t = mktime(&tm);
 
-        // Check if mktime() succeeded.
-        if (t != (time_t)-1)
-        {
-            return t;
-        }
+//         // Check if mktime() succeeded.
+//         if (t != (time_t)-1)
+//         {
+//             return t;
+//         }
+//     }
+//     return 0;
+// }
+
+
+time_t Period::parse_date_time(const string datetimeString) {
+    const string format = "%Y-%m-%d %H:%M:%S";
+
+    // Initialize a std::tm structure to hold the parsed date and time
+    std::tm timeStruct = {};
+
+    // Create an input string stream and parse the date string using std::get_time
+    std::istringstream ss(datetimeString);
+    ss >> std::get_time(&timeStruct, format.c_str());
+
+    // Check for parsing errors
+    if (ss.fail()) {
+        std::cerr << "Error parsing date string\n";
+        return -1; // Indicates an error
     }
-    return 0;
+
+    // Convert the std::tm structure to a time_t value using std::mktime
+    time_t timeValue = std::mktime(&timeStruct);
+
+    // Check for conversion errors
+    if (timeValue == -1) {
+        std::cerr << "Error converting std::tm to time_t\n";
+        return -1; // Indicates an error
+    }
+
+    // Return the resulting time_t value
+    return timeValue;
 }
+
 
 // function to convert a time_t to a date or time string.
 string Period::format_date_time(time_t time)
