@@ -1,28 +1,30 @@
+#include <iostream>
 #include "AvailableJob.hpp"
+#include <string>
 
 // default constructor
-AvailableJob::AvailableJob()
-{
-    this->supporter = nullptr;
+AvailableJob::AvailableJob() {
+    this->supporterName = "";
     this->availableTime = Period();
     this->skill = Skill();
 }
 
+
 // constructor
 AvailableJob::AvailableJob(
-    const Users::Member &supporter,
+    const std::string &supporterName,
     const Period &availableTime,
     const Skill &skill
-) {
-    this->supporter = &supporter;
+) : AvailableJob() {
+    this->supporterName = supporterName;
     this->availableTime = availableTime;
     this->skill = skill;
 }
 
 // setter
-void AvailableJob::set_supporter(const Users::Member &supporter)
+void AvailableJob::set_supporter_name(const string &supporterName)
 {
-    this->supporter = &supporter;
+    this->supporterName = supporterName;
 }
 
 void AvailableJob::set_available_time(const Period &availableTime)
@@ -37,9 +39,9 @@ void AvailableJob::set_skill(const Skill &skill)
 
 // getter
 
-const Users::Member AvailableJob::get_supporter() const
+const string AvailableJob::get_supporter_name() const
 {
-    return *supporter;
+    return supporterName;
 }
 
 const Period AvailableJob::get_available_time() const

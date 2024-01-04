@@ -4,6 +4,8 @@
 #include "../../../nlohmann/json.hpp"
 #include "../User/User.hpp"
 #include "../../Skill/Skill.hpp"
+#include "../../AvailableJob/AvailableJob.hpp"
+#include "../../Request/Request.hpp"
 
 using json = nlohmann::json;
 using std::string;
@@ -23,6 +25,8 @@ namespace Users
         string email;
         string city;
         std::vector<Skill> skills;
+        std::vector<AvailableJob> available_jobs;
+        std::vector<Request> requests;
         float credit;
 
     public:
@@ -58,6 +62,10 @@ namespace Users
 
         const std::vector<Skill> get_skills() const;
 
+        const std::vector<AvailableJob> get_available_jobs() const;
+
+        const std::vector<Request> get_requests() const;
+
 
 
         // Setter methods
@@ -75,8 +83,9 @@ namespace Users
 
         void set_password(const string &password);
 
-        // add skill
+        // add 
         void add_skill(string &skill_name, float &consumed_per_hour, float &minimum_rating );
+        void add_available_job(string &job_name, string &description, float &minimum_rating, float &salary_per_hour, string &start_time, string &end_time);
 
         // extract data from map
         void from_map(std::map<string, string> map);
