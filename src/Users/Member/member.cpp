@@ -94,6 +94,11 @@ const std::vector<Period> Users::Member::get_available_times() const
     return available_times;
 }
 
+const std::vector<Users::Member *> Users::Member::get_block_list() const
+{
+    return block_list;
+}
+
 // extract data from map
 void Users::Member::from_map(std::map<string, string> map)
 {
@@ -259,6 +264,56 @@ void Users::Member::add_available_time(string &startTime, string &endTime)
     this->available_times.push_back(available_time);
 }
 
+void Users::Member::add_block_list(Member *member)
+{
+    this->block_list.push_back(member);
+}
+
+
+// remove
+void Users::Member::remove_skill(string &skill_name)
+{
+    for (Skill skill : this->skills)
+    {
+        if (skill.get_skill_name() == skill_name)
+        {
+            this->skills.erase(std::remove(this->skills.begin(), this->skills.end(), skill), this->skills.end());
+        }
+    }
+}
+
+void Users::Member::remove_available_job(Period &available_time, Skill &skill)
+{
+    for (AvailableJob availableJob : this->available_jobs)
+    {
+        if (availableJob.get_skill().get_skill_name() == skill.get_skill_name() && availableJob.get_available_time().get_start_time_string() == available_time.get_start_time_string() && availableJob.get_available_time().get_end_time_string() == available_time.get_end_time_string())
+        {
+            this->available_jobs.erase(std::remove(this->available_jobs.begin(), this->available_jobs.end(), availableJob), this->available_jobs.end());
+        }
+    }
+}
+
+void Users::Member::remove_available_time(string &startTime, string &endTime)
+{
+    for (Period available_time : this->available_times)
+    {
+        if (available_time.get_start_time_string() == startTime && available_time.get_end_time_string() == endTime)
+        {
+            this->available_times.erase(std::remove(this->available_times.begin(), this->available_times.end(), available_time), this->available_times.end());
+        }
+    }
+}
+
+void Users::Member::remove_block_list(Member *member)
+{
+    for (Member *member : this->block_list)
+    {
+        if (member->get_username() == member->get_username())
+        {
+            this->block_list.erase(std::remove(this->block_list.begin(), this->block_list.end(), member), this->block_list.end());
+        }
+    }
+}
 
 void Users::Member::show_member_info(std::string role) {
     if (role == "member") {    
