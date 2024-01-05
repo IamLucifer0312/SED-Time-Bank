@@ -32,7 +32,18 @@
 
                 break;
             case 3:
+                std::cout << "Do you want to block any user ?\n"
+                          << "1. Yes.\n"
+                          << "2. No.\n";
 
+                switch (prompt_choice(1, 2))
+                {
+                    case 1:
+                        break;
+
+                    case 2:
+                        break;
+                }
                 break;
             case 4:
 
