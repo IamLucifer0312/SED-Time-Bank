@@ -7,10 +7,7 @@ void MenuSystem::block_member(std::string member_username)
     {
         if (mem.get_username() == member_username)
         {
-            std::cout << "This username is correct. " << std::endl;
-            // std::cout <<"Update password successfully !";
-            // userSystem.database.update_member(mem);
-            // userSystem.save_database();
+            std::cout << "Do you want to block this member ? " << std::endl;
             return;
         }
     }
