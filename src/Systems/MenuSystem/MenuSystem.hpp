@@ -66,9 +66,11 @@ public:
     //check username and block user
     void block_member(std::string member_username);
     void unblock_member(std::string member_username);
+    bool is_blocked(Users::Member member);
 
     //find supporter
     void find_supporter_city(std::string role);
+    void find_all_supporter(std::string role);
     void find_supporter_interface(std::string role);
 
     friend class UserSystem;

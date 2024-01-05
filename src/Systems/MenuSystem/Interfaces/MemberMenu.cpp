@@ -4,6 +4,7 @@
 #include "../Interfaces/Member/ViewAndUpdateInfo.cpp"
 #include "UpdateInfo.cpp"
 #include "find_supporter_city.cpp"
+#include "find_all_supporter.cpp"
 #include "Find_supporter.cpp"
 // member menu
     void MenuSystem::member_menu()
@@ -12,6 +13,7 @@
         Users::Member current_member = userSystem.get_current_member();
         while (loggedIn)
         {
+            clear_screen();
             std::cout << "\n\nMember actions:\n"
                         << "==============================\n"
                         << "0. Logout.\n"
