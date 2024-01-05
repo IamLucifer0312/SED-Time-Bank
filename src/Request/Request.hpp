@@ -1,6 +1,7 @@
 #include "../AvailableJob/AvailableJob.hpp"
 #include "../Period/Period.hpp"
 #include <string>
+#include <cstring>
 
 using std::string;
 
@@ -40,7 +41,7 @@ public:
     void set_total_credit(float totalCredit);
 
     // getter
-    string get_host();
+    const string get_host() const;
     string get_supporter();
     AvailableJob get_job();
     string get_work_time();

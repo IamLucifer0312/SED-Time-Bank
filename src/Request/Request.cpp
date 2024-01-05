@@ -43,7 +43,7 @@ void Request::set_total_credit(float totalCredit)
 }
 
 // getter
-string Request::get_host()
+const string Request::get_host() const
 {
     return host;
 }

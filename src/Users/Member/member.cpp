@@ -78,13 +78,12 @@ const std::vector<AvailableJob> Users::Member::get_available_jobs() const
 {
     return available_jobs;
 }
-
-const vector<Request *> Users::Member::get_received_requests() const
-{
+    
+vector<Request> &Users::Member::get_received_requests() {
     return receivedRequests;
 }
 
-const std::vector<Request *> Users::Member::get_sent_requests() const
+const std::vector<Request> Users::Member::get_sent_requests() const
 {
     return sentRequests;
 }
@@ -222,8 +221,10 @@ void Users::Member::add_available_job()
     this->available_jobs.push_back(availableJob);
 }
 
-void Users::Member::show_member_info(std::string role) {
-    if (role == "member") {    
+void Users::Member::show_member_info(std::string role)
+{
+    if (role == "member")
+    {
         std::cout << "Username: " << this->username << std::endl;
         std::cout << "Full name: " << this->full_name << std::endl;
         std::cout << "Phone number: " << this->phone_number << std::endl;

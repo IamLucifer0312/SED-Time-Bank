@@ -28,8 +28,8 @@ namespace Users
         string city;
         vector<Skill> skills;
         vector<AvailableJob> available_jobs;
-        vector<Request*> receivedRequests;
-        vector<Request*> sentRequests;
+        vector<Request> receivedRequests;
+        vector<Request> sentRequests;
 
         float credit;
 
@@ -62,15 +62,19 @@ namespace Users
 
         const float get_credit() const;
 
+        const void add_credit(float totalCredit) const;
+
+        const void substract_credit(float totalCredit) const;
+
         const string get_password() const;
 
         const std::vector<Skill> get_skills() const;
 
         const std::vector<AvailableJob> get_available_jobs() const;
         
-        const std::vector<Request*> get_received_requests() const;
+        std::vector<Request>& get_received_requests();
 
-        const std::vector<Request*> get_sent_requests() const;
+        const std::vector<Request> get_sent_requests() const;
 
 
 
