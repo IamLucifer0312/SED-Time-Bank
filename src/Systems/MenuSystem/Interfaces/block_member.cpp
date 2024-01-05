@@ -14,6 +14,10 @@ void MenuSystem::block_member(std::string member_username)
             switch (prompt_choice(1, 2))
             {
                 case 1:
+                    userSystem.get_current_member().add_block_list(member_username);
+                    userSystem.database.update_member(userSystem.get_current_member());
+                    userSystem.save_database();
+                    std::cout << "Member " << mem.get_username() << " has been blocked !!\n";
                     break;
                     
                 case 2:

@@ -6,6 +6,7 @@
                 "start_time": "2023-11-11 10:00:00"
             }
         ],
+        "block_list": null,
         "city": "Ha noi",
         "credit": 25.0,
         "email": "fewf@gmail.com",
@@ -34,6 +35,7 @@
                 "start_time": "2023-11-11 10:00:00"
             }
         ],
+        "block_list": null,
         "city": "sai gon",
         "credit": 30.0,
         "email": "ddd@gmail.com",
@@ -61,6 +63,9 @@
                 "end_time": "2023-11-11 12:00:00",
                 "start_time": "2023-11-11 10:00:00"
             }
+        ],
+        "block_list": [
+            "ddd"
         ],
         "city": "Sai gon",
         "credit": 20.0,
@@ -95,6 +100,7 @@
                 "start_time": "2023-11-11 10:00:00"
             }
         ],
+        "block_list": null,
         "city": "Sai gon",
         "credit": 20.0,
         "email": "asew@gmail.com",
@@ -123,6 +129,7 @@
                 "start_time": "2023-11-11 10:00:00"
             }
         ],
+        "block_list": null,
         "city": "Ha noi",
         "credit": 20.0,
         "email": "dsji@gmail.com",

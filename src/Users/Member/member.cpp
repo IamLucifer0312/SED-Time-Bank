@@ -94,7 +94,7 @@ const std::vector<Period> Users::Member::get_available_times() const
     return available_times;
 }
 
-const std::vector<Users::Member *> Users::Member::get_block_list() const
+const std::vector<string> Users::Member::get_block_list() const
 {
     return block_list;
 }
@@ -165,6 +165,13 @@ void Users::Member::serialize(json &j) const
 
     // Adding the available times array to the JSON object
     j["available_times"] = availableTimesArray;
+
+    json blockListArray;
+    for (const auto &block_member : block_list)
+    {
+        blockListArray.push_back(block_member);
+    }
+    j["block_list"] = blockListArray;
 }
 
 // Deserialization function for Member class
@@ -204,6 +211,18 @@ void Users::Member::deserialize(const json &j)
             available_times.emplace_back(startTime, endTime);
         }
     }
+
+    // Deserialize available jobs array (not implemented yet)
+    // Desirialize block list array
+    if (j.find("block_list") != j.end())
+    {
+        const json &blockListArray = j.at("block_list");
+        for (const auto &block_member : blockListArray)
+        {
+            block_list.push_back(block_member);
+        }
+    }
+
 }
 
 // Setters:
@@ -264,53 +283,53 @@ void Users::Member::add_available_time(string &startTime, string &endTime)
     this->available_times.push_back(available_time);
 }
 
-void Users::Member::add_block_list(Member *member)
+void Users::Member::add_block_list(string &username)
 {
-    this->block_list.push_back(member);
+    this->block_list.push_back(username);
 }
 
 
 // remove
 void Users::Member::remove_skill(string &skill_name)
 {
-    for (Skill skill : this->skills)
+    for (int i = 0; i < this->skills.size(); i++)
     {
-        if (skill.get_skill_name() == skill_name)
+        if (this->skills[i].get_skill_name() == skill_name)
         {
-            this->skills.erase(std::remove(this->skills.begin(), this->skills.end(), skill), this->skills.end());
+            this->skills.erase(this->skills.begin() + i);
         }
     }
 }
 
-void Users::Member::remove_available_job(Period &available_time, Skill &skill)
-{
-    for (AvailableJob availableJob : this->available_jobs)
-    {
-        if (availableJob.get_skill().get_skill_name() == skill.get_skill_name() && availableJob.get_available_time().get_start_time_string() == available_time.get_start_time_string() && availableJob.get_available_time().get_end_time_string() == available_time.get_end_time_string())
-        {
-            this->available_jobs.erase(std::remove(this->available_jobs.begin(), this->available_jobs.end(), availableJob), this->available_jobs.end());
-        }
-    }
-}
+// void Users::Member::remove_available_job(Period &available_time, Skill &skill)
+// {
+//     for (int i = 0; i < this->available_jobs.size(); i++)
+//     {
+//         if (this->available_jobs[i].get_available_time().get_start_time_string() == available_time.get_start_time_string() && this->available_jobs[i].get_available_time().get_end_time_string() == available_time.get_end_time_string() && this->available_jobs[i].get_skill().get_skill_name() == skill.get_skill_name())
+//         {
+//             this->available_jobs.erase(this->available_jobs.begin() + i);
+//         }
+//     }
+// }
 
 void Users::Member::remove_available_time(string &startTime, string &endTime)
 {
-    for (Period available_time : this->available_times)
+    for (int i = 0; i < this->available_times.size(); i++)
     {
-        if (available_time.get_start_time_string() == startTime && available_time.get_end_time_string() == endTime)
+        if (this->available_times[i].get_start_time_string() == startTime && this->available_times[i].get_end_time_string() == endTime)
         {
-            this->available_times.erase(std::remove(this->available_times.begin(), this->available_times.end(), available_time), this->available_times.end());
+            this->available_times.erase(this->available_times.begin() + i);
         }
     }
 }
 
-void Users::Member::remove_block_list(Member *member)
+void Users::Member::remove_block_list(string &username)
 {
-    for (Member *member : this->block_list)
+    for (int i = 0; i < this->block_list.size(); i++)
     {
-        if (member->get_username() == member->get_username())
+        if (this->block_list[i] == username)
         {
-            this->block_list.erase(std::remove(this->block_list.begin(), this->block_list.end(), member), this->block_list.end());
+            this->block_list.erase(this->block_list.begin() + i);
         }
     }
 }

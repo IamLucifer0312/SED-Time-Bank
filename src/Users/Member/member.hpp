@@ -33,7 +33,7 @@ namespace Users
         vector<Period> available_times;
         vector<Request*> receivedRequests;
         vector<Request*> sentRequests;
-        vector<Member*> block_list;
+        vector<string> block_list;
 
         float credit;
 
@@ -78,7 +78,7 @@ namespace Users
 
         const std::vector<Request*> get_sent_requests() const;
 
-        const std::vector<Member*> get_block_list() const;
+        const std::vector<string> get_block_list() const;
 
 
 
@@ -101,13 +101,13 @@ namespace Users
         void add_skill(string &skill_name, float &consumed_per_hour, float &minimum_rating );
         void add_available_job(Period &available_time, Skill &skill);
         void add_available_time(string &startTime, string &endTime);
-        void add_block_list(Member* member);
+        void add_block_list(string &username);
 
         // remove
         void remove_skill(string &skill_name);
-        void remove_available_job(Period &available_time, Skill &skill);
+        // void remove_available_job(Period &available_time, Skill &skill);
         void remove_available_time(string &startTime, string &endTime);
-        void remove_block_list(Member* member);
+        void remove_block_list(string &username);
 
         // extract data from map
         void from_map(std::map<string, string> map);
