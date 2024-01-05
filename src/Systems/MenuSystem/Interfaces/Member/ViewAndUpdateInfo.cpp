@@ -4,7 +4,7 @@
 void MenuSystem::member_view_my_info(Users::Member current_member, std::string information)
 {
     clear_screen();
-    current_member.show_member_info("member");
+    current_member.show_member_info("self");
     std::cout << "\nDo you want to update information ? "
             << "1. Yes\n"
             << "2. No\n";

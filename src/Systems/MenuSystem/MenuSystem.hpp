@@ -65,6 +65,7 @@ public:
 
     //check username and block user
     void block_member(std::string member_username);
+    void unblock_member(std::string member_username);
 
     //find supporter
     void find_supporter_city(std::string role);

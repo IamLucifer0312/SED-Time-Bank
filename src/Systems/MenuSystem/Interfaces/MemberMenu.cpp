@@ -32,9 +32,23 @@
 
                 break;
             case 3:
-                std::cout << "\nWhich user do you want to block: ";
-                std::getline(std::cin, member_username);
-                block_member(member_username);
+                clear_screen();
+                std::cout << "Block or unblock member?\n"
+                            << "1. Block\n"
+                            << "2. Unblock\n";
+                switch (prompt_choice(1, 2))
+                {
+                case 1:
+                    std::cout << "\nWhich user do you want to block: ";
+                    std::getline(std::cin, member_username);
+                    block_member(member_username);
+                    break;
+                case 2:
+                    std::cout << "\nWhich user do you want to unblock: ";
+                    std::getline(std::cin, member_username);
+                    unblock_member(member_username);
+                    break;
+                }
                 break;
             case 4:
 

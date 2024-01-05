@@ -359,7 +359,7 @@ void Users::Member::show_member_info(std::string role) {
         }
         std::cout << std::endl;
     }
-    else if (role == "admin")
+    else if (role == "admin" || role == "self")
     {
         std::cout << "Username: " << this->username << std::endl;
         std::cout << "Password :" << this->password << std::endl;
@@ -381,6 +381,10 @@ void Users::Member::show_member_info(std::string role) {
             std::cout << available_time.get_end_time_string() << std::endl;
         }
         std::cout << std::endl;
+        for (std::string &block_member : this->block_list)
+        {
+            std::cout << block_member << std::endl;
+        }
     }
     else if (role == "guest") {    
         std::cout << "Username: " << this->username << std::endl;
