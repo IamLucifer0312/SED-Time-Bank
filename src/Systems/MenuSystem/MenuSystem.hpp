@@ -25,6 +25,7 @@ private:
     Users::Admin admin;
     UserSystem userSystem;
     bool loggedIn;
+    std::string member_username;
 
 public:
     // constructor
@@ -61,6 +62,9 @@ public:
 
     //check username and change password of members for admin
     void change_new_password(std::string member_username);
+
+    //check username and block user
+    void block_member(std::string member_username);
 
     //find supporter
     void find_supporter_city(std::string role);

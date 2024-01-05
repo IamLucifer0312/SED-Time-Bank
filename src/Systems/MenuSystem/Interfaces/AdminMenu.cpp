@@ -2,7 +2,6 @@
 #include "../../UserSystem/UserSystem.hpp"
 void MenuSystem::admin_menu()
 {
-    std::string member_username;
     while (loggedIn)
     {
         std::cout << "\n\nAndmin action: \n"

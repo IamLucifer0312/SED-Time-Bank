@@ -32,13 +32,16 @@
 
                 break;
             case 3:
-                std::cout << "Do you want to block any user ?\n"
+                std::cout << "\nDo you want to block any user ?\n"
                           << "1. Yes.\n"
                           << "2. No.\n";
 
                 switch (prompt_choice(1, 2))
                 {
                     case 1:
+                        std::cout << "\nWhich user do you want to block: ";
+                        std::getline(std::cin, member_username);
+                        block_member(member_username);
                         break;
 
                     case 2:
