@@ -437,6 +437,10 @@ void Users::Member::show_member_info(std::string role) {
     }
 }
 
+
+
+// overwrite json functions, will be moved to another file later
+
 void to_json(json &j, const Request &r)
 {
     j = json{{"host", r.get_host()}, {"supporter", r.get_supporter()}, {"job", r.get_job()}, {"work_time", r.get_work_time_object()}, {"status", static_cast<int>(r.get_status())}, {"total_credit", r.get_total_credit()}};
