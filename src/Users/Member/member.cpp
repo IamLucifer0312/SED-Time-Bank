@@ -79,12 +79,12 @@ const std::vector<AvailableJob> Users::Member::get_available_jobs() const
     return available_jobs;
 }
 
-vector<Request> &Users::Member::get_received_requests()
+const vector<Request *> Users::Member::get_received_requests() const
 {
     return receivedRequests;
 }
 
-const std::vector<Request> Users::Member::get_sent_requests() const
+const std::vector<Request *> Users::Member::get_sent_requests() const
 {
     return sentRequests;
 }
@@ -141,7 +141,7 @@ void Users::Member::serialize(json &j) const
 
     // Creating a JSON array for skills
     json skillsArray;
-    for (const Skill &skill : skills)
+    for (const auto &skill : skills)
     {
         json singleSkill;
         singleSkill["skill_name"] = skill.get_skill_name();
@@ -172,16 +172,6 @@ void Users::Member::serialize(json &j) const
         blockListArray.push_back(block_member);
     }
     j["block_list"] = blockListArray;
-    
-    // Creating a JSON array for recieved requests
-    json receivedRequestsArray;
-    for (const Request &request : receivedRequests)
-    {
-        json singleRequest = request;
-        receivedRequestsArray.push_back(singleRequest);
-    }
-    // Adding the recieved requests array to the JSON object
-    j["received_requests"] = receivedRequestsArray;
 }
 
 // Deserialization function for Member class
@@ -233,21 +223,6 @@ void Users::Member::deserialize(const json &j)
         }
     }
 
-    // Deserialize recieved requests array
-    if (j.find("received_requests") != j.end())
-    {
-        const json &receivedRequestsArray = j.at("received_Requests");
-        for (const auto &request : receivedRequestsArray)
-        {
-            std::string host = request.at("host").get<std::string>();
-            std::string supporter = request.at("supporter").get<std::string>();
-            AvailableJob job = request.at("job").get<AvailableJob>();
-            std::string workTime = request.at("work_time").get<std::string>();
-            Status status = static_cast<Status>(request.at("status").get<int>());
-            float totalCredit = request.at("total_credit").get<float>();
-            receivedRequests.emplace_back(host, supporter, job, workTime, status, totalCredit);
-        }
-    }
 }
 
 // Setters:
@@ -435,51 +410,6 @@ void Users::Member::show_member_info(std::string role) {
         }
         std::cout << std::endl;
     }
-}
 
-
-
-// overwrite json functions, will be moved to another file later
-
-void to_json(json &j, const Request &r)
-{
-    j = json{{"host", r.get_host()}, {"supporter", r.get_supporter()}, {"job", r.get_job()}, {"work_time", r.get_work_time_object()}, {"status", static_cast<int>(r.get_status())}, {"total_credit", r.get_total_credit()}};
-}
-
-void to_json(json &j, const AvailableJob &h)
-{
-    j = json{{"supporterName", h.get_supporter_name()}, {"availableTime", h.get_available_time()}, {"skill", h.get_skill()}};
-}
-
-void to_json(json &j, const Period &p)
-{
-    j = json{{"start_time", p.get_start_time_string()}, {"end_time", p.get_end_time_string()}};
-}
-
-void to_json(json &j, const Skill &s)
-{
-    j = json{{"skill_name", s.get_skill_name()}, {"consumed_per_hour", s.get_consumed_per_hour()}, {"minimum_rating", s.get_mininum_rating()}};
-}
-
-void from_json(const json &j, AvailableJob &job)
-{
-    string supporterName = j.at("supporterName").get<string>();
-    Period availableTime = j.at("availableTime").get<Period>();
-    Skill skill = j.at("skill").get<Skill>();
-    job = AvailableJob(supporterName, availableTime, skill);
-}
-
-void from_json(const json &j, Skill &s)
-{
-    string skillName = j.at("skill_name").get<string>();
-    float consumedPerHour = j.at("consumed_per_hour").get<float>();
-    float minimumRating = j.at("minimum_rating").get<float>();
-    s = Skill(skillName, consumedPerHour, minimumRating);
-}
-
-void from_json(const json &j, Period &p)
-{
-    string startTime = j.at("start_time").get<string>();
-    string endTime = j.at("end_time").get<string>();
-    p = Period(startTime, endTime);
+    // std::cout << "Credit: " << this->credit << std::endl;
 }
