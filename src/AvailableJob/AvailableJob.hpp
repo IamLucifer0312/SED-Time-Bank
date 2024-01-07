@@ -1,7 +1,10 @@
-#include "../Users/Member/member.hpp"
 #include "../Period/Period.hpp"
 #include "../Skill/Skill.hpp"
 #include <vector>
+#include <string>
+using std::string;
+
+
 
 using std::vector;
 
@@ -12,29 +15,29 @@ using std::vector;
 class AvailableJob
 {
 private:
-    Users::Member supporter;
+    string supporterName;
     Period availableTime;
-    vector<Skill> skills;
+    Skill skill;
     public:
     // default constructor
-    AvailableJob();
+    AvailableJob() : supporterName("") {};
 
     // constructor
     AvailableJob(
-        const Users::Member &supporter,
+        const string &supporterName,
         const Period &availableTime,
-        const vector<Skill> &skills
-    );
+        const Skill &skill
+    ) {};
 
     // setter
-    void set_supporter(const Users::Member &supporter);
+    void set_supporter_name(const string &supporterName);
     void set_available_time(const Period &availableTime);
-    void set_skills(const vector<Skill> &skills);
+    void set_skill(const Skill &skill);
 
     // getter
-    const Users::Member get_supporter() const;
+    const string get_supporter_name() const;
     const Period get_available_time() const;
-    const vector<Skill> get_skills() const;
+    const Skill get_skill() const;
 
 
 

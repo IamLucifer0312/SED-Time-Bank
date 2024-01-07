@@ -67,8 +67,17 @@ void MenuSystem::login_menu(string role) {
         std::cout << "Enter your email: ";
         std::getline(std::cin, email);
 
-        std::cout << "Enter your city: ";
-        std::getline(std::cin, city);
+        std::cout << "Which city do you want to register \n"
+                  << "1. Ha noi\n"
+                  << "2. Sai gon\n";
+        switch (prompt_choice(1, 2)){
+            case 1:
+                city = "Ha noi";
+                break;
+            case 2:
+                city = "Sai gon";
+                break;
+        }
 
         userSystem.register_member(username, password, full_name, phone_number, home_address, email, city);
         userSystem.save_database();

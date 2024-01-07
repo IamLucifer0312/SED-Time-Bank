@@ -4,9 +4,15 @@
 #include "../../../nlohmann/json.hpp"
 #include "../User/User.hpp"
 #include "../../Skill/Skill.hpp"
+#include "../../AvailableJob/AvailableJob.hpp"
+#include "../../Request/Request.hpp"
+#include "../../Period/Period.hpp"
+
+
 
 using json = nlohmann::json;
 using std::string;
+using std::vector;
 
 // Check if the file is already included.
 #ifndef MEMBER_HPP
@@ -22,7 +28,13 @@ namespace Users
         string home_address;
         string email;
         string city;
-        std::vector<Skill> skills;
+        vector<Skill> skills;
+        vector<AvailableJob> available_jobs;
+        vector<Period> available_times;
+        vector<Request*> receivedRequests;
+        vector<Request*> sentRequests;
+        vector<string> block_list;
+
         float credit;
 
     public:
@@ -58,6 +70,16 @@ namespace Users
 
         const std::vector<Skill> get_skills() const;
 
+        const std::vector<Period> get_available_times() const;
+
+        const std::vector<AvailableJob> get_available_jobs() const;
+        
+        const std::vector<Request*> get_received_requests() const;
+
+        const std::vector<Request*> get_sent_requests() const;
+
+        const std::vector<string> get_block_list() const;
+
 
 
         // Setter methods
@@ -75,8 +97,17 @@ namespace Users
 
         void set_password(const string &password);
 
-        // add skill
+        // add 
         void add_skill(string &skill_name, float &consumed_per_hour, float &minimum_rating );
+        void add_available_job(Period &available_time, Skill &skill);
+        void add_available_time(string &startTime, string &endTime);
+        void add_block_list(string &username);
+
+        // remove
+        void remove_skill(string &skill_name);
+        // void remove_available_job(Period &available_time, Skill &skill);
+        void remove_available_time(string &startTime, string &endTime);
+        void remove_block_list(string &username);
 
         // extract data from map
         void from_map(std::map<string, string> map);

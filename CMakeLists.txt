@@ -19,7 +19,8 @@ set(SOURCES
     
 
     src/Systems/MenuSystem/menuSystem.cpp
-    src/Skills/skill.cpp
+    src/Skill/skill.cpp
+    src/Period/period.cpp
 
     main.cpp
 )

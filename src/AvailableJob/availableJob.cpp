@@ -1,28 +1,30 @@
+#include <iostream>
 #include "AvailableJob.hpp"
+#include <string>
 
 // default constructor
-AvailableJob::AvailableJob()
-{
-    this->supporter = Users::Member();
+AvailableJob::AvailableJob() {
+    this->supporterName = "";
     this->availableTime = Period();
-    this->skills = {};
+    this->skill = Skill();
 }
+
 
 // constructor
 AvailableJob::AvailableJob(
-    const Users::Member &supporter,
+    const std::string &supporterName,
     const Period &availableTime,
-    const vector<Skill> &skills
-) {
-    this->supporter = supporter;
+    const Skill &skill
+) : AvailableJob() {
+    this->supporterName = supporterName;
     this->availableTime = availableTime;
-    this->skills = supporter.get_skills();
+    this->skill = skill;
 }
 
 // setter
-void AvailableJob::set_supporter(const Users::Member &supporter)
+void AvailableJob::set_supporter_name(const string &supporterName)
 {
-    this->supporter = supporter;
+    this->supporterName = supporterName;
 }
 
 void AvailableJob::set_available_time(const Period &availableTime)
@@ -30,16 +32,16 @@ void AvailableJob::set_available_time(const Period &availableTime)
     this->availableTime = availableTime;
 }
 
-void AvailableJob::set_skills(const vector<Skill> &skills)
+void AvailableJob::set_skill(const Skill &skill)
 {
-    this->skills = skills;
+    this->skill = skill;
 }
 
 // getter
 
-const Users::Member AvailableJob::get_supporter() const
+const string AvailableJob::get_supporter_name() const
 {
-    return supporter;
+    return supporterName;
 }
 
 const Period AvailableJob::get_available_time() const
@@ -47,9 +49,9 @@ const Period AvailableJob::get_available_time() const
     return availableTime;
 }
 
-const vector<Skill> AvailableJob::get_skills() const
+const Skill AvailableJob::get_skill() const
 {
-    return skills;
+    return skill;
 }
 
 

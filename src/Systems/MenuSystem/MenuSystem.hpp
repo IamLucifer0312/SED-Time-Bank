@@ -25,6 +25,7 @@ private:
     Users::Admin admin;
     UserSystem userSystem;
     bool loggedIn;
+    std::string member_username;
 
 public:
     // constructor
@@ -50,6 +51,7 @@ public:
 
     // show members
     void show_members(std::string role);
+    void show_members_for_city(std::string city, std::string role);
     // clear screen
     void clear_screen();
 
@@ -59,8 +61,17 @@ public:
     void member_view_my_info(Users::Member current_member, std::string information);
 
     //check username and change password of members for admin
-    bool check_member_username(const std::string &member_username, std::string new_password);
-    void change_new_password(std::string new_password);
+    void change_new_password(std::string member_username);
+
+    //check username and block user
+    void block_member(std::string member_username);
+    void unblock_member(std::string member_username);
+    bool is_blocked(Users::Member member);
+
+    //find supporter
+    void find_supporter_city(std::string role);
+    void find_all_supporter(std::string role);
+    void find_supporter_interface(std::string role);
 
     friend class UserSystem;
 

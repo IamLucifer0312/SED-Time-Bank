@@ -50,6 +50,9 @@ void MenuSystem::update_member_info(std::string information)
         std::cin >> minimum_rating;
         userSystem.get_current_member().add_skill(skill_name, consumed_per_hour, minimum_rating);
     }
+    else if (information == "Block list") {
+        std::cout << "Please go to the Block Member page to update your block list" << std::endl;
+    }
     else
     {
         std::cout << "Invalid input.\n";    

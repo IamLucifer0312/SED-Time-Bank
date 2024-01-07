@@ -5,7 +5,9 @@
 #include "Interfaces/AdminMenu.cpp"
 #include "Interfaces/LoginRegisterMenu.cpp"
 #include "Methods/ClearScreen.cpp"
-#include "Interfaces/Member/checkMemberUsername.cpp"
+#include "Interfaces/change_new_password.cpp"
+#include "Interfaces/block_member.cpp"
+#include "Interfaces/unblock_member.cpp"
 
 // default constructor
 MenuSystem::MenuSystem()
@@ -60,8 +62,6 @@ int MenuSystem::prompt_choice(unsigned min, unsigned max)
 
     return choice;
 }
-// guest view supporter
-void MenuSystem::guest_view_supporter() {};
 
 // main loop
 void MenuSystem::main_loop()
