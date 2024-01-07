@@ -31,8 +31,10 @@ public:
     const std::string get_skill_name() const;
     const float get_consumed_per_hour() const;
     const float get_mininum_rating() const;
-
     std::string get_string() const;
+
+    // copy constructor
+    Skill(const Skill &other);
 };
 
 #endif 

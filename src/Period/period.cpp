@@ -48,7 +48,7 @@ time_t Period::parse_date_time(const string datetimeString) {
 
 
 // function to convert a time_t to a date or time string.
-string Period::format_date_time(time_t time)
+string Period::format_date_time(time_t time) const
 {
     const string format = "%Y-%m-%d %H:%M:%S";
     char buffer[80];
@@ -82,12 +82,12 @@ void Period::set_end_time(string endTime)
 }
 
 // getter
-string Period::get_start_time_string()
+const string Period::get_start_time_string() const
 {
     return format_date_time(startTime);
 }
 
-string Period::get_end_time_string()
+const string Period::get_end_time_string() const 
 {
     return format_date_time(endTime);
 }

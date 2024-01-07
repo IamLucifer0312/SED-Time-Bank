@@ -22,7 +22,7 @@ for (int i = 0; i < requests_list.size(); ++i) {
         cout << "Host: " << request.get_host() << std::endl;
         cout << "Work time: " << request.get_work_time() << std::endl;
         cout << "Credit: " << request.get_total_credit() << std::endl;
-        cout << "Skill: " << request.get_job().get_skill().get_skill_name() << std::endl;
+        cout << "Skill: " << request.get_job_name() << std::endl;
     }
 
     cout << "What would you like to do?" << std::endl;
@@ -52,7 +52,7 @@ void MenuSystem::accept_or_reject_request(vector<Request> &requests_list){
         cout << "Host: " << selected_request.get_host() << std::endl;
         cout << "Work time: " << selected_request.get_work_time() << std::endl;
         cout << "Credit: " << selected_request.get_total_credit() << std::endl;
-        cout << "Skill: " << selected_request.get_job().get_skill().get_skill_name() << std::endl;
+        cout << "Skill: " << selected_request.get_job_name() << std::endl;
 
         cout << "What would you like to do?" << std::endl;
         cout << "0. Back" << std::endl;

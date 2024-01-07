@@ -19,8 +19,8 @@ enum Status
 class Request
 {
 private:
-    string host;
-    string supporter;
+    string hostUsername;
+    string supporterUsername;
     AvailableJob job;
     Period workTime;
     Status status;
@@ -31,10 +31,10 @@ public:
     Request();
 
     // constructor
-    Request(string &host, AvailableJob &job, Period &workTime, Status &status);
+    Request(string &hostUsername, AvailableJob &job, Period &workTime);
 
     // setter
-    void set_host(string &host);
+    void set_host(string &hostUsername);
     void set_job(AvailableJob job);
     void set_work_time(Period workTime);
     void set_status(Status status);
@@ -42,11 +42,13 @@ public:
 
     // getter
     const string get_host() const;
-    string get_supporter();
-    AvailableJob get_job();
-    string get_work_time();
-    Status get_status();
-    float get_total_credit();
+    const string get_supporter() const;
+    const AvailableJob get_job() const;
+    const string get_job_name() const;
+    const Period get_work_time_object() const;
+    const string get_work_time_string() const;
+    const Status get_status() const;
+    const float get_total_credit() const;
 
 };
 
