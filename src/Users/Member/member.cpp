@@ -334,6 +334,24 @@ void Users::Member::remove_block_list(string &username)
     }
 }
 
+bool Users::Member::is_overlap(time_t startTime, time_t endTime)
+{
+    for (Period &available_time : this->available_times)
+    {
+        if (endTime < available_time.get_start_time() || available_time.get_end_time() < startTime)
+        {
+            return false;
+        }
+        if (static_cast<int>(difftime(available_time.get_start_time(), startTime)) <= 1800 )
+        {
+            return true;
+        }
+    }
+    return false;
+
+}
+
+
 void Users::Member::show_member_info(std::string role) {
     if (role == "member") {    
         std::cout << "Username: " << this->username << std::endl;

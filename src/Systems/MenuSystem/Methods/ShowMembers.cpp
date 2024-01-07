@@ -36,6 +36,29 @@ void MenuSystem::show_members_for_city(std::string city, std::string role)
     }   
 }
 
+void MenuSystem::show_members_for_time(std::string startTime, std::string endTime, std::string role)
+{
+    Period input_period = Period(startTime, endTime);
+    for (auto& member : userSystem.get_members())
+    {
+        if (member.get_username() == userSystem.get_current_member().get_username()) {
+            continue;
+        }
+
+        
+        if (!member.is_overlap(input_period.get_start_time(), input_period.get_end_time()))
+        {
+            continue;
+        }
+        
+      
+        if (is_blocked(member)) {
+            continue;
+        }
+        member.show_member_info(role);
+    }   
+}
+
 bool MenuSystem::is_blocked(Users::Member member) {
     for (auto& blocked_member : member.get_block_list())
         {
@@ -46,3 +69,4 @@ bool MenuSystem::is_blocked(Users::Member member) {
         }
     return false;
 }
+

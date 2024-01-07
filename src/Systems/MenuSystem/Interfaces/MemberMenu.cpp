@@ -5,6 +5,7 @@
 #include "UpdateInfo.cpp"
 #include "find_supporter_city.cpp"
 #include "find_all_supporter.cpp"
+#include "find_supporter_availableTime.cpp"
 #include "Find_supporter.cpp"
 // member menu
     void MenuSystem::member_menu()

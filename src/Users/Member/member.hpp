@@ -7,6 +7,7 @@
 #include "../../AvailableJob/AvailableJob.hpp"
 #include "../../Request/Request.hpp"
 #include "../../Period/Period.hpp"
+#include <ctime>
 
 
 
@@ -123,6 +124,9 @@ namespace Users
         
         // show member info
         void show_member_info(std::string role);
+
+        // check overlap available time
+        bool is_overlap(time_t startTime, time_t endTime);
 
     };
 
