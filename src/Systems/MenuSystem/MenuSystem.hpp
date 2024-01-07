@@ -73,6 +73,15 @@ public:
     void find_all_supporter(std::string role);
     void find_supporter_interface(std::string role);
 
+    //view received request
+    void view_received_request();
+
+    // accept or reject a request
+    void accept_or_reject_request(vector<Request> &requests_list);
+
+    //remove_request
+    bool remove_request(Request &request, vector<Request> &requests_list);
+
     friend class UserSystem;
 
 };

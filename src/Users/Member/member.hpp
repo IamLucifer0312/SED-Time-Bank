@@ -8,8 +8,6 @@
 #include "../../Request/Request.hpp"
 #include "../../Period/Period.hpp"
 
-
-
 using json = nlohmann::json;
 using std::string;
 using std::vector;
@@ -31,8 +29,8 @@ namespace Users
         vector<Skill> skills;
         vector<AvailableJob> available_jobs;
         vector<Period> available_times;
-        vector<Request*> receivedRequests;
-        vector<Request*> sentRequests;
+        vector<Request> receivedRequests;
+        vector<Request> sentRequests;
         vector<string> block_list;
 
         float credit;
@@ -66,6 +64,10 @@ namespace Users
 
         const float get_credit() const;
 
+        const void add_credit(float totalCredit) const;
+
+        const void substract_credit(float totalCredit) const;
+
         const string get_password() const;
 
         const std::vector<Skill> get_skills() const;
@@ -74,9 +76,9 @@ namespace Users
 
         const std::vector<AvailableJob> get_available_jobs() const;
         
-        const std::vector<Request*> get_received_requests() const;
+        std::vector<Request>& get_received_requests();
 
-        const std::vector<Request*> get_sent_requests() const;
+        const std::vector<Request> get_sent_requests() const;
 
         const std::vector<string> get_block_list() const;
 

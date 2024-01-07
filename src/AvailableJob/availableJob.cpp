@@ -3,19 +3,19 @@
 #include <string>
 
 // default constructor
-AvailableJob::AvailableJob() {
+AvailableJob::AvailableJob()
+{
     this->supporterName = "";
     this->availableTime = Period();
     this->skill = Skill();
 }
 
-
 // constructor
 AvailableJob::AvailableJob(
     const std::string &supporterName,
     const Period &availableTime,
-    const Skill &skill
-) : AvailableJob() {
+    const Skill &skill) : AvailableJob()
+{
     this->supporterName = supporterName;
     this->availableTime = availableTime;
     this->skill = skill;
@@ -54,4 +54,10 @@ const Skill AvailableJob::get_skill() const
     return skill;
 }
 
-
+// copy constructor
+AvailableJob::AvailableJob(const AvailableJob &other)
+{
+    this->supporterName = other.supporterName;
+    this->availableTime = other.availableTime;
+    this->skill = other.skill;
+}

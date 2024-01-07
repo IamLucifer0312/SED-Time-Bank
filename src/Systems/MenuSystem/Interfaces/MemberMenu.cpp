@@ -2,6 +2,7 @@
 #include "../Methods/ShowMembers.cpp"
 #include "../../UserSystem/UserSystem.hpp"
 #include "../Interfaces/Member/ViewAndUpdateInfo.cpp"
+#include "../Interfaces/Member/ViewReceivedRequest.cpp"
 #include "UpdateInfo.cpp"
 #include "find_supporter_city.cpp"
 #include "find_all_supporter.cpp"
@@ -20,9 +21,9 @@
                         << "1. View my information.\n"
                         << "2. Add credit.\n"
                         << "3. Block member.\n"
-                        << "4. View request. \n"
+                        << "4. View received request. \n"
                         << "5. Find supporter. \n"
-                        << "6. View the tutor. \n";
+                        << "6. View sent request. \n";
 
             switch (prompt_choice(0, 6))
             {
@@ -53,7 +54,8 @@
                 }
                 break;
             case 4:
-
+                clear_screen();
+                view_received_request();
                 break;
             case 5:
                 clear_screen();
