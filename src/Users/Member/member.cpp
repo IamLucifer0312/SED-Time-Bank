@@ -1,5 +1,7 @@
 #include <iostream>
 #include "Member.hpp"
+#include "Functions/SerializeDeserialize.cpp"
+#include "Functions/ShowInfo.cpp"
 
 // default constructor
 Users::Member::Member()
@@ -124,106 +126,7 @@ std::map<string, string> Users::Member::to_map_member() const
     return map;
 }
 
-// Serialization function for Member class
-void Users::Member::serialize(json &j) const
-{
-    j = {
-        {"username", username},
-        {"password", password},
-        {"full_name", full_name},
-        {"phone_number", phone_number},
-        {"home_address", home_address},
-        {"email", email},
-        {"city", city},
-        {"credit", credit}
-        // Add more member variables to serialize
-    };
 
-    // Creating a JSON array for skills
-    json skillsArray;
-    for (const auto &skill : skills)
-    {
-        json singleSkill;
-        singleSkill["skill_name"] = skill.get_skill_name();
-        singleSkill["consumed_per_hour"] = skill.get_consumed_per_hour();
-        singleSkill["minimum_rating"] = skill.get_mininum_rating();
-        skillsArray.push_back(singleSkill);
-    }
-
-    // Adding the skills array to the JSON object
-    j["skills"] = skillsArray;
-
-    // Creating a JSON array for available times
-    json availableTimesArray;
-    for (const Period &availableTime : available_times)
-    {
-        json singleAvailableTime;
-        singleAvailableTime["start_time"] =  availableTime.get_start_time_string();
-        singleAvailableTime["end_time"] =  availableTime.get_end_time_string();
-        availableTimesArray.push_back(singleAvailableTime);
-    }
-
-    // Adding the available times array to the JSON object
-    j["available_times"] = availableTimesArray;
-
-    json blockListArray;
-    for (const auto &block_member : block_list)
-    {
-        blockListArray.push_back(block_member);
-    }
-    j["block_list"] = blockListArray;
-}
-
-// Deserialization function for Member class
-void Users::Member::deserialize(const json &j)
-{
-    username = j.at("username").get<string>();
-    password = j.at("password").get<string>();
-    full_name = j.at("full_name").get<string>();
-    phone_number = j.at("phone_number").get<string>();
-    home_address = j.at("home_address").get<string>();
-    email = j.at("email").get<string>();
-    city = j.at("city").get<string>();
-    credit = j.at("credit").get<float>();
-    // Deserialize other member variables
-
-    // Deserialize skills array
-    if (j.find("skills") != j.end())
-    {
-        const json &skillsArray = j.at("skills");
-        for (const auto &skill : skillsArray)
-        {
-            std::string skillName = skill.at("skill_name").get<std::string>();
-            float consumedPerHour = skill.at("consumed_per_hour").get<float>();
-            float minimumRating = skill.at("minimum_rating").get<float>();
-            skills.emplace_back(skillName, consumedPerHour, minimumRating);
-        }
-    }
-
-    // Deserialize available times array
-    if (j.find("available_times") != j.end())
-    {
-        const json &availableTimesArray = j.at("available_times");
-        for (const auto &availableTime : availableTimesArray)
-        {
-            std::string startTime = availableTime.at("start_time").get<std::string>();
-            std::string endTime = availableTime.at("end_time").get<std::string>();
-            available_times.emplace_back(startTime, endTime);
-        }
-    }
-
-    // Deserialize available jobs array (not implemented yet)
-    // Desirialize block list array
-    if (j.find("block_list") != j.end())
-    {
-        const json &blockListArray = j.at("block_list");
-        for (const auto &block_member : blockListArray)
-        {
-            block_list.push_back(block_member);
-        }
-    }
-
-}
 
 // Setters:
 
@@ -272,7 +175,7 @@ void Users::Member::add_skill(string &skill_name, float &consumed_per_hour, floa
 // add available job
 void Users::Member::add_available_job(Period &available_time, Skill &skill)
 {
-    AvailableJob availableJob = AvailableJob(this->username, available_time, skill);
+    AvailableJob availableJob = AvailableJob(this->username, &available_time, &skill);
     this->available_jobs.push_back(availableJob);
 }
 
@@ -349,85 +252,4 @@ bool Users::Member::is_overlap(time_t startTime, time_t endTime)
     }
     return false;
 
-}
-
-
-void Users::Member::show_member_info(std::string role) {
-    if (role == "member") {    
-        std::cout << "Username: " << this->username << std::endl;
-        std::cout << "Full name: " << this->full_name << std::endl;
-        std::cout << "Phone number: " << this->phone_number << std::endl;
-        std::cout << "Home address: " << this->home_address << std::endl;
-        std::cout << "Email: " << this->email << std::endl;
-        std::cout << "City: " << this->city << std::endl;
-        
-        std::cout << "Skills: " << std::endl;
-        for (Skill &skill : this->skills)
-        {
-            std::cout << skill.get_string() << std::endl;
-            std::cout << std::endl;
-        }
-        std::cout << "Available times: " << std::endl;
-        for (Period &available_time : this->available_times)
-        {   
-            std::cout << "Period 1" << std::endl;
-            std::cout << available_time.get_start_time_string() << std::endl;
-            std::cout << available_time.get_end_time_string() << std::endl;
-            std::cout << std::endl;
-        }
-        std::cout << std::endl;
-    }
-    else if (role == "admin" || role == "self")
-    {
-        std::cout << "Username: " << this->username << std::endl;
-        std::cout << "Password :" << this->password << std::endl;
-        std::cout << "Full name: " << this->full_name << std::endl;
-        std::cout << "Phone number: " << this->phone_number << std::endl;
-        std::cout << "Home address: " << this->home_address << std::endl;
-        std::cout << "Email: " << this->email << std::endl;
-        std::cout << "City: " << this->city << std::endl;
-        std::cout << "Credit: " << this->credit << std::endl;
-        std::cout << "Skills: " << std::endl;
-        for (Skill &skill : this->skills)
-        {
-            std::cout << skill.get_string() << std::endl;
-        }
-        std::cout << "Available times: " << std::endl;
-        for (Period &available_time : this->available_times)
-        {
-            std::cout << available_time.get_start_time_string() << std::endl;
-            std::cout << available_time.get_end_time_string() << std::endl;
-        }
-        std::cout << std::endl;
-        for (std::string &block_member : this->block_list)
-        {
-            std::cout << block_member << std::endl;
-        }
-    }
-    else if (role == "guest") {    
-        std::cout << "Username: " << this->username << std::endl;
-        std::cout << "Full name: " << this->full_name << std::endl;
-        std::cout << "Phone number: " << this->phone_number << std::endl;
-        std::cout << "Home address: " << this->home_address << std::endl;
-        std::cout << "Email: " << this->email << std::endl;
-        std::cout << "City: " << this->city << std::endl;
-        
-        std::cout << "Skills: " << std::endl;
-        for (Skill &skill : this->skills)
-        {
-            std::cout << skill.get_string() << std::endl;
-            std::cout << std::endl;
-        }
-        std::cout << "Available times: " << std::endl;
-        for (Period &available_time : this->available_times)
-        {   
-            std::cout << "Period 1" << std::endl;
-            std::cout << available_time.get_start_time_string() << std::endl;
-            std::cout << available_time.get_end_time_string() << std::endl;
-            std::cout << std::endl;
-        }
-        std::cout << std::endl;
-    }
-
-    // std::cout << "Credit: " << this->credit << std::endl;
 }

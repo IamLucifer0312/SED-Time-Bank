@@ -4,6 +4,10 @@
       {
         "end_time": "2023-11-11 12:00:00",
         "start_time": "2023-11-11 10:00:00"
+      },
+      {
+        "end_time": "2024-1-7 12:00:00",
+        "start_time": "2024-1-7 10:00:00"
       }
     ],
     "block_list": null,
@@ -26,13 +30,25 @@
         "skill_name": "Cooking"
       }
     ],
-    "username": "Helu"
+    "username": "Helu",
+    "available_jobs": [
+      {
+        "supporter_name": "Helu",
+        "skill_name": "Programming",
+        "start_time": "2023-11-11 10:00:00",
+        "end_time": "2023-11-11 12:00:00"
+      }
+    ]
   },
   {
     "available_times": [
       {
         "end_time": "2023-11-11 12:00:00",
         "start_time": "2023-11-11 10:00:00"
+      },
+      {
+        "end_time": "2024-1-7 12:00:00",
+        "start_time": "2024-1-7 10:00:00"
       }
     ],
     "block_list": ["babicutie"],
@@ -55,13 +71,25 @@
         "skill_name": "Cooking"
       }
     ],
-    "username": "ddd"
+    "username": "ddd",
+    "available_jobs": [
+      {
+        "supporter_name": "Helu",
+        "skill_name": "Programming",
+        "start_time": "2023-11-11 10:00:00",
+        "end_time": "2023-11-11 12:00:00"
+      }
+    ]
   },
   {
     "available_times": [
       {
         "end_time": "2023-11-11 12:00:00",
         "start_time": "2023-11-11 10:00:00"
+      },
+      {
+        "end_time": "2024-1-7 12:00:00",
+        "start_time": "2024-1-7 10:00:00"
       }
     ],
     "block_list": ["ddd"],
@@ -89,13 +117,25 @@
         "skill_name": "Teaching"
       }
     ],
-    "username": "TT"
+    "username": "TT",
+    "available_jobs": [
+      {
+        "supporter_name": "Helu",
+        "skill_name": "Programming",
+        "start_time": "2023-11-11 10:00:00",
+        "end_time": "2023-11-11 12:00:00"
+      }
+    ]
   },
   {
     "available_times": [
       {
         "end_time": "2024-1-7 12:00:00",
         "start_time": "2024-1-7 10:00:00"
+      },
+      {
+        "end_time": "2023-11-11 12:00:00",
+        "start_time": "2023-11-11 10:00:00"
       }
     ],
     "block_list": null,
@@ -118,24 +158,14 @@
         "skill_name": "Cooking"
       }
     ],
-    "username": "hung anh"
-  },
-  {
-    "available_times": [
+    "username": "hung anh",
+    "available_jobs": [
       {
-        "end_time": "2023-11-11 12:00:00",
-        "start_time": "2023-11-11 10:00:00"
+        "supporter_name": "Helu",
+        "skill_name": "Programming",
+        "start_time": "2024-1-7 10:00:00",
+        "end_time": "2024-1-7 12:00:00"
       }
-    ],
-    "block_list": null,
-    "city": "Ha noi",
-    "credit": 20.0,
-    "email": "dsji@gmail.com",
-    "full_name": "love ziu",
-    "home_address": "232 cau giay",
-    "password": "kkk",
-    "phone_number": "239239",
-    "skills": null,
-    "username": "babicutie"
+    ]
   }
 ]

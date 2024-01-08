@@ -16,28 +16,28 @@ class AvailableJob
 {
 private:
     string supporterName;
-    Period availableTime;
-    Skill skill;
+    Period* availableTime;
+    Skill* skill;
     public:
     // default constructor
-    AvailableJob() : supporterName("") {};
+    AvailableJob();
 
     // constructor
     AvailableJob(
         const string &supporterName,
-        const Period &availableTime,
-        const Skill &skill
-    ) {};
+        Period* availableTime,
+        Skill* skill
+    );
 
     // setter
     void set_supporter_name(const string &supporterName);
-    void set_available_time(const Period &availableTime);
-    void set_skill(const Skill &skill);
+    void set_available_time(Period &availableTime);
+    void set_skill(Skill &skill);
 
     // getter
     const string get_supporter_name() const;
-    const Period get_available_time() const;
-    const Skill get_skill() const;
+    const Period* get_available_time() const;
+    const Skill* get_skill() const;
 
 
 

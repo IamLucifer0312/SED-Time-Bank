@@ -13,7 +13,7 @@ Request::Request(string &host, AvailableJob &job, Period &workTime, Status &stat
     this->job = job;
     this->workTime = workTime;
     this->status = status;
-    this->totalCredit = workTime.get_duration_by_hour() * job.get_skill().get_consumed_per_hour();
+    this->totalCredit = workTime.get_duration_by_hour() * job.get_skill()->get_consumed_per_hour();
 }
 
 // setter

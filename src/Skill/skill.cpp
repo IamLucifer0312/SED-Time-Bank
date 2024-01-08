@@ -42,6 +42,10 @@ std::string Skill::get_string() const
            "  Minimum rating: " + std::to_string(mininumRating) + "\n";
 }
 
+const Skill* Skill::get_ptr() const
+{
+    return this;
+}
 
 void Skill::set_minimum_rating(const float &mininumRating)
 {

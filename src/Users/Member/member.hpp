@@ -121,6 +121,8 @@ namespace Users
 
         // Deserialization function for Member class
         void deserialize(const json &j);
+        Period* get_available_time_by_start_end(string &startTime, string &endTime);
+        Skill* get_skill_by_name(string &skillName);
         
         // show member info
         void show_member_info(std::string role);
