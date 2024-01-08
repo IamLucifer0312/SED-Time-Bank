@@ -7,6 +7,7 @@
 #include "../../AvailableJob/AvailableJob.hpp"
 #include "../../Request/Request.hpp"
 #include "../../Period/Period.hpp"
+#include "../../Utils/JsonConversion.hpp"
 
 using json = nlohmann::json;
 using std::string;

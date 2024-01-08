@@ -49,6 +49,8 @@ public:
 
     float get_duration_by_hour();
 
+    static void from_json(const nlohmann::json& j, Period& p);
+
 };
 
 #endif // PERIOD_HPP

@@ -1,4 +1,5 @@
 #include "Period.hpp"
+#include "../../nlohmann/json.hpp"
 
 // default constructor
 Period::Period()
@@ -105,4 +106,10 @@ time_t Period::get_end_time()
 float Period::get_duration_by_hour()
 {
     return durationByHour;
+}
+
+void Period::from_json(const nlohmann::json& j, Period& p) {
+    j.at("startTime").get_to(p.startTime);
+    j.at("endTime").get_to(p.endTime);
+    j.at("durationByHour").get_to(p.durationByHour);
 }
