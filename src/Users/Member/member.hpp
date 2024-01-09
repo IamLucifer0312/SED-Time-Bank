@@ -100,7 +100,7 @@ namespace Users
 
         // add 
         void add_skill(string &skill_name, float &consumed_per_hour, float &minimum_rating );
-        void add_available_job(Period &available_time, Skill &skill);
+        void add_available_job(string startTime, string endTime, Skill &skill);
         void add_available_time(string &startTime, string &endTime);
         void add_block_list(string &username);
 
@@ -121,7 +121,6 @@ namespace Users
 
         // Deserialization function for Member class
         void deserialize(const json &j);
-        Period* get_available_time_by_start_end(string &startTime, string &endTime);
         Skill* get_skill_by_name(string &skillName);
         
         // show member info

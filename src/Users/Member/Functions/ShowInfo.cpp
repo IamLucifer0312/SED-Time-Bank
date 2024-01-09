@@ -28,9 +28,10 @@ void Users::Member::show_member_info(std::string role) {
         {
             std::cout << available_job.get_supporter_name() << std::endl;
             std::cout << available_job.get_skill()->get_string() << std::endl;
-            std::cout << available_job.get_available_time()->get_start_time_string() << std::endl;
-            std::cout << available_job.get_available_time()->get_end_time_string() << std::endl;
+            std::cout << available_job.get_start_time() << std::endl;
+            std::cout << available_job.get_end_time() << std::endl;
         }
+        std::cout << "----------------------------" << std::endl;
         std::cout << std::endl;
     }
     else if (role == "admin" || role == "self")
@@ -65,9 +66,10 @@ void Users::Member::show_member_info(std::string role) {
         {
             std::cout << available_job.get_supporter_name() << std::endl;
             std::cout << available_job.get_skill()->get_string() << std::endl;
-            std::cout << available_job.get_available_time()->get_start_time_string() << std::endl;
-            std::cout << available_job.get_available_time()->get_end_time_string() << std::endl;
+            std::cout << available_job.get_start_time() << std::endl;
+            std::cout << available_job.get_end_time() << std::endl;
         }
+        std::cout << "----------------------------" << std::endl;
         std::cout << std::endl;
     }
     else if (role == "guest") {    
@@ -97,9 +99,10 @@ void Users::Member::show_member_info(std::string role) {
         {
             std::cout << available_job.get_supporter_name() << std::endl;
             std::cout << available_job.get_skill()->get_string() << std::endl;
-            std::cout << available_job.get_available_time()->get_start_time_string() << std::endl;
-            std::cout << available_job.get_available_time()->get_end_time_string() << std::endl;
+            std::cout << available_job.get_start_time() << std::endl;
+            std::cout << available_job.get_end_time() << std::endl;
         }
+        std::cout << "----------------------------" << std::endl;
         std::cout << std::endl;
     }
 

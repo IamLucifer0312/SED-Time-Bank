@@ -1,17 +1,5 @@
 #include "../member.hpp"
 
-Period* Users::Member::get_available_time_by_start_end(string &startTime, string &endTime)
-{
-    for (auto &availableTime : available_times)
-    {
-        if (availableTime.get_start_time_string() == startTime && availableTime.get_end_time_string() == endTime)
-        {
-           return &availableTime;
-        }
-    }
-    return nullptr;
-}
-
 Skill* Users::Member::get_skill_by_name(string &skillName)
 {
     for (auto &skill : skills)
@@ -80,8 +68,8 @@ void Users::Member::serialize(json &j) const
         json singleAvailableJob;
         singleAvailableJob["supporter_name"] = availableJob.get_supporter_name();
         singleAvailableJob["skill_name"] = availableJob.get_skill()->get_skill_name();
-        singleAvailableJob["start_time"] = availableJob.get_available_time()->get_start_time_string();
-        singleAvailableJob["end_time"] = availableJob.get_available_time()->get_end_time_string();
+        singleAvailableJob["start_time"] = availableJob.get_start_time();
+        singleAvailableJob["end_time"] = availableJob.get_end_time();
         availableJobsArray.push_back(singleAvailableJob);
     }
     j["available_jobs"] = availableJobsArray;
@@ -140,15 +128,18 @@ void Users::Member::deserialize(const json &j)
     if (j.find("available_jobs") != j.end())
     {
         const json &availableJobsArray = j.at("available_jobs");
+        std::string startTime = "";
+        std::string endTime = "";
         for (const auto &availableJob : availableJobsArray)
         {
             std::string supporterName = availableJob.at("supporter_name").get<std::string>();
             std::string skillName = availableJob.at("skill_name").get<std::string>();
-            std::string startTime = availableJob.at("start_time").get<std::string>();
-            std::string endTime = availableJob.at("end_time").get<std::string>();
+            startTime = availableJob.at("start_time").get<std::string>();
+            endTime = availableJob.at("end_time").get<std::string>();
 
             
-            available_jobs.emplace_back(supporterName, get_available_time_by_start_end(startTime, endTime), get_skill_by_name(skillName));
+            available_jobs.emplace_back(supporterName, startTime, endTime, get_skill_by_name(skillName));
+            
         }
     }
 

@@ -173,9 +173,9 @@ void Users::Member::add_skill(string &skill_name, float &consumed_per_hour, floa
 }
 
 // add available job
-void Users::Member::add_available_job(Period &available_time, Skill &skill)
+void Users::Member::add_available_job(string startTime, string endTime, Skill &skill)
 {
-    AvailableJob availableJob = AvailableJob(this->username, &available_time, &skill);
+    AvailableJob availableJob = AvailableJob(this->username, startTime, endTime, &skill);
     this->available_jobs.push_back(availableJob);
 }
 
