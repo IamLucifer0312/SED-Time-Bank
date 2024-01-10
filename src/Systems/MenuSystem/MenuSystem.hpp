@@ -73,6 +73,9 @@ public:
     void find_all_supporter(std::string role);
     void find_supporter_interface(std::string role);
 
+    // make request
+    void make_request(AvailableJob& job);
+
     //view received request
     void view_received_request();
 

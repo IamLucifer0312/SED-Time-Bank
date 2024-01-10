@@ -13,9 +13,20 @@ using std::string;
 #ifndef JSONCONVERSION_HPP
 #define JSONCONVERSION_HPP
 
-// overwrite json functions, will be moved to another file later
+namespace nlohmann {
+    template <>
+    // struct adl_serializer<YourType> {
+    //     static void to_json(json& j, const YourType& obj);
+    //     static void from_json(const json& j, YourType& obj);
+    // };
 
-// to_json functions
+    struct adl_serializer<Skill> {
+        static void to_json(json& j, const Skill& obj);
+        static void from_json(const json& j, Skill& obj);
+    };
+
+}
+
 
 void to_json(json &j, const Request &r); 
 
@@ -23,9 +34,8 @@ void to_json(json &j, const AvailableJob &h);
 
 void to_json(json &j, const Period &p);
 
-void to_json(json &j, const Skill &s);
+// void to_json(json &j, const Skill &s);
 
-// from_json functions
 
 void from_json(const json &j, Skill &s);
 

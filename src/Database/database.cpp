@@ -125,3 +125,15 @@ void Database::update_member(const Users::Member &member)
     std::cerr << "Error: Member not found." << std::endl;
     return;
 }
+
+// Finder
+Users::Member Database::find_member(const string &username) {
+    for (Users::Member &member : members) {
+        if (member.get_username() == username) {
+            return member;
+        }
+        else {
+            std::cerr << "Error: Member not found." << std::endl;
+        }
+    }
+}

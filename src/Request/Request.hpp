@@ -31,7 +31,7 @@ public:
     Request();
 
     // constructor
-    Request(string &hostUsername, AvailableJob &job, Period &workTime);
+    Request(const string &hostUsername, const AvailableJob &job, const Period &workTime);
 
     // setter
     void set_host(string &hostUsername);

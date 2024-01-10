@@ -7,7 +7,7 @@
 #include "../../AvailableJob/AvailableJob.hpp"
 #include "../../Request/Request.hpp"
 #include "../../Period/Period.hpp"
-#include "../../Utils/JsonConversion.hpp"
+// #include "../../Utils/JsonConversion.hpp"
 
 using json = nlohmann::json;
 using std::string;
@@ -105,6 +105,8 @@ namespace Users
         void add_available_job(Period &available_time, Skill &skill);
         void add_available_time(string &startTime, string &endTime);
         void add_block_list(string &username);
+        void add_sent_request(Request &request);
+        void add_received_request(Request &request);
 
         // remove
         void remove_skill(string &skill_name);

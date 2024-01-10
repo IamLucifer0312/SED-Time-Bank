@@ -6,7 +6,7 @@ Request::Request() : hostUsername(""), supporterUsername(""), job(AvailableJob()
 }
 
 // constructor
-Request::Request(string &hostUsername, AvailableJob &job, Period &workTime)
+Request::Request(const string &hostUsername, const AvailableJob &job, const Period &workTime)
 {
     this->hostUsername = hostUsername;
     this->supporterUsername = job.get_supporter_name();

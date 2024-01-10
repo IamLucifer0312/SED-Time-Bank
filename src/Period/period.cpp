@@ -93,23 +93,17 @@ const string Period::get_end_time_string() const
     return format_date_time(endTime);
 }
 
-time_t Period::get_start_time()
+const time_t Period::get_start_time() const
 {
     return startTime;
 }
 
-time_t Period::get_end_time()
+const time_t Period::get_end_time() const
 {
     return endTime;
 }
 
-float Period::get_duration_by_hour()
+const float Period::get_duration_by_hour() const
 {
     return durationByHour;
-}
-
-void Period::from_json(const nlohmann::json& j, Period& p) {
-    j.at("startTime").get_to(p.startTime);
-    j.at("endTime").get_to(p.endTime);
-    j.at("durationByHour").get_to(p.durationByHour);
 }

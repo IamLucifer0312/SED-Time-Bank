@@ -158,8 +158,8 @@ void Users::Member::serialize(json &j) const
     for (const Period &availableTime : available_times)
     {
         json singleAvailableTime;
-        singleAvailableTime["start_time"] =  availableTime.get_start_time_string();
-        singleAvailableTime["end_time"] =  availableTime.get_end_time_string();
+        singleAvailableTime["start_time"] = availableTime.get_start_time_string();
+        singleAvailableTime["end_time"] = availableTime.get_end_time_string();
         availableTimesArray.push_back(singleAvailableTime);
     }
 
@@ -172,16 +172,22 @@ void Users::Member::serialize(json &j) const
         blockListArray.push_back(block_member);
     }
     j["block_list"] = blockListArray;
-    
+
     // Creating a JSON array for recieved requests
-    json receivedRequestsArray;
-    for (const Request &request : receivedRequests)
-    {
-        json singleRequest = request;
-        receivedRequestsArray.push_back(singleRequest);
-    }
-    // Adding the recieved requests array to the JSON object
-    j["received_requests"] = receivedRequestsArray;
+    // json receivedRequestsArray;
+    // for (const Request &request : receivedRequests)
+    // {
+    //     json singleRequest;
+    //     json singleJob;
+    //     AvailableJob job = request.get_job();
+    //     singleJob["supporter_name"] = job.get_supporter_name();
+
+    //     singleRequest["host"] = request.get_host();
+    //     singleRequest["supporter"] = request.get_supporter();
+    //     singleRequest["job"] = singleJob;
+    // }
+    // // Adding the recieved requests array to the JSON object
+    // j["received_requests"] = receivedRequestsArray;
 }
 
 // Deserialization function for Member class
@@ -234,20 +240,20 @@ void Users::Member::deserialize(const json &j)
     }
 
     // Deserialize recieved requests array
-    if (j.find("received_requests") != j.end())
-    {
-        const json &receivedRequestsArray = j.at("received_Requests");
-        for (const auto &request : receivedRequestsArray)
-        {
-            std::string host = request.at("host").get<std::string>();
-            std::string supporter = request.at("supporter").get<std::string>();
-            AvailableJob job = request.at("job").get<AvailableJob>();
-            std::string workTime = request.at("work_time").get<std::string>();
-            Status status = static_cast<Status>(request.at("status").get<int>());
-            float totalCredit = request.at("total_credit").get<float>();
-            receivedRequests.emplace_back(host, supporter, job, workTime, status, totalCredit);
-        }
-    }
+    // if (j.find("received_requests") != j.end())
+    // {
+    //     const json &receivedRequestsArray = j.at("received_Requests");
+    //     for (const auto &request : receivedRequestsArray)
+    //     {
+    //         std::string host = request.at("host").get<std::string>();
+    //         std::string supporter = request.at("supporter").get<std::string>();
+    //         // AvailableJob job = request.at("job").get<AvailableJob>();
+    //         std::string workTime = request.at("work_time").get<std::string>();
+    //         Status status = static_cast<Status>(request.at("status").get<int>());
+    //         float totalCredit = request.at("total_credit").get<float>();
+    //         // receivedRequests.emplace_back(host, supporter, job, workTime, status, totalCredit);
+    //     }
+    // }
 }
 
 // Setters:
@@ -313,6 +319,15 @@ void Users::Member::add_block_list(string &username)
     this->block_list.push_back(username);
 }
 
+void Users::Member::add_sent_request(Request &request)
+{
+    this->sentRequests.push_back(request);
+}
+
+void Users::Member::add_received_request(Request &request)
+{
+    this->receivedRequests.push_back(request);
+}
 
 // remove
 void Users::Member::remove_skill(string &skill_name)
@@ -359,15 +374,17 @@ void Users::Member::remove_block_list(string &username)
     }
 }
 
-void Users::Member::show_member_info(std::string role) {
-    if (role == "member") {    
+void Users::Member::show_member_info(std::string role)
+{
+    if (role == "member")
+    {
         std::cout << "Username: " << this->username << std::endl;
         std::cout << "Full name: " << this->full_name << std::endl;
         std::cout << "Phone number: " << this->phone_number << std::endl;
         std::cout << "Home address: " << this->home_address << std::endl;
         std::cout << "Email: " << this->email << std::endl;
         std::cout << "City: " << this->city << std::endl;
-        
+
         std::cout << "Skills: " << std::endl;
         for (Skill &skill : this->skills)
         {
@@ -376,7 +393,7 @@ void Users::Member::show_member_info(std::string role) {
         }
         std::cout << "Available times: " << std::endl;
         for (Period &available_time : this->available_times)
-        {   
+        {
             std::cout << "Period 1" << std::endl;
             std::cout << available_time.get_start_time_string() << std::endl;
             std::cout << available_time.get_end_time_string() << std::endl;
@@ -411,14 +428,15 @@ void Users::Member::show_member_info(std::string role) {
             std::cout << block_member << std::endl;
         }
     }
-    else if (role == "guest") {    
+    else if (role == "guest")
+    {
         std::cout << "Username: " << this->username << std::endl;
         std::cout << "Full name: " << this->full_name << std::endl;
         std::cout << "Phone number: " << this->phone_number << std::endl;
         std::cout << "Home address: " << this->home_address << std::endl;
         std::cout << "Email: " << this->email << std::endl;
         std::cout << "City: " << this->city << std::endl;
-        
+
         std::cout << "Skills: " << std::endl;
         for (Skill &skill : this->skills)
         {
@@ -427,7 +445,7 @@ void Users::Member::show_member_info(std::string role) {
         }
         std::cout << "Available times: " << std::endl;
         for (Period &available_time : this->available_times)
-        {   
+        {
             std::cout << "Period 1" << std::endl;
             std::cout << available_time.get_start_time_string() << std::endl;
             std::cout << available_time.get_end_time_string() << std::endl;
