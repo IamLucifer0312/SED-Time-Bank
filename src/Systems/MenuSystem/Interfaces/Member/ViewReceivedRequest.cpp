@@ -3,9 +3,9 @@
 #include "../../../../Review/Review.hpp"
 #include <string>
 
+
 using std::cout;
 using std::cin;
-using std::string;
 
 void MenuSystem::view_received_request()
 {
@@ -81,22 +81,30 @@ void MenuSystem::accept_or_reject_request(vector<Request> &requests_list){
         int rating;
         string comment;
         HostReview review;
+        selected_request.get_host();
+        Users::Member host = userSystem.get_database().find_member(selected_request.get_host());
 
         switch (prompt_choice(0, 2))
+        
         {
             case 0:
                 break;
 
-            case 1:
-                selected_request.set_status(Status::ACCEPTED);
-                remove_request(selected_request, requests_list);
-                cout << "Request accepted." << std::endl;
-                cout << "Please rate your host from 1 to 5: " << std::endl;
-                cin >> rating;
-                cout << "Please comment about your host: " << std::endl;
-                cin >> comment;
-                review = HostReview(comment, rating);
-                break;
+        case 1:
+            
+            selected_request.set_status(Status::ACCEPTED);
+            remove_request(selected_request, requests_list);
+            // this->userSystem.get_current_member().add_credit(selected_request.get_total_credit());
+            // find_member(selected_request.get_host()).subtract_credit(selected_request.get_total_credit();
+            cout << "Request accepted." << std::endl;
+            cout << "Please rate your host from 1 to 5: " << std::endl;
+            cin >> rating;
+            cout << "Please comment about your host: " << std::endl;
+            cin >> comment;
+            review = HostReview(comment, rating);
+            host.add_host_review(review);
+
+            break;
 
             case 2:
                 selected_request.set_status(Status::REJECTED);

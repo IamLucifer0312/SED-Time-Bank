@@ -76,7 +76,7 @@ namespace Users
 
         const std::vector<AvailableJob> get_available_jobs() const;
 
-        const std::vector<Request> &get_received_requests() const;
+        std::vector<Request> &get_received_requests() ;
 
         const std::vector<Request> &get_sent_requests() const;
 
@@ -104,6 +104,8 @@ namespace Users
         void add_block_list(string &username);
         void add_sent_request(Request &request);
         void add_received_request(Request &request);
+        void Users::Member::add_host_review(HostReview &review);
+        void Users::Member::add_supporter_review(SupporterReview &review);
 
         // remove
         void remove_skill(string &skill_name);
