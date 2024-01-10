@@ -10,8 +10,6 @@
 #include <ctime>
 #include "../../Review/Review.hpp"
 
-
-
 using json = nlohmann::json;
 using std::string;
 using std::vector;
@@ -55,8 +53,7 @@ namespace Users
             const string &home_address,
             const string &email,
             const string &city,
-            const float &credit
-            );
+            const float &credit);
 
         // Getter methods
         const string get_full_name() const;
@@ -78,14 +75,12 @@ namespace Users
         const std::vector<Period> get_available_times() const;
 
         const std::vector<AvailableJob> get_available_jobs() const;
-        
-        const std::vector<Request> get_received_requests() const;
 
-        const std::vector<Request> get_sent_requests() const;
+        const std::vector<Request> &get_received_requests() const;
+
+        const std::vector<Request> &get_sent_requests() const;
 
         const std::vector<string> get_block_list() const;
-
-
 
         // Setter methods
         void set_full_name(const string &full_name);
@@ -102,8 +97,8 @@ namespace Users
 
         void set_password(const string &password);
 
-        // add 
-        void add_skill(string &skill_name, float &consumed_per_hour, float &minimum_rating );
+        // add
+        void add_skill(string &skill_name, float &consumed_per_hour, float &minimum_rating);
         void add_available_job(string startTime, string endTime, Skill &skill);
         void add_available_time(string &startTime, string &endTime);
         void add_block_list(string &username);
@@ -127,14 +122,13 @@ namespace Users
 
         // Deserialization function for Member class
         void deserialize(const json &j);
-        Skill* get_skill_by_name(string &skillName);
-        
+        Skill *get_skill_by_name(string &skillName);
+
         // show member info
         void show_member_info(std::string role);
 
         // check overlap available time
         bool is_overlap(time_t startTime, time_t endTime);
-
     };
 
 } // namespace Users

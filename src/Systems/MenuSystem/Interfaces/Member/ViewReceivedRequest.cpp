@@ -78,34 +78,34 @@ void MenuSystem::accept_or_reject_request(vector<Request> &requests_list){
         cout << "1. Accept" << std::endl;
         cout << "2. Reject" << std::endl;
 
+        int rating;
+        string comment;
+        HostReview review;
+
         switch (prompt_choice(0, 2))
         {
-        case 0:
-            break;
+            case 0:
+                break;
 
-        case 1:
-            int rating;
-            string comment;
-            selected_request.set_status(Status::ACCEPTED);
-            remove_request(selected_request, requests_list);
-            // this->userSystem.get_current_member().add_credit(selected_request.get_total_credit());
-            // find_member(selected_request.get_host()).subtract_credit(selected_request.get_total_credit();
-            cout << "Request accepted." << std::endl;
-            cout << "Please rate your host from 1 to 5: " << std::endl;
-            cin >> rating;
-            cout << "Please comment about your host: " << std::endl;
-            cin >> comment;
-            HostReview review = HostReview(comment, rating);
-            break;
+            case 1:
+                selected_request.set_status(Status::ACCEPTED);
+                remove_request(selected_request, requests_list);
+                cout << "Request accepted." << std::endl;
+                cout << "Please rate your host from 1 to 5: " << std::endl;
+                cin >> rating;
+                cout << "Please comment about your host: " << std::endl;
+                cin >> comment;
+                review = HostReview(comment, rating);
+                break;
 
-        case 2:
-            selected_request.set_status(Status::REJECTED);
-            remove_request(selected_request, requests_list);
-            cout << "Request rejected." << std::endl;
-            break;
-        
-        default:
-            break;
+            case 2:
+                selected_request.set_status(Status::REJECTED);
+                remove_request(selected_request, requests_list);
+                cout << "Request rejected." << std::endl;
+                break;
+
+            default:
+                break;
         }
 }
 
