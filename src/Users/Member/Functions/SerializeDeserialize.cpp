@@ -6,7 +6,7 @@ Skill* Users::Member::get_skill_by_name(string &skillName)
     {
         if (skill.get_skill_name() == skillName)
         {
-            return &skill;
+            return new Skill(skill);
         }
     }
     return nullptr;
@@ -137,8 +137,9 @@ void Users::Member::deserialize(const json &j)
             startTime = availableJob.at("start_time").get<std::string>();
             endTime = availableJob.at("end_time").get<std::string>();
 
-            
-            available_jobs.emplace_back(supporterName, startTime, endTime, get_skill_by_name(skillName));
+            Skill* skill = get_skill_by_name(skillName);            
+            available_jobs.emplace_back(supporterName, startTime, endTime, skill);
+            delete skill;
             
         }
     }

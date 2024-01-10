@@ -23,7 +23,7 @@
                         << "3. Block member.\n"
                         << "4. View request. \n"
                         << "5. Find supporter. \n"
-                        << "6. View the tutor. \n";
+                        << "6. Add available job. \n";
 
             switch (prompt_choice(0, 6))
             {
