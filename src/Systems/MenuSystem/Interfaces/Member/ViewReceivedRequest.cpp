@@ -7,6 +7,7 @@
 using std::cout;
 using std::cin;
 
+
 void MenuSystem::view_received_request()
 {
     bool is_running = true;
@@ -63,7 +64,7 @@ for (int i = 0; i < requests_list.size(); ++i) {
 
 
 void MenuSystem::accept_or_reject_request(vector<Request> &requests_list){
-    cout << "Enter the number of the request you want to accept or reject: ";
+    cout << "Enter the request (number) you want to accept or reject: ";
     int selected_request_number = prompt_choice(1, requests_list.size() + 1);
     
     Request &selected_request = requests_list[selected_request_number - 1];
@@ -90,7 +91,7 @@ void MenuSystem::accept_or_reject_request(vector<Request> &requests_list){
             case 0:
                 break;
 
-        case 1:
+            case 1:
             
             selected_request.set_status(Status::ACCEPTED);
             remove_request(selected_request, requests_list);

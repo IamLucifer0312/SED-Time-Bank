@@ -86,7 +86,7 @@ vector<Request> &Users::Member::get_received_requests()
     return receivedRequests;
 }
 
-const std::vector<Request> &Users::Member::get_sent_requests() const
+std::vector<Request> &Users::Member::get_sent_requests()
 {
     return sentRequests;
 }

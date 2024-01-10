@@ -81,8 +81,15 @@ public:
     //view received request
     void view_received_request();
 
+    //view sent request
+    void view_sent_request();
+
     // accept or reject a request
     void accept_or_reject_request(vector<Request> &requests_list);
+
+    //accepted in sent requests
+    void accepted_request(vector<Request> &requests_list);
+
 
     //remove_request
     bool remove_request(Request &request, vector<Request> &requests_list);

@@ -78,7 +78,7 @@ namespace Users
 
         std::vector<Request> &get_received_requests() ;
 
-        const std::vector<Request> &get_sent_requests() const;
+        std::vector<Request> &get_sent_requests();
 
         const std::vector<string> get_block_list() const;
 
