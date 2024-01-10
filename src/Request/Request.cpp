@@ -1,25 +1,25 @@
 #include "Request.hpp"
 
 // default constructor
-Request::Request() : hostUsername(""), supporterUsername(""), job(AvailableJob()), workTime(Period()), status(PENDING), totalCredit(0)
+Request::Request() : host(nullptr), supporter(nullptr), job(AvailableJob()), workTime(Period()), status(PENDING), totalCredit(0)
 {
 }
 
 // constructor
 Request::Request(const string &hostUsername, const AvailableJob &job, const Period &workTime)
 {
-    this->hostUsername = hostUsername;
-    this->supporterUsername = job.get_supporter_name();
+    this->host = host;
+    this->supporter = job.get_supporter_name();
     this->job = job;
     this->workTime = workTime;
-    this->status = Status::PENDING;
-    this->totalCredit = workTime.get_duration_by_hour() * job.get_skill().get_consumed_per_hour();
+    this->status = status;
+    this->totalCredit = workTime.get_duration_by_hour() * job.get_skill()->get_consumed_per_hour();
 }
 
 // setter
-void Request::set_host(string &hostUsername)
+void Request::set_host(string &host)
 {
-    this->hostUsername = hostUsername;
+    this->host = host;
 }
 
 void Request::set_job(AvailableJob job)
@@ -43,42 +43,32 @@ void Request::set_total_credit(float totalCredit)
 }
 
 // getter
-const string Request::get_host() const
+string Request::get_host()
 {
-    return hostUsername;
+    return host;
 }
 
-const string Request::get_supporter() const
+string Request::get_supporter()
 {
-    return supporterUsername;
+    return supporter;
 }
 
-const AvailableJob Request::get_job() const
+AvailableJob Request::get_job()
 {
     return job;
 }
 
-const string Request::get_job_name() const
-{
-    return job.get_skill().get_skill_name();
-}
-
-const Period Request::get_work_time_object() const
+Period Request::get_work_time()
 {
     return workTime;
 }
 
-const string Request::get_work_time_string() const 
-{
-    return workTime.get_start_time_string() + " - " + workTime.get_end_time_string();
-}
-
-const Status Request::get_status() const 
+Status Request::get_status()
 {
     return status;
 }
 
-const float Request::get_total_credit() const
+float Request::get_total_credit()
 {
     return totalCredit;
 }

@@ -4,6 +4,8 @@
 #include <string>
 using std::string;
 
+
+
 using std::vector;
 
 // Check if file is already included
@@ -14,31 +16,36 @@ class AvailableJob
 {
 private:
     string supporterName;
-    Period availableTime;
-    Skill skill;
-
-public:
+    string startTime;
+    string endTime;
+    Skill* skill;
+    public:
     // default constructor
     AvailableJob();
 
     // constructor
     AvailableJob(
         const string &supporterName,
-        const Period &availableTime,
-        const Skill &skill);
+        string &startTime,
+        string &endTime,
+        Skill* skill
+    );
 
     // setter
     void set_supporter_name(const string &supporterName);
-    void set_available_time(const Period &availableTime);
-    void set_skill(const Skill &skill);
+    void set_start_time(const string &startTime);
+    void set_end_time(const string &endTime);
+    void set_skill(Skill &skill);
 
     // getter
     const string get_supporter_name() const;
-    const Period get_available_time() const;
-    const Skill get_skill() const;
+    const string get_start_time() const;
+    const string get_end_time() const;
+    const Skill* get_skill() const;
 
-    // copy constructor
-    AvailableJob(const AvailableJob &other);
+
+
 };
 
 #endif // AVAILABLEJOB_HPP
+

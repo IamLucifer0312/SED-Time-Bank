@@ -7,7 +7,9 @@
 #include "../../AvailableJob/AvailableJob.hpp"
 #include "../../Request/Request.hpp"
 #include "../../Period/Period.hpp"
-// #include "../../Utils/JsonConversion.hpp"
+#include <ctime>
+
+
 
 using json = nlohmann::json;
 using std::string;
@@ -65,10 +67,6 @@ namespace Users
 
         const float get_credit() const;
 
-        const void add_credit(float totalCredit) const;
-
-        const void substract_credit(float totalCredit) const;
-
         const string get_password() const;
 
         const std::vector<Skill> get_skills() const;
@@ -77,7 +75,7 @@ namespace Users
 
         const std::vector<AvailableJob> get_available_jobs() const;
         
-        std::vector<Request>& get_received_requests();
+        const std::vector<Request> get_received_requests() const;
 
         const std::vector<Request> get_sent_requests() const;
 
@@ -102,7 +100,7 @@ namespace Users
 
         // add 
         void add_skill(string &skill_name, float &consumed_per_hour, float &minimum_rating );
-        void add_available_job(Period &available_time, Skill &skill);
+        void add_available_job(string startTime, string endTime, Skill &skill);
         void add_available_time(string &startTime, string &endTime);
         void add_block_list(string &username);
         void add_sent_request(Request &request);
@@ -125,9 +123,13 @@ namespace Users
 
         // Deserialization function for Member class
         void deserialize(const json &j);
+        Skill* get_skill_by_name(string &skillName);
         
         // show member info
         void show_member_info(std::string role);
+
+        // check overlap available time
+        bool is_overlap(time_t startTime, time_t endTime);
 
     };
 

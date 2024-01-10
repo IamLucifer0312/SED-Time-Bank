@@ -3,7 +3,6 @@
 #include <map>
 #include <vector>
 #include <fstream>
-
 // Check if the file is already included.
 #ifndef MENUSYSTEM_HPP
 #define MENUSYSTEM_HPP
@@ -52,6 +51,7 @@ public:
     // show members
     void show_members(std::string role);
     void show_members_for_city(std::string city, std::string role);
+    void show_members_for_time(std::string startTime, std::string endTime, std::string role);
     // clear screen
     void clear_screen();
 
@@ -84,6 +84,8 @@ public:
 
     //remove_request
     bool remove_request(Request &request, vector<Request> &requests_list);
+
+    void find_supporter_availableTime(std::string role);
 
     friend class UserSystem;
 

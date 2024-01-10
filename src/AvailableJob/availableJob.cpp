@@ -3,21 +3,24 @@
 #include <string>
 
 // default constructor
-AvailableJob::AvailableJob()
-{
+AvailableJob::AvailableJob() {
     this->supporterName = "";
-    this->availableTime = Period();
-    this->skill = Skill();
+    this->startTime = "";
+    this->endTime = "";
+    this->skill = nullptr;
 }
+
 
 // constructor
 AvailableJob::AvailableJob(
     const std::string &supporterName,
-    const Period &availableTime,
-    const Skill &skill) : AvailableJob()
-{
+    string &startTime,
+    string &endTime,
+    Skill* skill
+) : AvailableJob() {
     this->supporterName = supporterName;
-    this->availableTime = availableTime;
+    this->startTime = startTime;
+    this->endTime = endTime;
     this->skill = skill;
 }
 
@@ -27,14 +30,19 @@ void AvailableJob::set_supporter_name(const string &supporterName)
     this->supporterName = supporterName;
 }
 
-void AvailableJob::set_available_time(const Period &availableTime)
+void AvailableJob::set_start_time(const string &startTime)
 {
-    this->availableTime = availableTime;
+    this->startTime = startTime;
 }
 
-void AvailableJob::set_skill(const Skill &skill)
+void AvailableJob::set_end_time(const string &endTime)
 {
-    this->skill = skill;
+    this->endTime = endTime;
+}
+
+void AvailableJob::set_skill(Skill &skill)
+{
+    this->skill = &skill;
 }
 
 // getter
@@ -44,20 +52,20 @@ const string AvailableJob::get_supporter_name() const
     return supporterName;
 }
 
-const Period AvailableJob::get_available_time() const
+const string AvailableJob::get_start_time() const
 {
-    return availableTime;
+    return startTime;
 }
 
-const Skill AvailableJob::get_skill() const
+const string AvailableJob::get_end_time() const
+{
+    return endTime;
+}
+
+
+const Skill* AvailableJob::get_skill() const
 {
     return skill;
 }
 
-// copy constructor
-AvailableJob::AvailableJob(const AvailableJob &other)
-{
-    this->supporterName = other.supporterName;
-    this->availableTime = other.availableTime;
-    this->skill = other.skill;
-}
+

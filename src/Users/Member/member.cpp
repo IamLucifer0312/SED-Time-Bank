@@ -1,5 +1,7 @@
 #include <iostream>
 #include "Member.hpp"
+#include "Functions/SerializeDeserialize.cpp"
+#include "Functions/ShowInfo.cpp"
 
 // default constructor
 Users::Member::Member()
@@ -79,7 +81,7 @@ const std::vector<AvailableJob> Users::Member::get_available_jobs() const
     return available_jobs;
 }
 
-vector<Request> &Users::Member::get_received_requests()
+const vector<Request> Users::Member::get_received_requests() const
 {
     return receivedRequests;
 }
@@ -138,7 +140,6 @@ void Users::Member::serialize(json &j) const
         {"credit", credit}
         // Add more member variables to serialize
     };
-
     // Creating a JSON array for skills
     json skillsArray;
     for (const Skill &skill : skills)
@@ -301,9 +302,9 @@ void Users::Member::add_skill(string &skill_name, float &consumed_per_hour, floa
 }
 
 // add available job
-void Users::Member::add_available_job(Period &available_time, Skill &skill)
+void Users::Member::add_available_job(string startTime, string endTime, Skill &skill)
 {
-    AvailableJob availableJob = AvailableJob(this->username, available_time, skill);
+    AvailableJob availableJob = AvailableJob(this->username, startTime, endTime, &skill);
     this->available_jobs.push_back(availableJob);
 }
 
@@ -372,6 +373,22 @@ void Users::Member::remove_block_list(string &username)
             this->block_list.erase(this->block_list.begin() + i);
         }
     }
+}
+
+bool Users::Member::is_overlap(time_t startTime, time_t endTime)
+{
+    for (Period &available_time : this->available_times)
+    {
+        if (endTime < available_time.get_start_time() || available_time.get_end_time() < startTime)
+        {
+            return false;
+        }
+        if (static_cast<int>(difftime(available_time.get_start_time(), startTime)) <= 1800)
+        {
+            return true;
+        }
+    }
+    return false;
 }
 
 void Users::Member::show_member_info(std::string role)

@@ -42,16 +42,12 @@ std::string Skill::get_string() const
            "  Minimum rating: " + std::to_string(mininumRating) + "\n";
 }
 
+const Skill* Skill::get_ptr() const
+{
+    return this;
+}
 
 void Skill::set_minimum_rating(const float &mininumRating)
 {
     this->mininumRating = limitToRange(mininumRating, 0, 5);
-}
-
-// copy constructor
-Skill::Skill(const Skill &other)
-{
-    this->skillName = other.skillName;
-    this->consumedPerHour = other.consumedPerHour;
-    this->mininumRating = other.mininumRating;
 }

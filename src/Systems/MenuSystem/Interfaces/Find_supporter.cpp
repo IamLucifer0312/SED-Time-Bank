@@ -17,6 +17,8 @@ void MenuSystem::find_supporter_interface(std::string role){
             find_supporter_city(role);
             break;
         case 2:
+            clear_screen();
+            find_supporter_availableTime(role);
             break;
         case 3:
             clear_screen();
