@@ -28,12 +28,12 @@ SupporterReview::SupporterReview(string &comment, int &skillRating, int &support
 
 //getter
 
-const int HostReview::get_host_rating() const{
-    return hostRating;
+const string Review::get_comment() const{
+    return comment;
 }
 
-const string HostReview::get_comment() const{
-    return comment;
+const int HostReview::get_host_rating() const{
+    return hostRating;
 }
 
 const int SupporterReview::get_supporter_rating() const{

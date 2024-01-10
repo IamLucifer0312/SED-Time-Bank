@@ -19,7 +19,7 @@ public:
     Review(string &comment);
 
     // getter
-    virtual const string get_comment() const;
+    const string get_comment() const;
     
 };
 
@@ -36,7 +36,6 @@ class HostReview : public Review {
 
         // getter
         const int get_host_rating() const;
-        const string get_comment() const;
 
         // setter
         void set_host_rating(int &hostRating);
@@ -56,7 +55,6 @@ class SupporterReview : public Review {
 
         // getter
         const int get_supporter_rating() const;
-        const string get_comment() const;
         const int get_skill_rating() const;
 
         // setter

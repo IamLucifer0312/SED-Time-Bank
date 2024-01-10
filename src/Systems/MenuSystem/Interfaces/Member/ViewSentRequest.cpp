@@ -31,10 +31,10 @@ void MenuSystem::view_sent_request(){
                 Request request = requests_list[i];
                 cout << "Request " << i + 1 << ":" << std::endl;
                 cout << "Supporter: " << request.get_supporter() << std::endl;
-                cout << "Work time: " << request.get_work_time_string() << std::endl;
+                cout << "Work time: " << request.get_job().get_start_time() << " - " << request.get_job().get_end_time() << std::endl;
                 cout << "Credit: " << request.get_total_credit() << std::endl;
-                cout << "Skill: " << request.get_job_name() << std::endl;
-                cout << //status
+                cout << "Skill: " << request.get_job().get_skill()->get_skill_name() << std::endl;
+                cout << "Status: " << request.get_status_string() << std::endl;
             }
 
             cout << "What would you like to do?" << std::endl;
@@ -68,9 +68,9 @@ void MenuSystem::accepted_request(vector<Request> &requests_list){
     Request &selected_request = requests_list[selected_request_number - 1];
         cout << "Request " << selected_request_number << ":" << std::endl;
         cout << "Host: " << selected_request.get_supporter() << std::endl;
-        cout << "Work time: " << selected_request.get_work_time_string() << std::endl;
+        cout << "Work time: " << selected_request.get_job().get_start_time() << " - " << selected_request.get_job().get_end_time() << std::endl;
         cout << "Credit: " << selected_request.get_total_credit() << std::endl;
-        cout << "Skill: " << selected_request.get_job_name() << std::endl;
+        cout << "Skill: " << selected_request.get_job().get_skill()->get_skill_name() << std::endl;
 
         int rating;
         string comment;

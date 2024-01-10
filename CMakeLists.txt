@@ -16,13 +16,14 @@ set(SOURCES
     src/Database/database.cpp
 
     src/Systems/UserSystem/userSystem.cpp
-    
+
 
     src/Systems/MenuSystem/menuSystem.cpp
     src/Skill/skill.cpp
     src/Period/period.cpp
     src/AvailableJob/availableJob.cpp
-
+    src/Review/review.cpp
+    src/Request/request.cpp
     main.cpp
 )
 

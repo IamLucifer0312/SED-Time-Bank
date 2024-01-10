@@ -136,4 +136,5 @@ Users::Member Database::find_member(const string &username) {
             std::cerr << "Error: Member not found." << std::endl;
         }
     }
+    return Users::Member();
 }

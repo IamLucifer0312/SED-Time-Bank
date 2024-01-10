@@ -36,9 +36,9 @@ for (int i = 0; i < requests_list.size(); ++i) {
         Request request = requests_list[i];
         cout << "Request " << i + 1 << ":" << std::endl;
         cout << "Host: " << request.get_host() << std::endl;
-        cout << "Work time: " << request.get_work_time_string() << std::endl;
+        cout << "Work time: " << request.get_job().get_start_time() << " - " << request.get_job().get_end_time() << std::endl;
         cout << "Credit: " << request.get_total_credit() << std::endl;
-        cout << "Skill: " << request.get_job_name() << std::endl;
+        cout << "Skill: " << request.get_job().get_skill()->get_skill_name() << std::endl;
     }
 
     cout << "What would you like to do?" << std::endl;
@@ -70,9 +70,9 @@ void MenuSystem::accept_or_reject_request(vector<Request> &requests_list){
     Request &selected_request = requests_list[selected_request_number - 1];
         cout << "Request " << selected_request_number << ":" << std::endl;
         cout << "Host: " << selected_request.get_host() << std::endl;
-        cout << "Work time: " << selected_request.get_work_time_string() << std::endl;
+        cout << "Work time: " << selected_request.get_job().get_start_time() << " - " << selected_request.get_job().get_end_time() << std::endl;
         cout << "Credit: " << selected_request.get_total_credit() << std::endl;
-        cout << "Skill: " << selected_request.get_job_name() << std::endl;
+        cout << "Skill: " << selected_request.get_job().get_skill()->get_skill_name() << std::endl;
 
         cout << "What would you like to do?" << std::endl;
         cout << "0. Back" << std::endl;
@@ -124,7 +124,7 @@ bool MenuSystem::remove_request(Request &request, vector<Request> &requests_list
     string hostUsername = request.get_host();
     // // Find the iterator to the element with the specified value
     auto it = std::find_if(requests_list.begin(), requests_list.end(),
-                     [hostUsername](const Request& obj) {
+                     [hostUsername](Request& obj) {
                          return obj.get_host() == hostUsername;
                     });
 

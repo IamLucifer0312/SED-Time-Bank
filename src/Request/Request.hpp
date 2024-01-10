@@ -45,8 +45,8 @@ public:
     AvailableJob get_job();
     Period get_work_time();
     Status get_status();
+    string get_status_string();
     float get_total_credit();
-
 };
 
 #endif // REQUEST_HPP

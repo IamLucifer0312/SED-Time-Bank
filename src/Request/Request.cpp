@@ -68,8 +68,22 @@ Status Request::get_status()
     return status;
 }
 
+string Request::get_status_string()
+{
+    switch (status)
+    {
+    case PENDING:
+        return "PENDING";
+    case ACCEPTED:
+        return "ACCEPTED";
+    case REJECTED:
+        return "REJECTED";
+    default:
+    return "UNKNOWN";
+    }
+}
+
 float Request::get_total_credit()
 {
     return totalCredit;
 }
-
