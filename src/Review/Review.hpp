@@ -8,7 +8,7 @@ using std::string;
 #define REVIEW_HPP
 
 class Review {
-private:
+protected:
     string comment;
     
 public:
@@ -19,7 +19,7 @@ public:
     Review(string &comment);
 
     // getter
-    const string get_comment() const;
+    virtual const string get_comment() const;
     
 };
 
@@ -60,7 +60,7 @@ class SupporterReview : public Review {
         const int get_skill_rating() const;
 
         // setter
-        void set_supporter_rating(int &hostRating);
+        void set_supporter_rating(int &supporterReview);
         void set_skill_rating(int &skillRating);
 };
 

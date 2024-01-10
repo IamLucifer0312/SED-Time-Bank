@@ -8,6 +8,7 @@
 #include "../../Request/Request.hpp"
 #include "../../Period/Period.hpp"
 #include <ctime>
+#include "../../Review/Review.hpp"
 
 
 
@@ -35,6 +36,9 @@ namespace Users
         vector<Request> receivedRequests;
         vector<Request> sentRequests;
         vector<string> block_list;
+        vector<HostReview> host_reviews;
+        vector<SupporterReview> supporter_reviews;
+
 
         float credit;
 

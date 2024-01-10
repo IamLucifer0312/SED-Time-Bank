@@ -1,7 +1,11 @@
 #include "../../MenuSystem.hpp"
 #include "../../../../Request/Request.hpp"
+#include "../../../../Review/Review.hpp"
+#include <string>
 
 using std::cout;
+using std::cin;
+using std::string;
 
 void MenuSystem::view_received_request()
 {
@@ -12,10 +16,21 @@ while (is_running)
 vector<Request> &requests_list = this->userSystem.get_current_member().get_received_requests();
 
 if (requests_list.size() == 0){
-    cout << "There are no requests.";
+    cout << "There are no requests." << std::endl;
     is_running = false;
-}
 
+    cout << "0. Back" << std::endl;
+
+    switch (prompt_choice(0,0))
+    {
+    case 0:
+        is_running = false;
+        break;
+    default:
+        break;
+}
+}
+else{
 for (int i = 0; i < requests_list.size(); ++i) {
         Request request = requests_list[i];
         cout << "Request " << i + 1 << ":" << std::endl;
@@ -38,7 +53,11 @@ for (int i = 0; i < requests_list.size(); ++i) {
     case 1:
         accept_or_reject_request(requests_list);
         break;
+    
+    default:
+        break;
     }
+}
 }
 }
 
@@ -65,12 +84,18 @@ void MenuSystem::accept_or_reject_request(vector<Request> &requests_list){
             break;
 
         case 1:
+            int rating;
+            string comment;
             selected_request.set_status(Status::ACCEPTED);
             remove_request(selected_request, requests_list);
             // this->userSystem.get_current_member().add_credit(selected_request.get_total_credit());
             // find_member(selected_request.get_host()).subtract_credit(selected_request.get_total_credit();
             cout << "Request accepted." << std::endl;
-            cout << "Please review the host:";
+            cout << "Please rate your host from 1 to 5: " << std::endl;
+            cin >> rating;
+            cout << "Please comment about your host: " << std::endl;
+            cin >> comment;
+            HostReview review = HostReview(comment, rating);
             break;
 
         case 2:

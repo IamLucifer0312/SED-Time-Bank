@@ -3,6 +3,8 @@
 #include <map>
 #include <vector>
 #include <fstream>
+#include "../../Review/Review.hpp"
+
 // Check if the file is already included.
 #ifndef MENUSYSTEM_HPP
 #define MENUSYSTEM_HPP
