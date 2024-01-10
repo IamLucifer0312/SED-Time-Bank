@@ -3,7 +3,7 @@
 #include "Interfaces/GuestMenu.cpp"
 #include "Interfaces/MemberMenu.cpp"
 #include "Interfaces/AdminMenu.cpp"
-#include "Interfaces/LoginRegisterMenu.cpp"
+#include "Interfaces/LogInRegisterMenu.cpp"
 #include "Methods/ClearScreen.cpp"
 #include "Interfaces/change_new_password.cpp"
 #include "Interfaces/block_member.cpp"

@@ -30,23 +30,25 @@ public:
     Request();
 
     // constructor
-    Request(const string &hostUsername, const AvailableJob &job, const Period &workTime);
+    Request(const string &hostUsername, const AvailableJob &job, const Period &workTime, const Status &status);
 
     // setter
     void set_host(string &host);
     void set_job(AvailableJob job);
     void set_work_time(Period workTime);
     void set_status(Status status);
+
+    Status string_to_status(string str);
     void set_total_credit(float totalCredit);
 
     // getter
-    string get_host();
-    string get_supporter();
-    AvailableJob get_job();
-    Period get_work_time();
-    Status get_status();
-    string get_status_string();
-    float get_total_credit();
+    const string get_host() const;
+    const string get_supporter() const;
+    const AvailableJob get_job() const;
+    const Period get_work_time() const;
+    const Status get_status() const;
+    const string get_status_string() const;
+    const float get_total_credit() const;
 };
 
 #endif // REQUEST_HPP

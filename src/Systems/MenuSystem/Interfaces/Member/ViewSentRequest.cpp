@@ -50,10 +50,7 @@ void MenuSystem::view_sent_request(){
             case 1:
 
                 break;
-            
-            
-
-    
+        
             default:
                 break;
             }

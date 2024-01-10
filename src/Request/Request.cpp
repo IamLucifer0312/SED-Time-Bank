@@ -1,14 +1,15 @@
 #include "Request.hpp"
 
+
 // default constructor
 Request::Request() : host(nullptr), supporter(nullptr), job(AvailableJob()), workTime(Period()), status(PENDING), totalCredit(0)
 {
 }
 
 // constructor
-Request::Request(const string &hostUsername, const AvailableJob &job, const Period &workTime)
+Request::Request(const string &hostUsername, const AvailableJob &job, const Period &workTime, const Status &status)
 {
-    this->host = host;
+    this->host = hostUsername;
     this->supporter = job.get_supporter_name();
     this->job = job;
     this->workTime = workTime;
@@ -42,33 +43,46 @@ void Request::set_total_credit(float totalCredit)
     this->totalCredit = totalCredit;
 }
 
+// string to status
+Status Request::string_to_status(string str)
+{
+    if (str == "PENDING")
+        return PENDING;
+    else if (str == "ACCEPTED")
+        return ACCEPTED;
+    else if (str == "REJECTED")
+        return REJECTED;
+    else
+        return PENDING;
+}
+
 // getter
-string Request::get_host()
+const string Request::get_host() const
 {
     return host;
 }
 
-string Request::get_supporter()
+const string Request::get_supporter() const
 {
     return supporter;
 }
 
-AvailableJob Request::get_job()
+const AvailableJob Request::get_job() const
 {
     return job;
 }
 
-Period Request::get_work_time()
+const Period Request::get_work_time() const
 {
     return workTime;
 }
 
-Status Request::get_status()
+const Status Request::get_status() const
 {
     return status;
 }
 
-string Request::get_status_string()
+const string Request::get_status_string() const
 {
     switch (status)
     {
@@ -83,7 +97,7 @@ string Request::get_status_string()
     }
 }
 
-float Request::get_total_credit()
+const float Request::get_total_credit() const
 {
     return totalCredit;
 }

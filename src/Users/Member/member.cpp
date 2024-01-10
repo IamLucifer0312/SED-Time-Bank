@@ -83,12 +83,12 @@ const std::vector<AvailableJob> Users::Member::get_available_jobs() const
 
 vector<Request> &Users::Member::get_received_requests() 
 {
-    return receivedRequests;
+    return received_requests;
 }
 
 std::vector<Request> &Users::Member::get_sent_requests()
 {
-    return sentRequests;
+    return sent_requests;
 }
 
 const std::vector<Period> Users::Member::get_available_times() const
@@ -191,12 +191,12 @@ void Users::Member::add_block_list(string &username)
 
 void Users::Member::add_sent_request(Request &request)
 {
-    this->sentRequests.push_back(request);
+    this->sent_requests.push_back(request);
 }
 
 void Users::Member::add_received_request(Request &request)
 {
-    this->receivedRequests.push_back(request);
+    this->received_requests.push_back(request);
 }
 
 void Users::Member::add_host_review(HostReview &review) {

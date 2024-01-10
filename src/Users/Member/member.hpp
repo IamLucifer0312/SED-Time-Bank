@@ -31,8 +31,8 @@ namespace Users
         vector<Skill> skills;
         vector<AvailableJob> available_jobs;
         vector<Period> available_times;
-        vector<Request> receivedRequests;
-        vector<Request> sentRequests;
+        vector<Request> received_requests;
+        vector<Request> sent_requests;
         vector<string> block_list;
         vector<HostReview> host_reviews;
         vector<SupporterReview> supporter_reviews;

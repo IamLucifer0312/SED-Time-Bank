@@ -1,7 +1,7 @@
-#include "../member.hpp"
+#include "../Member.hpp"
 
 void Users::Member::show_member_info(std::string role) {
-    if (role == "member") {    
+    if (role == "member") {  
         std::cout << "Username: " << this->username << std::endl;
         std::cout << "Full name: " << this->full_name << std::endl;
         std::cout << "Phone number: " << this->phone_number << std::endl;
@@ -31,6 +31,18 @@ void Users::Member::show_member_info(std::string role) {
             std::cout << available_job.get_start_time() << std::endl;
             std::cout << available_job.get_end_time() << std::endl;
         }
+
+        std::cout << "Sent Requests: " << std::endl;
+        for (Request &sent_request : this->sent_requests)
+        {
+            std::cout << sent_request.get_supporter() << std::endl;
+            std::cout << sent_request.get_job().get_skill()->get_string() << std::endl;
+            std::cout << sent_request.get_job().get_start_time() << std::endl;
+            std::cout << sent_request.get_job().get_end_time() << std::endl;
+            std::cout << sent_request.get_status_string() << std::endl;
+            std::cout << sent_request.get_total_credit() << std::endl;
+        }
+        
         std::cout << "----------------------------" << std::endl;
         std::cout << std::endl;
     }
