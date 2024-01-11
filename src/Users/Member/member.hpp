@@ -100,7 +100,7 @@ namespace Users
 
         // add 
         void add_skill(string &skill_name, float &consumed_per_hour, float &minimum_rating );
-        void add_available_job(Period &availableTime, Skill &skill);
+        void add_available_job(const Period &availableTime, Skill &skill);
         void add_available_time(string &startTime, string &endTime);
         void add_block_list(string &username);
 
@@ -129,6 +129,9 @@ namespace Users
 
         // check overlap available time
         bool is_overlap(time_t startTime, time_t endTime);
+
+        //check whether skill exists
+        bool have_skill(std::string skill_name);
 
     };
 

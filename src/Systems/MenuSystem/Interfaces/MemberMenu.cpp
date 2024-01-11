@@ -12,7 +12,6 @@
 void MenuSystem::member_menu()
 {
     std::string information;
-    Users::Member current_member = userSystem.get_current_member();
     while (loggedIn)
     {
         clear_screen();
@@ -24,12 +23,13 @@ void MenuSystem::member_menu()
                     << "3. Block member.\n"
                     << "4. View request. \n"
                     << "5. Find supporter. \n"
-                    << "6. Add available job. \n";
+                    << "6. View request. \n"
+                    << "7. Add available job. \n";
 
-        switch (prompt_choice(0, 6))
+        switch (prompt_choice(0, 7))
         {
         case 1:
-            member_view_my_info(current_member, information);
+            member_view_my_info(information);
             break;
                 
         case 2:
@@ -62,6 +62,8 @@ void MenuSystem::member_menu()
             find_supporter_interface("member");
             break;
         case 6:
+            break;
+        case 7:
             add_available_job();
             break;
         case 0:

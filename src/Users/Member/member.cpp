@@ -173,7 +173,7 @@ void Users::Member::add_skill(string &skill_name, float &consumed_per_hour, floa
 }
 
 // add available job
-void Users::Member::add_available_job(Period &availableTime, Skill &skill)
+void Users::Member::add_available_job(const Period &availableTime, Skill &skill)
 {
     AvailableJob availableJob = AvailableJob(this->username, availableTime, skill);
     this->available_jobs.push_back(availableJob);
@@ -252,4 +252,15 @@ bool Users::Member::is_overlap(time_t startTime, time_t endTime)
     }
     return false;
 
+}
+
+bool Users::Member::have_skill(std::string skill_name)
+{
+    for (Skill &skill: skills)
+        {
+            if (skill_name == skill.get_skill_name())
+            {return true;}
+        }
+    
+    return false;
 }
