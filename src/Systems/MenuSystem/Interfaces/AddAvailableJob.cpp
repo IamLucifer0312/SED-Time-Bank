@@ -42,7 +42,7 @@ void MenuSystem::add_available_job()
             answer = prompt_choice(1, arraySize);
             sizeValue = static_cast<size_t>(answer);
             skill = userSystem.get_current_member().get_skill_by_name(skill_name);
-            available_time = userSystem.get_current_member().get_available_times()[sizeValue];
+            available_time = userSystem.get_current_member().get_available_times()[sizeValue -1];
             userSystem.get_current_member().add_available_job(available_time, skill);
             std::cout << "Successfully added avalable job.\n";
             userSystem.update_current_member();

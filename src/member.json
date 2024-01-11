@@ -47,24 +47,6 @@
                 "skill_name": "Programming",
                 "start_time": "2023-11-11 10:00:00",
                 "supporter_name": "ddd"
-            },
-            {
-                "end_time": "",
-                "skill_name": "Programming",
-                "start_time": "",
-                "supporter_name": "ddd"
-            },
-            {
-                "end_time": "",
-                "skill_name": "Cooking",
-                "start_time": "",
-                "supporter_name": "ddd"
-            },
-            {
-                "end_time": "",
-                "skill_name": "Cooking",
-                "start_time": "1970-01-01 07:00:00",
-                "supporter_name": "ddd"
             }
         ],
         "available_times": [
@@ -73,8 +55,8 @@
                 "start_time": "2023-11-11 10:00:00"
             },
             {
-                "end_time": "",
-                "start_time": ""
+                "end_time": "2024-01-12 12:00:00",
+                "start_time": "2024-01-12 10:00:00"
             }
         ],
         "block_list": [
@@ -108,6 +90,12 @@
                 "skill_name": "Programming",
                 "start_time": "2023-11-11 10:00:00",
                 "supporter_name": "TT"
+            },
+            {
+                "end_time": "2024-01-07 12:00:00",
+                "skill_name": "Cooking",
+                "start_time": "2024-01-07 10:00:00",
+                "supporter_name": "TT"
             }
         ],
         "available_times": [
@@ -116,8 +104,8 @@
                 "start_time": "2023-11-11 10:00:00"
             },
             {
-                "end_time": "",
-                "start_time": ""
+                "end_time": "2024-01-07 12:00:00",
+                "start_time": "2024-01-07 10:00:00"
             }
         ],
         "block_list": [
@@ -145,6 +133,11 @@
                 "consumed_per_hour": 10.0,
                 "minimum_rating": 2.0,
                 "skill_name": "Teaching"
+            },
+            {
+                "consumed_per_hour": 0.0,
+                "minimum_rating": 0.0,
+                "skill_name": "0"
             }
         ],
         "username": "TT"
@@ -159,10 +152,6 @@
             }
         ],
         "available_times": [
-            {
-                "end_time": "",
-                "start_time": ""
-            },
             {
                 "end_time": "2023-11-11 12:00:00",
                 "start_time": "2023-11-11 10:00:00"
