@@ -21,6 +21,7 @@ private:
     string host;
     string supporter;
     AvailableJob job;
+    string tempSkillName;
     Period workTime;
     Status status;
     float totalCredit;
@@ -30,7 +31,7 @@ public:
     Request();
 
     // constructor
-    Request(const string &hostUsername, const AvailableJob &job, const Period &workTime, const Status &status);
+    Request(const string &hostUsername, const AvailableJob &job, const Period &workTime, const Status &status, const string tempSkillName);
 
     // setter
     void set_host(string &host);
@@ -44,7 +45,8 @@ public:
     // getter
     const string get_host() const;
     const string get_supporter() const;
-    const AvailableJob get_job() const;
+    AvailableJob& get_job();
+    string get_temp_skill_name() const;
     const Period get_work_time() const;
     const Status get_status() const;
     const string get_status_string() const;

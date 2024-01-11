@@ -18,29 +18,29 @@ void MenuSystem::member_menu()
     {
         clear_screen();
         std::cout << "\n\nMember actions:\n"
-                    << "==============================\n"
-                    << "0. Logout.\n"
-                    << "1. View my information.\n"
-                    << "2. Add credit.\n"
-                    << "3. Block member.\n"
-                    << "4. View request. \n"
-                    << "5. Find supporter. \n"
-                    << "6. Add available job. \n";
+                  << "==============================\n"
+                  << "0. Logout.\n"
+                  << "1. View my information.\n"
+                  << "2. Add credit.\n"
+                  << "3. Block member.\n"
+                  << "4. View request. \n"
+                  << "5. Find supporter. \n"
+                  << "6. Add available job. \n";
 
         switch (prompt_choice(0, 6))
         {
         case 1:
             member_view_my_info(current_member, information);
             break;
-                
+
         case 2:
 
             break;
         case 3:
             clear_screen();
             std::cout << "Block or unblock member?\n"
-                        << "1. Block\n"
-                        << "2. Unblock\n";
+                      << "1. Block\n"
+                      << "2. Unblock\n";
             switch (prompt_choice(1, 2))
             {
             case 1:
@@ -57,19 +57,18 @@ void MenuSystem::member_menu()
             break;
         case 4:
 
-                break;
-            case 5:
-                clear_screen();
-                find_supporter_interface("member");
-                break;
-            case 6:
-                clear_screen();
-                view_sent_request();
-                break;
-            case 0:
-                loggedIn = false;
-                break;
-            }
+            break;
+        case 5:
+            clear_screen();
+            find_supporter_interface("member");
+            break;
+        case 6:
+            clear_screen();
+            view_sent_request();
+            break;
+        case 0:
+            loggedIn = false;
+            break;
         }
     }
 }

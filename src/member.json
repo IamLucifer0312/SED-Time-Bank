@@ -39,24 +39,22 @@
         "end_time": "2023-11-11 12:00:00"
       }
     ],
-    "sent_request": [
+    "sent_requests": [
       {
-          "host": "tui",
-          "supporter": "Fut",
-          "job": {
-              "available_time": {
-                  "end_time": "2023-11-11 12:00:00",
-                  "start_time": "2023-11-11 10:00:00"
-              },
-              "skill": "Cooking"
-          },
-          "work_time": {
-              "end_time": "2023-11-11 12:00:00",
-              "start_time": "2023-11-11 10:00:00"
-          },
-          "status": 0,
-          "total_credit": 10.0
-      }
+        "host": "tui",
+        "job": {
+            "supporter_name": "Helu",
+            "skill_name": "Cooking",
+            "start_time": "2023-11-11 10:00:00",
+            "end_time": "2023-11-11 12:00:00"
+        },
+        "work_time": {
+            "end_time": "2023-11-11 12:00:00",
+            "start_time": "2023-11-11 10:00:00"
+        },
+        "status": 0,
+        "total_credit": 10.0
+    }
     ]
   },
   {
@@ -99,24 +97,22 @@
         "end_time": "2023-11-11 12:00:00"
       }
     ],
-    "sent_request": [
+    "sent_requests": [
       {
-          "host": "tui",
-          "supporter": "Fut",
-          "job": {
-              "available_time": {
-                  "end_time": "2023-11-11 12:00:00",
-                  "start_time": "2023-11-11 10:00:00"
-              },
-              "skill": "Cooking"
-          },
-          "work_time": {
-              "end_time": "2023-11-11 12:00:00",
-              "start_time": "2023-11-11 10:00:00"
-          },
-          "status": 0,
-          "total_credit": 10.0
-      }
+        "host": "tui",
+        "job": {
+            "supporter_name": "Helu",
+            "skill_name": "Cooking",
+            "start_time": "2023-11-11 10:00:00",
+            "end_time": "2023-11-11 12:00:00"
+        },
+        "work_time": {
+            "end_time": "2023-11-11 12:00:00",
+            "start_time": "2023-11-11 10:00:00"
+        },
+        "status": 0,
+        "total_credit": 10.0
+    }
     ]
   },
   {
@@ -164,24 +160,22 @@
         "end_time": "2023-11-11 12:00:00"
       }
     ],
-    "sent_request": [
+    "sent_requests": [
       {
-          "host": "tui",
-          "supporter": "Fut",
-          "job": {
-              "available_time": {
-                  "end_time": "2023-11-11 12:00:00",
-                  "start_time": "2023-11-11 10:00:00"
-              },
-              "skill": "Cooking"
-          },
-          "work_time": {
-              "end_time": "2023-11-11 12:00:00",
-              "start_time": "2023-11-11 10:00:00"
-          },
-          "status": 0,
-          "total_credit": 10.0
-      }
+        "host": "tui",
+        "job": {
+            "supporter_name": "Helu",
+            "skill_name": "Cooking",
+            "start_time": "2023-11-11 10:00:00",
+            "end_time": "2023-11-11 12:00:00"
+        },
+        "work_time": {
+            "end_time": "2023-11-11 12:00:00",
+            "start_time": "2023-11-11 10:00:00"
+        },
+        "status": 0,
+        "total_credit": 10.0
+    }
     ]
   },
   {
@@ -224,11 +218,11 @@
         "end_time": "2023-11-11 12:00:00"
       }
     ],
-    "sent_request": [
+    "sent_requests": [
       {
           "host": "tui",
           "job": {
-              "supporter_name": "Fut",
+              "supporter_name": "Helu",
               "skill_name": "Cooking",
               "start_time": "2023-11-11 10:00:00",
               "end_time": "2023-11-11 12:00:00"

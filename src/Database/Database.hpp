@@ -46,6 +46,7 @@ public:
     // Load members from data file
     vector<Users::Member> loadMembersFromFile(const string &filename);
     vector<Users::Admin> loadAdminsFromFile(const string &filename);
+    void set_job_to_requests();
 
     // Saving members to data file
     void saveMembersToFile(const vector<Users::Member> &members, const string &filename);
@@ -61,7 +62,6 @@ public:
 
     // Finder
     Users::Member find_member(const string &username);
-
 };
 
 #endif // DATABASE_HPP

@@ -81,7 +81,7 @@ const std::vector<AvailableJob> Users::Member::get_available_jobs() const
     return available_jobs;
 }
 
-vector<Request> &Users::Member::get_received_requests() 
+vector<Request> &Users::Member::get_received_requests()
 {
     return received_requests;
 }
@@ -199,11 +199,13 @@ void Users::Member::add_received_request(Request &request)
     this->received_requests.push_back(request);
 }
 
-void Users::Member::add_host_review(HostReview &review) {
+void Users::Member::add_host_review(HostReview &review)
+{
     this->host_reviews.push_back(review);
 }
 
-void Users::Member::add_supporter_review(SupporterReview &review) {
+void Users::Member::add_supporter_review(SupporterReview &review)
+{
     this->supporter_reviews.push_back(review);
 }
 

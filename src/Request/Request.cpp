@@ -1,20 +1,20 @@
 #include "Request.hpp"
 
-
 // default constructor
 Request::Request() : host(nullptr), supporter(nullptr), job(AvailableJob()), workTime(Period()), status(PENDING), totalCredit(0)
 {
 }
 
 // constructor
-Request::Request(const string &hostUsername, const AvailableJob &job, const Period &workTime, const Status &status)
+Request::Request(const string &hostUsername, const AvailableJob &job, const Period &workTime, const Status &status, const string tempSkillName)
 {
     this->host = hostUsername;
     this->supporter = job.get_supporter_name();
     this->job = job;
     this->workTime = workTime;
     this->status = status;
-    this->totalCredit = workTime.get_duration_by_hour() * job.get_skill()->get_consumed_per_hour();
+    this->totalCredit = workTime.get_duration_by_hour() * job.get_skill().get_consumed_per_hour();
+    this->tempSkillName = tempSkillName;
 }
 
 // setter
@@ -67,9 +67,14 @@ const string Request::get_supporter() const
     return supporter;
 }
 
-const AvailableJob Request::get_job() const
+AvailableJob& Request::get_job()
 {
     return job;
+}
+
+string Request::get_temp_skill_name() const
+{
+    return tempSkillName;
 }
 
 const Period Request::get_work_time() const
@@ -93,7 +98,7 @@ const string Request::get_status_string() const
     case REJECTED:
         return "REJECTED";
     default:
-    return "UNKNOWN";
+        return "UNKNOWN";
     }
 }
 

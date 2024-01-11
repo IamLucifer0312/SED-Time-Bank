@@ -36,9 +36,9 @@ void Users::Member::show_member_info(std::string role) {
         for (Request &sent_request : this->sent_requests)
         {
             std::cout << sent_request.get_supporter() << std::endl;
-            std::cout << sent_request.get_job().get_skill()->get_string() << std::endl;
-            std::cout << sent_request.get_job().get_start_time() << std::endl;
-            std::cout << sent_request.get_job().get_end_time() << std::endl;
+            std::cout << sent_request.get_job().get_skill().get_string() << std::endl;
+            std::cout << sent_request.get_job().get_available_time().get_start_time_string() << std::endl;
+            std::cout << sent_request.get_job().get_available_time().get_end_time_string() << std::endl;
             std::cout << sent_request.get_status_string() << std::endl;
             std::cout << sent_request.get_total_credit() << std::endl;
         }
