@@ -6,8 +6,8 @@
         "start_time": "2023-11-11 10:00:00"
       },
       {
-        "end_time": "2024-1-7 12:00:00",
-        "start_time": "2024-1-7 10:00:00"
+        "end_time": "2024-01-07 12:00:00",
+        "start_time": "2024-01-07 10:00:00"
       }
     ],
     "block_list": null,
@@ -93,7 +93,7 @@
     "username": "ddd",
     "available_jobs": [
       {
-        "supporter_name": "Helu",
+        "supporter_name": "ddd",
         "skill_name": "Programming",
         "start_time": "2023-11-11 10:00:00",
         "end_time": "2023-11-11 12:00:00"
@@ -158,7 +158,7 @@
     "username": "TT",
     "available_jobs": [
       {
-        "supporter_name": "Helu",
+        "supporter_name": "TT",
         "skill_name": "Programming",
         "start_time": "2023-11-11 10:00:00",
         "end_time": "2023-11-11 12:00:00"
@@ -218,7 +218,7 @@
     "username": "hung anh",
     "available_jobs": [
       {
-        "supporter_name": "Helu",
+        "supporter_name": "hung anh",
         "skill_name": "Programming",
         "start_time": "2023-11-11 10:00:00",
         "end_time": "2023-11-11 12:00:00"

@@ -97,9 +97,9 @@ namespace Users
 
         void set_password(const string &password);
 
-        // add
-        void add_skill(string &skill_name, float &consumed_per_hour, float &minimum_rating);
-        void add_available_job(string startTime, string endTime, Skill &skill);
+        // add 
+        void add_skill(string &skill_name, float &consumed_per_hour, float &minimum_rating );
+        void add_available_job(Period &availableTime, Skill &skill);
         void add_available_time(string &startTime, string &endTime);
         void add_block_list(string &username);
         void add_sent_request(Request &request);
@@ -124,8 +124,9 @@ namespace Users
 
         // Deserialization function for Member class
         void deserialize(const json &j);
-        Skill *get_skill_by_name(string &skillName);
-
+        Skill get_skill_by_name(string &skillName);
+        Period get_time_by_start_end(string &startTime, string &endTime);
+        
         // show member info
         void show_member_info(std::string role);
 

@@ -96,6 +96,9 @@ public:
 
     void find_supporter_availableTime(std::string role);
 
+    //add available job
+    void add_available_job();
+
     friend class UserSystem;
 
 };

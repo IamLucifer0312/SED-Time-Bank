@@ -27,9 +27,9 @@ void Users::Member::show_member_info(std::string role) {
         for (AvailableJob &available_job : this->available_jobs)
         {
             std::cout << available_job.get_supporter_name() << std::endl;
-            std::cout << available_job.get_skill()->get_string() << std::endl;
-            std::cout << available_job.get_start_time() << std::endl;
-            std::cout << available_job.get_end_time() << std::endl;
+            std::cout << available_job.get_skill().get_string() << std::endl;
+            std::cout << available_job.get_available_time().get_start_time_string() << std::endl;
+            std::cout << available_job.get_available_time().get_end_time_string() << std::endl;
         }
 
         std::cout << "Sent Requests: " << std::endl;
@@ -77,9 +77,9 @@ void Users::Member::show_member_info(std::string role) {
         for (AvailableJob &available_job : this->available_jobs)
         {
             std::cout << available_job.get_supporter_name() << std::endl;
-            std::cout << available_job.get_skill()->get_string() << std::endl;
-            std::cout << available_job.get_start_time() << std::endl;
-            std::cout << available_job.get_end_time() << std::endl;
+            std::cout << available_job.get_skill().get_string() << std::endl;
+            std::cout << available_job.get_available_time().get_start_time_string() << std::endl;
+            std::cout << available_job.get_available_time().get_end_time_string() << std::endl;
         }
         std::cout << "----------------------------" << std::endl;
         std::cout << std::endl;
@@ -110,9 +110,9 @@ void Users::Member::show_member_info(std::string role) {
         for (AvailableJob &available_job : this->available_jobs)
         {
             std::cout << available_job.get_supporter_name() << std::endl;
-            std::cout << available_job.get_skill()->get_string() << std::endl;
-            std::cout << available_job.get_start_time() << std::endl;
-            std::cout << available_job.get_end_time() << std::endl;
+            std::cout << available_job.get_skill().get_string() << std::endl;
+            std::cout << available_job.get_available_time().get_start_time_string() << std::endl;
+            std::cout << available_job.get_available_time().get_end_time_string() << std::endl;
         }
         std::cout << "----------------------------" << std::endl;
         std::cout << std::endl;
