@@ -55,7 +55,7 @@ void Users::Member::serialize(json &j) const
 
     // Creating a JSON array for available times
     json availableTimesArray;
-    for (const Period &availableTime : available_times)
+    for (Period availableTime : available_times)
     {
         json singleAvailableTime;
         singleAvailableTime["start_time"] = availableTime.get_start_time_string();

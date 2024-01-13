@@ -60,7 +60,7 @@ public:
     void update_member_info(std::string information);
 
     // interfaces
-    void member_view_my_info(Users::Member current_member, std::string information);
+    void member_view_my_info(std::string information);
 
     //check username and change password of members for admin
     void change_new_password(std::string member_username);

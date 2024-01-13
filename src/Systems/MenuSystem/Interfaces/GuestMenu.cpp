@@ -19,7 +19,8 @@
             {
             case 1:
                 clear_screen();
-                std::cout << "supporter's details \n";
+                std::cout << "Supporter's Details: \n";
+                std::cout << "==============================\n";
                 guest_view_supporter();
                 break;
             case 2:

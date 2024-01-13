@@ -1,10 +1,10 @@
 #include "../../MenuSystem.hpp"
 
 
-void MenuSystem::member_view_my_info(Users::Member current_member, std::string information)
+void MenuSystem::member_view_my_info(std::string information)
 {
     clear_screen();
-    current_member.show_member_info("self");
+    userSystem.get_current_member().show_member_info("self");
     std::cout << "\nDo you want to update information ? "
             << "1. Yes\n"
             << "2. No\n";
@@ -13,7 +13,6 @@ void MenuSystem::member_view_my_info(Users::Member current_member, std::string i
             std::cout << "\nWhich information do you want to update: ";
             std::getline(std::cin, information);
             update_member_info(information);
-            current_member = userSystem.get_current_member();
             std::cout << "Update Successfully";
             break;
         case 2:
