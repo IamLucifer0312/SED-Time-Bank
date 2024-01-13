@@ -8,8 +8,7 @@
 #include "../../Request/Request.hpp"
 #include "../../Period/Period.hpp"
 #include <ctime>
-
-
+#include "../../Review/Review.hpp"
 
 using json = nlohmann::json;
 using std::string;
@@ -32,9 +31,11 @@ namespace Users
         vector<Skill> skills;
         vector<AvailableJob> available_jobs;
         vector<Period> available_times;
-        vector<Request*> receivedRequests;
-        vector<Request*> sentRequests;
+        vector<Request> received_requests;
+        vector<Request> sent_requests;
         vector<string> block_list;
+        vector<HostReview> host_reviews;
+        vector<SupporterReview> supporter_reviews;
 
         float credit;
 
@@ -51,8 +52,7 @@ namespace Users
             const string &home_address,
             const string &email,
             const string &city,
-            const float &credit
-            );
+            const float &credit);
 
         // Getter methods
         const string get_full_name() const;
@@ -74,14 +74,12 @@ namespace Users
         const std::vector<Period> get_available_times() const;
 
         const std::vector<AvailableJob> get_available_jobs() const;
-        
-        const std::vector<Request*> get_received_requests() const;
 
-        const std::vector<Request*> get_sent_requests() const;
+        std::vector<Request> &get_received_requests();
+
+        std::vector<Request> &get_sent_requests();
 
         const std::vector<string> get_block_list() const;
-
-
 
         // Setter methods
         void set_full_name(const string &full_name);
@@ -101,8 +99,13 @@ namespace Users
         // add 
         void add_skill(string &skill_name, float &consumed_per_hour, float &minimum_rating );
         void add_available_job(const Period &availableTime, Skill &skill);
+
         void add_available_time(string &startTime, string &endTime);
         void add_block_list(string &username);
+        void add_sent_request(Request &request);
+        void add_received_request(Request &request);
+        void add_host_review(HostReview &review);
+        void add_supporter_review(SupporterReview &review);
 
         // remove
         void remove_skill(string &skill_name);
@@ -123,7 +126,7 @@ namespace Users
         void deserialize(const json &j);
         Skill get_skill_by_name(string &skillName);
         Period get_time_by_start_end(string &startTime, string &endTime);
-        
+
         // show member info
         void show_member_info(std::string role);
 
@@ -132,7 +135,6 @@ namespace Users
 
         //check whether skill exists
         bool have_skill(std::string skill_name);
-
     };
 
 } // namespace Users

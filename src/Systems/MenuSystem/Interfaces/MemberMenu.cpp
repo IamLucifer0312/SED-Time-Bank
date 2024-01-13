@@ -7,6 +7,7 @@
 #include "find_all_supporter.cpp"
 #include "find_supporter_availableTime.cpp"
 #include "Find_supporter.cpp"
+#include "Member/ViewSentRequest.cpp"
 #include "AddAvailableJob.cpp"
 // member menu
 void MenuSystem::member_menu()
@@ -26,20 +27,21 @@ void MenuSystem::member_menu()
                     << "6. View request. \n"
                     << "7. Add available job. \n";
 
+
         switch (prompt_choice(0, 7))
         {
         case 1:
             member_view_my_info(information);
             break;
-                
+
         case 2:
 
             break;
         case 3:
             clear_screen();
             std::cout << "Block or unblock member?\n"
-                        << "1. Block\n"
-                        << "2. Unblock\n";
+                      << "1. Block\n"
+                      << "2. Unblock\n";
             switch (prompt_choice(1, 2))
             {
             case 1:
@@ -62,6 +64,8 @@ void MenuSystem::member_menu()
             find_supporter_interface("member");
             break;
         case 6:
+            clear_screen();
+            view_sent_request();
             break;
         case 7:
             add_available_job();

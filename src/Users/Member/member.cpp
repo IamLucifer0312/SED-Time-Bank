@@ -81,14 +81,14 @@ const std::vector<AvailableJob> Users::Member::get_available_jobs() const
     return available_jobs;
 }
 
-const vector<Request *> Users::Member::get_received_requests() const
+vector<Request> &Users::Member::get_received_requests()
 {
-    return receivedRequests;
+    return received_requests;
 }
 
-const std::vector<Request *> Users::Member::get_sent_requests() const
+std::vector<Request> &Users::Member::get_sent_requests()
 {
-    return sentRequests;
+    return sent_requests;
 }
 
 const std::vector<Period> Users::Member::get_available_times() const
@@ -125,8 +125,6 @@ std::map<string, string> Users::Member::to_map_member() const
     map.emplace("credit", std::to_string(this->credit));
     return map;
 }
-
-
 
 // Setters:
 
@@ -191,6 +189,25 @@ void Users::Member::add_block_list(string &username)
     this->block_list.push_back(username);
 }
 
+void Users::Member::add_sent_request(Request &request)
+{
+    this->sent_requests.push_back(request);
+}
+
+void Users::Member::add_received_request(Request &request)
+{
+    this->received_requests.push_back(request);
+}
+
+void Users::Member::add_host_review(HostReview &review)
+{
+    this->host_reviews.push_back(review);
+}
+
+void Users::Member::add_supporter_review(SupporterReview &review)
+{
+    this->supporter_reviews.push_back(review);
+}
 
 // remove
 void Users::Member::remove_skill(string &skill_name)
@@ -245,13 +262,12 @@ bool Users::Member::is_overlap(time_t startTime, time_t endTime)
         {
             return false;
         }
-        if (static_cast<int>(difftime(available_time.get_start_time(), startTime)) <= 1800 )
+        if (static_cast<int>(difftime(available_time.get_start_time(), startTime)) <= 1800)
         {
             return true;
         }
     }
     return false;
-
 }
 
 bool Users::Member::have_skill(std::string skill_name)

@@ -3,6 +3,8 @@
 #include <map>
 #include <vector>
 #include <fstream>
+#include "../../Review/Review.hpp"
+
 // Check if the file is already included.
 #ifndef MENUSYSTEM_HPP
 #define MENUSYSTEM_HPP
@@ -72,6 +74,26 @@ public:
     void find_supporter_city(std::string role);
     void find_all_supporter(std::string role);
     void find_supporter_interface(std::string role);
+
+    // make request
+    void make_request(AvailableJob& job);
+
+    //view received request
+    void view_received_request();
+
+    //view sent request
+    void view_sent_request();
+
+    // accept or reject a request
+    void accept_or_reject_request(vector<Request> &requests_list);
+
+    //accepted in sent requests
+    void accepted_request(vector<Request> &requests_list);
+
+
+    //remove_request
+    bool remove_request(Request &request, vector<Request> &requests_list);
+
     void find_supporter_availableTime(std::string role);
 
     //add available job

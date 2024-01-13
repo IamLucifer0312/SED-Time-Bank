@@ -1,4 +1,4 @@
-#include "../member.hpp"
+#include "../Member.hpp"
 
 Skill Users::Member::get_skill_by_name(string &skillName)
 {
@@ -12,7 +12,8 @@ Skill Users::Member::get_skill_by_name(string &skillName)
     return Skill();
 }
 
-Period Users::Member::get_time_by_start_end(string &startTime, string &endTime) {
+Period Users::Member::get_time_by_start_end(string &startTime, string &endTime)
+{
     for (auto &availableTime : available_times)
     {
         if (availableTime.get_start_time_string() == startTime && availableTime.get_end_time_string() == endTime)
@@ -57,8 +58,8 @@ void Users::Member::serialize(json &j) const
     for (Period availableTime : available_times)
     {
         json singleAvailableTime;
-        singleAvailableTime["start_time"] =  availableTime.get_start_time_string();
-        singleAvailableTime["end_time"] =  availableTime.get_end_time_string();
+        singleAvailableTime["start_time"] = availableTime.get_start_time_string();
+        singleAvailableTime["end_time"] = availableTime.get_end_time_string();
         availableTimesArray.push_back(singleAvailableTime);
     }
 
@@ -84,6 +85,36 @@ void Users::Member::serialize(json &j) const
         availableJobsArray.push_back(singleAvailableJob);
     }
     j["available_jobs"] = availableJobsArray;
+
+    // Sent Requests
+    json sentRequestsArray;
+    for (Request sentRequest : sent_requests)
+    {
+        json singleSentRequest;
+        singleSentRequest["host"] = sentRequest.get_host();
+
+        AvailableJob &job = sentRequest.get_job();
+
+        json singleJob;
+        singleJob["supporter_name"] = sentRequest.get_job().get_supporter_name();
+        singleJob["skill_name"] = sentRequest.get_job().get_skill().get_skill_name();
+        singleJob["start_time"] = sentRequest.get_job().get_available_time().get_start_time_string();
+        singleJob["end_time"] = sentRequest.get_job().get_available_time().get_end_time_string();
+
+        singleSentRequest["job"] = singleJob;
+
+        json singleWorkTime;
+        singleWorkTime["start_time"] = sentRequest.get_work_time().get_start_time_string();
+        singleWorkTime["end_time"] = sentRequest.get_work_time().get_end_time_string();
+
+        singleSentRequest["work_time"] = singleWorkTime;
+
+        singleSentRequest["status"] = static_cast<int>(sentRequest.get_status());
+        singleSentRequest["total_credit"] = sentRequest.get_total_credit();
+        sentRequestsArray.push_back(singleSentRequest);
+    }
+
+    j["sent_requests"] = sentRequestsArray;
 }
 
 // Deserialization function for Member class
@@ -124,7 +155,6 @@ void Users::Member::deserialize(const json &j)
         }
     }
 
-    // Deserialize available jobs array (not implemented yet)
     // Desirialize block list array
     if (j.find("block_list") != j.end())
     {
@@ -147,10 +177,35 @@ void Users::Member::deserialize(const json &j)
             std::string skillName = availableJob.at("skill_name").get<std::string>();
             startTime = availableJob.at("start_time").get<std::string>();
             endTime = availableJob.at("end_time").get<std::string>();
-     
+
             available_jobs.emplace_back(supporterName, get_time_by_start_end(startTime, endTime), get_skill_by_name(skillName));
-            
         }
     }
 
+    // Deserialize sent requests array
+    if (j.find("sent_requests") != j.end())
+    {
+        const json &sentRequestsArray = j.at("sent_requests");
+        for (const auto &sentRequest : sentRequestsArray)
+        {
+            std::string host = sentRequest.at("host").get<std::string>();
+
+            std::string supporterName = sentRequest.at("job").at("supporter_name").get<std::string>();
+            std::string skillName = sentRequest.at("job").at("skill_name").get<std::string>();
+            std::string startTime = sentRequest.at("job").at("start_time").get<std::string>();
+            std::string endTime = sentRequest.at("job").at("end_time").get<std::string>();
+            Period availableTime = Period(startTime, endTime);
+            Skill tempSkill = Skill();
+            AvailableJob job = AvailableJob(supporterName, availableTime, tempSkill);
+
+            std::string workStartTime = sentRequest.at("work_time").at("start_time").get<std::string>();
+            std::string workEndTime = sentRequest.at("work_time").at("end_time").get<std::string>();
+            Period workTime = Period(workStartTime, workEndTime);
+
+            Status status = static_cast<Status>(sentRequest.at("status").get<int>());
+            float totalCredit = sentRequest.at("total_credit").get<float>();
+
+            sent_requests.emplace_back(host, job, workTime, status, skillName);
+        }
+    }
 }

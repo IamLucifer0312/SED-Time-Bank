@@ -43,11 +43,12 @@ public:
 
     const string get_end_time_string() const;
 
-    time_t get_start_time();
+    const time_t get_start_time() const;
 
-    time_t get_end_time();
+    const time_t get_end_time() const;
 
-    float get_duration_by_hour();
+    const float get_duration_by_hour() const;
+
 
 };
 

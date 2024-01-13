@@ -42,8 +42,23 @@ vector<Users::Member> Database::deserializeMembers(const json &jsonArray)
         Users::Member member;
         member.deserialize(memberJson);
         deserializedMembers.push_back(member);
+        set_job_to_requests();
     }
     return deserializedMembers;
+}
+
+void Database::set_job_to_requests()
+{
+    for (Users::Member &member : members)
+    {
+        for (Request &request : member.get_sent_requests())
+        {
+            string skillName = request.get_temp_skill_name();
+            Skill tempSkill = find_member(request.get_supporter()).get_skill_by_name(skillName);
+            AvailableJob& job = request.get_job();
+            job.set_skill(tempSkill);
+        }
+    }
 }
 
 // Add a member to the database object
@@ -67,7 +82,8 @@ vector<Users::Admin> Database::get_all_admins() const
 vector<Users::Admin> Database::loadAdminsFromFile(const string &filename)
 {
     std::ifstream file(filename);
-    if (!file.is_open()) {
+    if (!file.is_open())
+    {
         std::cerr << "Error: Unable to open file: " << filename << std::endl;
     }
 
@@ -80,7 +96,8 @@ vector<Users::Admin> Database::loadAdminsFromFile(const string &filename)
 vector<Users::Member> Database::loadMembersFromFile(const string &filename)
 {
     std::ifstream file(filename);
-    if (!file.is_open()) {
+    if (!file.is_open())
+    {
         std::cerr << "Error: Unable to open file: " << filename << std::endl;
     }
 
@@ -124,4 +141,21 @@ void Database::update_member(const Users::Member &member)
     }
     std::cerr << "Error: Member not found." << std::endl;
     return;
+}
+
+// Finder
+Users::Member Database::find_member(const string &username)
+{
+    for (Users::Member &member : members)
+    {
+        if (member.get_username() == username)
+        {
+            return member;
+        }
+        else
+        {
+            std::cerr << "Error: Member not found." << std::endl;
+        }
+    }
+    return Users::Member();
 }

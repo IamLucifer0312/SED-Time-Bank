@@ -10,7 +10,6 @@
 
 // INCLUDES
 
-
 // user classes
 #include "../../Users/Users.hpp"
 
@@ -52,11 +51,12 @@ public:
     bool checkPasswordSpace(const std::string &password);
 
     // reigster member
-    void register_member( std::string username, std::string password, std::string full_name, std::string phone_number, std::string home_address, std::string email, std::string city);
+    void register_member(std::string username, std::string password, std::string full_name, std::string phone_number, std::string home_address, std::string email, std::string city);
 
     // getters
     std::vector<Users::Member> get_members();
-    Users::Member& get_current_member();
+    Users::Member &get_current_member();
+    Database &get_database();
     // setters
     void set_current_member(Users::Member &member);
     void set_admin(Users::Admin &admin);
