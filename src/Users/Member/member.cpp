@@ -209,6 +209,10 @@ void Users::Member::add_supporter_review(SupporterReview &review)
     this->supporter_reviews.push_back(review);
 }
 
+void Users::Member::add_credit(float addingCredit) {
+    credit += addingCredit;
+}
+
 // remove
 void Users::Member::remove_skill(string &skill_name)
 {

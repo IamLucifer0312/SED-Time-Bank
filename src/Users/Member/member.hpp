@@ -106,6 +106,7 @@ namespace Users
         void add_received_request(Request &request);
         void add_host_review(HostReview &review);
         void add_supporter_review(SupporterReview &review);
+        void add_credit(float addingCredit);
 
         // remove
         void remove_skill(string &skill_name);

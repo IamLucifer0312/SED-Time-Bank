@@ -2,6 +2,7 @@
 #include "../Methods/ShowMembers.cpp"
 #include "../../UserSystem/UserSystem.hpp"
 #include "../Interfaces/Member/ViewAndUpdateInfo.cpp"
+#include "../Interfaces/Member/AddCredit.cpp"
 #include "UpdateInfo.cpp"
 #include "find_supporter_city.cpp"
 #include "find_all_supporter.cpp"
@@ -35,7 +36,7 @@ void MenuSystem::member_menu()
             break;
 
         case 2:
-
+            add_credit();
             break;
         case 3:
             clear_screen();

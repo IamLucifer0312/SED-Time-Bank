@@ -69,22 +69,23 @@ void MenuSystem::main_loop()
     userSystem.load_database();
     
     clear_screen();
-
-    std::cout << "\n"
-              << "======================================\n"
-              << "EEET2482/COSC2082 ASSIGNMENT\n"
-              << "TIME BANK APPLICATION\n"
-              << "\n"
-              << "Instructor: Mr. Tran Duc Linh\n"
-              << "Group: Group 2\n"
-              << "s4021255, Cu Duc Quang\n"
-              << "s3978616, Nguyen Trong Tien\n"
-              << "s4000948, Pham Hung Anh\n"
-              << "s3979081, Tran Phan Trong Phuc"
-              << "\n======================================\n\n";
-
-    while (!this->quit)
+     while (!this->quit)
     {
+
+        std::cout << "\n"
+                << "======================================\n"
+                << "EEET2482/COSC2082 ASSIGNMENT\n"
+                << "TIME BANK APPLICATION\n"
+                << "\n"
+                << "Instructor: Mr. Tran Duc Linh\n"
+                << "Group: Group 2\n"
+                << "s4021255, Cu Duc Quang\n"
+                << "s3978616, Nguyen Trong Tien\n"
+                << "s4000948, Pham Hung Anh\n"
+                << "s3979081, Tran Phan Trong Phuc"
+                << "\n======================================\n\n";
+
+   
         std::cout << "\nMAIN MENU\n"
                   << "=========================\n"
                   << "--> 0. Exit\n"

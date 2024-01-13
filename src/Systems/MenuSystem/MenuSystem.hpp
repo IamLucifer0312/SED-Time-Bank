@@ -98,6 +98,7 @@ public:
 
     //add available job
     void add_available_job();
+    void add_credit();
 
     friend class UserSystem;
 

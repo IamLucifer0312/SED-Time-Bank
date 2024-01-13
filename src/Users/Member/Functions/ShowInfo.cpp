@@ -74,10 +74,12 @@ void Users::Member::show_member_info(std::string role) {
             std::cout << std::endl;
         }
         std::cout << std::endl;
+        std::cout << "Block list: \n";
         for (std::string &block_member : this->block_list)
         {
             std::cout << block_member << std::endl;
         }
+        std::cout << std::endl;
 
         std::cout << "Available Jobs: " << std::endl;
         for (AvailableJob &available_job : this->available_jobs)
@@ -114,6 +116,15 @@ void Users::Member::show_member_info(std::string role) {
             std::cout << "End time: " << available_time.get_end_time_string() << std::endl;
             std::cout << std::endl;
         }
+
+        std::cout << std::endl;
+        std::cout << "Block list: \n";
+        for (std::string &block_member : this->block_list)
+        {
+            std::cout << block_member << std::endl;
+        }
+        std::cout << std::endl;
+
         std::cout << "Available Jobs: " << std::endl;
         for (AvailableJob &available_job : this->available_jobs)
         {
