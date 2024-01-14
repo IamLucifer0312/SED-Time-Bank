@@ -10,6 +10,7 @@
 #include "Find_supporter.cpp"
 #include "Member/ViewSentRequest.cpp"
 #include "AddAvailableJob.cpp"
+#include "Member/MakeRequest.cpp"
 // member menu
 void MenuSystem::member_menu()
 {
@@ -18,16 +19,19 @@ void MenuSystem::member_menu()
     {
         clear_screen();
         std::cout << "\n\nMember actions:\n"
-                    << "==============================\n"
-                    << "0. Logout.\n"
-                    << "1. View my information.\n"
-                    << "2. Add credit.\n"
-                    << "3. Block member.\n"
-                    << "4. View recieved request. \n"
-                    << "5. Find supporter. \n"
-                    << "6. View sent request. \n"
-                    << "7. Add available job. \n";
+                  << "==============================\n"
+                  << "0. Logout.\n"
+                  << "1. View my information.\n"
+                  << "2. Add credit.\n"
+                  << "3. Block member.\n"
+                  << "4. View recieved request. \n"
+                  << "5. Find supporter. \n"
+                  << "6. View sent request. \n"
+                  << "7. Add available job. \n";
 
+        // testing
+        const AvailableJob &tempJob = (userSystem.get_database().find_member("hung anh").get_available_jobs())[0];
+        Period tempTime = Period();
 
         switch (prompt_choice(0, 7))
         {
@@ -63,6 +67,10 @@ void MenuSystem::member_menu()
         case 5:
             clear_screen();
             find_supporter_interface("member");
+
+            // testing
+            // cout << tempJob.get_supporter_name() << std::endl;
+            // make_request(tempJob, tempTime);
             break;
         case 6:
             clear_screen();

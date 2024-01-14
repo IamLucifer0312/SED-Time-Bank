@@ -61,7 +61,7 @@ public:
     void update_member(const Users::Member &member);
 
     // Finder
-    Users::Member find_member(const string &username);
+    Users::Member& find_member(const string &username);
 };
 
 #endif // DATABASE_HPP

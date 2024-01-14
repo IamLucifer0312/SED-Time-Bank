@@ -107,3 +107,9 @@ const float Period::get_duration_by_hour() const
 {
     return durationByHour;
 }
+
+// operator overloading
+
+bool Period::operator== (const Period& other) const {
+    return (this->startTime == other.startTime && this->endTime == other.endTime);
+}

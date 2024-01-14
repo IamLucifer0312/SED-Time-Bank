@@ -83,7 +83,7 @@ void Database::set_job_to_requests(vector<Users::Member> &deserializedMembers)
 
             AvailableJob &job = request.get_job();
             job.set_skill(tempSkill);
-            
+
             request.set_job(job);
         }
     }
@@ -172,7 +172,7 @@ void Database::update_member(const Users::Member &member)
 }
 
 // Finder
-Users::Member Database::find_member(const string &username)
+Users::Member& Database::find_member(const string &username)
 {
     for (Users::Member &member : members)
     {
@@ -180,10 +180,10 @@ Users::Member Database::find_member(const string &username)
         {
             return member;
         }
-        else
+        else if (&member == &members.back()) 
         {
             std::cerr << "Error: Member not found." << std::endl;
         }
     }
-    return Users::Member();
+    return members.back();
 }

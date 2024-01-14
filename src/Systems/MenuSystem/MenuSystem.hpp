@@ -76,7 +76,7 @@ public:
     void find_supporter_interface(std::string role);
 
     // make request
-    void make_request(AvailableJob& job);
+    void make_request(const AvailableJob& job, Period& workTime);
 
     //view received request
     void view_received_request();

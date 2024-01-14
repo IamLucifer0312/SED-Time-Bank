@@ -17,7 +17,6 @@ public:
     time_t endTime;
     float durationByHour;
 
-
     // default constructor
     Period();
 
@@ -49,7 +48,8 @@ public:
 
     const float get_duration_by_hour() const;
 
-
+    // operator overloading
+    bool operator==(const Period &other) const;
 };
 
 #endif // PERIOD_HPP

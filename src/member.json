@@ -30,17 +30,17 @@
             {
                 "host": "Helu",
                 "job": {
-                    "supporter_name": "ddd",
+                    "end_time": "2023-11-11 12:00:00",
                     "skill_name": "Programming",
                     "start_time": "2023-11-11 10:00:00",
-                    "end_time": "2023-11-11 12:00:00"
-                },
-                "work_time": {
-                    "start_time": "2023-11-11 10:00:00",
-                    "end_time": "2023-11-11 12:00:00"
+                    "supporter_name": "ddd"
                 },
                 "status": 0,
-                "total_credit": 10.4
+                "total_credit": 10.399999618530273,
+                "work_time": {
+                    "end_time": "2023-11-11 12:00:00",
+                    "start_time": "2023-11-11 10:00:00"
+                }
             }
         ],
         "skills": [
