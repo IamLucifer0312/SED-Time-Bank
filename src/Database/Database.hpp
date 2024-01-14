@@ -46,7 +46,7 @@ public:
     // Load members from data file
     vector<Users::Member> loadMembersFromFile(const string &filename);
     vector<Users::Admin> loadAdminsFromFile(const string &filename);
-    void set_job_to_requests();
+    void set_job_to_requests(vector<Users::Member>& deserializedMembers);
 
     // Saving members to data file
     void saveMembersToFile(const vector<Users::Member> &members, const string &filename);

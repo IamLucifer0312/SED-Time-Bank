@@ -26,6 +26,8 @@ void Request::set_host(string &host)
 void Request::set_job(AvailableJob job)
 {
     this->job = job;
+    this->totalCredit = workTime.get_duration_by_hour() * job.get_skill().get_consumed_per_hour();
+
 }
 
 void Request::set_work_time(Period workTime)

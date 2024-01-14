@@ -26,7 +26,23 @@
         "home_address": "no",
         "password": "123",
         "phone_number": "0912",
-        "sent_requests": null,
+        "sent_requests": [
+            {
+                "host": "Helu",
+                "job": {
+                    "supporter_name": "ddd",
+                    "skill_name": "Programming",
+                    "start_time": "2023-11-11 10:00:00",
+                    "end_time": "2023-11-11 12:00:00"
+                },
+                "work_time": {
+                    "start_time": "2023-11-11 10:00:00",
+                    "end_time": "2023-11-11 12:00:00"
+                },
+                "status": 0,
+                "total_credit": 10.4
+            }
+        ],
         "skills": [
             {
                 "consumed_per_hour": 5.199999809265137,

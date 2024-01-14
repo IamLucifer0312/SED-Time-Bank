@@ -1,5 +1,19 @@
 #include "Database.hpp"
 
+#define find_member_macro(username, memberList, found_member) \
+    for (Users::Member & member : memberList)                 \
+    {                                                         \
+        if (member.get_username() == username)                \
+        {                                                     \
+            found_member = member;                            \
+            break;                                            \
+        }                                                     \
+    }                                                         \
+    if (&found_member == &memberList.back())                  \
+    {                                                         \
+        std::cerr << "Error: Member not found." << std::endl; \
+    }
+
 // constructor
 Database::Database() {}
 Database::Database(const string &member_file_name) : member_file(member_file_name)
@@ -42,21 +56,35 @@ vector<Users::Member> Database::deserializeMembers(const json &jsonArray)
         Users::Member member;
         member.deserialize(memberJson);
         deserializedMembers.push_back(member);
-        set_job_to_requests();
     }
+    // set the jobs of members to the corresponding requests
+    set_job_to_requests(deserializedMembers);
+
     return deserializedMembers;
 }
 
-void Database::set_job_to_requests()
+void Database::set_job_to_requests(vector<Users::Member> &deserializedMembers)
 {
-    for (Users::Member &member : members)
+    for (Users::Member &member : deserializedMembers)
     {
+        if (member.get_sent_requests().empty())
+        {
+            continue;
+        }
+
         for (Request &request : member.get_sent_requests())
         {
             string skillName = request.get_temp_skill_name();
-            Skill tempSkill = find_member(request.get_supporter()).get_skill_by_name(skillName);
-            AvailableJob& job = request.get_job();
+
+            Users::Member supporter;
+            find_member_macro(request.get_supporter(), deserializedMembers, supporter);
+
+            Skill tempSkill = supporter.get_skill_by_name(skillName);
+
+            AvailableJob &job = request.get_job();
             job.set_skill(tempSkill);
+            
+            request.set_job(job);
         }
     }
 }
