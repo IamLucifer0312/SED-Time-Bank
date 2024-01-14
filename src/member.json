@@ -136,7 +136,23 @@
         "home_address": "Hihi",
         "password": "123456",
         "phone_number": "123",
-        "sent_requests": null,
+        "sent_requests": [
+            {
+                "host": "TT",
+                "job": {
+                    "end_time": "2023-11-11 12:00:00",
+                    "skill_name": "Programming",
+                    "start_time": "2023-11-11 10:00:00",
+                    "supporter_name": "Helu"
+                },
+                "status": 0,
+                "total_credit": 10.399999618530273,
+                "work_time": {
+                    "end_time": "2023-11-11 12:00:00",
+                    "start_time": "2023-11-11 10:00:00"
+                }
+            }
+        ],
         "skills": [
             {
                 "consumed_per_hour": 5.199999809265137,

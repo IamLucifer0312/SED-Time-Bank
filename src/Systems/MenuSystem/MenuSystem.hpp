@@ -90,6 +90,9 @@ public:
     //accepted in sent requests
     void accepted_request(vector<Request> &requests_list);
 
+    //book job
+    void book_job();
+
 
     //remove_request
     bool remove_request(Request &request, vector<Request> &requests_list);

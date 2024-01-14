@@ -3,6 +3,7 @@
 #include "../../UserSystem/UserSystem.hpp"
 #include "../Interfaces/Member/ViewAndUpdateInfo.cpp"
 #include "../Interfaces/Member/AddCredit.cpp"
+#include "../Interfaces/Member/BookJob.cpp"
 #include "UpdateInfo.cpp"
 #include "find_supporter_city.cpp"
 #include "find_all_supporter.cpp"
@@ -24,7 +25,7 @@ void MenuSystem::member_menu()
                   << "1. View my information.\n"
                   << "2. Add credit.\n"
                   << "3. Block member.\n"
-                  << "4. View recieved request. \n"
+                  << "4. View received request. \n"
                   << "5. Find supporter. \n"
                   << "6. View sent request. \n"
                   << "7. Add available job. \n";

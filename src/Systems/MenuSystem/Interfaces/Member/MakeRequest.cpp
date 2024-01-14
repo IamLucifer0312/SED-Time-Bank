@@ -19,5 +19,6 @@ void MenuSystem::make_request(const AvailableJob &job, Period &workTime)
     supporter.add_received_request(temp);
 
     // save to database
-    userSystem.save_database();
+    userSystem.update_current_member();
+    userSystem.update_member(supporter);
 }

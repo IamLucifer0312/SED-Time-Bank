@@ -39,7 +39,8 @@ private:
     const Period get_available_time() const;
     const Skill get_skill() const;
 
-
+    void showInfo();
+    friend class MenuSystem;
 
 };
 

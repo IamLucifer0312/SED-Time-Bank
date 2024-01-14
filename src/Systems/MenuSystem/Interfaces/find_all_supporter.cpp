@@ -10,6 +10,7 @@ void MenuSystem::find_all_supporter(std::string role)
                     << "0. no\n";
     switch(prompt_choice(0,1)){
         case 1:
+            book_job();
             break;
         case 0:
             break;

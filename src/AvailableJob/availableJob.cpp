@@ -53,4 +53,11 @@ const Skill AvailableJob::get_skill() const
     return skill;
 }
 
+void AvailableJob::showInfo() {
+    std::cout << "Supporter name: " << supporterName << std::endl;
+    std::cout << skill.get_string() << std::endl;
+    std::cout << "Start time:" << availableTime.get_start_time_string() << std::endl;
+    std::cout << "End time:" << availableTime.get_end_time_string() << std::endl;
+    std::cout << std::endl;
+};
 

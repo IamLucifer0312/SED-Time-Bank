@@ -61,6 +61,7 @@ public:
     void set_current_member(Users::Member &member);
     void set_admin(Users::Admin &admin);
     void update_current_member();
+    void update_member(Users::Member &newMember);
     void update_new_password();
 
     friend class MenuSystem;
