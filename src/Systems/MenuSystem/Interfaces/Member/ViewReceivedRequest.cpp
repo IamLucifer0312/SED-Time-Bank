@@ -72,7 +72,7 @@ void MenuSystem::accept_or_reject_request(vector<Request> &requests_list)
     int selected_request_number = prompt_choice(1, requests_list.size() + 1);
 
     Request &selected_request = requests_list[selected_request_number - 1];
-    clear_screen();
+    
     cout << "Request " << selected_request_number << ":" << std::endl;
     cout << "Host: " << selected_request.get_host() << std::endl;
     cout << "Work time: " << selected_request.get_job().get_available_time().get_start_time_string() << " - " << selected_request.get_job().get_available_time().get_end_time_string() << std::endl;
@@ -85,11 +85,10 @@ void MenuSystem::accept_or_reject_request(vector<Request> &requests_list)
     cout << "1. Accept" << std::endl;
     cout << "2. Reject" << std::endl;
 
-    int rating;
-    string comment;
-    HostReview review;
-    selected_request.get_host();
-    Users::Member &host = userSystem.get_database().find_member(selected_request.get_host());
+        int rating;
+        string comment;
+        HostReview review;
+        Users::Member host = userSystem.get_database().find_member(selected_request.get_host());
 
     switch (prompt_choice(0, 2))
 
@@ -97,22 +96,33 @@ void MenuSystem::accept_or_reject_request(vector<Request> &requests_list)
     case 0:
         break;
 
-    case 1:
-        // set status of request to accepted
-        selected_request.set_status(Status::ACCEPTED);
+            case 1:
+            
+            selected_request.set_status(Status::ACCEPTED);
+            host.add_approved_sent_request(selected_request);
+            userSystem.current_member.add_approved_received_request(selected_request);
+            remove_request(selected_request, requests_list);
+            userSystem.update_member(host);
+            userSystem.update_current_member();
+            cout << "Request accepted." << std::endl;
+            cout << "0. Back" << std::endl;
 
-        remove_request(selected_request, requests_list);
-        // this->userSystem.get_current_member().add_credit(selected_request.get_total_credit());
-        // find_member(selected_request.get_host()).subtract_credit(selected_request.get_total_credit();
-        cout << "Request accepted." << std::endl;
-        cout << "Please rate your host from 1 to 5: " << std::endl;
-        cin >> rating;
-        cout << "Please comment about your host: " << std::endl;
-        cin >> comment;
-        review = HostReview(comment, rating);
-        host.add_host_review(review);
+            switch (prompt_choice(0,0))
+            {
+            case 0:
+                break;
+            default:
+                break;
+            }
 
-        break;
+            // cout << "Please rate your host from 1 to 5: " << std::endl;
+            // cin >> rating;
+            // cout << "Please comment about your host: " << std::endl;
+            // cin >> comment;
+            // review = HostReview(comment, rating);
+            // host.add_host_review(review);
+            
+            break;
 
     case 2:
         // set status of request to rejected
@@ -121,23 +131,18 @@ void MenuSystem::accept_or_reject_request(vector<Request> &requests_list)
             if ((host.get_sent_requests())[i] == selected_request)
             {
                 (host.get_sent_requests())[i].set_status(Status::REJECTED);
-                cout << "TESTING: " << host.get_sent_requests()[i].get_status_string() << std::endl;
+                cout << "Request rejected." << std::endl;
+                remove_request(selected_request, requests_list);
+                // save to database
+                userSystem.update_current_member();
+                userSystem.update_member(host);
+                break;
             }
             else
             {
                 std::cerr << "Request not found." << std::endl;
             }
         }
-        selected_request.set_status(Status::REJECTED);
-
-        remove_request(selected_request, requests_list);
-        cout << "Request rejected." << std::endl;
-
-        // save to database
-        userSystem.update_current_member();
-        userSystem.update_member(host);
-        break;
-
     default:
         break;
     }

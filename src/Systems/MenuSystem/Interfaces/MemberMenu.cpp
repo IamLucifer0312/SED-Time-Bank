@@ -11,6 +11,7 @@
 #include "Find_supporter.cpp"
 #include "Member/ViewSentRequest.cpp"
 #include "Member/ViewReceivedRequest.cpp"
+#include "Member/RateApprovedJob.cpp"
 #include "AddAvailableJob.cpp"
 #include "Member/MakeRequest.cpp"
 // member menu
@@ -29,9 +30,10 @@ void MenuSystem::member_menu()
                   << "4. View received request. \n"
                   << "5. Find supporter. \n"
                   << "6. View sent request. \n"
-                  << "7. Add available job. \n";
+                  << "7. Add available job. \n"
+                  << "8. View approved requests. \n";
 
-        switch (prompt_choice(0, 7))
+        switch (prompt_choice(0, 8))
         {
         case 1:
             member_view_my_info(information);
@@ -73,6 +75,10 @@ void MenuSystem::member_menu()
             break;
         case 7:
             add_available_job();
+            break;
+        case 8:
+            clear_screen();
+            view_approved_requests();
             break;
         case 0:
             loggedIn = false;

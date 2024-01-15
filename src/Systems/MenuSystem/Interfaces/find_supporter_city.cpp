@@ -16,6 +16,7 @@ void MenuSystem::find_supporter_city(std::string role)
                             << "0. no\n";
             switch(prompt_choice(0,1)){
                 case 1:
+                    book_job();
                     break;
                 case 0:
                     break;
@@ -29,6 +30,7 @@ void MenuSystem::find_supporter_city(std::string role)
                             << "0. no\n";
             switch(prompt_choice(0,1)){
                 case 1:
+                    book_job();
                     break;
                 case 0:
                     break;

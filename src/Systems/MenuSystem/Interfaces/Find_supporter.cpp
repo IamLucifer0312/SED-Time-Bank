@@ -2,14 +2,6 @@
 
 void MenuSystem::find_supporter_interface(std::string role)
 {
-    // testing
-    const AvailableJob &tempJob = (userSystem.get_database().find_member("TT").get_available_jobs())[0];
-    Period tempTime = Period();
-    make_request(tempJob, tempTime);
-    std::cout << "Sent request successfully!" << std::endl;
-
-    // std::cout << "Received requests: " << (userSystem.get_database().find_member("hung anh").get_received_requests()) != nullptr << std::endl;
-
     std::cout << "Do you want to search job for city or available time ?\n"
               << "1. city\n"
               << "2. available time\n"

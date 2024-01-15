@@ -33,6 +33,8 @@ namespace Users
         vector<Period> available_times;
         vector<Request> received_requests;
         vector<Request> sent_requests;
+        vector<Request> approved_sent_requests;
+        vector<Request> approved_received_requests;
         vector<string> block_list;
         vector<HostReview> host_reviews;
         vector<SupporterReview> supporter_reviews;
@@ -79,6 +81,10 @@ namespace Users
 
         std::vector<Request> &get_sent_requests();
 
+        std::vector<Request> &get_approved_sent_requests();
+
+        std::vector<Request> &get_approved_received_requests();
+
         const std::vector<string> get_block_list() const;
 
         // Setter methods
@@ -104,6 +110,8 @@ namespace Users
         void add_block_list(string &username);
         void add_sent_request(Request &request);
         void add_received_request(Request &request);
+        void add_approved_sent_request(Request &request);
+        void add_approved_received_request(Request &request);
         void add_host_review(HostReview &review);
         void add_supporter_review(SupporterReview &review);
         void add_credit(float addingCredit);

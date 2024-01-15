@@ -17,7 +17,7 @@ Review::Review(string &comment){
     this->comment = comment;
 }
 
-HostReview::HostReview(string &commnet, int &hostRating):Review(commnet){
+HostReview::HostReview(string &comment, int &hostRating):Review(comment){
     this->hostRating = hostRating;
 }
 
