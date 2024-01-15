@@ -86,6 +86,28 @@ void Users::Member::serialize(json &j) const
     }
     j["available_jobs"] = availableJobsArray;
 
+    // Reviews:
+    json hostReviewsArray;
+    for (const auto &hostReview : host_reviews)
+    {
+        json singleHostReview;
+        singleHostReview["host_rating"] = hostReview.get_host_rating();
+        singleHostReview["comment"] = hostReview.get_comment();
+        hostReviewsArray.push_back(singleHostReview);
+    }
+    j["host_reviews"] = hostReviewsArray;
+
+    json supporterReviewsArray;
+    for (const auto &supporterReview : supporter_reviews)
+    {
+        json singleSupporterReview;
+        singleSupporterReview["supporter_rating"] = supporterReview.get_supporter_rating();
+        singleSupporterReview["skill_rating"] = supporterReview.get_skill_rating();
+        singleSupporterReview["comment"] = supporterReview.get_comment();
+        supporterReviewsArray.push_back(singleSupporterReview);
+    }
+    j["supporter_reviews"] = supporterReviewsArray;
+
     // Sent Requests
     json sentRequestsArray;
     for (Request sentRequest : sent_requests)
@@ -116,6 +138,98 @@ void Users::Member::serialize(json &j) const
     }
 
     j["sent_requests"] = sentRequestsArray;
+
+    // Received Requests
+    json receivedRequestsArray;
+    for (Request receivedRequest : received_requests)
+    {
+        json singleReceivedRequest;
+        singleReceivedRequest["host"] = receivedRequest.get_host();
+
+        AvailableJob &job = receivedRequest.get_job();
+
+        json singleJob;
+        singleJob["supporter_name"] = receivedRequest.get_job().get_supporter_name();
+        singleJob["skill_name"] = receivedRequest.get_job().get_skill().get_skill_name();
+        singleJob["start_time"] = receivedRequest.get_job().get_available_time().get_start_time_string();
+        singleJob["end_time"] = receivedRequest.get_job().get_available_time().get_end_time_string();
+
+        singleReceivedRequest["job"] = singleJob;
+
+        json singleWorkTime;
+        singleWorkTime["start_time"] = receivedRequest.get_work_time().get_start_time_string();
+        singleWorkTime["end_time"] = receivedRequest.get_work_time().get_end_time_string();
+
+        singleReceivedRequest["work_time"] = singleWorkTime;
+
+        singleReceivedRequest["status"] = static_cast<int>(receivedRequest.get_status());
+        singleReceivedRequest["total_credit"] = receivedRequest.get_total_credit();
+        
+        receivedRequestsArray.push_back(singleReceivedRequest);
+    }
+
+    j["received_requests"] = receivedRequestsArray;
+
+    json approvedSentRequestsArray;
+    for (Request approvedSentRequest : approved_sent_requests)
+    {
+        json singleSentRequest;
+        singleSentRequest["host"] = approvedSentRequest.get_host();
+
+        AvailableJob &job = approvedSentRequest.get_job();
+
+        json singleJob;
+        singleJob["supporter_name"] = approvedSentRequest.get_job().get_supporter_name();
+        singleJob["skill_name"] = approvedSentRequest.get_job().get_skill().get_skill_name();
+        singleJob["start_time"] = approvedSentRequest.get_job().get_available_time().get_start_time_string();
+        singleJob["end_time"] = approvedSentRequest.get_job().get_available_time().get_end_time_string();
+
+        singleSentRequest["job"] = singleJob;
+
+        json singleWorkTime;
+        singleWorkTime["start_time"] = approvedSentRequest.get_work_time().get_start_time_string();
+        singleWorkTime["end_time"] = approvedSentRequest.get_work_time().get_end_time_string();
+
+        singleSentRequest["work_time"] = singleWorkTime;
+
+        singleSentRequest["status"] = static_cast<int>(approvedSentRequest.get_status());
+        singleSentRequest["total_credit"] = approvedSentRequest.get_total_credit();
+        
+        approvedSentRequestsArray.push_back(singleSentRequest);
+    }
+
+    j["approved_sent_requests"] = approvedSentRequestsArray;
+
+    json approvedReceivedRequestsArray;
+    for (Request approvedReceivedRequest : received_requests)
+    {
+        json singleReceivedRequest;
+        singleReceivedRequest["host"] = approvedReceivedRequest.get_host();
+
+        AvailableJob &job = approvedReceivedRequest.get_job();
+
+        json singleJob;
+        singleJob["supporter_name"] = approvedReceivedRequest.get_job().get_supporter_name();
+        singleJob["skill_name"] = approvedReceivedRequest.get_job().get_skill().get_skill_name();
+        singleJob["start_time"] = approvedReceivedRequest.get_job().get_available_time().get_start_time_string();
+        singleJob["end_time"] = approvedReceivedRequest.get_job().get_available_time().get_end_time_string();
+
+        singleReceivedRequest["job"] = singleJob;
+
+        json singleWorkTime;
+        singleWorkTime["start_time"] = approvedReceivedRequest.get_work_time().get_start_time_string();
+        singleWorkTime["end_time"] = approvedReceivedRequest.get_work_time().get_end_time_string();
+
+        singleReceivedRequest["work_time"] = singleWorkTime;
+
+        singleReceivedRequest["status"] = static_cast<int>(approvedReceivedRequest.get_status());
+        singleReceivedRequest["total_credit"] = approvedReceivedRequest.get_total_credit();
+        
+        approvedReceivedRequestsArray.push_back(singleReceivedRequest);
+    }
+
+    j["approved_received_requests"] = approvedReceivedRequestsArray;
+
 }
 
 // Deserialization function for Member class
@@ -183,6 +297,33 @@ void Users::Member::deserialize(const json &j)
         }
     }
 
+    // Deserialize host reviews array
+    if (j.find("host_reviews") != j.end())
+    {
+        const json &hostReviewsArray = j.at("host_reviews");
+        for (const auto &hostReview : hostReviewsArray)
+        {
+            int hostRating = hostReview.at("host_rating").get<int>();
+            std::string comment = hostReview.at("comment").get<std::string>();
+
+            host_reviews.emplace_back(comment, hostRating);
+        }
+    }
+
+    // Deserialize supporter reviews array
+    if (j.find("supporter_reviews") != j.end())
+    {
+        const json &supporterReviewsArray = j.at("supporter_reviews");
+        for (const auto &supporterReview : supporterReviewsArray)
+        {
+            int supporterRating = supporterReview.at("supporter_rating").get<int>();
+            int skillRating = supporterReview.at("skill_rating").get<int>();
+            std::string comment = supporterReview.at("comment").get<std::string>();
+
+            supporter_reviews.emplace_back(comment, supporterRating, skillRating);
+        }
+    }
+
     // Deserialize sent requests array
     if (j.find("sent_requests") != j.end())
     {
@@ -209,4 +350,84 @@ void Users::Member::deserialize(const json &j)
             sent_requests.emplace_back(host, job, workTime, status, skillName);
         }
     }
+
+    // Deserialize received requests array
+    if (j.find("received_requests") != j.end())
+    {
+        const json &receivedRequestsArray = j.at("received_requests");
+        for (const auto &receivedRequest : receivedRequestsArray)
+        {
+            std::string host = receivedRequest.at("host").get<std::string>();
+
+            std::string supporterName = receivedRequest.at("job").at("supporter_name").get<std::string>();
+            std::string skillName = receivedRequest.at("job").at("skill_name").get<std::string>();
+            std::string startTime = receivedRequest.at("job").at("start_time").get<std::string>();
+            std::string endTime = receivedRequest.at("job").at("end_time").get<std::string>();
+            Period availableTime = Period(startTime, endTime);
+            Skill tempSkill = Skill();
+            AvailableJob job = AvailableJob(supporterName, availableTime, tempSkill);
+
+            std::string workStartTime = receivedRequest.at("work_time").at("start_time").get<std::string>();
+            std::string workEndTime = receivedRequest.at("work_time").at("end_time").get<std::string>();
+            Period workTime = Period(workStartTime, workEndTime);
+
+            Status status = static_cast<Status>(receivedRequest.at("status").get<int>());
+            float totalCredit = receivedRequest.at("total_credit").get<float>();
+
+            received_requests.emplace_back(host, job, workTime, status, skillName);
+        }
+    }
+
+    if (j.find("approved_sent_requests") != j.end())
+    {
+        const json &sentRequestsArray = j.at("approved_sent_requests");
+        for (const auto &sentRequest : sentRequestsArray)
+        {
+            std::string host = sentRequest.at("host").get<std::string>();
+
+            std::string supporterName = sentRequest.at("job").at("supporter_name").get<std::string>();
+            std::string skillName = sentRequest.at("job").at("skill_name").get<std::string>();
+            std::string startTime = sentRequest.at("job").at("start_time").get<std::string>();
+            std::string endTime = sentRequest.at("job").at("end_time").get<std::string>();
+            Period availableTime = Period(startTime, endTime);
+            Skill tempSkill = Skill();
+            AvailableJob job = AvailableJob(supporterName, availableTime, tempSkill);
+
+            std::string workStartTime = sentRequest.at("work_time").at("start_time").get<std::string>();
+            std::string workEndTime = sentRequest.at("work_time").at("end_time").get<std::string>();
+            Period workTime = Period(workStartTime, workEndTime);
+
+            Status status = static_cast<Status>(sentRequest.at("status").get<int>());
+            float totalCredit = sentRequest.at("total_credit").get<float>();
+
+            approved_sent_requests.emplace_back(host, job, workTime, status, skillName);
+        }
+    }
+
+    if (j.find("approved_received_requests") != j.end())
+    {
+        const json &receivedRequestsArray = j.at("approved_received_requests");
+        for (const auto &receivedRequest : receivedRequestsArray)
+        {
+            std::string host = receivedRequest.at("host").get<std::string>();
+
+            std::string supporterName = receivedRequest.at("job").at("supporter_name").get<std::string>();
+            std::string skillName = receivedRequest.at("job").at("skill_name").get<std::string>();
+            std::string startTime = receivedRequest.at("job").at("start_time").get<std::string>();
+            std::string endTime = receivedRequest.at("job").at("end_time").get<std::string>();
+            Period availableTime = Period(startTime, endTime);
+            Skill tempSkill = Skill();
+            AvailableJob job = AvailableJob(supporterName, availableTime, tempSkill);
+
+            std::string workStartTime = receivedRequest.at("work_time").at("start_time").get<std::string>();
+            std::string workEndTime = receivedRequest.at("work_time").at("end_time").get<std::string>();
+            Period workTime = Period(workStartTime, workEndTime);
+
+            Status status = static_cast<Status>(receivedRequest.at("status").get<int>());
+            float totalCredit = receivedRequest.at("total_credit").get<float>();
+
+            approved_received_requests.emplace_back(host, job, workTime, status, skillName);
+        }
+    }
+
 }

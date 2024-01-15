@@ -91,6 +91,16 @@ std::vector<Request> &Users::Member::get_sent_requests()
     return sent_requests;
 }
 
+std::vector<Request> &Users::Member::get_approved_sent_requests()
+{
+    return approved_sent_requests;
+}
+
+std::vector<Request> &Users::Member::get_approved_received_requests()
+{
+    return approved_received_requests;
+}
+
 const std::vector<Period> Users::Member::get_available_times() const
 {
     return available_times;
@@ -197,6 +207,16 @@ void Users::Member::add_sent_request(Request &request)
 void Users::Member::add_received_request(Request &request)
 {
     this->received_requests.push_back(request);
+}
+
+void Users::Member::add_approved_sent_request(Request &request)
+{
+    this->approved_sent_requests.push_back(request);
+}
+
+void Users::Member::add_approved_received_request(Request &request)
+{
+    this->approved_received_requests.push_back(request);
 }
 
 void Users::Member::add_host_review(HostReview &review)

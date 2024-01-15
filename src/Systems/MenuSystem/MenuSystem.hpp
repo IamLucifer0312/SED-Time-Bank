@@ -103,6 +103,12 @@ public:
     void add_available_job();
     void add_credit();
 
+    void view_approved_requests();
+
+    // review
+    void review_supporter(vector<Request> &requests_list);
+    void review_host(vector<Request> &requests_list);
+
     friend class UserSystem;
 
 };
