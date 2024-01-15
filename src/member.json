@@ -1,258 +1,254 @@
 [
-    {
-        "approved_received_requests": null,
-        "approved_sent_requests": null,
-        "available_jobs": [
-            {
-                "end_time": "2023-11-11 12:00:00",
-                "skill_name": "Programming",
-                "start_time": "2023-11-11 10:00:00",
-                "supporter_name": "Helu"
-            }
-        ],
-        "available_times": [
-            {
-                "end_time": "2023-11-11 12:00:00",
-                "start_time": "2023-11-11 10:00:00"
-            },
-            {
-                "end_time": "2024-01-07 12:00:00",
-                "start_time": "2024-01-07 10:00:00"
-            }
-        ],
-        "block_list": null,
-        "city": "Ha noi",
-        "credit": 25.0,
-        "email": "fewf@gmail.com",
-        "full_name": "Fut",
-        "home_address": "no",
-        "host_reviews": [
-            {
-                "comment": "Helu",
-                "host_rating": 3
-            }
-        ],
-        "password": "123",
-        "phone_number": "0912",
-        "received_requests": null,
-        "sent_requests": null,
-        "skills": [
-            {
-                "consumed_per_hour": 5.199999809265137,
-                "minimum_rating": 3.5,
-                "skill_name": "Programming"
-            },
-            {
-                "consumed_per_hour": 4.099999904632568,
-                "minimum_rating": 2.5,
-                "skill_name": "Cooking"
-            }
-        ],
-        "supporter_reviews": null,
-        "username": "Helu"
-    },
-    {
-        "approved_received_requests": null,
-        "approved_sent_requests": null,
-        "available_jobs": [
-            {
-                "end_time": "2023-11-11 12:00:00",
-                "skill_name": "Programming",
-                "start_time": "2023-11-11 10:00:00",
-                "supporter_name": "ddd"
-            }
-        ],
-        "available_times": [
-            {
-                "end_time": "2023-11-11 12:00:00",
-                "start_time": "2023-11-11 10:00:00"
-            },
-            {
-                "end_time": "2024-01-12 12:00:00",
-                "start_time": "2024-01-12 10:00:00"
-            }
-        ],
-        "block_list": [
-            "babicutie"
-        ],
-        "city": "Sai gon",
-        "credit": 30.0,
-        "email": "ddd@gmail.com",
-        "full_name": "duc quang",
-        "home_address": "123 Nguyen Van Linh",
-        "host_reviews": null,
-        "password": "dd",
-        "phone_number": "8328382",
-        "received_requests": null,
-        "sent_requests": null,
-        "skills": [
-            {
-                "consumed_per_hour": 5.199999809265137,
-                "minimum_rating": 3.5,
-                "skill_name": "Programming"
-            },
-            {
-                "consumed_per_hour": 4.099999904632568,
-                "minimum_rating": 2.5,
-                "skill_name": "Cooking"
-            }
-        ],
-        "supporter_reviews": null,
-        "username": "ddd"
-    },
-    {
-        "approved_received_requests": null,
-        "approved_sent_requests": [
-            {
-                "host": "TT",
-                "job": {
-                    "end_time": "2023-11-11 12:00:00",
-                    "skill_name": "",
-                    "start_time": "2023-11-11 10:00:00",
-                    "supporter_name": "Helu"
-                },
-                "status": 1,
-                "total_credit": 0.0,
-                "work_time": {
-                    "end_time": "2023-11-11 12:00:00",
-                    "start_time": "2023-11-11 10:00:00"
-                }
-            }
-        ],
-        "available_jobs": [
-            {
-                "end_time": "2023-11-11 12:00:00",
-                "skill_name": "Programming",
-                "start_time": "2023-11-11 10:00:00",
-                "supporter_name": "TT"
-            },
-            {
-                "end_time": "2024-01-07 12:00:00",
-                "skill_name": "Cooking",
-                "start_time": "2024-01-07 10:00:00",
-                "supporter_name": "TT"
-            }
-        ],
-        "available_times": [
-            {
-                "end_time": "2023-11-11 12:00:00",
-                "start_time": "2023-11-11 10:00:00"
-            },
-            {
-                "end_time": "2024-01-07 12:00:00",
-                "start_time": "2024-01-07 10:00:00"
-            }
-        ],
-        "block_list": [
-            "ddd"
-        ],
-        "city": "Sai gon",
-        "credit": 57.0,
-        "email": "test@gmail.com",
-        "full_name": "NTT",
-        "home_address": "Hihi",
-        "host_reviews": null,
-        "password": "123456",
-        "phone_number": "123",
-        "received_requests": null,
-        "sent_requests": [
-            {
-                "host": "TT",
-                "job": {
-                    "end_time": "2023-11-11 12:00:00",
-                    "skill_name": "Programming",
-                    "start_time": "2023-11-11 10:00:00",
-                    "supporter_name": "Helu"
-                },
-                "status": 0,
-                "total_credit": 10.399999618530273,
-                "work_time": {
-                    "end_time": "2023-11-11 12:00:00",
-                    "start_time": "2023-11-11 10:00:00"
-                }
-            },
-            {
-                "host": "TT",
-                "job": {
-                    "end_time": "2023-11-11 12:00:00",
-                    "skill_name": "Programming",
-                    "start_time": "2023-11-11 10:00:00",
-                    "supporter_name": "Helu"
-                },
-                "status": 0,
-                "total_credit": 10.399999618530273,
-                "work_time": {
-                    "end_time": "2023-11-11 12:00:00",
-                    "start_time": "2023-11-11 10:00:00"
-                }
-            }
-        ],
-        "skills": [
-            {
-                "consumed_per_hour": 5.199999809265137,
-                "minimum_rating": 3.5,
-                "skill_name": "Programming"
-            },
-            {
-                "consumed_per_hour": 4.099999904632568,
-                "minimum_rating": 2.5,
-                "skill_name": "Cooking"
-            },
-            {
-                "consumed_per_hour": 10.0,
-                "minimum_rating": 2.0,
-                "skill_name": "Teaching"
-            },
-            {
-                "consumed_per_hour": 0.0,
-                "minimum_rating": 0.0,
-                "skill_name": "0"
-            }
-        ],
-        "supporter_reviews": null,
-        "username": "TT"
-    },
-    {
-        "approved_received_requests": null,
-        "approved_sent_requests": null,
-        "available_jobs": [
-            {
-                "end_time": "2023-11-11 12:00:00",
-                "skill_name": "Programming",
-                "start_time": "2023-11-11 10:00:00",
-                "supporter_name": "hung anh"
-            }
-        ],
-        "available_times": [
-            {
-                "end_time": "2023-11-11 12:00:00",
-                "start_time": "2023-11-11 10:00:00"
-            }
-        ],
-        "block_list": null,
-        "city": "Sai gon",
-        "credit": 20.0,
-        "email": "asew@gmail.com",
-        "full_name": "Pham Hung Anh",
-        "home_address": "abcd",
-        "host_reviews": null,
-        "password": "123456",
-        "phone_number": "0987654321",
-        "received_requests": null,
-        "sent_requests": null,
-        "skills": [
-            {
-                "consumed_per_hour": 5.199999809265137,
-                "minimum_rating": 3.5,
-                "skill_name": "Programming"
-            },
-            {
-                "consumed_per_hour": 4.099999904632568,
-                "minimum_rating": 2.5,
-                "skill_name": "Cooking"
-            }
-        ],
-        "supporter_reviews": null,
-        "username": "hung anh"
-    }
+  {
+    "approved_received_requests": null,
+    "approved_sent_requests": null,
+    "available_jobs": [
+      {
+        "end_time": "2023-11-11 12:00:00",
+        "skill_name": "Programming",
+        "start_time": "2023-11-11 10:00:00",
+        "supporter_name": "Helu"
+      }
+    ],
+    "available_times": [
+      {
+        "end_time": "2023-11-11 12:00:00",
+        "start_time": "2023-11-11 10:00:00"
+      },
+      {
+        "end_time": "2024-01-07 12:00:00",
+        "start_time": "2024-01-07 10:00:00"
+      }
+    ],
+    "block_list": null,
+    "city": "Ha noi",
+    "credit": 25.0,
+    "email": "fewf@gmail.com",
+    "full_name": "Fut",
+    "home_address": "no",
+    "host_reviews": [
+      {
+        "comment": "Helu",
+        "host_rating": 3
+      }
+    ],
+    "password": "123",
+    "phone_number": "0912",
+    "received_requests": null,
+    "sent_requests": null,
+    "skills": [
+      {
+        "consumed_per_hour": 5.199999809265137,
+        "minimum_rating": 3.5,
+        "skill_name": "Programming"
+      },
+      {
+        "consumed_per_hour": 4.099999904632568,
+        "minimum_rating": 2.5,
+        "skill_name": "Cooking"
+      }
+    ],
+    "supporter_reviews": null,
+    "username": "Helu"
+  },
+  {
+    "approved_received_requests": null,
+    "approved_sent_requests": null,
+    "available_jobs": [
+      {
+        "end_time": "2023-11-11 12:00:00",
+        "skill_name": "Programming",
+        "start_time": "2023-11-11 10:00:00",
+        "supporter_name": "ddd"
+      }
+    ],
+    "available_times": [
+      {
+        "end_time": "2023-11-11 12:00:00",
+        "start_time": "2023-11-11 10:00:00"
+      },
+      {
+        "end_time": "2024-01-12 12:00:00",
+        "start_time": "2024-01-12 10:00:00"
+      }
+    ],
+    "block_list": ["babicutie"],
+    "city": "Sai gon",
+    "credit": 30.0,
+    "email": "ddd@gmail.com",
+    "full_name": "duc quang",
+    "home_address": "123 Nguyen Van Linh",
+    "host_reviews": null,
+    "password": "dd",
+    "phone_number": "8328382",
+    "received_requests": null,
+    "sent_requests": null,
+    "skills": [
+      {
+        "consumed_per_hour": 5.199999809265137,
+        "minimum_rating": 3.5,
+        "skill_name": "Programming"
+      },
+      {
+        "consumed_per_hour": 4.099999904632568,
+        "minimum_rating": 2.5,
+        "skill_name": "Cooking"
+      }
+    ],
+    "supporter_reviews": null,
+    "username": "ddd"
+  },
+  {
+    "approved_received_requests": null,
+    "approved_sent_requests": [
+      {
+        "host": "TT",
+        "job": {
+          "end_time": "2023-11-11 12:00:00",
+          "skill_name": "",
+          "start_time": "2023-11-11 10:00:00",
+          "supporter_name": "Helu"
+        },
+        "status": 1,
+        "total_credit": 0.0,
+        "work_time": {
+          "end_time": "2023-11-11 12:00:00",
+          "start_time": "2023-11-11 10:00:00"
+        }
+      }
+    ],
+    "available_jobs": [
+      {
+        "end_time": "2023-11-11 12:00:00",
+        "skill_name": "Programming",
+        "start_time": "2023-11-11 10:00:00",
+        "supporter_name": "TT"
+      },
+      {
+        "end_time": "2024-01-07 12:00:00",
+        "skill_name": "Cooking",
+        "start_time": "2024-01-07 10:00:00",
+        "supporter_name": "TT"
+      }
+    ],
+    "available_times": [
+      {
+        "end_time": "2023-11-11 12:00:00",
+        "start_time": "2023-11-11 10:00:00"
+      },
+      {
+        "end_time": "2024-01-07 12:00:00",
+        "start_time": "2024-01-07 10:00:00"
+      }
+    ],
+    "block_list": ["ddd"],
+    "city": "Sai gon",
+    "credit": 57.0,
+    "email": "test@gmail.com",
+    "full_name": "NTT",
+    "home_address": "Hihi",
+    "host_reviews": null,
+    "password": "123456",
+    "phone_number": "123",
+    "received_requests": null,
+    "sent_requests": [
+      {
+        "host": "TT",
+        "job": {
+          "end_time": "2023-11-11 12:00:00",
+          "skill_name": "Programming",
+          "start_time": "2023-11-11 10:00:00",
+          "supporter_name": "Helu"
+        },
+        "status": 0,
+        "total_credit": 10.399999618530273,
+        "work_time": {
+          "end_time": "2023-11-11 12:00:00",
+          "start_time": "2023-11-11 10:00:00"
+        }
+      },
+      {
+        "host": "TT",
+        "job": {
+          "end_time": "2023-11-11 12:00:00",
+          "skill_name": "Programming",
+          "start_time": "2023-11-11 10:00:00",
+          "supporter_name": "Helu"
+        },
+        "status": 0,
+        "total_credit": 10.399999618530273,
+        "work_time": {
+          "end_time": "2023-11-11 12:00:00",
+          "start_time": "2023-11-11 10:00:00"
+        }
+      }
+    ],
+    "skills": [
+      {
+        "consumed_per_hour": 5.199999809265137,
+        "minimum_rating": 3.5,
+        "skill_name": "Programming"
+      },
+      {
+        "consumed_per_hour": 4.099999904632568,
+        "minimum_rating": 2.5,
+        "skill_name": "Cooking"
+      },
+      {
+        "consumed_per_hour": 10.0,
+        "minimum_rating": 2.0,
+        "skill_name": "Teaching"
+      },
+      {
+        "consumed_per_hour": 0.0,
+        "minimum_rating": 0.0,
+        "skill_name": "0"
+      }
+    ],
+    "supporter_reviews": null,
+    "username": "TT"
+  },
+  {
+    "approved_received_requests": null,
+    "approved_sent_requests": null,
+    "available_jobs": [
+      {
+        "end_time": "2023-11-11 12:00:00",
+        "skill_name": "Programming",
+        "start_time": "2023-11-11 10:00:00",
+        "supporter_name": "hung anh"
+      }
+    ],
+    "available_times": [
+      {
+        "end_time": "2023-11-11 12:00:00",
+        "start_time": "2023-11-11 10:00:00"
+      }
+    ],
+    "block_list": null,
+    "city": "Sai gon",
+    "credit": 20.0,
+    "email": "asew@gmail.com",
+    "full_name": "Pham Hung Anh",
+    "home_address": "abcd",
+    "host_reviews": null,
+    "password": "123456",
+    "phone_number": "0987654321",
+    "received_requests": null,
+    "sent_requests": null,
+    "skills": [
+      {
+        "consumed_per_hour": 5.199999809265137,
+        "minimum_rating": 3.5,
+        "skill_name": "Programming"
+      },
+      {
+        "consumed_per_hour": 4.099999904632568,
+        "minimum_rating": 2.5,
+        "skill_name": "Cooking"
+      }
+    ],
+    "supporter_reviews": null,
+    "username": "hung anh"
+  }
 ]

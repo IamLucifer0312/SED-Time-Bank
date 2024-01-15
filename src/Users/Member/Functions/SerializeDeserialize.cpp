@@ -133,7 +133,7 @@ void Users::Member::serialize(json &j) const
 
         singleSentRequest["status"] = static_cast<int>(sentRequest.get_status());
         singleSentRequest["total_credit"] = sentRequest.get_total_credit();
-        
+
         sentRequestsArray.push_back(singleSentRequest);
     }
 

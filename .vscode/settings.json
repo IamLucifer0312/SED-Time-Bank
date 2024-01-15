@@ -93,6 +93,22 @@
     "xtree": "cpp",
     "xutility": "cpp",
     "__hash_table": "cpp",
-    "__memory": "cpp"
+    "__memory": "cpp",
+    "__bit_reference": "cpp",
+    "__bits": "cpp",
+    "__config": "cpp",
+    "__debug": "cpp",
+    "__errc": "cpp",
+    "__locale": "cpp",
+    "__mutex_base": "cpp",
+    "__node_handle": "cpp",
+    "__split_buffer": "cpp",
+    "__threading_support": "cpp",
+    "__tree": "cpp",
+    "__tuple": "cpp",
+    "__verbose_abort": "cpp",
+    "complex": "cpp",
+    "queue": "cpp",
+    "stack": "cpp"
   }
 }

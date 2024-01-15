@@ -67,6 +67,7 @@ void Database::set_job_to_requests(vector<Users::Member> &deserializedMembers)
 {
     for (Users::Member &member : deserializedMembers)
     {
+        // set sent requests
         if (member.get_sent_requests().empty())
         {
             continue;
@@ -86,6 +87,28 @@ void Database::set_job_to_requests(vector<Users::Member> &deserializedMembers)
 
             request.set_job(job);
         }
+
+        // set received requests
+        if (member.get_received_requests().empty())
+        {
+            continue;
+        }
+
+        for (Request &request : member.get_received_requests())
+        {
+            string skillName = request.get_temp_skill_name();
+
+            Users::Member supporter;
+            find_member_macro(request.get_supporter(), deserializedMembers, supporter);
+
+            Skill tempSkill = supporter.get_skill_by_name(skillName);
+
+            AvailableJob &job = request.get_job();
+            job.set_skill(tempSkill);
+
+            request.set_job(job);
+        }
+
     }
 }
 

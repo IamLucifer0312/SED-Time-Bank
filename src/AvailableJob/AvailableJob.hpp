@@ -39,6 +39,10 @@ private:
     const Period get_available_time() const;
     const Skill get_skill() const;
 
+    // operator
+    bool operator==(const AvailableJob &availableJob) const;
+
+// show info
     void showInfo();
     friend class MenuSystem;
 

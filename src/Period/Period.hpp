@@ -50,6 +50,9 @@ public:
 
     // operator overloading
     bool operator==(const Period &other) const;
+
+    // copy operator
+    Period &operator=(const Period &other);
 };
 
 #endif // PERIOD_HPP

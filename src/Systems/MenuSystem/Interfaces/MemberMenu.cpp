@@ -33,10 +33,6 @@ void MenuSystem::member_menu()
                   << "7. Add available job. \n"
                   << "8. View approved requests. \n";
 
-        // testing
-        const AvailableJob &tempJob = (userSystem.get_database().find_member("hung anh").get_available_jobs())[0];
-        Period tempTime = Period();
-
         switch (prompt_choice(0, 8))
         {
         case 1:
