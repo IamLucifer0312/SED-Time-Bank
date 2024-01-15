@@ -5,6 +5,7 @@ void MenuSystem::book_job() {
     std::cout << "Enter supporter username: ";
     std::getline(std::cin, supporterName);
     
+    // need error handling here:
     int arraySize = userSystem.database.find_member(supporterName).get_available_jobs().size();
     vector<AvailableJob> availableJobs = userSystem.database.find_member(supporterName).get_available_jobs();
     for (size_t i = 0; i < arraySize; i++)

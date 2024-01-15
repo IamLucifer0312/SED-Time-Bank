@@ -19,7 +19,7 @@ void MenuSystem::view_approved_requests() {
                 cout << "Host: " << request.get_host() << std::endl;
                 cout << "Work time: " << request.get_job().get_available_time().get_start_time_string() << " - " << request.get_job().get_available_time().get_end_time_string() << std::endl;
                 cout << "Credit: " << request.get_total_credit() << std::endl;
-                cout << "Skill: " << request.get_job().get_skill().get_string() << std::endl;
+                cout << "Skill: " << request.get_job().get_skill().get_skill_name() << std::endl;
             }
             std::cout << "\n";
             std::cout << "What do you want to do ?\n"
@@ -43,7 +43,7 @@ void MenuSystem::view_approved_requests() {
                 cout << "Host: " << request.get_host() << std::endl;
                 cout << "Work time: " << request.get_job().get_available_time().get_start_time_string() << " - " << request.get_job().get_available_time().get_end_time_string() << std::endl;
                 cout << "Credit: " << request.get_total_credit() << std::endl;
-                cout << "Skill: " << request.get_job().get_skill().get_string() << std::endl;
+                cout << "Skill: " << request.get_job().get_skill().get_skill_name() << std::endl;
             }
             std::cout << "\n";
             std::cout << "What do you want to do ?\n"
