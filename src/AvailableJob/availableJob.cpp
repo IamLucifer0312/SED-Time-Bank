@@ -53,6 +53,12 @@ const Skill AvailableJob::get_skill() const
     return skill;
 }
 
+// operator
+bool AvailableJob::operator==(const AvailableJob &availableJob) const
+{
+    return this->supporterName == availableJob.supporterName;
+}
+
 void AvailableJob::showInfo() {
     std::cout << "Supporter name: " << supporterName << std::endl;
     std::cout << skill.get_string() << std::endl;

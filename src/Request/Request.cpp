@@ -108,3 +108,15 @@ const float Request::get_total_credit() const
 {
     return totalCredit;
 }
+
+
+// operator
+bool Request::operator==(const Request &request) const
+{
+    return (this->host == request.host
+            && this->supporter == request.supporter 
+            && this->job == request.job 
+            && this->workTime == request.workTime 
+            && this->status == request.status
+            );
+}

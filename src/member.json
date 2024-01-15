@@ -26,6 +26,23 @@
         "home_address": "no",
         "password": "123",
         "phone_number": "0912",
+        "received_requests": [
+            {
+                "host": "TT",
+                "job": {
+                    "end_time": "2023-11-11 12:00:00",
+                    "skill_name": "Programming",
+                    "start_time": "2023-11-11 10:00:00",
+                    "supporter_name": "Helu"
+                },
+                "status": 0,
+                "total_credit": 10.399999618530273,
+                "work_time": {
+                    "end_time": "2023-11-11 12:00:00",
+                    "start_time": "2023-11-11 10:00:00"
+                }
+            }
+        ],
         "sent_requests": [
             {
                 "host": "Helu",
@@ -36,6 +53,21 @@
                     "supporter_name": "ddd"
                 },
                 "status": 0,
+                "total_credit": 10.399999618530273,
+                "work_time": {
+                    "end_time": "2023-11-11 12:00:00",
+                    "start_time": "2023-11-11 10:00:00"
+                }
+            },
+            {
+                "host": "Helu",
+                "job": {
+                    "end_time": "2023-11-11 12:00:00",
+                    "skill_name": "Programming",
+                    "start_time": "2023-11-11 10:00:00",
+                    "supporter_name": "TT"
+                },
+                "status": 2,
                 "total_credit": 10.399999618530273,
                 "work_time": {
                     "end_time": "2023-11-11 12:00:00",
@@ -86,6 +118,7 @@
         "home_address": "123 Nguyen Van Linh",
         "password": "dd",
         "phone_number": "8328382",
+        "received_requests": null,
         "sent_requests": null,
         "skills": [
             {
@@ -136,6 +169,7 @@
         "home_address": "Hihi",
         "password": "123456",
         "phone_number": "123",
+        "received_requests": null,
         "sent_requests": [
             {
                 "host": "TT",
@@ -200,6 +234,7 @@
         "home_address": "abcd",
         "password": "123456",
         "phone_number": "0987654321",
+        "received_requests": null,
         "sent_requests": null,
         "skills": [
             {

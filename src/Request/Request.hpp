@@ -24,7 +24,7 @@ private:
     string tempSkillName;
     Period workTime;
     Status status;
-    float totalCredit;
+    float totalCredit = 0;
 
 public:
     // default constructor
@@ -51,6 +51,9 @@ public:
     const Status get_status() const;
     const string get_status_string() const;
     const float get_total_credit() const;
+
+    // operator
+    bool operator==(const Request &request) const;
 };
 
 #endif // REQUEST_HPP
