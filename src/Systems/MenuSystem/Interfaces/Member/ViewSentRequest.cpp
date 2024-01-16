@@ -16,6 +16,7 @@ void MenuSystem::view_sent_request()
         // check if there are no requests
         if (requests_list.size() == 0)
         {
+            clear_screen();
             cout << "There are no requests." << std::endl;
 
             cout << "0. Back" << std::endl;
