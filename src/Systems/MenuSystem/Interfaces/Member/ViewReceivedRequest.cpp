@@ -124,7 +124,7 @@ void MenuSystem::accept_or_reject_request(vector<Request> &requests_list)
 
         // save to database
         userSystem.update_member(host);
-        userSystem.update_current_member();
+        userSystem.update_member(userSystem.current_member);
         cout << "Request accepted." << std::endl;
         cout << "0. Back" << std::endl;
 

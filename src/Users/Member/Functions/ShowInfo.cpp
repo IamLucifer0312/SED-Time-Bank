@@ -12,12 +12,14 @@ void Users::Member::show_member_info(std::string role) {
         std::cout << std::endl;
         
         std::cout << "Skills: " << std::endl;
+        std::cout << std::endl;
         for (Skill &skill : this->skills)
         {
             std::cout << skill.get_string() << std::endl;
             std::cout << std::endl;
         }
         std::cout << "Available times: " << std::endl;
+        std::cout << std::endl;
         for (Period &available_time : this->available_times)
         {   
             std::cout << "Start time: " << available_time.get_start_time_string() << std::endl;
@@ -25,6 +27,7 @@ void Users::Member::show_member_info(std::string role) {
             std::cout << std::endl;
         }
         std::cout << "Available Jobs: " << std::endl;
+        std::cout << std::endl;
         for (AvailableJob &available_job : this->available_jobs)
         {
             std::cout << "Supporter name: " << available_job.get_supporter_name() << std::endl;
@@ -62,11 +65,13 @@ void Users::Member::show_member_info(std::string role) {
         std::cout << std::endl;
 
         std::cout << "Skills: " << std::endl;
+        std::cout << std::endl;
         for (Skill &skill : this->skills)
         {
             std::cout << skill.get_string() << std::endl;
         }
         std::cout << "Available times: " << std::endl;
+        std::cout << std::endl;
         for (Period &available_time : this->available_times)
         {
             std::cout << "Start time: " << available_time.get_start_time_string() << std::endl;
@@ -82,6 +87,7 @@ void Users::Member::show_member_info(std::string role) {
         std::cout << std::endl;
 
         std::cout << "Available Jobs: " << std::endl;
+        std::cout << std::endl;
         for (AvailableJob &available_job : this->available_jobs)
         {
             std::cout << "Supporter name: " << available_job.get_supporter_name() << std::endl;
@@ -104,12 +110,14 @@ void Users::Member::show_member_info(std::string role) {
         std::cout << std::endl;
         
         std::cout << "Skills: " << std::endl;
+        std::cout << std::endl;
         for (Skill &skill : this->skills)
         {
             std::cout << skill.get_string() << std::endl;
             std::cout << std::endl;
         }
         std::cout << "Available times: " << std::endl;
+        std::cout << std::endl;
         for (Period &available_time : this->available_times)
         {   
             std::cout << "Start time: " << available_time.get_start_time_string() << std::endl;
@@ -126,6 +134,7 @@ void Users::Member::show_member_info(std::string role) {
         std::cout << std::endl;
 
         std::cout << "Available Jobs: " << std::endl;
+        std::cout << std::endl;
         for (AvailableJob &available_job : this->available_jobs)
         {
             std::cout << "Supporter name: " << available_job.get_supporter_name() << std::endl;

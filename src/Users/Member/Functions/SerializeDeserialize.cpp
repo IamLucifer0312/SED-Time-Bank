@@ -201,7 +201,7 @@ void Users::Member::serialize(json &j) const
     j["approved_sent_requests"] = approvedSentRequestsArray;
 
     json approvedReceivedRequestsArray;
-    for (Request approvedReceivedRequest : received_requests)
+    for (Request approvedReceivedRequest : approved_received_requests)
     {
         json singleReceivedRequest;
         singleReceivedRequest["host"] = approvedReceivedRequest.get_host();

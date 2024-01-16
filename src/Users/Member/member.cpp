@@ -250,16 +250,16 @@ void Users::Member::remove_skill(string &skill_name)
     }
 }
 
-// void Users::Member::remove_available_job(Period &available_time, Skill &skill)
-// {
-//     for (int i = 0; i < this->available_jobs.size(); i++)
-//     {
-//         if (this->available_jobs[i].get_available_time().get_start_time_string() == available_time.get_start_time_string() && this->available_jobs[i].get_available_time().get_end_time_string() == available_time.get_end_time_string() && this->available_jobs[i].get_skill().get_skill_name() == skill.get_skill_name())
-//         {
-//             this->available_jobs.erase(this->available_jobs.begin() + i);
-//         }
-//     }
-// }
+void Users::Member::remove_available_job(AvailableJob &availableJob)
+{
+    for (int i = 0; i < this->available_jobs.size(); i++)
+    {
+        if (this->available_jobs[i] == availableJob)
+        {
+            this->available_jobs.erase(this->available_jobs.begin() + i);
+        }
+    }
+}
 
 void Users::Member::remove_available_time(string &startTime, string &endTime)
 {

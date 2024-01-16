@@ -13,7 +13,7 @@
 #include "Member/ViewSentRequest.cpp"
 #include "Member/ViewReceivedRequest.cpp"
 #include "Member/RateApprovedJob.cpp"
-#include "AddAvailableJob.cpp"
+#include "UpdateAvailableJob.cpp"
 #include "Member/MakeRequest.cpp"
 #include "Block_member_interface.cpp"
 // member menu
@@ -31,7 +31,7 @@ void MenuSystem::member_menu()
                   << "3. Block member.\n"
                   << "4. View current requests. \n"
                   << "5. Find supporter. \n"
-                  << "6. Add available job. \n"
+                  << "6. Update available job. \n"
                   << "7. View approved requests. \n";
 
         switch (prompt_choice(0, 7))
@@ -56,7 +56,8 @@ void MenuSystem::member_menu()
             find_supporter_interface("member");
             break;
         case 6:
-            add_available_job();
+            clear_screen();
+            update_available_job();
             break;
         case 7:
             clear_screen();

@@ -101,7 +101,7 @@ public:
     void find_supporter_availableTime(std::string role);
 
     // add available job
-    void add_available_job();
+    void update_available_job();
     void add_credit();
 
     // view requests
