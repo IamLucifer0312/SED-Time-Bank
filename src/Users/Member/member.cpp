@@ -234,6 +234,11 @@ void Users::Member::add_credit(float addingCredit) {
 }
 
 // remove
+
+void Users::Member::subtract_credit(float subtractingCredit) {
+    credit -= subtractingCredit;
+}
+
 void Users::Member::remove_skill(string &skill_name)
 {
     for (int i = 0; i < this->skills.size(); i++)

@@ -103,6 +103,8 @@ public:
     void add_available_job();
     void add_credit();
 
+    //view requests
+    void view_current_requests();
     void view_approved_requests();
 
     // review

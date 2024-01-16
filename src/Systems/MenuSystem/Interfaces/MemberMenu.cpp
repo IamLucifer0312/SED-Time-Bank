@@ -9,6 +9,7 @@
 #include "find_all_supporter.cpp"
 #include "find_supporter_availableTime.cpp"
 #include "Find_supporter.cpp"
+#include "Member/ViewCurrentRequests.cpp"
 #include "Member/ViewSentRequest.cpp"
 #include "Member/ViewReceivedRequest.cpp"
 #include "Member/RateApprovedJob.cpp"
@@ -27,13 +28,12 @@ void MenuSystem::member_menu()
                   << "1. View my information.\n"
                   << "2. Add credit.\n"
                   << "3. Block member.\n"
-                  << "4. View received request. \n"
+                  << "4. View current requests. \n"
                   << "5. Find supporter. \n"
-                  << "6. View sent request. \n"
-                  << "7. Add available job. \n"
-                  << "8. View approved requests. \n";
+                  << "6. Add available job. \n"
+                  << "7. View approved requests. \n";
 
-        switch (prompt_choice(0, 8))
+        switch (prompt_choice(0, 7))
         {
         case 1:
             member_view_my_info(information);
@@ -63,20 +63,16 @@ void MenuSystem::member_menu()
             break;
         case 4:
             clear_screen();
-            view_received_request();
+            view_current_requests();
             break;
         case 5:
             clear_screen();
             find_supporter_interface("member");
             break;
         case 6:
-            clear_screen();
-            view_sent_request();
-            break;
-        case 7:
             add_available_job();
             break;
-        case 8:
+        case 7:
             clear_screen();
             view_approved_requests();
             break;

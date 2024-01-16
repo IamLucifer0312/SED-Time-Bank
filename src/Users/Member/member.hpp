@@ -118,6 +118,7 @@ namespace Users
 
         // remove
         void remove_skill(string &skill_name);
+        void subtract_credit(float subtractingCredit);
         // void remove_available_job(Period &available_time, Skill &skill);
         void remove_available_time(string &startTime, string &endTime);
         void remove_block_list(string &username);
