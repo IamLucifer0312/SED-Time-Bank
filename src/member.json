@@ -76,7 +76,7 @@
             "babicutie"
         ],
         "city": "Sai gon",
-        "credit": 150.0,
+        "credit": 30.0,
         "email": "ddd@gmail.com",
         "full_name": "duc quang",
         "home_address": "123 Nguyen Van Linh",
@@ -84,23 +84,7 @@
         "password": "dd",
         "phone_number": "8328382",
         "received_requests": null,
-        "sent_requests": [
-            {
-                "host": "ddd",
-                "job": {
-                    "end_time": "2023-11-11 12:00:00",
-                    "skill_name": "Programming",
-                    "start_time": "2023-11-11 10:00:00",
-                    "supporter_name": "hung anh"
-                },
-                "status": 0,
-                "total_credit": 10.399999618530273,
-                "work_time": {
-                    "end_time": "2023-11-11 12:00:00",
-                    "start_time": "2023-11-11 10:00:00"
-                }
-            }
-        ],
+        "sent_requests": null,
         "skills": [
             {
                 "consumed_per_hour": 5.199999809265137,
@@ -138,12 +122,12 @@
                 "host": "TT",
                 "job": {
                     "end_time": "2023-11-11 12:00:00",
-                    "skill_name": "",
+                    "skill_name": "Programming",
                     "start_time": "2023-11-11 10:00:00",
                     "supporter_name": "ddd"
                 },
                 "status": 1,
-                "total_credit": 0.0,
+                "total_credit": 10.399999618530273,
                 "work_time": {
                     "end_time": "2023-11-11 12:00:00",
                     "start_time": "2023-11-11 10:00:00"
@@ -259,23 +243,7 @@
         "username": "TT"
     },
     {
-        "approved_received_requests": [
-            {
-                "host": "ddd",
-                "job": {
-                    "end_time": "2023-11-11 12:00:00",
-                    "skill_name": "Programming",
-                    "start_time": "2023-11-11 10:00:00",
-                    "supporter_name": "hung anh"
-                },
-                "status": 0,
-                "total_credit": 10.399999618530273,
-                "work_time": {
-                    "end_time": "2023-11-11 12:00:00",
-                    "start_time": "2023-11-11 10:00:00"
-                }
-            }
-        ],
+        "approved_received_requests": null,
         "approved_sent_requests": null,
         "available_jobs": [
             {
@@ -300,23 +268,7 @@
         "host_reviews": null,
         "password": "123456",
         "phone_number": "0987654321",
-        "received_requests": [
-            {
-                "host": "ddd",
-                "job": {
-                    "end_time": "2023-11-11 12:00:00",
-                    "skill_name": "Programming",
-                    "start_time": "2023-11-11 10:00:00",
-                    "supporter_name": "hung anh"
-                },
-                "status": 0,
-                "total_credit": 10.399999618530273,
-                "work_time": {
-                    "end_time": "2023-11-11 12:00:00",
-                    "start_time": "2023-11-11 10:00:00"
-                }
-            }
-        ],
+        "received_requests": null,
         "sent_requests": null,
         "skills": [
             {
@@ -332,25 +284,5 @@
         ],
         "supporter_reviews": null,
         "username": "hung anh"
-    },
-    {
-        "approved_received_requests": null,
-        "approved_sent_requests": null,
-        "available_jobs": null,
-        "available_times": null,
-        "block_list": null,
-        "city": "Sai gon",
-        "credit": 20.0,
-        "email": "test@gmail.com",
-        "full_name": "testting",
-        "home_address": "123 nguyen van linh",
-        "host_reviews": null,
-        "password": "123",
-        "phone_number": "35748584",
-        "received_requests": null,
-        "sent_requests": null,
-        "skills": null,
-        "supporter_reviews": null,
-        "username": "test"
     }
 ]
