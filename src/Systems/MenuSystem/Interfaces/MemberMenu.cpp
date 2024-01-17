@@ -21,7 +21,7 @@ void MenuSystem::member_menu()
     while (loggedIn)
     {
         clear_screen();
-        std::cout << "Member menu:\n"
+        std::cout << "\n\nMember actions:\n"
                   << "==============================\n"
                   << "0. Logout.\n"
                   << "1. View my information.\n"
