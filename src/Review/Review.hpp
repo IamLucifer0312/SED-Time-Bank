@@ -56,7 +56,6 @@ class SupporterReview : public Review {
         // getter
         const int get_supporter_rating() const;
         const int get_skill_rating() const;
-
         // setter
         void set_supporter_rating(int &supporterReview);
         void set_skill_rating(int &skillRating);

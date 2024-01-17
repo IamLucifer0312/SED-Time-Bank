@@ -35,6 +35,7 @@ Users::Member::Member(
     this->credit = credit;
     this->skills = {};
     this->avg_host_rating = 5;
+    this->avg_supporter_rating = 0;
 }
 
 // Getter methods
