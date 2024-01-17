@@ -53,7 +53,7 @@ void MenuSystem::member_menu()
             break;
         case 5:
             clear_screen();
-            find_supporter_interface("member");
+            find_supporter_interface();
             break;
         case 6:
             clear_screen();

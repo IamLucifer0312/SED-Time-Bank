@@ -60,6 +60,7 @@ class SupporterReview : public Review {
         // setter
         void set_supporter_rating(int &supporterReview);
         void set_skill_rating(int &skillRating);
+
 };
 
 

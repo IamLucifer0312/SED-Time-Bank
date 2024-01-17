@@ -1,7 +1,7 @@
 #include "../MenuSystem.hpp"
 
 
-void MenuSystem::find_supporter_city(std::string role)
+void MenuSystem::find_supporter_city()
 {
     std::cout << "which city do you want to search \n"
               << "1. Ha noi\n"
@@ -10,7 +10,7 @@ void MenuSystem::find_supporter_city(std::string role)
     switch (prompt_choice(1, 2)){
         case 1:
             clear_screen();
-            show_members_for_city("Ha noi", role);
+            show_members_for_city("Ha noi");
             std::cout << "What do you want to do ?\n"
                             << "1. Book\n"
                             << "0. no\n";
@@ -24,7 +24,7 @@ void MenuSystem::find_supporter_city(std::string role)
             break; 
         case 2:
             clear_screen();
-            show_members_for_city("Sai gon", role);
+            show_members_for_city("Sai gon");
             std::cout << "What do you want to do ?\n"
                             << "1. Book\n"
                             << "0. no\n";

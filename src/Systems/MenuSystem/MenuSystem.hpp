@@ -49,9 +49,9 @@ public:
     void admin_menu();
 
     // show members
-    void show_members(std::string role);
-    void show_members_for_city(std::string city, std::string role);
-    void show_members_for_time(std::string startTime, std::string endTime, std::string role);
+    void show_members(string role);
+    void show_members_for_city(std::string city);
+    void show_members_for_time(std::string startTime, std::string endTime);
     // clear screen
     void clear_screen();
 
@@ -70,9 +70,10 @@ public:
     bool is_blocked(Users::Member member);
 
     // find supporter
-    void find_supporter_city(std::string role);
-    void find_all_supporter(std::string role);
-    void find_supporter_interface(std::string role);
+    void find_supporter_city();
+    void find_all_supporter();
+    void find_supporter_interface();
+    void find_supporter_availableTime();
 
     // make request
     void make_request(const AvailableJob &job, Period &workTime);
@@ -86,9 +87,6 @@ public:
     // accept or reject a request
     void accept_or_reject_request(vector<Request> &requests_list);
 
-    // accepted in sent requests
-    void accepted_request(vector<Request> &requests_list);
-
     // book job
     void book_job();
 
@@ -98,7 +96,7 @@ public:
     // remove_request
     bool remove_request(Request &request, vector<Request> &requests_list);
 
-    void find_supporter_availableTime(std::string role);
+    
 
     // add available job
     void update_available_job();

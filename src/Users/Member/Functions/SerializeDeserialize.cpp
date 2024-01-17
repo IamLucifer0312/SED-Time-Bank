@@ -35,7 +35,9 @@ void Users::Member::serialize(json &j) const
         {"home_address", home_address},
         {"email", email},
         {"city", city},
-        {"credit", credit}
+        {"credit", credit},
+        {"avg_host_rating", avg_host_rating},
+        {"avg_supporter_rating", avg_supporter_rating}
         // Add more member variables to serialize
     };
 
@@ -243,6 +245,8 @@ void Users::Member::deserialize(const json &j)
     email = j.at("email").get<string>();
     city = j.at("city").get<string>();
     credit = j.at("credit").get<float>();
+    avg_host_rating = j.at("avg_host_rating").get<double>();
+    avg_supporter_rating = j.at("avg_supporter_rating").get<double>();
     // Deserialize other member variables
 
     // Deserialize skills array

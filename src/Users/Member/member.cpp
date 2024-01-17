@@ -2,6 +2,7 @@
 #include "Member.hpp"
 #include "Functions/SerializeDeserialize.cpp"
 #include "Functions/ShowInfo.cpp"
+#include "Functions/CalculateRating.cpp"
 
 // default constructor
 Users::Member::Member()
@@ -33,6 +34,7 @@ Users::Member::Member(
     this->city = city;
     this->credit = credit;
     this->skills = {};
+    this->avg_host_rating = 5;
 }
 
 // Getter methods
@@ -109,6 +111,16 @@ const std::vector<Period> Users::Member::get_available_times() const
 const std::vector<string> Users::Member::get_block_list() const
 {
     return block_list;
+}
+
+double Users::Member::get_avg_host_rating() const
+{
+    return this->avg_host_rating;
+}
+
+double Users::Member::get_avg_supporter_rating() const
+{
+    return this->avg_supporter_rating;
 }
 
 // extract data from map

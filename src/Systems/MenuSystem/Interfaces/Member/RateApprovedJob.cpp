@@ -86,6 +86,7 @@ void MenuSystem::review_host(vector<Request> &requests_list)
     getline(cin, comment);
     review = HostReview(comment, hostRating);
     host.add_host_review(review);
+    host.calculate_avg_host_rating();
 
     // add credit to supporter
     userSystem.get_current_member().add_credit(selected_request.get_total_credit());
@@ -129,6 +130,7 @@ void MenuSystem::review_supporter(vector<Request> &requests_list)
 
     review = SupporterReview(comment, skillRating, supporterRating);
     supporter.add_supporter_review(review);
+    supporter.calculate_avg_supporter_rating();
     userSystem.update_member(supporter);
     std::cout << "Successfully reviewed supporter.\n";
     cout << "0. Back" << std::endl;
