@@ -1,13 +1,10 @@
 #include "MenuSystem.hpp"
 #include "../UserSystem/UserSystem.hpp"
-#include "Interfaces/GuestMenu.cpp"
+#include "Interfaces/Guest/GuestMenu.cpp"
 #include "Interfaces/MemberMenu.cpp"
-#include "Interfaces/AdminMenu.cpp"
+#include "Interfaces/Admin/AdminMenu.cpp"
 #include "Interfaces/LogInRegisterMenu.cpp"
 #include "Methods/ClearScreen.cpp"
-#include "Interfaces/change_new_password.cpp"
-#include "Interfaces/block_member.cpp"
-#include "Interfaces/unblock_member.cpp"
 
 // default constructor
 MenuSystem::MenuSystem()

@@ -1,5 +1,5 @@
 #include "Period.hpp"
-#include "../../nlohmann/json.hpp"
+#include "../../../nlohmann/json.hpp"
 
 // default constructor
 Period::Period()

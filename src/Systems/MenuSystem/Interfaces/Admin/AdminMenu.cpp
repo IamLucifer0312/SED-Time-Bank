@@ -1,5 +1,6 @@
-#include "../MenuSystem.hpp"
-#include "../../UserSystem/UserSystem.hpp"
+#include "../../MenuSystem.hpp"
+#include "../../../UserSystem/UserSystem.hpp"
+#include "ChangePassword.cpp"
 void MenuSystem::admin_menu()
 {
     while (loggedIn)

@@ -1,6 +1,6 @@
-#include "../../MenuSystem.hpp"
-#include "../../../../Request/Request.hpp"
-#include "../../../../Review/Review.hpp"
+#include "../../../MenuSystem.hpp"
+#include "../../../../../Classes/Request/Request.hpp"
+#include "../../../../../Classes/Review/Review.hpp"
 #include <string>
 
 using std::cin;
