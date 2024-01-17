@@ -23,21 +23,6 @@ int MenuSystem::prompt_choice(unsigned min, unsigned max)
     int choice = -1;
     std::string buffer;
 
-    std::cout << "Enter your choice: ";
-    std::getline(std::cin, buffer);
-    try
-    {
-        choice = std::stoi(buffer);
-    }
-    catch (std::invalid_argument &e)
-    {
-        choice = -1;
-    }
-    catch (std::out_of_range &e)
-    {
-        choice = -1;
-    }
-
     while (choice == -1)
     {
         std::cout << "Enter your choice: ";

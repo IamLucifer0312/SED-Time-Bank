@@ -10,10 +10,16 @@ void MenuSystem::member_view_my_info(std::string information)
             << "2. No\n";
     switch (prompt_choice(1,2)){
         case 1: 
+            std::cout << "\nList of information you can update: \n"
+                    << "- Full name\n"
+                    << "- Phone number\n"
+                    << "- Home Address\n"
+                    << "- Email\n"
+                    << "- City\n"
+                    << "- Skill\n";
             std::cout << "\nWhich information do you want to update: ";
             std::getline(std::cin, information);
             update_member_info(information);
-            std::cout << "Update Successfully";
             break;
         case 2:
             break;

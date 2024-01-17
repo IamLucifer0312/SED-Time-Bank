@@ -16,6 +16,16 @@ void MenuSystem::book_job() {
     }
     int answer = prompt_choice(1, arraySize);
     size_t sizeValue = static_cast<size_t>(answer);
+
+    float totalCredit = availableJobs[sizeValue - 1].get_skill().get_consumed_per_hour() * availableJobs[sizeValue - 1].get_available_time().get_duration_by_hour();
+
+    if( totalCredit > userSystem.get_current_member().get_credit()){
+        std::cout << "You don't have enough credit to book this job.\n";
+        std::cout << "You need " << totalCredit << " credit to book this job.\n";
+        std::cout << "Your current credit is " << userSystem.get_current_member().get_credit() << std::endl;
+        return;
+    }
+
     make_request(availableJobs[sizeValue - 1], availableJobs[sizeValue - 1].availableTime);
     std::cout << "Successfully booked job.\n";
     std::getline(std::cin, supporterName);

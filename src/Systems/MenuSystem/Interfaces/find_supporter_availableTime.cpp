@@ -1,6 +1,6 @@
 #include "../MenuSystem.hpp"
 
-void MenuSystem::find_supporter_availableTime(std::string role){
+void MenuSystem::find_supporter_availableTime(){
     std::string date;
     std::string from;
     std::string to;
@@ -18,7 +18,7 @@ void MenuSystem::find_supporter_availableTime(std::string role){
     std::cout << "Available supporters: \n";
     
     clear_screen();
-    show_members_for_time(startTime, endTime, role);
+    show_members_for_time(startTime, endTime);
     
     std::cout << "What do you want to do ?\n"
                             << "1. Book\n"

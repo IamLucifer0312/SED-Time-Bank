@@ -4,7 +4,7 @@ void MenuSystem::admin_menu()
 {
     while (loggedIn)
     {
-        std::cout << "\n\nAndmin action: \n"
+        std::cout << "Admin menu: \n"
                         << "==============================\n"
                         << "0. Logout.\n"
                         << "1. View list member.\n";

@@ -38,7 +38,8 @@ namespace Users
         vector<string> block_list;
         vector<HostReview> host_reviews;
         vector<SupporterReview> supporter_reviews;
-
+        double avg_host_rating;
+        double avg_supporter_rating;
         float credit;
 
     public:
@@ -87,6 +88,10 @@ namespace Users
 
         const std::vector<string> get_block_list() const;
 
+        double get_avg_host_rating() const;
+
+        double get_avg_supporter_rating() const;
+
         // Setter methods
         void set_full_name(const string &full_name);
 
@@ -118,9 +123,11 @@ namespace Users
 
         // remove
         void remove_skill(string &skill_name);
+        void subtract_credit(float subtractingCredit);
         // void remove_available_job(Period &available_time, Skill &skill);
         void remove_available_time(string &startTime, string &endTime);
         void remove_block_list(string &username);
+        void remove_available_job(AvailableJob &available_job);
 
         // extract data from map
         void from_map(std::map<string, string> map);
@@ -138,12 +145,17 @@ namespace Users
 
         // show member info
         void show_member_info(std::string role);
+        void show_member_info_for_host(Users::Member &current_member);
 
         // check overlap available time
         bool is_overlap(time_t startTime, time_t endTime);
 
         //check whether skill exists
         bool have_skill(std::string skill_name);
+
+        // caculate avg rating
+        void calculate_avg_host_rating();
+        void calculate_avg_supporter_rating();
     };
 
 } // namespace Users

@@ -10,12 +10,10 @@
 #define MENUSYSTEM_HPP
 
 // INCLUDES
-#include "../UserSystem/UserSystem.hpp" 
+#include "../UserSystem/UserSystem.hpp"
 
 // user classes
 #include "../../Users/Users.hpp"
-
-
 
 class MenuSystem
 {
@@ -43,7 +41,7 @@ public:
 
     // guess menu
     void guest_menu();
-    
+
     // member menu
     void member_menu();
 
@@ -51,9 +49,9 @@ public:
     void admin_menu();
 
     // show members
-    void show_members(std::string role);
-    void show_members_for_city(std::string city, std::string role);
-    void show_members_for_time(std::string startTime, std::string endTime, std::string role);
+    void show_members(string role);
+    void show_members_for_city(std::string city);
+    void show_members_for_time(std::string startTime, std::string endTime);
     // clear screen
     void clear_screen();
 
@@ -61,48 +59,51 @@ public:
 
     // interfaces
     void member_view_my_info(std::string information);
+    void block_member_interface();
 
-    //check username and change password of members for admin
+    // check username and change password of members for admin
     void change_new_password(std::string member_username);
 
-    //check username and block user
+    // check username and block user
     void block_member(std::string member_username);
     void unblock_member(std::string member_username);
     bool is_blocked(Users::Member member);
 
-    //find supporter
-    void find_supporter_city(std::string role);
-    void find_all_supporter(std::string role);
-    void find_supporter_interface(std::string role);
+    // find supporter
+    void find_supporter_city();
+    void find_all_supporter();
+    void find_supporter_interface();
+    void find_supporter_availableTime();
 
     // make request
-    void make_request(const AvailableJob& job, Period& workTime);
+    void make_request(const AvailableJob &job, Period &workTime);
 
-    //view received request
+    // view received request
     void view_received_request();
 
-    //view sent request
+    // view sent request
     void view_sent_request();
 
     // accept or reject a request
     void accept_or_reject_request(vector<Request> &requests_list);
 
-    //accepted in sent requests
-    void accepted_request(vector<Request> &requests_list);
-
-    //book job
+    // book job
     void book_job();
 
+    // check block list for the username
+    bool check_block_list(const string member_username);
 
-    //remove_request
+    // remove_request
     bool remove_request(Request &request, vector<Request> &requests_list);
 
-    void find_supporter_availableTime(std::string role);
+    
 
-    //add available job
-    void add_available_job();
+    // add available job
+    void update_available_job();
     void add_credit();
 
+    // view requests
+    void view_current_requests();
     void view_approved_requests();
 
     // review
@@ -110,7 +111,6 @@ public:
     void review_host(vector<Request> &requests_list);
 
     friend class UserSystem;
-
 };
 
 #endif // MENUSYSTEM_HPP

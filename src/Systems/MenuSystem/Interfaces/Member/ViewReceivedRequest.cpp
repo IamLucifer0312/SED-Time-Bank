@@ -14,10 +14,11 @@ void MenuSystem::view_received_request()
 
         vector<Request> &requests_list = this->userSystem.get_current_member().get_received_requests();
 
+        // check if there are no requests
         if (requests_list.size() == 0)
-        {
+        {   
+            clear_screen();
             cout << "There are no requests." << std::endl;
-            is_running = false;
 
             cout << "0. Back" << std::endl;
 
@@ -27,9 +28,11 @@ void MenuSystem::view_received_request()
                 is_running = false;
                 break;
             default:
+                is_running = false;
                 break;
             }
         }
+
         else
         {
             for (int i = 0; i < requests_list.size(); ++i)
@@ -72,7 +75,8 @@ void MenuSystem::accept_or_reject_request(vector<Request> &requests_list)
     int selected_request_number = prompt_choice(1, requests_list.size() + 1);
 
     Request &selected_request = requests_list[selected_request_number - 1];
-    
+
+    clear_screen();
     cout << "Request " << selected_request_number << ":" << std::endl;
     cout << "Host: " << selected_request.get_host() << std::endl;
     cout << "Work time: " << selected_request.get_job().get_available_time().get_start_time_string() << " - " << selected_request.get_job().get_available_time().get_end_time_string() << std::endl;
@@ -85,10 +89,7 @@ void MenuSystem::accept_or_reject_request(vector<Request> &requests_list)
     cout << "1. Accept" << std::endl;
     cout << "2. Reject" << std::endl;
 
-        int rating;
-        string comment;
-        HostReview review;
-        Users::Member host = userSystem.get_database().find_member(selected_request.get_host());
+    Users::Member host = userSystem.get_database().find_member(selected_request.get_host());
 
     switch (prompt_choice(0, 2))
 
@@ -96,33 +97,45 @@ void MenuSystem::accept_or_reject_request(vector<Request> &requests_list)
     case 0:
         break;
 
-            case 1:
-            
-            selected_request.set_status(Status::ACCEPTED);
-            host.add_approved_sent_request(selected_request);
-            userSystem.current_member.add_approved_received_request(selected_request);
-            remove_request(selected_request, requests_list);
-            userSystem.update_member(host);
-            userSystem.update_current_member();
-            cout << "Request accepted." << std::endl;
-            cout << "0. Back" << std::endl;
-
-            switch (prompt_choice(0,0))
+    case 1:
+        // set the status of request to accepted
+        for (int i = 0; i < host.get_sent_requests().size(); ++i)
+        {
+            if ((host.get_sent_requests())[i] == selected_request)
             {
-            case 0:
-                break;
-            default:
+                (host.get_sent_requests())[i].set_status(Status::ACCEPTED);
                 break;
             }
+            else
+            {
+                std::cerr << "Host request not found." << std::endl;
+            }
+        }
+        selected_request.set_status(Status::ACCEPTED);
 
-            // cout << "Please rate your host from 1 to 5: " << std::endl;
-            // cin >> rating;
-            // cout << "Please comment about your host: " << std::endl;
-            // cin >> comment;
-            // review = HostReview(comment, rating);
-            // host.add_host_review(review);
-            
+        // subtract credit from host
+        host.subtract_credit(selected_request.get_total_credit());
+        cout << "Credit subtracted from host." << std::endl;
+
+        // add request to approved list
+        host.add_approved_sent_request(selected_request);
+        userSystem.current_member.add_approved_received_request(selected_request);
+        remove_request(selected_request, requests_list);
+
+        // save to database
+        userSystem.update_member(host);
+        userSystem.update_member(userSystem.current_member);
+        cout << "Request accepted." << std::endl;
+        cout << "0. Back" << std::endl;
+
+        switch (prompt_choice(0, 0))
+        {
+        case 0:
             break;
+        default:
+            break;
+        }
+        break;
 
     case 2:
         // set status of request to rejected
@@ -133,6 +146,7 @@ void MenuSystem::accept_or_reject_request(vector<Request> &requests_list)
                 (host.get_sent_requests())[i].set_status(Status::REJECTED);
                 cout << "Request rejected." << std::endl;
                 remove_request(selected_request, requests_list);
+
                 // save to database
                 userSystem.update_current_member();
                 userSystem.update_member(host);
@@ -140,7 +154,7 @@ void MenuSystem::accept_or_reject_request(vector<Request> &requests_list)
             }
             else
             {
-                std::cerr << "Request not found." << std::endl;
+                std::cerr << "Host request not found." << std::endl;
             }
         }
     default:

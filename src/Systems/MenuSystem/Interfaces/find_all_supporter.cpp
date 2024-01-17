@@ -1,9 +1,9 @@
 #include "../MenuSystem.hpp"
 
 
-void MenuSystem::find_all_supporter(std::string role)
+void MenuSystem::find_all_supporter()
 {
-    show_members(role);
+    show_members("member");
 
     std::cout << "What do you want to do ?\n"
                     << "1. Book\n"

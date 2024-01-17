@@ -2,6 +2,7 @@
 #include "Member.hpp"
 #include "Functions/SerializeDeserialize.cpp"
 #include "Functions/ShowInfo.cpp"
+#include "Functions/CalculateRating.cpp"
 
 // default constructor
 Users::Member::Member()
@@ -33,6 +34,7 @@ Users::Member::Member(
     this->city = city;
     this->credit = credit;
     this->skills = {};
+    this->avg_host_rating = 5;
 }
 
 // Getter methods
@@ -109,6 +111,16 @@ const std::vector<Period> Users::Member::get_available_times() const
 const std::vector<string> Users::Member::get_block_list() const
 {
     return block_list;
+}
+
+double Users::Member::get_avg_host_rating() const
+{
+    return this->avg_host_rating;
+}
+
+double Users::Member::get_avg_supporter_rating() const
+{
+    return this->avg_supporter_rating;
 }
 
 // extract data from map
@@ -234,6 +246,11 @@ void Users::Member::add_credit(float addingCredit) {
 }
 
 // remove
+
+void Users::Member::subtract_credit(float subtractingCredit) {
+    credit -= subtractingCredit;
+}
+
 void Users::Member::remove_skill(string &skill_name)
 {
     for (int i = 0; i < this->skills.size(); i++)
@@ -245,16 +262,16 @@ void Users::Member::remove_skill(string &skill_name)
     }
 }
 
-// void Users::Member::remove_available_job(Period &available_time, Skill &skill)
-// {
-//     for (int i = 0; i < this->available_jobs.size(); i++)
-//     {
-//         if (this->available_jobs[i].get_available_time().get_start_time_string() == available_time.get_start_time_string() && this->available_jobs[i].get_available_time().get_end_time_string() == available_time.get_end_time_string() && this->available_jobs[i].get_skill().get_skill_name() == skill.get_skill_name())
-//         {
-//             this->available_jobs.erase(this->available_jobs.begin() + i);
-//         }
-//     }
-// }
+void Users::Member::remove_available_job(AvailableJob &availableJob)
+{
+    for (int i = 0; i < this->available_jobs.size(); i++)
+    {
+        if (this->available_jobs[i] == availableJob)
+        {
+            this->available_jobs.erase(this->available_jobs.begin() + i);
+        }
+    }
+}
 
 void Users::Member::remove_available_time(string &startTime, string &endTime)
 {

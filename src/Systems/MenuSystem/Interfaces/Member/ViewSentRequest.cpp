@@ -3,31 +3,39 @@
 #include "../../../../Review/Review.hpp"
 #include <string>
 
-
-using std::cout;
 using std::cin;
+using std::cout;
 
-void MenuSystem::view_sent_request(){
+void MenuSystem::view_sent_request()
+{
     bool is_running = true;
-    while (is_running){
+    while (is_running)
+    {
         vector<Request> &requests_list = this->userSystem.get_current_member().get_sent_requests();
-        if (requests_list.size() == 0){
+
+        // check if there are no requests
+        if (requests_list.size() == 0)
+        {
+            clear_screen();
             cout << "There are no requests." << std::endl;
-            is_running = false;
 
             cout << "0. Back" << std::endl;
 
-            switch (prompt_choice(0,0))
+            switch (prompt_choice(0, 0))
             {
             case 0:
                 is_running = false;
                 break;
             default:
+                is_running = false;
                 break;
             }
         }
-        else{
-            for (int i = 0; i < requests_list.size(); ++i) {
+
+        else
+        {
+            for (int i = 0; i < requests_list.size(); ++i)
+            {
                 Request request = requests_list[i];
                 cout << "Request " << i + 1 << ":" << std::endl;
                 cout << "\tSupporter: " << request.get_supporter() << std::endl;
@@ -39,7 +47,7 @@ void MenuSystem::view_sent_request(){
             }
 
             cout << "0. Back" << std::endl;
-          
+
             switch (prompt_choice(0, 0))
             {
             case 0:

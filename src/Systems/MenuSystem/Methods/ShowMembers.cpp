@@ -1,7 +1,7 @@
 #include "../MenuSystem.hpp"
 #include "../../UserSystem/UserSystem.hpp"
 
-void MenuSystem::show_members(std::string role)
+void MenuSystem::show_members(string role)
 {
     for (auto& member : userSystem.get_members())
     {
@@ -11,13 +11,17 @@ void MenuSystem::show_members(std::string role)
         if (is_blocked(member)) {
             continue;
         }
-        member.show_member_info(role);
+        if (role != "member") {
+            member.show_member_info(role);
+        } else {
+            member.show_member_info_for_host(userSystem.get_current_member());
+        }  
     }
     
 }
 
 
-void MenuSystem::show_members_for_city(std::string city, std::string role)
+void MenuSystem::show_members_for_city(std::string city)
 {
     for (auto& member : userSystem.get_members())
     {
@@ -32,11 +36,11 @@ void MenuSystem::show_members_for_city(std::string city, std::string role)
         if (is_blocked(member)) {
             continue;
         }
-        member.show_member_info(role);
+        member.show_member_info_for_host(userSystem.get_current_member());
     }   
 }
 
-void MenuSystem::show_members_for_time(std::string startTime, std::string endTime, std::string role)
+void MenuSystem::show_members_for_time(std::string startTime, std::string endTime)
 {
     Period input_period = Period(startTime, endTime);
     for (auto& member : userSystem.get_members())
@@ -55,7 +59,7 @@ void MenuSystem::show_members_for_time(std::string startTime, std::string endTim
         if (is_blocked(member)) {
             continue;
         }
-        member.show_member_info(role);
+        member.show_member_info_for_host(userSystem.get_current_member());
     }   
 }
 

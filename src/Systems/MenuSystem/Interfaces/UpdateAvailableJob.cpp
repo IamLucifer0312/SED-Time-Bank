@@ -1,17 +1,19 @@
 #include "../MenuSystem.hpp"
 
-void MenuSystem::add_available_job()
+void MenuSystem::update_available_job()
 {
     std::string skill_name;
     
-    std::cout << "Do you want to add or update your avalable job? \n"
-              << "1. Yes. \n"
-              << "2. No. \n";
+    std::cout << "Add or remove your avalable job? \n"
+              << "0. Back\n"
+              << "1. Add. \n"
+              << "2. Remove. \n";
 
     std::string start_time;
     std::string end_time;
     int arraySize = userSystem.get_current_member().get_available_times().size();
     int answer = 0;
+    vector<AvailableJob> availableJobs = userSystem.get_current_member().get_available_jobs();
     size_t sizeValue = 0;
     Skill skill = Skill();
     Period available_time = Period();
@@ -49,6 +51,28 @@ void MenuSystem::add_available_job()
             break;
         
         case 2:
+            std::cout << std::endl;
+            arraySize = userSystem.get_current_member().get_available_jobs().size();
+            for (size_t i = 0; i < arraySize; i++)
+            {
+                std::cout << i + 1 << std::endl;
+                availableJobs[i].showInfo();
+                std::cout << std::endl;
+            }
+            std::cout << "Please choose your available job to remove: \n ";
+            answer = prompt_choice(1, arraySize);
+            sizeValue = static_cast<size_t>(answer);
+            userSystem.get_current_member().remove_available_job(availableJobs[sizeValue - 1]);
+            std::cout << "Successfully removed avalable job.\n";
+            userSystem.update_current_member();
             break;
+    }
+    std::cout << "0. Back" << std::endl;
+    switch (prompt_choice(0, 0))
+    {
+    case 0:
+        break;
+    default:
+        break;
     }
 }
