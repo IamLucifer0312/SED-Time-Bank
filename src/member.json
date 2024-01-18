@@ -52,7 +52,23 @@
         ],
         "password": "123",
         "phone_number": "0912",
-        "received_requests": null,
+        "received_requests": [
+            {
+                "host": "TT",
+                "job": {
+                    "end_time": "2023-11-11 12:00:00",
+                    "skill_name": "Programming",
+                    "start_time": "2023-11-11 10:00:00",
+                    "supporter_name": "Helu"
+                },
+                "status": 0,
+                "total_credit": 10.399999618530273,
+                "work_time": {
+                    "end_time": "2023-11-11 12:00:00",
+                    "start_time": "2023-11-11 10:00:00"
+                }
+            }
+        ],
         "sent_requests": null,
         "skills": [
             {
@@ -166,7 +182,7 @@
         "avg_host_rating": 3.0,
         "avg_supporter_rating": 3.5,
         "block_list": null,
-        "city": "Sai gon",
+        "city": "",
         "credit": 96.29999542236328,
         "email": "trongtiennguyen0312@gmail.com",
         "full_name": "NTT",
@@ -190,6 +206,21 @@
                     "supporter_name": "Helu"
                 },
                 "status": 1,
+                "total_credit": 10.399999618530273,
+                "work_time": {
+                    "end_time": "2023-11-11 12:00:00",
+                    "start_time": "2023-11-11 10:00:00"
+                }
+            },
+            {
+                "host": "TT",
+                "job": {
+                    "end_time": "2023-11-11 12:00:00",
+                    "skill_name": "Programming",
+                    "start_time": "2023-11-11 10:00:00",
+                    "supporter_name": "Helu"
+                },
+                "status": 0,
                 "total_credit": 10.399999618530273,
                 "work_time": {
                     "end_time": "2023-11-11 12:00:00",

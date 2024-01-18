@@ -86,9 +86,34 @@ void MenuSystem::review_host(vector<Request> &requests_list)
     HostReview review;
     Users::Member host = userSystem.get_database().find_member(selected_request.get_host());
 
+    if (host.get_username() == "")
+    {
+        std::cout << "0. Back\n";
+        switch (prompt_choice(0, 0))
+        {
+        case 0:
+            break;
+        default:
+            break;
+        }
+        return;
+    }
+
     cout << "Please rate your host skill from 1 to 5: " << std::endl;
     hostRating = prompt_choice(1, 5);
-    cout << "Please comment about your host: " << std::endl;
+    if (hostRating < 0 || hostRating > 5)
+    {
+        std::cout << "Invalid rating\n";
+        std::cout << "0. Back\n";
+        switch (prompt_choice(0, 0))
+        {
+        case 0:
+            return;
+        default:
+            return;
+        }
+    }
+    cout << "Please comment about your supporter: " << std::endl;
     getline(cin, comment);
     review = HostReview(comment, hostRating);
     host.add_host_review(review);
@@ -102,8 +127,16 @@ void MenuSystem::review_host(vector<Request> &requests_list)
 
     std::cout << "Successfully reviewed host.\n";
     cout << "You have received " << selected_request.get_total_credit() << " credits for completing the work!" << std::endl;
-    std::cout << "Press any key to continue.\n";
-    std::cin.get();
+    cout << "0. Back" << std::endl;
+
+    switch (prompt_choice(0, 0))
+    {
+    case 0:
+        return;
+
+    default:
+        return;
+    }
 }
 
 void MenuSystem::review_supporter(vector<Request> &requests_list)
@@ -118,11 +151,48 @@ void MenuSystem::review_supporter(vector<Request> &requests_list)
     string comment;
     SupporterReview review;
     Users::Member supporter = userSystem.get_database().find_member(selected_request.get_supporter());
+    if (supporter.get_username() == "")
+    {
+        std::cout << "0. Back\n";
+        switch (prompt_choice(0, 0))
+        {
+        case 0:
+            return;
+        default:
+            return;
+        }
+    }
 
     cout << "Please rate your supporter from 1 to 5: " << std::endl;
     supporterRating = prompt_choice(1, 5);
+    if (supporterRating < 0 || supporterRating > 5)
+    {
+        std::cout << "Invalid rating\n";
+        std::cout << "0. Back\n";
+        switch (prompt_choice(0, 0))
+        {
+        case 0:
+            return;
+        default:
+            return;
+        }
+    }
+    
     cout << "Please rate your supporter's skill from 1 to 5: " << std::endl;
     skillRating = prompt_choice(1, 5);
+    if (skillRating < 0 || skillRating > 5)
+    {
+        std::cout << "Invalid rating\n";
+        std::cout << "0. Back\n";
+        switch (prompt_choice(0, 0))
+        {
+        case 0:
+            return;
+        default:
+            return;
+        }
+    }
+
     cout << "Please comment about your supporter: " << std::endl;
     getline(cin, comment);
 
