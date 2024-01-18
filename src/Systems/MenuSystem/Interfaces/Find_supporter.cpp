@@ -1,7 +1,4 @@
-#include "../../MenuSystem.hpp"
-#include "FindAllSupporter.cpp"
-#include "FindSupporterCity.cpp"
-#include "FindSupporterAvailableTime.cpp"
+#include "../MenuSystem.hpp"
 
 void MenuSystem::find_supporter_interface()
 {

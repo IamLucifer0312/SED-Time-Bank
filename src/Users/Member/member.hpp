@@ -3,12 +3,12 @@
 #include <map>
 #include "../../../nlohmann/json.hpp"
 #include "../User/User.hpp"
-#include "../../Classes/Skill/Skill.hpp"
-#include "../../Classes/AvailableJob/AvailableJob.hpp"
-#include "../../Classes/Request/Request.hpp"
-#include "../../Classes/Period/Period.hpp"
-#include "../../Classes/Review/Review.hpp"
+#include "../../Skill/Skill.hpp"
+#include "../../AvailableJob/AvailableJob.hpp"
+#include "../../Request/Request.hpp"
+#include "../../Period/Period.hpp"
 #include <ctime>
+#include "../../Review/Review.hpp"
 
 using json = nlohmann::json;
 using std::string;

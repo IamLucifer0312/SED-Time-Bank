@@ -1,6 +1,4 @@
-#include "../../MenuSystem.hpp"
-#include "BlockMember.cpp"
-#include "UnblockMember.cpp"
+#include "../MenuSystem.hpp"
 
 void MenuSystem::block_member_interface()
 {

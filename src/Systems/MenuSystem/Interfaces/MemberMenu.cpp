@@ -1,18 +1,21 @@
 #include "../MenuSystem.hpp"
 #include "../Methods/ShowMembers.cpp"
 #include "../../UserSystem/UserSystem.hpp"
-#include "Member/ViewAndUpdateInfo.cpp"
-#include "Member/AddCredit.cpp"
-#include "Member/UpdateInfo.cpp"
-#include "FindSupporter/FindSupporter.cpp"
-//Job and Request
-#include "JobAndRequest/AvailableJob/BookJob.cpp"
-#include "JobAndRequest/Request/ViewCurrentRequests.cpp"
-#include "JobAndRequest/Request/RateApprovedJob.cpp"
-#include "JobAndRequest/AvailableJob/UpdateAvailableJob.cpp"
-#include "JobAndRequest/Request/MakeRequest.cpp"
-
-#include "Block/BlockMemberInterface.cpp"
+#include "../Interfaces/Member/ViewAndUpdateInfo.cpp"
+#include "../Interfaces/Member/AddCredit.cpp"
+#include "../Interfaces/Member/BookJob.cpp"
+#include "UpdateInfo.cpp"
+#include "find_supporter_city.cpp"
+#include "find_all_supporter.cpp"
+#include "find_supporter_availableTime.cpp"
+#include "Find_supporter.cpp"
+#include "ViewCurrentRequests.cpp"
+#include "Member/ViewSentRequest.cpp"
+#include "Member/ViewReceivedRequest.cpp"
+#include "Member/RateApprovedJob.cpp"
+#include "UpdateAvailableJob.cpp"
+#include "Member/MakeRequest.cpp"
+#include "Block_member_interface.cpp"
 // member menu
 void MenuSystem::member_menu()
 {

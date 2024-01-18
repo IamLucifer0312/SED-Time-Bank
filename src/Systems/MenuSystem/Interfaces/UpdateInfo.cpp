@@ -1,5 +1,5 @@
-#include "../../MenuSystem.hpp"
-#include "../../../UserSystem/UserSystem.hpp"
+#include "../MenuSystem.hpp"
+#include "../../UserSystem/UserSystem.hpp"
 
 void MenuSystem::update_member_info(std::string information)
 {
