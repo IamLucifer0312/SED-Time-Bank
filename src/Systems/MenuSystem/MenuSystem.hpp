@@ -64,6 +64,8 @@ public:
     // check username and change password of members for admin
     void change_new_password(std::string member_username);
 
+
+
     // check username and block user
     void block_member(std::string member_username);
     void unblock_member(std::string member_username);
@@ -95,8 +97,6 @@ public:
 
     // remove_request
     bool remove_request(Request &request, vector<Request> &requests_list);
-
-    
 
     // add available job
     void update_available_job();

@@ -59,7 +59,7 @@ void MenuSystem::update_available_job()
                 availableJobs[i].showInfo();
                 std::cout << std::endl;
             }
-            std::cout << "Please choose your available job to remove: \n ";
+            std::cout << "Please choose your available job (number) to remove: \n";
             answer = prompt_choice(1, arraySize);
             sizeValue = static_cast<size_t>(answer);
             userSystem.get_current_member().remove_available_job(availableJobs[sizeValue - 1]);

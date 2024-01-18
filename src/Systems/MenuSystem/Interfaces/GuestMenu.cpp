@@ -25,7 +25,7 @@
                 break;
             case 2:
                 clear_screen();
-                std::cout << "Registered...\n";
+                std::cout << "Registering...\n";
                 register_menu();
                 break;
             case 0:

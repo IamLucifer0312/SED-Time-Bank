@@ -1,6 +1,5 @@
 #include "../UserSystem.hpp"
 
-
 // login
 bool UserSystem::validateLogin(const std::string &username, const std::string &password, const std::string role)
 {
@@ -26,13 +25,13 @@ bool UserSystem::validateLogin(const std::string &username, const std::string &p
             }
         }
     }
-    
+
     return false;
 }
 
-
 // register member
-void UserSystem::register_member(std::string username, std::string password, std::string full_name, std::string phone_number, std::string home_address, std::string email, std::string city) {
+void UserSystem::register_member(std::string username, std::string password, std::string full_name, std::string phone_number, std::string home_address, std::string email, std::string city)
+{
     database.add_member(Users::Member(username, password, full_name, phone_number, home_address, email, city, 20));
     database.saveData();
     return;
@@ -70,4 +69,17 @@ bool UserSystem::checkPasswordSpace(const std::string &password)
         }
     }
     return true;
+}
+
+// check the email is valid or not
+bool UserSystem::is_email_valid(const string &email)
+{
+
+    // Regular expression definition
+    const std::regex pattern(
+        "(\\w+)(\\.|_)?(\\w*)@(\\w+)(\\.(\\w+))+");
+
+    // Match the string pattern
+    // with regular expression
+    return regex_match(email, pattern);
 }

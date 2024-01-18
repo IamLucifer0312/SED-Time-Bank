@@ -41,6 +41,7 @@ void MenuSystem::member_menu()
             break;
 
         case 2:
+            clear_screen();
             add_credit();
             break;
         case 3:

@@ -3,6 +3,7 @@
 #include <map>
 #include <vector>
 #include <fstream>
+#include <regex>
 
 // Check if the file is already included.
 #ifndef USERSYSTEM_HPP
@@ -49,6 +50,7 @@ public:
     bool checkUSername(const std::string &username);
     bool checkPasswordEmpty(const std::string &password);
     bool checkPasswordSpace(const std::string &password);
+    bool is_email_valid(const string &email);
 
     // reigster member
     void register_member(std::string username, std::string password, std::string full_name, std::string phone_number, std::string home_address, std::string email, std::string city);

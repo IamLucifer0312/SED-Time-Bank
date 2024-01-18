@@ -2,7 +2,15 @@
 #include "../../UserSystem/UserSystem.hpp"
 
 void MenuSystem::show_members(string role)
-{
+{   
+    // check if there are no members
+    if (userSystem.get_members().size() == 0)
+    {
+        std::cout << "There are no members in the system !!\n";
+        std::cout << "0. Back\n";
+        prompt_choice(0, 0);
+    }
+
     for (auto& member : userSystem.get_members())
     {
         if (member.get_username() == userSystem.get_current_member().get_username()) {

@@ -4,6 +4,7 @@ void MenuSystem::admin_menu()
 {
     while (loggedIn)
     {
+        clear_screen();
         std::cout << "Admin menu: \n"
                         << "==============================\n"
                         << "0. Logout.\n"

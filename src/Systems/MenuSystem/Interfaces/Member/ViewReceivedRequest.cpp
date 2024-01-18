@@ -90,6 +90,8 @@ void MenuSystem::accept_or_reject_request(vector<Request> &requests_list)
     cout << "2. Reject" << std::endl;
 
     Users::Member host = userSystem.get_database().find_member(selected_request.get_host());
+    // temporary variable for checking if request is found
+    bool request_found = false;
 
     switch (prompt_choice(0, 2))
 
@@ -104,13 +106,17 @@ void MenuSystem::accept_or_reject_request(vector<Request> &requests_list)
             if ((host.get_sent_requests())[i] == selected_request)
             {
                 (host.get_sent_requests())[i].set_status(Status::ACCEPTED);
+                request_found = true;
                 break;
             }
-            else
-            {
-                std::cerr << "Host request not found." << std::endl;
-            }
         }
+
+        if (!request_found)
+        {
+            std::cerr << "Host request not found." << std::endl;
+            break;
+        }
+
         selected_request.set_status(Status::ACCEPTED);
 
         // subtract credit from host
@@ -144,6 +150,7 @@ void MenuSystem::accept_or_reject_request(vector<Request> &requests_list)
             if ((host.get_sent_requests())[i] == selected_request)
             {
                 (host.get_sent_requests())[i].set_status(Status::REJECTED);
+                request_found = true;
                 cout << "Request rejected." << std::endl;
                 remove_request(selected_request, requests_list);
 
@@ -152,10 +159,12 @@ void MenuSystem::accept_or_reject_request(vector<Request> &requests_list)
                 userSystem.update_member(host);
                 break;
             }
-            else
-            {
-                std::cerr << "Host request not found." << std::endl;
-            }
+        }
+        
+        if (!request_found)
+        {
+            std::cerr << "Host request not found." << std::endl;
+            break;
         }
     default:
         break;

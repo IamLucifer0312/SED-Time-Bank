@@ -6,7 +6,7 @@ void MenuSystem::block_member(std::string member_username)
     {
         if (mem.get_username() == member_username)
         {
-            std::cout << "Do you want to block " << member_username << " ? \n"
+            std::cout << "\nDo you want to block " << member_username << " ? \n"
                       << "1. Yes\n"
                       << "2. No\n";
 
@@ -16,7 +16,16 @@ void MenuSystem::block_member(std::string member_username)
                 userSystem.get_current_member().add_block_list(member_username);
                 userSystem.database.update_member(userSystem.get_current_member());
                 userSystem.save_database();
-                std::cout << "Member " << mem.get_username() << " has been blocked !!\n";
+                
+                clear_screen();
+                std::cout << mem.get_username() << " has been blocked !!\n";
+                std::cout << "0. Back\n";
+                switch (prompt_choice(0, 0))
+                {
+                case 0:
+                    break;
+                }
+
                 break;
 
             case 2:
@@ -25,6 +34,13 @@ void MenuSystem::block_member(std::string member_username)
             return;
         }
     }
-    std::cout << "There are no member having this username !!";
+    std::cout << "There are no member having this username !!\n";
+    std::cout << "0. Back\n";
+    switch (prompt_choice(0, 0))
+    {
+    case 0:
+        break;
+    }
+
     return;
 }

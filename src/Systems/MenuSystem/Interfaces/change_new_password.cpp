@@ -9,14 +9,13 @@ void MenuSystem::change_new_password(string member_username)
     {
         if (mem.get_username() == member_username)
         {
-            std::cout << "This username is correct. " << std::endl;
             mem.set_password(new_password);
-            std::cout <<"Update password successfully !";
+            std::cout <<"Update password successfully !" << std::endl;
             userSystem.database.update_member(mem);
             userSystem.save_database();
             return;
         }
     }
-    std::cout << "There are no member have this username !!";
+    std::cout << "There are no member have this username !!" << std::endl;
     return;
 }

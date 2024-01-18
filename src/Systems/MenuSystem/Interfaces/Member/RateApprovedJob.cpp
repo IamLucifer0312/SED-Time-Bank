@@ -82,7 +82,7 @@ void MenuSystem::review_host(vector<Request> &requests_list)
 
     cout << "Please rate your host skill from 1 to 5: " << std::endl;
     hostRating = prompt_choice(1, 5);
-    cout << "Please comment about your supporter: " << std::endl;
+    cout << "Please comment about your host: " << std::endl;
     getline(cin, comment);
     review = HostReview(comment, hostRating);
     host.add_host_review(review);

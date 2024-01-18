@@ -51,7 +51,7 @@ void MenuSystem::update_member_info(std::string information)
             std::getline(std::cin, skill_name);
             std::cout << "Enter consumed per hour: ";
             std::cin >> consumed_per_hour;
-            std::cout << "Enter minimum rating: ";
+            std::cout << "Enter minimum host rating for this skill: ";
             std::cin >> minimum_rating;
             userSystem.get_current_member().add_skill(skill_name, consumed_per_hour, minimum_rating);
             break;

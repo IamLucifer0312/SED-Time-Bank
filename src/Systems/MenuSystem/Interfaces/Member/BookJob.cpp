@@ -14,6 +14,8 @@ void MenuSystem::book_job() {
         availableJobs[i].showInfo();
         std::cout << std::endl;
     }
+
+    std::cout << "Choose a job (number) you would like to book: " << std::endl;
     int answer = prompt_choice(1, arraySize);
     size_t sizeValue = static_cast<size_t>(answer);
 
@@ -28,5 +30,9 @@ void MenuSystem::book_job() {
 
     make_request(availableJobs[sizeValue - 1], availableJobs[sizeValue - 1].availableTime);
     std::cout << "Successfully booked job.\n";
-    std::getline(std::cin, supporterName);
+    std::cout << "0. Back\n";
+    switch(prompt_choice(0, 0)) {
+        case 0:
+            break;
+    }
 };

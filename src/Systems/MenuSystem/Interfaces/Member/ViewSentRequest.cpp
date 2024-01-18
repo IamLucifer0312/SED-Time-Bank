@@ -6,6 +6,20 @@
 using std::cin;
 using std::cout;
 
+#define print_status(status)                                         \
+    switch (status)                                                  \
+    {                                                                \
+    case 0:                                                          \
+        cout << "\tStatus: PENDING" << std::endl;                    \
+        break;                                                       \
+    case 2:                                                          \
+        cout << "\t>> Your request has been REJECTED!" << std::endl; \
+        break;                                                       \
+    default:                                                         \
+        cout << "Failed to print status" << std::endl;               \
+        break;                                                       \
+    }
+
 void MenuSystem::view_sent_request()
 {
     bool is_running = true;
@@ -42,7 +56,7 @@ void MenuSystem::view_sent_request()
                 cout << "\tWork time: " << request.get_job().get_available_time().get_start_time_string() << " - " << request.get_job().get_available_time().get_end_time_string() << std::endl;
                 cout << "\tCredit: " << request.get_total_credit() << std::endl;
                 cout << "\tSkill: " << request.get_job().get_skill().get_skill_name() << std::endl;
-                cout << "\tStatus: " << request.get_status_string() << std::endl;
+                print_status(request.get_status());
                 cout << std::endl;
             }
 
