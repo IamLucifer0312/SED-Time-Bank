@@ -1,6 +1,6 @@
-#include "../../MenuSystem.hpp"
-#include "../../../../Request/Request.hpp"
-#include "../../../../Review/Review.hpp"
+#include "../../../MenuSystem.hpp"
+#include "../../../../../Classes/Request/Request.hpp"
+#include "../../../../../Classes/Review/Review.hpp"
 #include <string>
 
 using std::cin;
@@ -40,10 +40,11 @@ void MenuSystem::view_received_request()
                 Request request = requests_list[i];
                 cout << std::endl;
                 cout << "Request " << i + 1 << ":" << std::endl;
-                cout << "Host: " << request.get_host() << std::endl;
-                cout << "Work time: " << request.get_job().get_available_time().get_start_time_string() << " - " << request.get_job().get_available_time().get_end_time_string() << std::endl;
-                cout << "Credit: " << request.get_total_credit() << std::endl;
-                cout << "Skill: " << request.get_job().get_skill().get_skill_name() << std::endl;
+                cout << "\tSupporter: " << request.get_supporter() << std::endl;
+                cout << "\tWork time: " << request.get_job().get_available_time().get_start_time_string() << " - " << request.get_job().get_available_time().get_end_time_string() << std::endl;
+                cout << "\tCredit: " << request.get_total_credit() << std::endl;
+                cout << "\tSkill: " << request.get_job().get_skill().get_skill_name() << std::endl;
+                cout << "\tStatus: " << request.get_status_string() << std::endl;
             }
 
             cout << std::endl;

@@ -1,4 +1,4 @@
-#include "../../MenuSystem.hpp"
+#include "../../../MenuSystem.hpp"
 
 using std::cin;
 using std::cout;
@@ -14,15 +14,18 @@ void MenuSystem::view_approved_requests()
     case 1:
         requests_list = this->userSystem.get_current_member().get_approved_sent_requests();
         std::cout << "Approved requests: \n";
+        std::cout << std::endl;
 
         for (int i = 0; i < requests_list.size(); ++i)
         {
             Request request = requests_list[i];
             cout << "Request " << i + 1 << ":" << std::endl;
+            std::cout << std::endl;
             cout << "Supporter: " << request.get_supporter() << std::endl;
             cout << "Work time: " << request.get_job().get_available_time().get_start_time_string() << " - " << request.get_job().get_available_time().get_end_time_string() << std::endl;
             cout << "Credit: " << request.get_total_credit() << std::endl;
             cout << "Skill: " << request.get_job().get_skill().get_skill_name() << std::endl;
+            std::cout << std::endl;
         }
         std::cout << "\n";
         std::cout << "What do you want to do ?\n"
@@ -40,15 +43,18 @@ void MenuSystem::view_approved_requests()
     case 2:
         requests_list = this->userSystem.get_current_member().get_approved_received_requests();
         std::cout << "Approved requests: \n";
+        std::cout << std::endl;
 
         for (int i = 0; i < requests_list.size(); ++i)
         {
             Request request = requests_list[i];
             cout << "Request " << i + 1 << ":" << std::endl;
+            std::cout << std::endl;
             cout << "Host: " << request.get_host() << std::endl;
             cout << "Work time: " << request.get_job().get_available_time().get_start_time_string() << " - " << request.get_job().get_available_time().get_end_time_string() << std::endl;
             cout << "Credit: " << request.get_total_credit() << std::endl;
             cout << "Skill: " << request.get_job().get_skill().get_skill_name() << std::endl;
+            std::cout << std::endl;
         }
         std::cout << "\n";
         std::cout << "What do you want to do ?\n"

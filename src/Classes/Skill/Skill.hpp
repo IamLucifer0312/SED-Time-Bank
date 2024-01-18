@@ -32,6 +32,7 @@ public:
     const float get_consumed_per_hour() const;
     const float get_mininum_rating() const;
     const Skill* get_ptr() const;
+    std::string formatFloat(float value, int precision) const;
 
     std::string get_string() const;
 };

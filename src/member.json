@@ -5,54 +5,23 @@
                 "host": "TT",
                 "job": {
                     "end_time": "2023-11-11 12:00:00",
-                    "skill_name": "",
+                    "skill_name": "Programming",
                     "start_time": "2023-11-11 10:00:00",
                     "supporter_name": "Helu"
                 },
                 "status": 1,
-                "total_credit": 0.0,
+                "total_credit": 10.399999618530273,
                 "work_time": {
                     "end_time": "2023-11-11 12:00:00",
                     "start_time": "2023-11-11 10:00:00"
                 }
             }
         ],
-        "approved_sent_requests": [
-            {
-                "host": "Helu",
-                "job": {
-                    "end_time": "2023-11-11 12:00:00",
-                    "skill_name": "",
-                    "start_time": "2023-11-11 10:00:00",
-                    "supporter_name": "TT"
-                },
-                "status": 1,
-                "total_credit": 0.0,
-                "work_time": {
-                    "end_time": "2023-11-11 12:00:00",
-                    "start_time": "2023-11-11 10:00:00"
-                }
-            },
-            {
-                "host": "Helu",
-                "job": {
-                    "end_time": "2023-11-11 12:00:00",
-                    "skill_name": "",
-                    "start_time": "2023-11-11 10:00:00",
-                    "supporter_name": "TT"
-                },
-                "status": 1,
-                "total_credit": 0.0,
-                "work_time": {
-                    "end_time": "2023-11-11 12:00:00",
-                    "start_time": "2023-11-11 10:00:00"
-                }
-            }
-        ],
+        "approved_sent_requests": null,
         "available_jobs": [
             {
                 "end_time": "2023-11-11 12:00:00",
-                "skill_name": "",
+                "skill_name": "Programming",
                 "start_time": "2023-11-11 10:00:00",
                 "supporter_name": "Helu"
             }
@@ -70,10 +39,10 @@
         "avg_host_rating": 3.0,
         "avg_supporter_rating": 0.0,
         "block_list": null,
-        "city": "dsds",
-        "credit": 4.200000762939453,
+        "city": "Ha noi",
+        "credit": 15.600000381469727,
         "email": "fewf@gmail.com",
-        "full_name": "Katy",
+        "full_name": "Fut",
         "home_address": "no",
         "host_reviews": [
             {
@@ -81,147 +50,10 @@
                 "host_rating": 3
             }
         ],
-        "password": "",
+        "password": "123",
         "phone_number": "0912",
-        "received_requests": [
-            {
-                "host": "TT",
-                "job": {
-                    "end_time": "2023-11-11 12:00:00",
-                    "skill_name": "",
-                    "start_time": "2023-11-11 10:00:00",
-                    "supporter_name": "Helu"
-                },
-                "status": 0,
-                "total_credit": 0.0,
-                "work_time": {
-                    "end_time": "2023-11-11 12:00:00",
-                    "start_time": "2023-11-11 10:00:00"
-                }
-            }
-        ],
-        "sent_requests": [
-            {
-                "host": "Helu",
-                "job": {
-                    "end_time": "2024-01-07 12:00:00",
-                    "skill_name": "Cooking",
-                    "start_time": "2024-01-07 10:00:00",
-                    "supporter_name": "TT"
-                },
-                "status": 0,
-                "total_credit": 8.199999809265137,
-                "work_time": {
-                    "end_time": "2024-01-07 12:00:00",
-                    "start_time": "2024-01-07 10:00:00"
-                }
-            },
-            {
-                "host": "Helu",
-                "job": {
-                    "end_time": "2024-01-07 12:00:00",
-                    "skill_name": "Cooking",
-                    "start_time": "2024-01-07 10:00:00",
-                    "supporter_name": "TT"
-                },
-                "status": 0,
-                "total_credit": 8.199999809265137,
-                "work_time": {
-                    "end_time": "2024-01-07 12:00:00",
-                    "start_time": "2024-01-07 10:00:00"
-                }
-            },
-            {
-                "host": "Helu",
-                "job": {
-                    "end_time": "2023-11-11 12:00:00",
-                    "skill_name": "Programming",
-                    "start_time": "2023-11-11 10:00:00",
-                    "supporter_name": "TT"
-                },
-                "status": 2,
-                "total_credit": 10.399999618530273,
-                "work_time": {
-                    "end_time": "2023-11-11 12:00:00",
-                    "start_time": "2023-11-11 10:00:00"
-                }
-            },
-            {
-                "host": "Helu",
-                "job": {
-                    "end_time": "2023-11-11 12:00:00",
-                    "skill_name": "Programming",
-                    "start_time": "2023-11-11 10:00:00",
-                    "supporter_name": "TT"
-                },
-                "status": 1,
-                "total_credit": 10.399999618530273,
-                "work_time": {
-                    "end_time": "2023-11-11 12:00:00",
-                    "start_time": "2023-11-11 10:00:00"
-                }
-            },
-            {
-                "host": "Helu",
-                "job": {
-                    "end_time": "1970-01-01 08:00:00",
-                    "skill_name": "",
-                    "start_time": "1970-01-01 08:00:00",
-                    "supporter_name": ""
-                },
-                "status": 0,
-                "total_credit": 0.0,
-                "work_time": {
-                    "end_time": "1970-01-01 08:00:00",
-                    "start_time": "1970-01-01 08:00:00"
-                }
-            },
-            {
-                "host": "Helu",
-                "job": {
-                    "end_time": "2023-11-11 12:00:00",
-                    "skill_name": "Programming",
-                    "start_time": "2023-11-11 10:00:00",
-                    "supporter_name": "test"
-                },
-                "status": 0,
-                "total_credit": 10.399999618530273,
-                "work_time": {
-                    "end_time": "2023-11-11 12:00:00",
-                    "start_time": "2023-11-11 10:00:00"
-                }
-            },
-            {
-                "host": "Helu",
-                "job": {
-                    "end_time": "1970-01-01 08:00:00",
-                    "skill_name": "",
-                    "start_time": "1970-01-01 08:00:00",
-                    "supporter_name": ""
-                },
-                "status": 0,
-                "total_credit": 0.0,
-                "work_time": {
-                    "end_time": "1970-01-01 08:00:00",
-                    "start_time": "1970-01-01 08:00:00"
-                }
-            },
-            {
-                "host": "Helu",
-                "job": {
-                    "end_time": "1970-01-01 08:00:00",
-                    "skill_name": "",
-                    "start_time": "1970-01-01 08:00:00",
-                    "supporter_name": ""
-                },
-                "status": 0,
-                "total_credit": 0.0,
-                "work_time": {
-                    "end_time": "1970-01-01 08:00:00",
-                    "start_time": "1970-01-01 08:00:00"
-                }
-            }
-        ],
+        "received_requests": null,
+        "sent_requests": null,
         "skills": [
             {
                 "consumed_per_hour": 5.199999809265137,
@@ -289,34 +121,18 @@
         "username": "ddd"
     },
     {
-        "approved_received_requests": [
-            {
-                "host": "Helu",
-                "job": {
-                    "end_time": "2023-11-11 12:00:00",
-                    "skill_name": "",
-                    "start_time": "2023-11-11 10:00:00",
-                    "supporter_name": "TT"
-                },
-                "status": 1,
-                "total_credit": 0.0,
-                "work_time": {
-                    "end_time": "2023-11-11 12:00:00",
-                    "start_time": "2023-11-11 10:00:00"
-                }
-            }
-        ],
+        "approved_received_requests": null,
         "approved_sent_requests": [
             {
                 "host": "TT",
                 "job": {
                     "end_time": "2023-11-11 12:00:00",
-                    "skill_name": "",
+                    "skill_name": "Programming",
                     "start_time": "2023-11-11 10:00:00",
                     "supporter_name": "Helu"
                 },
                 "status": 1,
-                "total_credit": 0.0,
+                "total_credit": 10.399999618530273,
                 "work_time": {
                     "end_time": "2023-11-11 12:00:00",
                     "start_time": "2023-11-11 10:00:00"
@@ -347,13 +163,11 @@
                 "start_time": "2024-01-07 10:00:00"
             }
         ],
-        "avg_host_rating": 4.5,
+        "avg_host_rating": 3.0,
         "avg_supporter_rating": 3.5,
-        "block_list": [
-            "ddd"
-        ],
+        "block_list": null,
         "city": "Sai gon",
-        "credit": 4.699999809265137,
+        "credit": 96.29999542236328,
         "email": "trongtiennguyen0312@gmail.com",
         "full_name": "NTT",
         "home_address": "Hihi",
@@ -361,10 +175,6 @@
             {
                 "comment": "Good",
                 "host_rating": 3
-            },
-            {
-                "comment": "34r32fdgf",
-                "host_rating": 6
             }
         ],
         "password": "123456",
@@ -379,83 +189,8 @@
                     "start_time": "2023-11-11 10:00:00",
                     "supporter_name": "Helu"
                 },
-                "status": 2,
-                "total_credit": 10.399999618530273,
-                "work_time": {
-                    "end_time": "2023-11-11 12:00:00",
-                    "start_time": "2023-11-11 10:00:00"
-                }
-            },
-            {
-                "host": "TT",
-                "job": {
-                    "end_time": "2023-11-11 12:00:00",
-                    "skill_name": "Programming",
-                    "start_time": "2023-11-11 10:00:00",
-                    "supporter_name": "Helu"
-                },
                 "status": 1,
                 "total_credit": 10.399999618530273,
-                "work_time": {
-                    "end_time": "2023-11-11 12:00:00",
-                    "start_time": "2023-11-11 10:00:00"
-                }
-            },
-            {
-                "host": "TT",
-                "job": {
-                    "end_time": "2023-11-11 12:00:00",
-                    "skill_name": "Programming",
-                    "start_time": "2023-11-11 10:00:00",
-                    "supporter_name": "ddd"
-                },
-                "status": 0,
-                "total_credit": 10.399999618530273,
-                "work_time": {
-                    "end_time": "2023-11-11 12:00:00",
-                    "start_time": "2023-11-11 10:00:00"
-                }
-            },
-            {
-                "host": "TT",
-                "job": {
-                    "end_time": "2023-11-11 12:00:00",
-                    "skill_name": "Programming",
-                    "start_time": "2023-11-11 10:00:00",
-                    "supporter_name": "Helu"
-                },
-                "status": 0,
-                "total_credit": 10.399999618530273,
-                "work_time": {
-                    "end_time": "2023-11-11 12:00:00",
-                    "start_time": "2023-11-11 10:00:00"
-                }
-            },
-            {
-                "host": "TT",
-                "job": {
-                    "end_time": "2023-11-11 12:00:00",
-                    "skill_name": "Programming",
-                    "start_time": "2023-11-11 10:00:00",
-                    "supporter_name": "Helu"
-                },
-                "status": 0,
-                "total_credit": 10.399999618530273,
-                "work_time": {
-                    "end_time": "2023-11-11 12:00:00",
-                    "start_time": "2023-11-11 10:00:00"
-                }
-            },
-            {
-                "host": "TT",
-                "job": {
-                    "end_time": "2023-11-11 12:00:00",
-                    "skill_name": "",
-                    "start_time": "2023-11-11 10:00:00",
-                    "supporter_name": "Helu"
-                },
-                "status": 0,
-                "total_credit": 0.0,
                 "work_time": {
                     "end_time": "2023-11-11 12:00:00",
                     "start_time": "2023-11-11 10:00:00"
@@ -603,7 +338,7 @@
                 "start_time": "2024-01-07 10:00:00"
             }
         ],
-        "avg_host_rating": 0.0,
+        "avg_host_rating": 5.0,
         "avg_supporter_rating": 0.0,
         "block_list": [
             "ddd"
@@ -613,76 +348,10 @@
         "email": "test@gmail.com",
         "full_name": "test account",
         "home_address": "1234 Nguyen Van Linh",
-        "host_reviews": [
-            {
-                "comment": "ehthe",
-                "host_rating": 0
-            }
-        ],
+        "host_reviews": null,
         "password": "123456",
         "phone_number": "1234775",
-        "received_requests": [
-            {
-                "host": "Helu",
-                "job": {
-                    "end_time": "1970-01-01 08:00:00",
-                    "skill_name": "",
-                    "start_time": "1970-01-01 08:00:00",
-                    "supporter_name": ""
-                },
-                "status": 0,
-                "total_credit": 0.0,
-                "work_time": {
-                    "end_time": "1970-01-01 08:00:00",
-                    "start_time": "1970-01-01 08:00:00"
-                }
-            },
-            {
-                "host": "Helu",
-                "job": {
-                    "end_time": "2023-11-11 12:00:00",
-                    "skill_name": "Programming",
-                    "start_time": "2023-11-11 10:00:00",
-                    "supporter_name": "test"
-                },
-                "status": 0,
-                "total_credit": 10.399999618530273,
-                "work_time": {
-                    "end_time": "2023-11-11 12:00:00",
-                    "start_time": "2023-11-11 10:00:00"
-                }
-            },
-            {
-                "host": "Helu",
-                "job": {
-                    "end_time": "1970-01-01 08:00:00",
-                    "skill_name": "",
-                    "start_time": "1970-01-01 08:00:00",
-                    "supporter_name": ""
-                },
-                "status": 0,
-                "total_credit": 0.0,
-                "work_time": {
-                    "end_time": "1970-01-01 08:00:00",
-                    "start_time": "1970-01-01 08:00:00"
-                }
-            },
-            {
-                "host": "Helu",
-                "job": {
-                    "end_time": "1970-01-01 08:00:00",
-                    "skill_name": "",
-                    "start_time": "1970-01-01 08:00:00",
-                    "supporter_name": ""
-                },
-                "status": 0,
-                "total_credit": 0.0,
-                "work_time": {
-                    "end_time": "1970-01-01 08:00:00",
-                    "start_time": "1970-01-01 08:00:00"
-                }
-            }
-        ],
+        "received_requests": null,
         "sent_requests": [
             {
                 "host": "test",

@@ -35,6 +35,7 @@ Users::Member::Member(
     this->credit = credit;
     this->skills = {};
     this->avg_host_rating = 5;
+    this->avg_supporter_rating = 0;
 }
 
 // Getter methods
@@ -83,7 +84,7 @@ const std::vector<AvailableJob> Users::Member::get_available_jobs() const
     return available_jobs;
 }
 
-vector<Request> &Users::Member::get_received_requests()
+std::vector<Request> &Users::Member::get_received_requests()
 {
     return received_requests;
 }

@@ -1,4 +1,6 @@
-#include "../MenuSystem.hpp"
+#include "../../../MenuSystem.hpp"
+#include "ViewSentRequest.cpp"
+#include "ViewReceivedRequest.cpp"
 
 #include <string>
 

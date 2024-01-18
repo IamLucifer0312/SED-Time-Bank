@@ -1,4 +1,4 @@
-#include "../../MenuSystem.hpp"
+#include "../../../MenuSystem.hpp"
 
 void MenuSystem::book_job() {
     string supporterName;
@@ -25,6 +25,11 @@ void MenuSystem::book_job() {
         std::cout << "You don't have enough credit to book this job.\n";
         std::cout << "You need " << totalCredit << " credit to book this job.\n";
         std::cout << "Your current credit is " << userSystem.get_current_member().get_credit() << std::endl;
+        std::cout << "0. Back\n";
+        switch(prompt_choice(0, 0)) {
+            case 0:
+                break;
+        }
         return;
     }
 

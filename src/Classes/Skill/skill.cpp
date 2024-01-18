@@ -1,4 +1,6 @@
 #include "Skill.hpp"
+#include <iomanip>
+#include <sstream>
 
 // default constructor
 Skill::Skill()
@@ -37,9 +39,10 @@ const float Skill::get_mininum_rating() const
 
 std::string Skill::get_string() const
 {
+    
     return "Skill: " + skillName + "\n" +
-           "  Consumed per hour: " + std::to_string(consumedPerHour) + "\n" +
-           "  Minimum rating: " + std::to_string(mininumRating) + "\n";
+           "  Consumed per hour: " + formatFloat(consumedPerHour, 2) + "\n" +
+           "  Minimum rating: " + formatFloat(mininumRating, 2) + "\n";
 }
 
 const Skill* Skill::get_ptr() const
@@ -50,4 +53,10 @@ const Skill* Skill::get_ptr() const
 void Skill::set_minimum_rating(const float &mininumRating)
 {
     this->mininumRating = limitToRange(mininumRating, 0, 5);
+}
+
+std::string Skill::formatFloat(float value, int precision) const {
+    std::ostringstream oss;
+    oss << std::fixed << std::setprecision(precision) << value;
+    return oss.str();
 }

@@ -19,11 +19,11 @@ set(SOURCES
 
 
     src/Systems/MenuSystem/menuSystem.cpp
-    src/Skill/skill.cpp
-    src/Period/period.cpp
-    src/AvailableJob/availableJob.cpp
-    src/Review/review.cpp
-    src/Request/request.cpp
+    src/Classes/Skill/skill.cpp
+    src/Classes/Period/period.cpp
+    src/Classes/AvailableJob/availableJob.cpp
+    src/Classes/Review/review.cpp
+    src/Classes/Request/request.cpp
     main.cpp
 )
 
