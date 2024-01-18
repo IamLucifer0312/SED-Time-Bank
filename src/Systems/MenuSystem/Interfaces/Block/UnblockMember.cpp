@@ -15,15 +15,11 @@ void MenuSystem::unblock_member(std::string member_username)
                 userSystem.get_current_member().remove_block_list(member_username);
                 userSystem.database.update_member(userSystem.get_current_member());
                 userSystem.save_database();
-                
+
                 clear_screen();
                 std::cout << mem.get_username() << " has been unblocked !!\n";
-                std::cout << "0. Back\n";
-                switch (prompt_choice(0, 0))
-                {
-                case 0:
-                    break;
-                }
+                std::cout << "Press any key to continue.\n";
+                std::cin.get();
 
                 break;
 
@@ -34,11 +30,7 @@ void MenuSystem::unblock_member(std::string member_username)
         }
     }
     std::cout << "There are no member having this username !!\n";
-    std::cout << "0. Back\n";
-    switch (prompt_choice(0, 0))
-    {
-    case 0:
-        break;
-    }
+    std::cout << "Press any key to continue.\n";
+    std::cin.get();
     return;
 }

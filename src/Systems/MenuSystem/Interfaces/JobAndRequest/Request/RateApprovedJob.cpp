@@ -102,16 +102,8 @@ void MenuSystem::review_host(vector<Request> &requests_list)
 
     std::cout << "Successfully reviewed host.\n";
     cout << "You have received " << selected_request.get_total_credit() << " credits for completing the work!" << std::endl;
-    cout << "0. Back" << std::endl;
-
-    switch (prompt_choice(0, 0))
-    {
-    case 0:
-        break;
-
-    default:
-        break;
-    }
+    std::cout << "Press any key to continue.\n";
+    std::cin.get();
 }
 
 void MenuSystem::review_supporter(vector<Request> &requests_list)
@@ -139,14 +131,6 @@ void MenuSystem::review_supporter(vector<Request> &requests_list)
     supporter.calculate_avg_supporter_rating();
     userSystem.update_member(supporter);
     std::cout << "Successfully reviewed supporter.\n";
-    cout << "0. Back" << std::endl;
-
-    switch (prompt_choice(0, 0))
-    {
-    case 0:
-        break;
-
-    default:
-        break;
-    }
+    std::cout << "Press any key to continue.\n";
+    std::cin.get();
 }

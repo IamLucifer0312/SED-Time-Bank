@@ -16,21 +16,13 @@ void MenuSystem::view_received_request()
 
         // check if there are no requests
         if (requests_list.size() == 0)
-        {   
+        {
             clear_screen();
             cout << "There are no requests." << std::endl;
 
-            cout << "0. Back" << std::endl;
-
-            switch (prompt_choice(0, 0))
-            {
-            case 0:
-                is_running = false;
-                break;
-            default:
-                is_running = false;
-                break;
-            }
+            std::cout << "Press any key to continue.\n";
+            std::cin.get();
+            is_running = false;
         }
 
         else
@@ -133,15 +125,8 @@ void MenuSystem::accept_or_reject_request(vector<Request> &requests_list)
         userSystem.update_member(host);
         userSystem.update_member(userSystem.current_member);
         cout << "Request accepted." << std::endl;
-        cout << "0. Back" << std::endl;
-
-        switch (prompt_choice(0, 0))
-        {
-        case 0:
-            break;
-        default:
-            break;
-        }
+        cout << "Press any key to continue.\n";
+        std::cin.get();
         break;
 
     case 2:
@@ -161,7 +146,7 @@ void MenuSystem::accept_or_reject_request(vector<Request> &requests_list)
                 break;
             }
         }
-        
+
         if (!request_found)
         {
             std::cerr << "Host request not found." << std::endl;

@@ -25,19 +25,31 @@ int MenuSystem::prompt_choice(unsigned min, unsigned max)
         std::cout << "Enter your choice: ";
         std::getline(std::cin, buffer);
 
-        if (choice < min || max < choice)
-            choice = -1;
+        // check if input is a number
         try
         {
             choice = std::stoi(buffer);
+
+            // check if input is in range
+            if (choice < min || choice > max)
+            {
+                if (min == max)
+                    std::cerr << "Choice out of range. The choice must be " << min << "." << std::endl;
+                else
+                    std::cerr << "Choice out of range. Please try again from (" << min << " to " << max << ")." << std::endl;
+                choice = -1;
+            }
         }
         catch (std::invalid_argument &e)
         {
-            choice = -1;
+            if (min == max)
+                std::cerr << "Invalid choice. The choice must be " << min << "." << std::endl;
+            else
+                std::cerr << "Invalid choice. Please enter your choice from (" << min << " to " << max << ")." << std::endl;
         }
         catch (std::out_of_range &e)
         {
-            choice = -1;
+            std::cerr << "Choice out of range. Please try again." << std::endl;
         }
     }
 
@@ -73,7 +85,7 @@ void MenuSystem::main_loop()
                   << "--> 2. Login as Member\n"
                   << "--> 3. Login as Admin\n";
 
-        switch (prompt_choice(1, 5))
+        switch (prompt_choice(0, 3))
         {
         case 1:
             clear_screen();

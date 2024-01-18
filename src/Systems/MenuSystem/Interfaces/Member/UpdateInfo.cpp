@@ -44,7 +44,7 @@ void MenuSystem::update_member_info(std::string information)
         float consumed_per_hour, minimum_rating;
         std::cout << "1. Add Skill \n";
         std::cout << "2. Remove Skill \n";
-        switch (prompt_choice(1,2))
+        switch (prompt_choice(1, 2))
         {
         case 1:
             std::cout << "Enter skill name: ";
@@ -67,23 +67,17 @@ void MenuSystem::update_member_info(std::string information)
         default:
             break;
         }
-        
     }
-    else if (information == "Block list") {
+    else if (information == "Block list")
+    {
         std::cout << "Please go to the Block Member page to update your block list" << std::endl;
     }
     else
     {
-        std::cout << "Invalid input.\n";    
+        std::cout << "Invalid input.\n";
     }
     userSystem.update_current_member();
     std::cout << "Update Successfully\n";
-    std::cout << "0. Back" << std::endl;
-    switch (prompt_choice(0, 0))
-    {
-    case 0:
-        break;
-    default:
-        break;
-    }
+    std::cout << "Press any key to continue.\n";
+    std::cin.get();
 }

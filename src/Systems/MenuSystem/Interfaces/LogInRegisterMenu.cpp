@@ -6,6 +6,38 @@ void MenuSystem::login_menu(string role)
     std::cout << "Enter your username: ";
     std::string username;
     std::getline(std::cin, username);
+    bool user_found = false;
+
+    if (role == "member")
+    {
+        // check if username exists
+        for (Users::Member user : userSystem.get_database().get_all_members())
+        {
+            if (user.get_username() == username)
+            {
+                user_found = true;
+                break;
+            }
+        }
+    }
+    else if (role == "admin")
+    {
+        // check if username exists
+        for (Users::Admin user : userSystem.get_database().get_all_admins())
+        {
+            if (user.get_username() == username)
+            {
+                user_found = true;
+                break;
+            }
+        }
+    }
+    if (!user_found)
+    {
+        std::cout << "Username not found. Press any key to continue.\n";
+        std::cin.get();
+        return;
+    }
 
     std::cout << "Enter your password: ";
     std::string password;
@@ -27,7 +59,7 @@ void MenuSystem::login_menu(string role)
     }
     else
     {
-        std::cout << "Login failed. Press any key to continue\n";
+        std::cout << "Wrong password or username. Press any key to continue.\n";
         std::cin.get();
         return;
     }
@@ -66,12 +98,17 @@ void MenuSystem::register_menu()
     std::cout << "Enter your phone number: ";
     std::getline(std::cin, phone_number);
 
-    try {
+    try
+    {
         std::stoi(phone_number);
-    } catch (const std::invalid_argument&) {
+    }
+    catch (const std::invalid_argument &)
+    {
         std::cout << "Invalid phone number. Please try again.\n";
         return;
-    } catch (const std::out_of_range&) {
+    }
+    catch (const std::out_of_range &)
+    {
         std::cout << "Invalid phone number. Please try again.\n";
         return;
     }
@@ -86,7 +123,6 @@ void MenuSystem::register_menu()
         std::cout << "Phone number is too short. Please try again.\n";
         return;
     }
-    
 
     std::cout << "Enter your home address: ";
     std::getline(std::cin, home_address);
@@ -94,7 +130,7 @@ void MenuSystem::register_menu()
     std::cout << "Enter your email: ";
     std::getline(std::cin, email);
 
-    if(!userSystem.is_email_valid(email))
+    if (!userSystem.is_email_valid(email))
     {
         std::cout << "Invalid email. Please try again.\n";
         return;

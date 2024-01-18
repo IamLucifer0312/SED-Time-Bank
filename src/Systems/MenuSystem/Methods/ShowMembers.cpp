@@ -7,8 +7,8 @@ void MenuSystem::show_members(string role)
     if (userSystem.get_members().size() == 0)
     {
         std::cout << "There are no members in the system !!\n";
-        std::cout << "0. Back\n";
-        prompt_choice(0, 0);
+        std::cout << "Press any key to continue.\n";
+        std::cin.get();
     }
 
     for (auto& member : userSystem.get_members())

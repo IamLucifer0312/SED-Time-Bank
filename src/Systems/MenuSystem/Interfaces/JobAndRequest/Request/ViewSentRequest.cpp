@@ -33,17 +33,9 @@ void MenuSystem::view_sent_request()
             clear_screen();
             cout << "There are no requests." << std::endl;
 
-            cout << "0. Back" << std::endl;
-
-            switch (prompt_choice(0, 0))
-            {
-            case 0:
-                is_running = false;
-                break;
-            default:
-                is_running = false;
-                break;
-            }
+            cout << "Press any key to continue.\n";
+            cin.get();
+            is_running = false;
         }
 
         else

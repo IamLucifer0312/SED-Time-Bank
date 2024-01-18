@@ -5,6 +5,7 @@ void MenuSystem::admin_menu()
 {
     while (loggedIn)
     {
+        bool user_found = false;
         clear_screen();
         std::cout << "Admin menu: \n"
                         << "==============================\n"
@@ -25,6 +26,24 @@ void MenuSystem::admin_menu()
                     case 1: 
                         std::cout << "\nWhich user do you want to update password: ";
                         std::getline(std::cin, member_username);
+
+                        // check if username exists
+                        for (Users::Member user : userSystem.get_database().get_all_members())
+                        {
+                            if (user.get_username() == member_username)
+                            {
+                                user_found = true;
+                                break;
+                            }
+                        }
+                        if (!user_found)
+                        {
+                            std::cout << "Username not found. Please try again\n";
+                            std::cout << "Press any key to continue.\n";
+                            std::cin.get();
+                            break;
+                        }
+
                         change_new_password(member_username);
                         break;
                     case 0:
