@@ -84,7 +84,7 @@ const std::vector<AvailableJob> Users::Member::get_available_jobs() const
     return available_jobs;
 }
 
-vector<Request> &Users::Member::get_received_requests()
+std::vector<Request> &Users::Member::get_received_requests()
 {
     return received_requests;
 }

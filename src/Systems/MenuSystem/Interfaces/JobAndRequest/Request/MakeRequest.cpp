@@ -16,8 +16,8 @@ void MenuSystem::make_request(const AvailableJob &job, Period &workTime)
 
     Request temp = Request(userSystem.get_current_member().get_username(), job, workTime, Status::PENDING, job.get_skill().get_skill_name());
 
-    userSystem.get_current_member().get_sent_requests().push_back(temp);
-    supporter.get_received_requests().push_back(temp);
+    userSystem.current_member.add_sent_request(temp);
+    supporter.add_received_request(temp);
 
     // save to database
     userSystem.update_current_member();
