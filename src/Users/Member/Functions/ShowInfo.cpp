@@ -22,19 +22,19 @@ void Users::Member::show_member_info(std::string role) {
         {
             std::cout << skill.get_string() << std::endl;
         }
-        std::cout << "Available times: " << std::endl;
+        std::cout << "Available Times: " << std::endl;
         std::cout << std::endl;
         for (Period &available_time : this->available_times)
         {
-            std::cout << "Start time: " << available_time.get_start_time_string() << std::endl;
-            std::cout << "End time: " << available_time.get_end_time_string() << std::endl;
+            std::cout << "  Start time: " << available_time.get_start_time_string() << std::endl;
+            std::cout << "  End time: " << available_time.get_end_time_string() << std::endl;
             std::cout << std::endl;
         }
         std::cout << std::endl;
         std::cout << "Block list: \n";
         for (std::string &block_member : this->block_list)
         {
-            std::cout << block_member << std::endl;
+            std::cout << "  Username: "<< block_member << std::endl;
         }
         std::cout << std::endl;
 
@@ -42,10 +42,11 @@ void Users::Member::show_member_info(std::string role) {
         std::cout << std::endl;
         for (AvailableJob &available_job : this->available_jobs)
         {
-            std::cout << "Supporter name: " << available_job.get_supporter_name() << std::endl;
+            std::cout << "  Supporter name: " << available_job.get_supporter_name() << std::endl;
             std::cout << available_job.get_skill().get_string() << std::endl;
-            std::cout << "Start time:" << available_job.get_available_time().get_start_time_string() << std::endl;
-            std::cout << "End time:" << available_job.get_available_time().get_end_time_string() << std::endl;
+            std::cout << "  Start time:" << available_job.get_available_time().get_start_time_string() << std::endl;
+            std::cout << "  End time:" << available_job.get_available_time().get_end_time_string() << std::endl;
+            std::cout << "  -------------------------"<< std::endl;
             std::cout << std::endl;
         }
         std::cout << "----------------------------" << std::endl;
@@ -70,31 +71,26 @@ void Users::Member::show_member_info(std::string role) {
             std::cout << skill.get_string() << std::endl;
             std::cout << std::endl;
         }
-        std::cout << "Available times: " << std::endl;
+        std::cout << "Available Times: " << std::endl;
         std::cout << std::endl;
         for (Period &available_time : this->available_times)
         {   
-            std::cout << "Start time: " << available_time.get_start_time_string() << std::endl;
-            std::cout << "End time: " << available_time.get_end_time_string() << std::endl;
+            std::cout << "  Start time: " << available_time.get_start_time_string() << std::endl;
+            std::cout << "  End time: " << available_time.get_end_time_string() << std::endl;
             std::cout << std::endl;
         }
 
-        std::cout << std::endl;
-        std::cout << "Block list: \n";
-        for (std::string &block_member : this->block_list)
-        {
-            std::cout << block_member << std::endl;
-        }
         std::cout << std::endl;
 
         std::cout << "Available Jobs: " << std::endl;
         std::cout << std::endl;
         for (AvailableJob &available_job : this->available_jobs)
         {
-            std::cout << "Supporter name: " << available_job.get_supporter_name() << std::endl;
+            std::cout << "  Supporter name: " << available_job.get_supporter_name() << std::endl;
             std::cout << available_job.get_skill().get_string() << std::endl;
-            std::cout << "Start time:" << available_job.get_available_time().get_start_time_string() << std::endl;
-            std::cout << "End time:" << available_job.get_available_time().get_end_time_string() << std::endl;
+            std::cout << "  Start time:" << available_job.get_available_time().get_start_time_string() << std::endl;
+            std::cout << "  End time:" << available_job.get_available_time().get_end_time_string() << std::endl;
+            std::cout << "  -------------------------"<< std::endl;
             std::cout << std::endl;
         }
         std::cout << "----------------------------" << std::endl;
@@ -122,12 +118,12 @@ void Users::Member::show_member_info_for_host(Users::Member &current_member) {
         std::cout << skill.get_string() << std::endl;
         std::cout << std::endl;
     }
-    std::cout << "Available times: " << std::endl;
+    std::cout << "Available Times: " << std::endl;
     std::cout << std::endl;
     for (Period &available_time : this->available_times)
     {   
-        std::cout << "Start time: " << available_time.get_start_time_string() << std::endl;
-        std::cout << "End time: " << available_time.get_end_time_string() << std::endl;
+        std::cout << "  Start time: " << available_time.get_start_time_string() << std::endl;
+        std::cout << "  End time: " << available_time.get_end_time_string() << std::endl;
         std::cout << std::endl;
     }
 
@@ -142,10 +138,11 @@ void Users::Member::show_member_info_for_host(Users::Member &current_member) {
         if (available_job.get_skill().get_consumed_per_hour() > current_member.get_credit()) {
             continue;
         }
-        std::cout << "Supporter name: " << available_job.get_supporter_name() << std::endl;
+        std::cout << "  Supporter name: " << available_job.get_supporter_name() << std::endl;
         std::cout << available_job.get_skill().get_string() << std::endl;
-        std::cout << "Start time:" << available_job.get_available_time().get_start_time_string() << std::endl;
-        std::cout << "End time:" << available_job.get_available_time().get_end_time_string() << std::endl;
+        std::cout << "  Start time:" << available_job.get_available_time().get_start_time_string() << std::endl;
+        std::cout << "  End time:" << available_job.get_available_time().get_end_time_string() << std::endl;
+        std::cout << "  -------------------------"<< std::endl;
         std::cout << std::endl;
     }
     

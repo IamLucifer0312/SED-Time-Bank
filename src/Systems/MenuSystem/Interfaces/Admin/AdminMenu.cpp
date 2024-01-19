@@ -21,7 +21,7 @@ void MenuSystem::admin_menu()
                       << "1. Yes\n"
                       << "2. No\n";
 
-            switch (prompt_choice(0, 1))
+            switch (prompt_choice(1, 2))
             {
             case 1:
                 std::cout << "\nWhich user do you want to update password: ";
@@ -46,7 +46,7 @@ void MenuSystem::admin_menu()
 
                 change_new_password(member_username);
                 break;
-            case 0:
+            case 2:
                 break;
             }
             break;

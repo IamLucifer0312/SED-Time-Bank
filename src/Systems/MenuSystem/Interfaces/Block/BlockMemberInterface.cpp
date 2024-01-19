@@ -7,10 +7,14 @@ void MenuSystem::block_member_interface()
     int i = 0;
     int count = 0;
     std::cout << "Would you like to block or unblock member?\n"
+              << "0. Back\n"
               << "1. Block\n"
               << "2. Unblock\n";
-    switch (prompt_choice(1, 2))
+    switch (prompt_choice(0, 2))
     {
+    // Back
+    case 0:
+        break;
     // Block
     case 1:
         clear_screen();
