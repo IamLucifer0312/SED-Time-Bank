@@ -1,10 +1,38 @@
 #include "../../../MenuSystem.hpp"
 
-void MenuSystem::book_job()
+void MenuSystem::book_job(vector<Users::Member> tempSupporterList)
 {
     string supporterName;
-    std::cout << "Enter supporter username: ";
-    std::getline(std::cin, supporterName);
+    bool isFound = false;
+    while (!isFound)
+    {
+        std::cout << "Enter supporter username: ";
+        std::getline(std::cin, supporterName);
+
+        // check if supporter exists
+        for (auto &supporter : tempSupporterList)
+        {
+            if (supporter.get_username() == supporterName)
+            {
+                isFound = true;
+                break;
+            }
+        }
+
+        if (!isFound)
+        {
+            std::cout << "Supporter not found. Please enter the correct supporter name on the list.\n";
+            std::cout << "1. Try again.\n";
+            std::cout << "0. Exit.\n";
+            switch (prompt_choice(0, 1))
+            {
+            case 1:
+                break;
+            case 0:
+                return;
+            }
+        }
+    }
 
     // need error handling here:
     int arraySize = userSystem.database.find_member(supporterName).get_available_jobs().size();
@@ -33,6 +61,7 @@ void MenuSystem::book_job()
     }
 
     make_request(availableJobs[sizeValue - 1], availableJobs[sizeValue - 1].availableTime);
+    clear_screen();
     std::cout << "Successfully booked job.\n";
     std::cout << "Press any key to continue.\n";
     std::cin.get();
