@@ -32,11 +32,10 @@ void MenuSystem::view_received_request()
                 Request request = requests_list[i];
                 cout << std::endl;
                 cout << "Request " << i + 1 << ":" << std::endl;
-                cout << "\tSupporter: " << request.get_supporter() << std::endl;
+                cout << "\tHost: " << request.get_host() << std::endl;
                 cout << "\tWork time: " << request.get_job().get_available_time().get_start_time_string() << " - " << request.get_job().get_available_time().get_end_time_string() << std::endl;
                 cout << "\tCredit: " << request.get_total_credit() << std::endl;
                 cout << "\tSkill: " << request.get_job().get_skill().get_skill_name() << std::endl;
-                cout << "\tStatus: " << request.get_status_string() << std::endl;
             }
 
             cout << std::endl;

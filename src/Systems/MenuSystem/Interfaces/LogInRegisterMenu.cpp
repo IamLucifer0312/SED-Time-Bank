@@ -111,22 +111,30 @@ void MenuSystem::register_menu()
     catch (const std::invalid_argument &)
     {
         std::cout << "Invalid phone number. Please try again.\n";
+        std::cout << "Press Enter to continue.\n";
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         return;
     }
     catch (const std::out_of_range &)
     {
         std::cout << "Invalid phone number. Please try again.\n";
+        std::cout << "Press Enter to continue.\n";
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         return;
     }
 
     if (phone_number.length() > 10)
     {
         std::cout << "Phone number is too long. Please try again.\n";
+        std::cout << "Press Enter to continue.\n";
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         return;
     }
     else if (phone_number.length() < 10)
     {
         std::cout << "Phone number is too short. Please try again.\n";
+        std::cout << "Press Enter to continue.\n";
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         return;
     }
 
@@ -139,7 +147,20 @@ void MenuSystem::register_menu()
     if (!userSystem.is_email_valid(email))
     {
         std::cout << "Invalid email. Please try again.\n";
+        std::cout << "Press Enter to continue.\n";
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         return;
+    }
+
+    for (Users::Member user : userSystem.get_database().get_all_members())
+    {
+        if (user.get_email() == email)
+        {
+            std::cout << "Email already exists. Please try again.\n";
+            std::cout << "Press Enter to continue.\n";
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            return;
+        }
     }
 
     std::cout << "Which city do you want to register \n"

@@ -225,8 +225,17 @@ void MenuSystem::review_supporter(vector<Request> &requests_list)
         }
     }
 
-    cout << "Please comment about your supporter: " << std::endl;
-    getline(cin, comment);
+    // check if comment is empty
+    while (comment.empty())
+    {
+        cout << "Please comment about your supporter: " << std::endl;
+        getline(cin, comment);
+
+        if (comment.empty())
+        {
+            std::cout << "Comment cannot be empty\n";
+        }
+    }
 
     review = SupporterReview(comment, skillRating, supporterRating);
     supporter.add_supporter_review(review);
@@ -235,7 +244,6 @@ void MenuSystem::review_supporter(vector<Request> &requests_list)
 
     // update database
     userSystem.update_current_member();
-    std::cout << "Ran through.\n";
     userSystem.update_member(supporter);
 
     std::cout << "Successfully reviewed supporter.\n";

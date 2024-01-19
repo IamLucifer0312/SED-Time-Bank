@@ -1,6 +1,22 @@
 [
     {
-        "approved_received_requests": null,
+        "approved_received_requests": [
+            {
+                "host": "ddd",
+                "job": {
+                    "end_time": "2023-11-11 12:00:00",
+                    "skill_name": "Programming",
+                    "start_time": "2023-11-11 10:00:00",
+                    "supporter_name": "Helu"
+                },
+                "status": 1,
+                "total_credit": 10.399999618530273,
+                "work_time": {
+                    "end_time": "2023-11-11 12:00:00",
+                    "start_time": "2023-11-11 10:00:00"
+                }
+            }
+        ],
         "approved_sent_requests": null,
         "available_jobs": [
             {
@@ -21,7 +37,7 @@
             }
         ],
         "avg_host_rating": 3.0,
-        "avg_supporter_rating": 2.0,
+        "avg_supporter_rating": 2.3333333333333335,
         "block_list": null,
         "city": "Ha noi",
         "credit": 44.400001525878906,
@@ -71,6 +87,16 @@
                 "comment": "hi",
                 "skill_rating": 1,
                 "supporter_rating": 2
+            },
+            {
+                "comment": "",
+                "skill_rating": 2,
+                "supporter_rating": 2
+            },
+            {
+                "comment": "great",
+                "skill_rating": 2,
+                "supporter_rating": 3
             }
         ],
         "username": "Helu"
@@ -102,7 +128,7 @@
             "babicutie"
         ],
         "city": "Sai gon",
-        "credit": 30.0,
+        "credit": 19.600000381469727,
         "email": "ddd@gmail.com",
         "full_name": "duc quang",
         "home_address": "123 Nguyen Van Linh",
@@ -110,7 +136,23 @@
         "password": "dd",
         "phone_number": "8328382",
         "received_requests": null,
-        "sent_requests": null,
+        "sent_requests": [
+            {
+                "host": "ddd",
+                "job": {
+                    "end_time": "2023-11-11 12:00:00",
+                    "skill_name": "Programming",
+                    "start_time": "2023-11-11 10:00:00",
+                    "supporter_name": "Helu"
+                },
+                "status": 1,
+                "total_credit": 10.399999618530273,
+                "work_time": {
+                    "end_time": "2023-11-11 12:00:00",
+                    "start_time": "2023-11-11 10:00:00"
+                }
+            }
+        ],
         "skills": [
             {
                 "consumed_per_hour": 5.199999809265137,
@@ -128,23 +170,7 @@
     },
     {
         "approved_received_requests": null,
-        "approved_sent_requests": [
-            {
-                "host": "TT",
-                "job": {
-                    "end_time": "2023-11-11 12:00:00",
-                    "skill_name": "Programming",
-                    "start_time": "2023-11-11 10:00:00",
-                    "supporter_name": "Helu"
-                },
-                "status": 1,
-                "total_credit": 10.399999618530273,
-                "work_time": {
-                    "end_time": "2023-11-11 12:00:00",
-                    "start_time": "2023-11-11 10:00:00"
-                }
-            }
-        ],
+        "approved_sent_requests": null,
         "available_jobs": [
             {
                 "end_time": "2023-11-11 12:00:00",
