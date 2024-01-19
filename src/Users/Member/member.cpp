@@ -302,7 +302,7 @@ bool Users::Member::is_overlap(time_t startTime, time_t endTime)
     {
         if (endTime < available_time.get_start_time() || available_time.get_end_time() < startTime)
         {
-            return false;
+            continue;
         }
         if (static_cast<int>(difftime(available_time.get_start_time(), startTime)) <= 1800)
         {
