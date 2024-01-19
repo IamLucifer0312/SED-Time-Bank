@@ -40,7 +40,7 @@
         "avg_supporter_rating": 0.0,
         "block_list": null,
         "city": "Ha noi",
-        "credit": 15.600000381469727,
+        "credit": 16.600000381469727,
         "email": "fewf@gmail.com",
         "full_name": "Fut",
         "home_address": "no",
@@ -195,7 +195,23 @@
         ],
         "password": "123456",
         "phone_number": "0932166716",
-        "received_requests": null,
+        "received_requests": [
+            {
+                "host": "Helu",
+                "job": {
+                    "end_time": "2023-11-11 12:00:00",
+                    "skill_name": "Programming",
+                    "start_time": "2023-11-11 10:00:00",
+                    "supporter_name": "TT"
+                },
+                "status": 0,
+                "total_credit": 10.399999618530273,
+                "work_time": {
+                    "end_time": "2023-11-11 12:00:00",
+                    "start_time": "2023-11-11 10:00:00"
+                }
+            }
+        ],
         "sent_requests": [
             {
                 "host": "TT",

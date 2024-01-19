@@ -2,7 +2,7 @@
 #include "../../UserSystem/UserSystem.hpp"
 
 void MenuSystem::show_members(string role)
-{   
+{
     // check if there are no members
     if (userSystem.get_members().size() == 0)
     {
@@ -11,29 +11,35 @@ void MenuSystem::show_members(string role)
         std::cin.get();
     }
 
-    for (auto& member : userSystem.get_members())
+    for (auto &member : userSystem.get_members())
     {
-        if (member.get_username() == userSystem.get_current_member().get_username()) {
+        if (member.get_username() == userSystem.get_current_member().get_username())
+        {
             continue;
         }
-        if (is_blocked(member)) {
+        if (is_blocked(member))
+        {
             continue;
         }
-        if (role != "member") {
+        if (role != "member")
+        {
             member.show_member_info(role);
-        } else {
+        }
+        else
+        {
             member.show_member_info_for_host(userSystem.get_current_member());
-        }  
+        }
     }
-    
 }
-
 
 void MenuSystem::show_members_for_city(std::string city)
 {
-    for (auto& member : userSystem.get_members())
+    // Extract all members from the same city
+    vector<Users::Member> temp;
+    for (auto &member : userSystem.get_members())
     {
-        if (member.get_username() == userSystem.get_current_member().get_username()) {
+        if (member.get_username() == userSystem.get_current_member().get_username())
+        {
             continue;
         }
 
@@ -41,44 +47,100 @@ void MenuSystem::show_members_for_city(std::string city)
         {
             continue;
         }
-        if (is_blocked(member)) {
+        if (is_blocked(member))
+        {
             continue;
         }
-        member.show_member_info_for_host(userSystem.get_current_member());
-    }   
+        temp.push_back(member);
+    }
+
+    // check if there are no members
+    if (temp.size() == 0)
+    {
+        std::cout << "There are no members from this city !!\n";
+        std::cout << "Press any key to continue.\n";
+        std::cin.get();
+    }
+    else
+    {
+        for (auto &member : temp)
+        {
+            member.show_member_info_for_host(userSystem.get_current_member());
+        }
+
+        std::cout << "What do you want to do ?\n"
+                  << "1. Book\n"
+                  << "0. no\n";
+        switch (prompt_choice(0, 1))
+        {
+        case 1:
+            book_job(temp);
+            break;
+        case 0:
+            break;
+        }
+    }
 }
 
 void MenuSystem::show_members_for_time(std::string startTime, std::string endTime)
 {
     Period input_period = Period(startTime, endTime);
-    for (auto& member : userSystem.get_members())
+    vector<Users::Member> temp;
+    for (auto &member : userSystem.get_members())
     {
-        if (member.get_username() == userSystem.get_current_member().get_username()) {
+        if (member.get_username() == userSystem.get_current_member().get_username())
+        {
             continue;
         }
 
-        
         if (!member.is_overlap(input_period.get_start_time(), input_period.get_end_time()))
         {
             continue;
         }
-        
-      
-        if (is_blocked(member)) {
+
+        if (is_blocked(member))
+        {
             continue;
         }
-        member.show_member_info_for_host(userSystem.get_current_member());
-    }   
+        temp.push_back(member);
+    }
+
+    if (temp.size() == 0)
+    {
+        std::cout << "There are no members available at this time !!\n";
+        std::cout << "Press any key to continue.\n";
+        std::cin.get();
+    }
+    else
+    {
+        std::cout << "Available supporters: \n";
+        for (auto &member : temp)
+        {
+            member.show_member_info_for_host(userSystem.get_current_member());
+        }
+
+        std::cout << "What do you want to do ?\n"
+                  << "1. Book\n"
+                  << "0. no\n";
+        switch (prompt_choice(0, 1))
+        {
+        case 1:
+            book_job(temp);
+            break;
+        case 0:
+            break;
+        }
+    }
 }
 
-bool MenuSystem::is_blocked(Users::Member member) {
-    for (auto& blocked_member : member.get_block_list())
+bool MenuSystem::is_blocked(Users::Member member)
+{
+    for (auto &blocked_member : member.get_block_list())
+    {
+        if (blocked_member == userSystem.get_current_member().get_username())
         {
-            if (blocked_member == userSystem.get_current_member().get_username())
-            {
-                return true;
-            }
+            return true;
         }
+    }
     return false;
 }
-

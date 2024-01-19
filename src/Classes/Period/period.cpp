@@ -18,7 +18,8 @@ Period::Period(string startTime, string endTime)
 
 // function to convert a date or time string to time_t.
 
-time_t Period::parse_date_time(const string datetimeString) {
+time_t Period::parse_date_time(const string datetimeString)
+{
     const string format = "%Y-%m-%d %H:%M:%S";
 
     // Initialize a std::tm structure to hold the parsed date and time
@@ -29,8 +30,9 @@ time_t Period::parse_date_time(const string datetimeString) {
     ss >> std::get_time(&timeStruct, format.c_str());
 
     // Check for parsing errors
-    if (ss.fail()) {
-        std::cerr << "Error parsing date string\n";
+    if (ss.fail())
+    {
+        throw std::runtime_error("Error parsing datetime string");
         return -1; // Indicates an error
     }
 
@@ -38,15 +40,15 @@ time_t Period::parse_date_time(const string datetimeString) {
     time_t timeValue = std::mktime(&timeStruct);
 
     // Check for conversion errors
-    if (timeValue == -1) {
-        std::cerr << "Error converting std::tm to time_t\n";
+    if (timeValue == -1)
+    {
+        throw std::runtime_error("Error converting time value");
         return -1; // Indicates an error
     }
 
     // Return the resulting time_t value
     return timeValue;
 }
-
 
 // function to convert a time_t to a date or time string.
 string Period::format_date_time(time_t time) const
@@ -110,12 +112,14 @@ const float Period::get_duration_by_hour() const
 
 // operator overloading
 
-bool Period::operator== (const Period& other) const {
+bool Period::operator==(const Period &other) const
+{
     return (this->startTime == other.startTime && this->endTime == other.endTime);
 }
 
 // copy operator
-Period& Period::operator=(const Period& other) {
+Period &Period::operator=(const Period &other)
+{
     this->startTime = other.startTime;
     this->endTime = other.endTime;
     this->durationByHour = other.durationByHour;

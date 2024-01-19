@@ -90,7 +90,7 @@ public:
     void accept_or_reject_request(vector<Request> &requests_list);
 
     // book job
-    void book_job();
+    void book_job(vector<Users::Member> tempSupporterList);
 
     // check block list for the username
     bool check_block_list(const string member_username);
