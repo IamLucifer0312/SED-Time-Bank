@@ -10,9 +10,9 @@ void MenuSystem::change_new_password(string member_username)
         if (mem.get_username() == member_username)
         {
             mem.set_password(new_password);
-            std::cout <<"Update password successfully!" << std::endl;
-            std::cout << "Press any key to continue." << std::endl;
-            std::cin.get();
+            std::cout << "Update password successfully!" << std::endl;
+            std::cout << "Press Enter to continue." << std::endl;
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             userSystem.database.update_member(mem);
             userSystem.save_database();
             return;

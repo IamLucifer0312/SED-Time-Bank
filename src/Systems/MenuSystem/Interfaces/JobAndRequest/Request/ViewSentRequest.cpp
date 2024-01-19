@@ -33,7 +33,7 @@ void MenuSystem::view_sent_request()
             clear_screen();
             cout << "There are no requests." << std::endl;
 
-            cout << "Press any key to continue.\n";
+            cout << "Press Enter to continue.\n";
             cin.get();
             is_running = false;
         }

@@ -1,22 +1,6 @@
 [
     {
-        "approved_received_requests": [
-            {
-                "host": "TT",
-                "job": {
-                    "end_time": "2023-11-11 12:00:00",
-                    "skill_name": "Programming",
-                    "start_time": "2023-11-11 10:00:00",
-                    "supporter_name": "Helu"
-                },
-                "status": 1,
-                "total_credit": 10.399999618530273,
-                "work_time": {
-                    "end_time": "2023-11-11 12:00:00",
-                    "start_time": "2023-11-11 10:00:00"
-                }
-            }
-        ],
+        "approved_received_requests": null,
         "approved_sent_requests": null,
         "available_jobs": [
             {
@@ -37,10 +21,10 @@
             }
         ],
         "avg_host_rating": 3.0,
-        "avg_supporter_rating": 0.0,
+        "avg_supporter_rating": 2.0,
         "block_list": null,
         "city": "Ha noi",
-        "credit": 16.600000381469727,
+        "credit": 44.400001525878906,
         "email": "fewf@gmail.com",
         "full_name": "Fut",
         "home_address": "no",
@@ -82,7 +66,13 @@
                 "skill_name": "Cooking"
             }
         ],
-        "supporter_reviews": null,
+        "supporter_reviews": [
+            {
+                "comment": "hi",
+                "skill_rating": 1,
+                "supporter_rating": 2
+            }
+        ],
         "username": "Helu"
     },
     {
@@ -179,8 +169,8 @@
                 "start_time": "2024-01-07 10:00:00"
             }
         ],
-        "avg_host_rating": 3.0,
-        "avg_supporter_rating": 3.5,
+        "avg_host_rating": 3.5,
+        "avg_supporter_rating": 3.3333333333333335,
         "block_list": null,
         "city": "",
         "credit": 96.29999542236328,
@@ -191,6 +181,18 @@
             {
                 "comment": "Good",
                 "host_rating": 3
+            },
+            {
+                "comment": "j a m a l",
+                "host_rating": 1
+            },
+            {
+                "comment": "good",
+                "host_rating": 5
+            },
+            {
+                "comment": "sfsfs",
+                "host_rating": 5
             }
         ],
         "password": "123456",
@@ -271,6 +273,11 @@
                 "comment": "a m o g u s",
                 "skill_rating": 4,
                 "supporter_rating": 4
+            },
+            {
+                "comment": "Hihi",
+                "skill_rating": 3,
+                "supporter_rating": 3
             }
         ],
         "username": "TT"

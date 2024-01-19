@@ -20,8 +20,8 @@ void MenuSystem::view_received_request()
             clear_screen();
             cout << "There are no requests." << std::endl;
 
-            std::cout << "Press any key to continue.\n";
-            std::cin.get();
+            std::cout << "Press Enter to continue.\n";
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             is_running = false;
         }
 
@@ -65,21 +65,7 @@ void MenuSystem::accept_or_reject_request(vector<Request> &requests_list)
 {
     cout << std::endl;
     cout << "Enter the request (number) you want to accept or reject: " << std::endl;
-    int selected_request_number = prompt_choice(1, requests_list.size() + 1);
-
-    if (selected_request_number < 1 || selected_request_number > requests_list.size())
-    {
-        std::cerr << "Invalid request number." << std::endl;
-        std::cout << "0. Back" << std::endl;
-        switch (prompt_choice(0, 0))
-        {
-        case 0:
-            return;
-        default:
-            return;
-        }
-        return;
-    }
+    int selected_request_number = prompt_choice(1, requests_list.size());
 
     Request &selected_request = requests_list[selected_request_number - 1];
 
@@ -139,8 +125,8 @@ void MenuSystem::accept_or_reject_request(vector<Request> &requests_list)
         userSystem.update_member(host);
         userSystem.update_member(userSystem.current_member);
         cout << "Request accepted." << std::endl;
-        cout << "Press any key to continue.\n";
-        std::cin.get();
+        cout << "Press Enter to continue.\n";
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         break;
 
     case 2:

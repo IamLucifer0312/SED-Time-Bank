@@ -29,7 +29,6 @@ void MenuSystem::update_available_job()
         {
             std::cout << "This skill doesn't match your current skills.\n";
             std::cout << "Please Enter to continue\n";
-            std::cin.ignore();
             return;
         }
 
@@ -67,6 +66,6 @@ void MenuSystem::update_available_job()
         userSystem.update_current_member();
         break;
     }
-    std::cout << "Press any key to continue.\n";
-    std::cin.get();
+    std::cout << "Press Enter to continue.\n";
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 }

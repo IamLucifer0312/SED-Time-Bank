@@ -7,8 +7,8 @@ void MenuSystem::show_members(string role)
     if (userSystem.get_members().size() == 0)
     {
         std::cout << "There are no members in the system !!\n";
-        std::cout << "Press any key to continue.\n";
-        std::cin.get();
+        std::cout << "Press Enter to continue.\n";
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     }
 
     for (auto &member : userSystem.get_members())
@@ -58,8 +58,8 @@ void MenuSystem::show_members_for_city(std::string city)
     if (temp.size() == 0)
     {
         std::cout << "There are no members from this city !!\n";
-        std::cout << "Press any key to continue.\n";
-        std::cin.get();
+        std::cout << "Press Enter to continue.\n";
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     }
     else
     {
@@ -108,8 +108,8 @@ void MenuSystem::show_members_for_time(std::string startTime, std::string endTim
     if (temp.size() == 0)
     {
         std::cout << "There are no members available at this time !!\n";
-        std::cout << "Press any key to continue.\n";
-        std::cin.get();
+        std::cout << "Press Enter to continue.\n";
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     }
     else
     {

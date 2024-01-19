@@ -17,8 +17,8 @@ void MenuSystem::find_supporter_availableTime()
     catch (const std::runtime_error &e)
     {
         std::cout << "Invalid date. Please try again.\n";
-        std::cout << "Press any key to continue.\n";
-        std::cin.get();
+        std::cout << "Press Enter to continue.\n";
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         return;
     }
 
@@ -33,8 +33,8 @@ void MenuSystem::find_supporter_availableTime()
     catch (const std::exception &e)
     {
         std::cout << "Invalid time. Please try again.\n";
-        std::cout << "Press any key to continue.\n";
-        std::cin.get();
+        std::cout << "Press Enter to continue.\n";
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         return;
     }
 
@@ -48,22 +48,21 @@ void MenuSystem::find_supporter_availableTime()
     catch (const std::exception &e)
     {
         std::cout << "Invalid time. Please try again.\n";
-        std::cout << "Press any key to continue.\n";
-        std::cin.get();
+        std::cout << "Press Enter to continue.\n";
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         return;
     }
 
     if (tester.parse_date_time(date + " " + from) >= tester.parse_date_time(date + " " + to))
     {
         std::cout << "The time input is negative. Please try again.\n";
-        std::cout << "Press any key to continue.\n";
-        std::cin.get();
+        std::cout << "Press Enter to continue.\n";
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         return;
     }
 
     std::string startTime = date + " " + from;
     std::string endTime = date + " " + to;
-
 
     clear_screen();
     show_members_for_time(startTime, endTime);

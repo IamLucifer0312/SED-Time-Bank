@@ -19,8 +19,8 @@ void MenuSystem::block_member_interface()
         if (userSystem.database.get_all_members().size() == 0)
         {
             std::cout << "\nThere are no members !!\n";
-            std::cout << "Press any key to continue.\n";
-            std::cin.get();
+            std::cout << "Press Enter to continue.\n";
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             break;
         }
 
@@ -67,8 +67,8 @@ void MenuSystem::block_member_interface()
         if (userSystem.get_current_member().get_block_list().size() == 0)
         {
             std::cout << "\nThere are no members in your block list !!\n";
-            std::cout << "Press any key to continue.\n";
-            std::cin.get();
+            std::cout << "Press Enter to continue.\n";
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             break;
         }
 

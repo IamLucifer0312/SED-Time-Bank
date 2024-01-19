@@ -36,7 +36,7 @@ void MenuSystem::update_member_info(std::string information)
         std::string new_info;
         std::cout << "1. Ha noi\n";
         std::cout << "2. Sai gon\n";
-        switch (prompt_choice(1,2))
+        switch (prompt_choice(1, 2))
         {
         case 1:
             new_info = "Ha noi";
@@ -47,8 +47,9 @@ void MenuSystem::update_member_info(std::string information)
         default:
             break;
         }
-        
-        if (new_info.empty()) {
+
+        if (new_info.empty())
+        {
             std::cout << "Invalid input\n";
             std::cout << "0. Back" << std::endl;
             switch (prompt_choice(0, 0))
@@ -57,7 +58,7 @@ void MenuSystem::update_member_info(std::string information)
                 return;
             default:
                 return;
-            } 
+            }
         }
         userSystem.get_current_member().set_city(new_info);
     }
@@ -73,7 +74,8 @@ void MenuSystem::update_member_info(std::string information)
             std::cout << "Enter skill name: ";
             std::getline(std::cin, skill_name);
 
-            if (skill_name.empty()) {
+            if (skill_name.empty())
+            {
                 std::cout << "Skill name cannot be empty\n";
                 std::cout << "0. Back" << std::endl;
                 switch (prompt_choice(0, 0))
@@ -82,13 +84,14 @@ void MenuSystem::update_member_info(std::string information)
                     return;
                 default:
                     return;
-                } 
+                }
             }
 
             std::cout << "Enter consumed per hour: ";
             std::cin >> consumed_per_hour;
 
-            if (!consumed_per_hour || consumed_per_hour < 0) {
+            if (!consumed_per_hour || consumed_per_hour < 0)
+            {
                 std::cout << "Invalid number\n";
                 std::cout << "0. Back" << std::endl;
                 switch (prompt_choice(0, 0))
@@ -97,13 +100,14 @@ void MenuSystem::update_member_info(std::string information)
                     return;
                 default:
                     return;
-                } 
+                }
             }
 
             std::cout << "Enter minimum host rating for this skill: ";
             std::cin >> minimum_rating;
 
-            if (minimum_rating < 0 || minimum_rating > 5) {
+            if (minimum_rating < 0 || minimum_rating > 5)
+            {
                 std::cout << "Minimum rating must be between 0 and 5\n";
                 std::cout << "0. Back" << std::endl;
                 switch (prompt_choice(0, 0))
@@ -112,7 +116,7 @@ void MenuSystem::update_member_info(std::string information)
                     return;
                 default:
                     return;
-                } 
+                }
             }
 
             userSystem.get_current_member().add_skill(skill_name, consumed_per_hour, minimum_rating);
@@ -122,10 +126,11 @@ void MenuSystem::update_member_info(std::string information)
             {
                 std::cout << skill.get_string() << std::endl;
             }
-            std::cout << "Enter skill name: ";
+            std::cout << "Enter the skill name you want to remove: ";
             std::getline(std::cin, skill_name);
 
-            if (!userSystem.get_current_member().have_skill(skill_name)) {
+            if (!userSystem.get_current_member().have_skill(skill_name))
+            {
                 std::cout << "You don't have this skill\n";
                 std::cout << "0. Back" << std::endl;
                 switch (prompt_choice(0, 0))
@@ -134,7 +139,7 @@ void MenuSystem::update_member_info(std::string information)
                     return;
                 default:
                     return;
-                } 
+                }
             }
 
             userSystem.get_current_member().remove_skill(skill_name);
@@ -149,7 +154,7 @@ void MenuSystem::update_member_info(std::string information)
     }
     else
     {
-        std::cout << "Invalid input.\n"; 
+        std::cout << "Invalid input. Please enter the correct information in the list\n";
         std::cout << "0. Back" << std::endl;
         switch (prompt_choice(0, 0))
         {
@@ -157,10 +162,10 @@ void MenuSystem::update_member_info(std::string information)
             return;
         default:
             return;
-        } 
+        }
     }
     userSystem.update_current_member();
     std::cout << "Update Successfully\n";
-    std::cout << "Press any key to continue.\n";
-    std::cin.get();
+    std::cout << "Press Enter to continue.\n";
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 }

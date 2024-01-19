@@ -34,8 +34,8 @@ void MenuSystem::login_menu(string role)
     }
     if (!user_found)
     {
-        std::cout << "Username not found. Press any key to continue.\n";
-        std::cin.get();
+        std::cout << "Username not found. Press Enter to continue.\n";
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         return;
     }
 
@@ -46,8 +46,8 @@ void MenuSystem::login_menu(string role)
     if (userSystem.validateLogin(username, password, role))
     {
         loggedIn = true;
-        std::cout << "Login successfully! Press any key to continue.\n";
-        std::cin.get();
+        std::cout << "Login successfully! Press Enter to continue.\n";
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         if (role == "admin")
         {
             admin_menu();
@@ -59,8 +59,8 @@ void MenuSystem::login_menu(string role)
     }
     else
     {
-        std::cout << "Wrong password or username. Press any key to continue.\n";
-        std::cin.get();
+        std::cout << "Wrong password or username. Press Enter to continue.\n";
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         return;
     }
 }
@@ -74,6 +74,8 @@ void MenuSystem::register_menu()
     if (userSystem.checkUSername(username))
     {
         std::cout << "Username already exists. Please try again.\n";
+        std::cout << "Press Enter to continue.\n";
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         return;
     }
 
@@ -83,12 +85,16 @@ void MenuSystem::register_menu()
     if (!userSystem.checkPasswordEmpty(password))
     {
         std::cout << "Password cannot be empty. Please try again.\n";
+        std::cout << "Press Enter to continue.\n";
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         return;
     }
 
     if (!userSystem.checkPasswordSpace(password))
     {
         std::cout << "Password cannot contain space. Please try again.\n";
+        std::cout << "Press Enter to continue.\n";
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         return;
     }
 

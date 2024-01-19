@@ -55,14 +55,14 @@ void MenuSystem::book_job(vector<Users::Member> tempSupporterList)
         std::cout << "You don't have enough credit to book this job.\n";
         std::cout << "You need " << totalCredit << " credit to book this job.\n";
         std::cout << "Your current credit is " << userSystem.get_current_member().get_credit() << std::endl;
-        std::cout << "Press any key to continue.\n";
-        std::cin.get();
+        std::cout << "Press Enter to continue.\n";
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         return;
     }
 
     make_request(availableJobs[sizeValue - 1], availableJobs[sizeValue - 1].availableTime);
     clear_screen();
     std::cout << "Successfully booked job.\n";
-    std::cout << "Press any key to continue.\n";
-    std::cin.get();
+    std::cout << "Press Enter to continue.\n";
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 };

@@ -19,8 +19,8 @@ void MenuSystem::block_member(std::string member_username)
 
                 clear_screen();
                 std::cout << mem.get_username() << " has been blocked !!\n";
-                std::cout << "Press any key to continue.\n";
-                std::cin.get();
+                std::cout << "Press Enter to continue.\n";
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
                 break;
 
             case 2:
@@ -30,8 +30,8 @@ void MenuSystem::block_member(std::string member_username)
         }
     }
     std::cout << "There are no member having this username !!\n";
-    std::cout << "Press any key to continue.\n";
-    std::cin.get();
+    std::cout << "Press Enter to continue.\n";
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
     return;
 }
