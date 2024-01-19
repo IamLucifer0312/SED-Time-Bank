@@ -40,9 +40,9 @@ const float Skill::get_mininum_rating() const
 std::string Skill::get_string() const
 {
     
-    return "Skill: " + skillName + "\n" +
-           "  Consumed per hour: " + formatFloat(consumedPerHour, 2) + "\n" +
-           "  Minimum rating: " + formatFloat(mininumRating, 2) + "\n";
+    return "  Skill name: " + skillName + "\n" +
+           "    Consumed per hour: " + formatFloat(consumedPerHour, 2) + "\n" +
+           "    Minimum rating: " + formatFloat(mininumRating, 2) + "\n";
 }
 
 const Skill* Skill::get_ptr() const

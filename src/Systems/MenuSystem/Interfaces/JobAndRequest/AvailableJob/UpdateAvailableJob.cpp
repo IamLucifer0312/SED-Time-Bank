@@ -18,8 +18,10 @@ void MenuSystem::update_available_job()
     Skill skill = Skill();
     Period available_time = Period();
 
-    switch (prompt_choice(1, 2))
+    switch (prompt_choice(0, 2))
     {
+    case 0:
+        return;
     case 1:
 
         std::cout << "\nEnter your skill name: ";
