@@ -145,12 +145,14 @@ void MenuSystem::review_host(vector<Request> &requests_list)
     }
     cout << "Please comment about your host: " << std::endl;
     getline(cin, comment);
+    // add review to host
     review = HostReview(comment, hostRating);
     host.add_host_review(review);
     host.calculate_avg_host_rating();
 
     // add credit to supporter
     userSystem.get_current_member().add_credit(selected_request.get_total_credit());
+    // remove request from requests list
     remove_request(selected_request, requests_list);
 
     // update database
@@ -237,9 +239,11 @@ void MenuSystem::review_supporter(vector<Request> &requests_list)
         }
     }
 
+    // add review to supporter
     review = SupporterReview(comment, skillRating, supporterRating);
     supporter.add_supporter_review(review);
     supporter.calculate_avg_supporter_rating();
+    // remove request from requests list
     remove_request(selected_request, requests_list);
 
     // update database

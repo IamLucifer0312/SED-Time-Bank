@@ -3,10 +3,12 @@
 // login
 bool UserSystem::validateLogin(const std::string &username, const std::string &password, const std::string role)
 {
+    // Login for member
     if (role == "member")
     {
         for (Users::Member &member : database.get_all_members())
         {
+            // check if the username and password are correct
             if (member.get_username() == username && member.authenticate(password))
             {
                 set_current_member(member);
@@ -14,10 +16,12 @@ bool UserSystem::validateLogin(const std::string &username, const std::string &p
             }
         }
     }
+    // Login for admin
     else if (role == "admin")
     {
         for (Users::Admin &admin : database.get_all_admins())
         {
+            // check if the username and password are correct
             if (admin.get_username() == username && admin.authenticate(password))
             {
                 set_admin(admin);
@@ -30,7 +34,8 @@ bool UserSystem::validateLogin(const std::string &username, const std::string &p
 }
 
 // register member
-void UserSystem::register_member(std::string username, std::string password, std::string full_name, std::string phone_number, std::string home_address, std::string email, std::string city)
+void UserSystem::register_member(std::string username, std::string password, std::string full_name, 
+                                 std::string phone_number, std::string home_address, std::string email, std::string city)
 {
     database.add_member(Users::Member(username, password, full_name, phone_number, home_address, email, city, 20));
     database.saveData();

@@ -130,11 +130,14 @@ void Users::Member::show_member_info_for_host(Users::Member &current_member) {
     // Unsuitable available jobs will not be shown
     std::cout << "Available Jobs: " << std::endl;
     std::cout << std::endl;
+    // filter available jobs
     for (AvailableJob &available_job : this->available_jobs)
     {
+        // by minimum host rating
         if (available_job.get_skill().get_mininum_rating() > current_member.get_avg_host_rating()) {
             continue;
         }
+        // by consumed credit
         if (available_job.get_skill().get_consumed_per_hour() > current_member.get_credit()) {
             continue;
         }
