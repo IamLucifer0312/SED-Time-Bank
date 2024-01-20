@@ -27,6 +27,7 @@ Period Users::Member::get_time_by_start_end(string &startTime, string &endTime)
 // Serialization function for Member class
 void Users::Member::serialize(json &j) const
 {
+    // Serialize member attributes
     j = {
         {"username", username},
         {"password", password},
@@ -38,7 +39,6 @@ void Users::Member::serialize(json &j) const
         {"credit", credit},
         {"avg_host_rating", avg_host_rating},
         {"avg_supporter_rating", avg_supporter_rating}
-        // Add more member variables to serialize
     };
 
     // Creating a JSON array for skills

@@ -192,6 +192,13 @@ vector<Users::Member> Database::loadMembersFromFile(const string &filename)
     return deserializeMembers(jsonArray);
 }
 
+// Load data from file
+void Database::loadData()
+{
+    this->members = loadMembersFromFile(member_file);
+    this->admins = loadAdminsFromFile(admin_file);
+};
+
 // Saving members to data file
 void Database::saveMembersToFile(const vector<Users::Member> &members, const string &filename)
 {
@@ -207,12 +214,7 @@ void Database::saveData()
     saveMembersToFile(members, member_file);
 };
 
-// Load data from file
-void Database::loadData()
-{
-    this->members = loadMembersFromFile(member_file);
-    this->admins = loadAdminsFromFile(admin_file);
-};
+
 
 void Database::update_member(const Users::Member &member)
 {

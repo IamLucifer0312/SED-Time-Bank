@@ -10,6 +10,13 @@ void MenuSystem::update_member_info(std::string information)
         std::getline(std::cin, new_info);
         userSystem.get_current_member().set_full_name(new_info);
     }
+    else if (information == "Password")
+    {
+        std::string new_info;
+        std::cout << "Enter new " << information << ": ";
+        std::getline(std::cin, new_info);
+        userSystem.get_current_member().set_password(new_info);
+    }
     else if (information == "Phone number")
     {
         std::string new_info;

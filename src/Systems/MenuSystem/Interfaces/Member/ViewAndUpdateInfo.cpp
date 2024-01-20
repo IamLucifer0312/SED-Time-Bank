@@ -10,6 +10,7 @@ void MenuSystem::member_view_my_info(std::string information)
     switch (prompt_choice(1,2)){
         case 1: 
             std::cout << "\nList of information you can update: \n"
+                    << "- Password\n"
                     << "- Full name\n"
                     << "- Phone number\n"
                     << "- Home Address\n"
