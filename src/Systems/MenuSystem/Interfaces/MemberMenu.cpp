@@ -34,6 +34,7 @@ void MenuSystem::member_menu()
         switch (prompt_choice(0, 7))
         {
         case 1:
+            clear_screen();
             member_view_my_info(information);
             break;
 

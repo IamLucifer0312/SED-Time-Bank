@@ -1,6 +1,7 @@
 #include "../Member.hpp"
 
-void Users::Member::show_member_info(std::string role) {
+void Users::Member::show_member_info(std::string role)
+{
     if (role == "admin" || role == "self")
     {
         std::cout << "Username: " << this->username << std::endl;
@@ -51,7 +52,8 @@ void Users::Member::show_member_info(std::string role) {
         std::cout << "----------------------------" << std::endl;
         std::cout << std::endl;
     }
-    else if (role == "guest") {    
+    else if (role == "guest")
+    {
         std::cout << "Username: " << this->username << std::endl;
         std::cout << "Full name: " << this->full_name << std::endl;
         std::cout << "Phone number: " << this->phone_number << std::endl;
@@ -62,7 +64,7 @@ void Users::Member::show_member_info(std::string role) {
         std::cout << "Average supporter rating: " << this->avg_supporter_rating << std::endl;
 
         std::cout << std::endl;
-        
+
         std::cout << "Skills: " << std::endl;
         std::cout << std::endl;
         for (Skill &skill : this->skills)
@@ -73,7 +75,7 @@ void Users::Member::show_member_info(std::string role) {
         std::cout << "Available times: " << std::endl;
         std::cout << std::endl;
         for (Period &available_time : this->available_times)
-        {   
+        {
             std::cout << "Start time: " << available_time.get_start_time_string() << std::endl;
             std::cout << "End time: " << available_time.get_end_time_string() << std::endl;
             std::cout << std::endl;
@@ -100,10 +102,10 @@ void Users::Member::show_member_info(std::string role) {
         std::cout << "----------------------------" << std::endl;
         std::cout << std::endl;
     }
-
 }
 
-void Users::Member::show_member_info_for_host(Users::Member &current_member) {
+void Users::Member::show_member_info_for_host(Users::Member &current_member)
+{
     std::cout << "Username: " << this->username << std::endl;
     std::cout << "Full name: " << this->full_name << std::endl;
     std::cout << "Phone number: " << this->phone_number << std::endl;
@@ -114,7 +116,7 @@ void Users::Member::show_member_info_for_host(Users::Member &current_member) {
     std::cout << "Average supporter rating: " << this->avg_supporter_rating << std::endl;
 
     std::cout << std::endl;
-    
+
     std::cout << "Skills: " << std::endl;
     std::cout << std::endl;
     for (Skill &skill : this->skills)
@@ -125,7 +127,7 @@ void Users::Member::show_member_info_for_host(Users::Member &current_member) {
     std::cout << "Available times: " << std::endl;
     std::cout << std::endl;
     for (Period &available_time : this->available_times)
-    {   
+    {
         std::cout << "Start time: " << available_time.get_start_time_string() << std::endl;
         std::cout << "End time: " << available_time.get_end_time_string() << std::endl;
         std::cout << std::endl;
@@ -136,10 +138,12 @@ void Users::Member::show_member_info_for_host(Users::Member &current_member) {
     std::cout << std::endl;
     for (AvailableJob &available_job : this->available_jobs)
     {
-        if (available_job.get_skill().get_mininum_rating() > current_member.get_avg_host_rating()) {
+        if (available_job.get_skill().get_mininum_rating() > current_member.get_avg_host_rating())
+        {
             continue;
         }
-        if (available_job.get_skill().get_consumed_per_hour() > current_member.get_credit()) {
+        if (available_job.get_skill().get_consumed_per_hour() > current_member.get_credit())
+        {
             continue;
         }
         std::cout << "Supporter name: " << available_job.get_supporter_name() << std::endl;
@@ -148,7 +152,7 @@ void Users::Member::show_member_info_for_host(Users::Member &current_member) {
         std::cout << "End time:" << available_job.get_available_time().get_end_time_string() << std::endl;
         std::cout << std::endl;
     }
-    
+
     std::cout << "----------------------------" << std::endl;
     std::cout << std::endl;
 }
