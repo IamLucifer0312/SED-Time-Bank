@@ -19,7 +19,6 @@ class MenuSystem
 {
 private:
     bool quit;
-    Users::Admin admin;
     UserSystem userSystem;
     bool loggedIn;
     std::string member_username;
