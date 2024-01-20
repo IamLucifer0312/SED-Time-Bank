@@ -27,12 +27,6 @@ namespace Users
 
         // authenticate password
         bool authenticate(const string &pwd) const;
-
-        // extract data from map
-        virtual void from_map(std::map<string, string> map);
-
-        // convert data to map
-        virtual std::map<string, string> to_map();
     };
 
 };

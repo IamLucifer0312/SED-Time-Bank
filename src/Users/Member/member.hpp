@@ -129,12 +129,6 @@ namespace Users
         void remove_block_list(string &username);
         void remove_available_job(AvailableJob &available_job);
 
-        // extract data from map
-        void from_map(std::map<string, string> map);
-
-        // convert data to map
-        std::map<string, string> to_map_member() const;
-
         // Serialization function for Member class
         void serialize(json &j) const;
 

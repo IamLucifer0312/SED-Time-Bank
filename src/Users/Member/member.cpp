@@ -124,31 +124,6 @@ double Users::Member::get_avg_supporter_rating() const
     return this->avg_supporter_rating;
 }
 
-// extract data from map
-void Users::Member::from_map(std::map<string, string> map)
-{
-    User::from_map(map);
-    this->full_name = map["full_name"];
-    this->phone_number = map["phone_number"];
-    this->home_address = map["home_address"];
-    this->email = map["email"];
-    this->city = map["city"];
-    this->credit = std::stof(map["credit"]);
-}
-
-// convert data to map
-std::map<string, string> Users::Member::to_map_member() const
-{
-    std::map<string, string> map = to_map_member();
-    map.emplace("full_name", this->full_name);
-    map.emplace("phone_number", this->phone_number);
-    map.emplace("home_address", this->home_address);
-    map.emplace("email", this->email);
-    map.emplace("city", this->city);
-    map.emplace("credit", std::to_string(this->credit));
-    return map;
-}
-
 // Setters:
 
 void Users::Member::set_full_name(const string &full_name)
