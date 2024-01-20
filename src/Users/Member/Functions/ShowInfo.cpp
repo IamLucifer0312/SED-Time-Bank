@@ -35,7 +35,7 @@ void Users::Member::show_member_info(std::string role)
         std::cout << "Block list: \n";
         for (std::string &block_member : this->block_list)
         {
-            std::cout << "  Username: "<< block_member << std::endl;
+            std::cout << "  Username: " << block_member << std::endl;
         }
         std::cout << std::endl;
 
@@ -47,7 +47,7 @@ void Users::Member::show_member_info(std::string role)
             std::cout << available_job.get_skill().get_string() << std::endl;
             std::cout << "  Start time:" << available_job.get_available_time().get_start_time_string() << std::endl;
             std::cout << "  End time:" << available_job.get_available_time().get_end_time_string() << std::endl;
-            std::cout << "  -------------------------"<< std::endl;
+            std::cout << "  -------------------------" << std::endl;
             std::cout << std::endl;
         }
         std::cout << "----------------------------" << std::endl;
@@ -76,7 +76,7 @@ void Users::Member::show_member_info(std::string role)
         std::cout << "Available Times: " << std::endl;
         std::cout << std::endl;
         for (Period &available_time : this->available_times)
-        {   
+        {
             std::cout << "  Start time: " << available_time.get_start_time_string() << std::endl;
             std::cout << "  End time: " << available_time.get_end_time_string() << std::endl;
             std::cout << std::endl;
@@ -92,7 +92,7 @@ void Users::Member::show_member_info(std::string role)
             std::cout << available_job.get_skill().get_string() << std::endl;
             std::cout << "  Start time:" << available_job.get_available_time().get_start_time_string() << std::endl;
             std::cout << "  End time:" << available_job.get_available_time().get_end_time_string() << std::endl;
-            std::cout << "  -------------------------"<< std::endl;
+            std::cout << "  -------------------------" << std::endl;
             std::cout << std::endl;
         }
         std::cout << "----------------------------" << std::endl;
@@ -123,7 +123,7 @@ void Users::Member::show_member_info_for_host(Users::Member &current_member)
     std::cout << "Available Times: " << std::endl;
     std::cout << std::endl;
     for (Period &available_time : this->available_times)
-    {   
+    {
         std::cout << "  Start time: " << available_time.get_start_time_string() << std::endl;
         std::cout << "  End time: " << available_time.get_end_time_string() << std::endl;
         std::cout << std::endl;
@@ -136,12 +136,12 @@ void Users::Member::show_member_info_for_host(Users::Member &current_member)
     for (AvailableJob &available_job : this->available_jobs)
     {
         // by minimum host rating
-        if (available_job.get_skill().get_mininum_rating() > current_member.get_avg_host_rating()) 
+        if (available_job.get_skill().get_mininum_rating() > current_member.get_avg_host_rating())
         {
             continue;
         }
         // by consumed credit
-        if (available_job.get_skill().get_consumed_per_hour() > current_member.get_credit()) 
+        if (available_job.get_skill().get_consumed_per_hour() > current_member.get_credit())
         {
             continue;
         }
@@ -149,10 +149,25 @@ void Users::Member::show_member_info_for_host(Users::Member &current_member)
         std::cout << available_job.get_skill().get_string() << std::endl;
         std::cout << "  Start time:" << available_job.get_available_time().get_start_time_string() << std::endl;
         std::cout << "  End time:" << available_job.get_available_time().get_end_time_string() << std::endl;
-        std::cout << "  -------------------------"<< std::endl;
+        std::cout << "  -------------------------" << std::endl;
         std::cout << std::endl;
     }
 
+    // Members supporter reviews
+    std::cout << "Supporter reviews: " << std::endl;
+    std::cout << std::endl;
+    for (int i = 0; i < this->supporter_reviews.size(); i++)
+    {
+        if (i == this->supporter_reviews.size() - 1)
+        {
+            std::cout << "\"" << this->supporter_reviews[i].get_comment() << "\"";
+            break;
+        }
+        std::cout << "\"" << this->supporter_reviews[i].get_comment() << "\", ";
+    }
+
+    std::cout << std::endl;
+    std::cout << std::endl;
     std::cout << "----------------------------" << std::endl;
     std::cout << std::endl;
 }

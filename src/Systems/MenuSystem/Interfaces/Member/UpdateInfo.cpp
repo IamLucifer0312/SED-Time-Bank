@@ -127,6 +127,10 @@ void MenuSystem::update_member_info(std::string information)
             }
 
             userSystem.get_current_member().add_skill(skill_name, consumed_per_hour, minimum_rating);
+
+            std::cout << "Skill added successfully\n";
+            std::cout << "Press Enter to continue.\n";
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             break;
         case 2:
             for (auto skill : userSystem.get_current_member().get_skills())

@@ -124,6 +124,11 @@ double Users::Member::get_avg_supporter_rating() const
     return this->avg_supporter_rating;
 }
 
+const std::vector<HostReview> Users::Member::get_host_reviews() const
+{
+    return host_reviews;
+}
+
 // Setters:
 
 void Users::Member::set_full_name(const string &full_name)

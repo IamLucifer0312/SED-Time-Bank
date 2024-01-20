@@ -177,5 +177,7 @@ void MenuSystem::register_menu()
     }
 
     userSystem.register_member(username, password, full_name, phone_number, home_address, email, city);
+    std::cout << "Register successfully! Press Enter to continue.\n";
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     userSystem.save_database();
 }

@@ -92,6 +92,8 @@ namespace Users
 
         double get_avg_supporter_rating() const;
 
+        const std::vector<HostReview> get_host_reviews() const;
+
         // Setter methods
         void set_full_name(const string &full_name);
 

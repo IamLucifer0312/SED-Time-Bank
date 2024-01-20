@@ -30,12 +30,25 @@ void MenuSystem::view_received_request()
             for (int i = 0; i < requests_list.size(); ++i)
             {
                 Request request = requests_list[i];
+                Users::Member host = userSystem.get_database().find_member(request.get_host());
                 cout << std::endl;
                 cout << "Request " << i + 1 << ":" << std::endl;
                 cout << "\tHost: " << request.get_host() << std::endl;
                 cout << "\tWork time: " << request.get_job().get_available_time().get_start_time_string() << " - " << request.get_job().get_available_time().get_end_time_string() << std::endl;
                 cout << "\tCredit: " << request.get_total_credit() << std::endl;
                 cout << "\tSkill: " << request.get_job().get_skill().get_skill_name() << std::endl;
+                cout << "\tHost's average rating: " << host.get_avg_host_rating() << std::endl;
+                cout << "\tHost reviews: ";
+                for (int i = 0; i < host.get_host_reviews().size(); i++)
+                {
+                    if (i == host.get_host_reviews().size() - 1)
+                    {
+                        std::cout << "\"" << host.get_host_reviews()[i].get_comment() << "\"";
+                        break;
+                    }
+                    std::cout << "\"" << host.get_host_reviews()[i].get_comment() << "\", ";
+                }
+                cout << std::endl;
             }
 
             cout << std::endl;

@@ -61,10 +61,9 @@ void MenuSystem::main_loop()
 {
     userSystem.load_database();
 
-    clear_screen();
     while (!this->quit)
     {
-
+        clear_screen();
         std::cout << "\n"
                   << "======================================\n"
                   << "EEET2482/COSC2082 ASSIGNMENT\n"
