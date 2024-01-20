@@ -71,7 +71,7 @@ void MenuSystem::register_menu()
 
     std::cout << "Enter your new username: ";
     std::getline(std::cin, username);
-    if (userSystem.checkUSername(username))
+    if (userSystem.checkUsername(username))
     {
         std::cout << "Username already exists. Please try again.\n";
         std::cout << "Press Enter to continue.\n";
@@ -144,7 +144,7 @@ void MenuSystem::register_menu()
     std::cout << "Enter your email: ";
     std::getline(std::cin, email);
 
-    if (!userSystem.is_email_valid(email))
+    if (!userSystem.checkEmail(email))
     {
         std::cout << "Invalid email. Please try again.\n";
         std::cout << "Press Enter to continue.\n";

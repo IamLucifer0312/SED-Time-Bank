@@ -37,11 +37,13 @@ public:
     // validators:
     // log in
     bool validateLogin(const std::string &username, const std::string &password, std::string role);
-
-    bool checkUSername(const std::string &username);
+    // username
+    bool checkUsername(const std::string &username);
+    // password
     bool checkPasswordEmpty(const std::string &password);
     bool checkPasswordSpace(const std::string &password);
-    bool is_email_valid(const string &email);
+    // email
+    bool checkEmail(const string &email);
 
     // reigster member
     void register_member(std::string username, std::string password, std::string full_name, std::string phone_number, std::string home_address, std::string email, std::string city);
@@ -50,6 +52,7 @@ public:
     std::vector<Users::Member> get_members();
     Users::Member &get_current_member();
     Database &get_database();
+    
     // setters
     void set_current_member(Users::Member &member);
     void set_admin(Users::Admin &admin);
