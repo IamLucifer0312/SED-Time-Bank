@@ -108,7 +108,7 @@ namespace Users
         void set_password(const string &password);
 
         // add 
-        void add_skill(string &skill_name, float &consumed_per_hour, float &minimum_rating );
+        void add_skill(string &skill_name, float &consumed_per_hour, float &minimum_rating);
         void add_available_job(const Period &availableTime, Skill &skill);
 
         void add_available_time(string &startTime, string &endTime);
@@ -124,7 +124,6 @@ namespace Users
         // remove
         void remove_skill(string &skill_name);
         void subtract_credit(float subtractingCredit);
-        // void remove_available_job(Period &available_time, Skill &skill);
         void remove_available_time(string &startTime, string &endTime);
         void remove_block_list(string &username);
         void remove_available_job(AvailableJob &available_job);

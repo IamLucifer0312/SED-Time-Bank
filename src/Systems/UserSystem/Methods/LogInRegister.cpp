@@ -43,7 +43,7 @@ void UserSystem::register_member(std::string username, std::string password, std
 }
 
 // validators
-bool UserSystem::checkUSername(const std::string &username)
+bool UserSystem::checkUsername(const std::string &username)
 {
     for (const auto &member : database.get_all_members())
     {
@@ -77,7 +77,7 @@ bool UserSystem::checkPasswordSpace(const std::string &password)
 }
 
 // check the email is valid or not
-bool UserSystem::is_email_valid(const string &email)
+bool UserSystem::checkEmail(const string &email)
 {
 
     // Regular expression definition

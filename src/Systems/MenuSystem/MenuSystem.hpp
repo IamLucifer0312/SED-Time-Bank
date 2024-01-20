@@ -19,8 +19,6 @@ class MenuSystem
 {
 private:
     bool quit;
-    // LoginType login_type;
-    std::vector<Users::Member> members;
     Users::Admin admin;
     UserSystem userSystem;
     bool loggedIn;
@@ -30,16 +28,17 @@ public:
     // constructor
     MenuSystem();
 
+    // prompt user's choice from min to max
     int prompt_choice(unsigned min, unsigned max);
 
+    // main menu loop
     void main_loop();
 
+    // login and register menu
     void login_menu(string role);
     void register_menu();
 
-    void guest_view_supporter();
-
-    // guess menu
+    // guest menu
     void guest_menu();
 
     // member menu
@@ -48,11 +47,15 @@ public:
     // admin menu
     void admin_menu();
 
+    // view supporters for guests
+    void guest_view_supporter();
+
     // show members
     void show_members(string role);
     void show_members_for_city(std::string city);
     void show_members_for_time(std::string startTime, std::string endTime);
-    // clear screen
+
+    // clear screen method
     void clear_screen();
 
     void update_member_info(std::string information);
@@ -63,8 +66,6 @@ public:
 
     // check username and change password of members for admin
     void change_new_password(std::string member_username);
-
-
 
     // check username and block user
     void block_member(std::string member_username);
@@ -100,6 +101,8 @@ public:
 
     // add available job
     void update_available_job();
+
+    // add credit
     void add_credit();
 
     // view requests
