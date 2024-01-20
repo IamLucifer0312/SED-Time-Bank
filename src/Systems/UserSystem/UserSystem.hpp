@@ -17,19 +17,10 @@
 // database class
 #include "../../Database/Database.hpp"
 
-enum LoginType
-{
-    NONE,
-    GUEST,
-    MEMBER,
-    ADMIN
-};
-
 class UserSystem
 {
 private:
     bool quit;
-    LoginType login_type;
     std::vector<Users::Member> members;
     Users::Admin admin;
     Database database;
