@@ -57,6 +57,7 @@ public:
     // clear screen method
     void clear_screen();
 
+    // update member info
     void update_member_info(std::string information);
 
     // interfaces

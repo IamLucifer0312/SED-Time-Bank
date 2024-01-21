@@ -17,9 +17,7 @@
 // constructor
 Database::Database() {}
 Database::Database(const string &member_file_name) : member_file(member_file_name)
-{
-
-}
+{}
 
 // Serialize member vector to json
 json Database::serializeMembers(const vector<Users::Member> &members)
@@ -63,6 +61,7 @@ vector<Users::Member> Database::deserializeMembers(const json &jsonArray)
     return deserializedMembers;
 }
 
+// set the jobs of members to the corresponding requests
 void Database::set_job_to_requests(vector<Users::Member> &deserializedMembers)
 {
     for (Users::Member &member : deserializedMembers)
