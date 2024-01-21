@@ -3,7 +3,7 @@
 
 void MenuSystem::find_supporter_city()
 {
-    std::cout << "which city do you want to search \n"
+    std::cout << "Which city do you want to search \n"
               << "1. Ha noi\n"
               << "2. Sai gon\n";
 

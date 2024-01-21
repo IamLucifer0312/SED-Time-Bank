@@ -89,8 +89,8 @@
             },
             {
                 "comment": "Could be better",
-                "skill_rating": 2,
-                "supporter_rating": 4
+                "skill_rating": 4,
+                "supporter_rating": 2
             }
         ],
         "username": "ddd"
@@ -111,10 +111,47 @@
                     "end_time": "2024-01-07 12:00:00",
                     "start_time": "2024-01-07 10:00:00"
                 }
+            },
+            {
+                "host": "fut123",
+                "job": {
+                    "end_time": "2024-01-07 12:00:00",
+                    "skill_name": "Cooking",
+                    "start_time": "2024-01-07 10:00:00",
+                    "supporter_name": "TT"
+                },
+                "status": 1,
+                "total_credit": 8.199999809265137,
+                "work_time": {
+                    "end_time": "2024-01-07 12:00:00",
+                    "start_time": "2024-01-07 10:00:00"
+                }
             }
         ],
-        "approved_sent_requests": null,
+        "approved_sent_requests": [
+            {
+                "host": "TT",
+                "job": {
+                    "end_time": "2024-01-12 12:00:00",
+                    "skill_name": "Programming",
+                    "start_time": "2024-01-12 10:00:00",
+                    "supporter_name": "fut123"
+                },
+                "status": 1,
+                "total_credit": 10.399999618530273,
+                "work_time": {
+                    "end_time": "2024-01-12 12:00:00",
+                    "start_time": "2024-01-12 10:00:00"
+                }
+            }
+        ],
         "available_jobs": [
+            {
+                "end_time": "2024-01-07 12:00:00",
+                "skill_name": "Programming",
+                "start_time": "2024-01-07 10:00:00",
+                "supporter_name": "TT"
+            },
             {
                 "end_time": "2024-01-07 12:00:00",
                 "skill_name": "Programming",
@@ -132,11 +169,11 @@
                 "start_time": "2024-01-07 10:00:00"
             }
         ],
-        "avg_host_rating": 3.5,
-        "avg_supporter_rating": 3.25,
+        "avg_host_rating": 3.6,
+        "avg_supporter_rating": 3.0,
         "block_list": null,
         "city": "Sai gon",
-        "credit": 95.09999084472656,
+        "credit": 84.69998931884766,
         "email": "trongtiennguyen0312@gmail.com",
         "full_name": "NTT",
         "home_address": "Hihi",
@@ -156,6 +193,10 @@
             {
                 "comment": "nice host",
                 "host_rating": 5
+            },
+            {
+                "comment": "Great guy",
+                "host_rating": 4
             }
         ],
         "password": "123456",
@@ -175,51 +216,6 @@
                     "end_time": "2023-11-11 12:00:00",
                     "start_time": "2023-11-11 10:00:00"
                 }
-            },
-            {
-                "host": "fut123",
-                "job": {
-                    "end_time": "2024-01-07 12:00:00",
-                    "skill_name": "Cooking",
-                    "start_time": "2024-01-07 10:00:00",
-                    "supporter_name": "TT"
-                },
-                "status": 0,
-                "total_credit": 8.199999809265137,
-                "work_time": {
-                    "end_time": "2024-01-07 12:00:00",
-                    "start_time": "2024-01-07 10:00:00"
-                }
-            },
-            {
-                "host": "fut123",
-                "job": {
-                    "end_time": "2024-01-07 12:00:00",
-                    "skill_name": "Cooking",
-                    "start_time": "2024-01-07 10:00:00",
-                    "supporter_name": "TT"
-                },
-                "status": 0,
-                "total_credit": 8.199999809265137,
-                "work_time": {
-                    "end_time": "2024-01-07 12:00:00",
-                    "start_time": "2024-01-07 10:00:00"
-                }
-            },
-            {
-                "host": "fut123",
-                "job": {
-                    "end_time": "2024-01-07 12:00:00",
-                    "skill_name": "Cooking",
-                    "start_time": "2024-01-07 10:00:00",
-                    "supporter_name": "TT"
-                },
-                "status": 0,
-                "total_credit": 8.199999809265137,
-                "work_time": {
-                    "end_time": "2024-01-07 12:00:00",
-                    "start_time": "2024-01-07 10:00:00"
-                }
             }
         ],
         "sent_requests": [
@@ -231,21 +227,6 @@
                     "start_time": "2023-11-11 10:00:00",
                     "supporter_name": "fut123"
                 },
-                "status": 1,
-                "total_credit": 10.399999618530273,
-                "work_time": {
-                    "end_time": "2023-11-11 12:00:00",
-                    "start_time": "2023-11-11 10:00:00"
-                }
-            },
-            {
-                "host": "TT",
-                "job": {
-                    "end_time": "2023-11-11 12:00:00",
-                    "skill_name": "Programming",
-                    "start_time": "2023-11-11 10:00:00",
-                    "supporter_name": "fut123"
-                },
                 "status": 0,
                 "total_credit": 10.399999618530273,
                 "work_time": {
@@ -276,22 +257,7 @@
                     "start_time": "2024-01-12 10:00:00",
                     "supporter_name": "fut123"
                 },
-                "status": 0,
-                "total_credit": 10.399999618530273,
-                "work_time": {
-                    "end_time": "2024-01-12 12:00:00",
-                    "start_time": "2024-01-12 10:00:00"
-                }
-            },
-            {
-                "host": "TT",
-                "job": {
-                    "end_time": "2024-01-12 12:00:00",
-                    "skill_name": "Programming",
-                    "start_time": "2024-01-12 10:00:00",
-                    "supporter_name": "fut123"
-                },
-                "status": 0,
+                "status": 2,
                 "total_credit": 10.399999618530273,
                 "work_time": {
                     "end_time": "2024-01-12 12:00:00",
@@ -329,12 +295,17 @@
             },
             {
                 "comment": "Could be better",
+                "skill_rating": 4,
+                "supporter_rating": 2
+            },
+            {
+                "comment": "Very nnice job",
                 "skill_rating": 2,
                 "supporter_rating": 4
             },
             {
-                "comment": "Very nnice job",
-                "skill_rating": 4,
+                "comment": "Need improvements",
+                "skill_rating": 3,
                 "supporter_rating": 2
             }
         ],
@@ -408,8 +379,8 @@
             },
             {
                 "comment": "Could be better",
-                "skill_rating": 2,
-                "supporter_rating": 4
+                "skill_rating": 4,
+                "supporter_rating": 2
             }
         ],
         "username": "hung anh"
@@ -488,8 +459,8 @@
             },
             {
                 "comment": "Could be better",
-                "skill_rating": 2,
-                "supporter_rating": 4
+                "skill_rating": 4,
+                "supporter_rating": 2
             }
         ],
         "username": "HGG"
@@ -533,9 +504,12 @@
         ],
         "avg_host_rating": 3.0,
         "avg_supporter_rating": 3.5,
-        "block_list": null,
+        "block_list": [
+            "TT",
+            "ddd"
+        ],
         "city": "Ha noi",
-        "credit": 69.0,
+        "credit": 71.20000457763672,
         "email": "phuc12@gmail.com",
         "full_name": "Tran Phan Trong Phuc",
         "home_address": "123 Ky Con, Phuong 7, Quan 5, Ha noi",
@@ -574,24 +548,24 @@
                     "end_time": "2024-01-12 12:00:00",
                     "start_time": "2024-01-12 10:00:00"
                 }
-            },
-            {
-                "host": "TT",
-                "job": {
-                    "end_time": "2024-01-12 12:00:00",
-                    "skill_name": "Programming",
-                    "start_time": "2024-01-12 10:00:00",
-                    "supporter_name": "fut123"
-                },
-                "status": 0,
-                "total_credit": 10.399999618530273,
-                "work_time": {
-                    "end_time": "2024-01-12 12:00:00",
-                    "start_time": "2024-01-12 10:00:00"
-                }
             }
         ],
         "sent_requests": [
+            {
+                "host": "fut123",
+                "job": {
+                    "end_time": "2024-01-07 12:00:00",
+                    "skill_name": "Cooking",
+                    "start_time": "2024-01-07 10:00:00",
+                    "supporter_name": "TT"
+                },
+                "status": 2,
+                "total_credit": 8.199999809265137,
+                "work_time": {
+                    "end_time": "2024-01-07 12:00:00",
+                    "start_time": "2024-01-07 10:00:00"
+                }
+            },
             {
                 "host": "fut123",
                 "job": {
@@ -615,7 +589,7 @@
                     "start_time": "2024-01-07 10:00:00",
                     "supporter_name": "TT"
                 },
-                "status": 0,
+                "status": 2,
                 "total_credit": 8.199999809265137,
                 "work_time": {
                     "end_time": "2024-01-07 12:00:00",
@@ -626,27 +600,12 @@
                 "host": "fut123",
                 "job": {
                     "end_time": "2024-01-07 12:00:00",
-                    "skill_name": "Cooking",
+                    "skill_name": "Programming",
                     "start_time": "2024-01-07 10:00:00",
                     "supporter_name": "TT"
                 },
-                "status": 0,
-                "total_credit": 8.199999809265137,
-                "work_time": {
-                    "end_time": "2024-01-07 12:00:00",
-                    "start_time": "2024-01-07 10:00:00"
-                }
-            },
-            {
-                "host": "fut123",
-                "job": {
-                    "end_time": "2024-01-07 12:00:00",
-                    "skill_name": "Cooking",
-                    "start_time": "2024-01-07 10:00:00",
-                    "supporter_name": "TT"
-                },
-                "status": 0,
-                "total_credit": 8.199999809265137,
+                "status": 2,
+                "total_credit": 10.399999618530273,
                 "work_time": {
                     "end_time": "2024-01-07 12:00:00",
                     "start_time": "2024-01-07 10:00:00"
@@ -678,13 +637,13 @@
             },
             {
                 "comment": "Could be better",
-                "skill_rating": 2,
-                "supporter_rating": 4
+                "skill_rating": 4,
+                "supporter_rating": 2
             },
             {
                 "comment": "this one is good",
-                "skill_rating": 4,
-                "supporter_rating": 3
+                "skill_rating": 3,
+                "supporter_rating": 4
             }
         ],
         "username": "fut123"

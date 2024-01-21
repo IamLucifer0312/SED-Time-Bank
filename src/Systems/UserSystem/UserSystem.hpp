@@ -20,7 +20,6 @@
 class UserSystem
 {
 private:
-    bool quit;
     std::vector<Users::Member> members;
     Users::Admin admin;
     Database database;

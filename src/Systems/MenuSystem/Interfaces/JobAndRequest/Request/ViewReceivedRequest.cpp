@@ -131,7 +131,10 @@ void MenuSystem::accept_or_reject_request(vector<Request> &requests_list)
         // add request to approved list
         host.add_approved_sent_request(selected_request);
         userSystem.current_member.add_approved_received_request(selected_request);
+
+        // remove request from requests list
         remove_request(selected_request, requests_list);
+        remove_request(selected_request, host.get_sent_requests());
 
         // save to database
         userSystem.update_member(host);
@@ -149,12 +152,15 @@ void MenuSystem::accept_or_reject_request(vector<Request> &requests_list)
             {
                 (host.get_sent_requests())[i].set_status(Status::REJECTED);
                 request_found = true;
-                cout << "Request rejected." << std::endl;
                 remove_request(selected_request, requests_list);
 
                 // save to database
                 userSystem.update_current_member();
                 userSystem.update_member(host);
+
+                cout << "Request rejected." << std::endl;
+                cout << "Press Enter to continue.\n";
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
                 break;
             }
         }

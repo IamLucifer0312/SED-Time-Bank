@@ -15,6 +15,9 @@ using std::cout;
     case 2:                                                          \
         cout << "\t>> Your request has been REJECTED!" << std::endl; \
         break;                                                       \
+    case 1:                                                          \
+        cout << "\t>> Your request has been ACCEPTED" << std::endl;  \
+        break;                                                       \
     default:                                                         \
         cout << "Failed to print status" << std::endl;               \
         break;                                                       \

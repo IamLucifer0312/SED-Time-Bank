@@ -17,7 +17,8 @@ void MenuSystem::member_view_my_info(std::string information)
                     << "- Home Address\n"
                     << "- Email\n"
                     << "- City\n"
-                    << "- Skill\n";
+                    << "- Skill\n"
+                    << "- Available time\n";
             std::cout << "\nWhich information do you want to update: ";
             std::getline(std::cin, information);
             update_member_info(information);

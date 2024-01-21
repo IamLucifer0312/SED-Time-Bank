@@ -159,6 +159,117 @@ void MenuSystem::update_member_info(std::string information)
             break;
         }
     }
+    else if (information == "Available time")
+    {
+        std::cout << "Add or remove your avalable time? \n"
+                  << "0. Back\n"
+                  << "1. Add. \n"
+                  << "2. Remove. \n";
+
+        std::string date;
+        std::string start_time;
+        std::string end_time;
+        std::string startTime;
+        std::string endTime;
+        Period tester;
+
+        vector<Period> availableTimes = userSystem.get_current_member().get_available_times();
+        int arraySize = availableTimes.size();
+        int answer = 0;
+        int i;
+
+        switch (prompt_choice(0, 2))
+        {
+        case 0:
+            return;
+        case 1:
+
+            std::cout << "Enter your date (Y-M-D): ";
+            std::getline(std::cin, date);
+            // check if date is valid
+            try
+            {
+                tester.parse_date_time(date + " 00:00:00");
+            }
+            catch (const std::runtime_error &e)
+            {
+                std::cout << "Invalid date. Please try again.\n";
+                std::cout << "Press Enter to continue.\n";
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                return;
+            }
+
+            std::cout << "Enter your time (H:M:S)\n";
+            std::cout << "From: ";
+            std::getline(std::cin, start_time);
+            // check if time is valid
+            try
+            {
+                tester.parse_date_time(date + " " + start_time);
+            }
+            catch (const std::exception &e)
+            {
+                std::cout << "Invalid time. Please try again.\n";
+                std::cout << "Press Enter to continue.\n";
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                return;
+            }
+
+            std::cout << "To: ";
+            std::getline(std::cin, end_time);
+            // check if time is valid
+            try
+            {
+                tester.parse_date_time(date + " " + end_time);
+            }
+            catch (const std::exception &e)
+            {
+                std::cout << "Invalid time. Please try again.\n";
+                std::cout << "Press Enter to continue.\n";
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                return;
+            }
+
+            if (tester.parse_date_time(date + " " + start_time) >= tester.parse_date_time(date + " " + end_time))
+            {
+                std::cout << "The time input is negative. Please try again.\n";
+                std::cout << "Press Enter to continue.\n";
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                return;
+            }
+
+            startTime = date + " " + start_time;
+            endTime = date + " " + end_time;
+
+            userSystem.get_current_member().add_available_time(startTime, endTime);
+
+            // update current member
+            userSystem.update_current_member();
+
+            break;
+        case 2:
+            std::cout << std::endl;
+            arraySize = userSystem.get_current_member().get_available_times().size();
+            for (size_t i = 0; i < arraySize; i++)
+            {
+                std::cout << i + 1 << std::endl;
+                std::cout << userSystem.get_current_member().get_available_times()[i].get_start_time_string() << std::endl;
+                std::cout << userSystem.get_current_member().get_available_times()[i].get_end_time_string() << std::endl;
+                std::cout << std::endl;
+            }
+            std::cout << "Please choose your available time (number) to remove: \n";
+            answer = prompt_choice(1, arraySize);
+            size_t sizeValue = static_cast<size_t>(answer);
+            startTime = userSystem.get_current_member().get_available_times()[sizeValue - 1].get_start_time_string();
+            endTime = userSystem.get_current_member().get_available_times()[sizeValue - 1].get_end_time_string();
+
+            userSystem.get_current_member().remove_available_time(startTime, endTime);
+
+            // update current member
+            userSystem.update_current_member();
+            break;
+        }
+    }
     else if (information == "Block list")
     {
         std::cout << "Please go to the Block Member page to update your block list" << std::endl;

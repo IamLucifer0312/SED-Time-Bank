@@ -98,8 +98,11 @@ public:
     // remove_request
     bool remove_request(Request &request, vector<Request> &requests_list);
 
-    // add available job
+    // update available job
     void update_available_job();
+
+    // update available time
+    void update_available_time();
 
     // add credit
     void add_credit();
