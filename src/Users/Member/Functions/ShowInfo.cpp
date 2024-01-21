@@ -50,6 +50,32 @@ void Users::Member::show_member_info(std::string role)
             std::cout << "  -------------------------" << std::endl;
             std::cout << std::endl;
         }
+            std::cout << "Host reviews: " << std::endl;
+            for (int i = 0; i < this->host_reviews.size(); i++)
+            {
+                if (i == this->host_reviews.size() - 1)
+                {
+                    std::cout << "\"" << this->host_reviews[i].get_comment() << "\"";
+                    break;
+                }
+                std::cout << "\"" << this->host_reviews[i].get_comment() << "\", ";
+            }
+            std::cout << std::endl;
+            std::cout << std::endl;
+
+            std::cout << "Supporter reviews: " << std::endl;
+            std::cout << std::endl;
+            for (int i = 0; i < this->supporter_reviews.size(); i++)
+            {
+                if (i == this->supporter_reviews.size() - 1)
+                {
+                    std::cout << "\"" << this->supporter_reviews[i].get_comment() << "\"";
+                    break;
+                }
+                std::cout << "\"" << this->supporter_reviews[i].get_comment() << "\", ";
+            }
+
+            std::cout << std::endl;
         std::cout << "----------------------------" << std::endl;
         std::cout << std::endl;
     }
@@ -95,6 +121,7 @@ void Users::Member::show_member_info(std::string role)
             std::cout << "  -------------------------" << std::endl;
             std::cout << std::endl;
         }
+
         std::cout << "----------------------------" << std::endl;
         std::cout << std::endl;
     }

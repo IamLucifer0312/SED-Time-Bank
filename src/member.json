@@ -89,8 +89,8 @@
             },
             {
                 "comment": "Could be better",
-                "skill_rating": 4,
-                "supporter_rating": 2
+                "skill_rating": 2,
+                "supporter_rating": 4
             }
         ],
         "username": "ddd"
@@ -295,18 +295,18 @@
             },
             {
                 "comment": "Could be better",
-                "skill_rating": 4,
-                "supporter_rating": 2
-            },
-            {
-                "comment": "Very nnice job",
                 "skill_rating": 2,
                 "supporter_rating": 4
             },
             {
-                "comment": "Need improvements",
-                "skill_rating": 3,
+                "comment": "Very nnice job",
+                "skill_rating": 4,
                 "supporter_rating": 2
+            },
+            {
+                "comment": "Need improvements",
+                "skill_rating": 2,
+                "supporter_rating": 3
             }
         ],
         "username": "TT"
@@ -379,8 +379,8 @@
             },
             {
                 "comment": "Could be better",
-                "skill_rating": 4,
-                "supporter_rating": 2
+                "skill_rating": 2,
+                "supporter_rating": 4
             }
         ],
         "username": "hung anh"
@@ -459,8 +459,8 @@
             },
             {
                 "comment": "Could be better",
-                "skill_rating": 4,
-                "supporter_rating": 2
+                "skill_rating": 2,
+                "supporter_rating": 4
             }
         ],
         "username": "HGG"
@@ -637,13 +637,13 @@
             },
             {
                 "comment": "Could be better",
-                "skill_rating": 4,
-                "supporter_rating": 2
+                "skill_rating": 2,
+                "supporter_rating": 4
             },
             {
                 "comment": "this one is good",
-                "skill_rating": 3,
-                "supporter_rating": 4
+                "skill_rating": 4,
+                "supporter_rating": 3
             }
         ],
         "username": "fut123"
