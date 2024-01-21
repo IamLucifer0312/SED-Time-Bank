@@ -18,8 +18,7 @@
 Database::Database() {}
 Database::Database(const string &member_file_name) : member_file(member_file_name)
 {
-    // Load data from file to members vector in constructor if needed
-    // this->loadData();
+
 }
 
 // Serialize member vector to json
@@ -35,7 +34,7 @@ json Database::serializeMembers(const vector<Users::Member> &members)
     return jsonArray;
 }
 
-// Deserialize json to member vector
+// Deserialize json to admin vector
 vector<Users::Admin> Database::deserializeAdmins(const json &jsonArray)
 {
     vector<Users::Admin> deserializedAdmins;
@@ -48,6 +47,7 @@ vector<Users::Admin> Database::deserializeAdmins(const json &jsonArray)
     return deserializedAdmins;
 }
 
+// Deserialize json to member vector
 vector<Users::Member> Database::deserializeMembers(const json &jsonArray)
 {
     vector<Users::Member> deserializedMembers;
@@ -177,7 +177,7 @@ vector<Users::Admin> Database::loadAdminsFromFile(const string &filename)
         // Initialize the file with default admin account
         json adminData = {
             {"username", "admin"},
-            {"password", "rmit123"},
+            {"password", "rmit1234"},
         };
         json adminArray = json::array();
         adminArray.push_back(adminData);
