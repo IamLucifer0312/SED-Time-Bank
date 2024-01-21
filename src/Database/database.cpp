@@ -166,10 +166,32 @@ vector<Users::Admin> Database::get_all_admins() const
 // Load members from data file
 vector<Users::Admin> Database::loadAdminsFromFile(const string &filename)
 {
+    
     std::ifstream file(filename);
     if (!file.is_open())
     {
+        // Create new file if not found
         std::cerr << "Error: Unable to open file: " << filename << std::endl;
+        std::cerr << "Creating new file: " << filename << std::endl;
+        std::string path = "src";
+        CreateDirectoryA(path.c_str(), NULL);        
+        std::ofstream newFile("src/admin.json");
+        // Initialize the file with default admin account
+        json adminData = {
+            {"username", "admin"},
+            {"password", "rmit123"},
+        };
+        json adminArray = json::array();
+        adminArray.push_back(adminData);
+        newFile << adminArray << std::endl;
+        newFile.close();
+        // return empty data;
+        return deserializeAdmins(adminArray);
+    }
+    //Reopen the file
+    if (!file.is_open())
+    {
+        std::ifstream file(filename);
     }
 
     json jsonArray;
@@ -183,7 +205,18 @@ vector<Users::Member> Database::loadMembersFromFile(const string &filename)
     std::ifstream file(filename);
     if (!file.is_open())
     {
+        // Create new file if not found
         std::cerr << "Error: Unable to open file: " << filename << std::endl;
+        std::cerr << "Creating new file: " << filename << std::endl;
+        std::string path = "src";
+        CreateDirectoryA(path.c_str(), NULL);  
+        std::ofstream newFile("src/member.json");
+        // Initialize the file with empty value
+        newFile << "[]" << std::endl;
+        newFile.close();
+        // return empty data
+        json jsonArray = json::array();
+        return deserializeMembers(jsonArray);
     }
 
     json jsonArray;

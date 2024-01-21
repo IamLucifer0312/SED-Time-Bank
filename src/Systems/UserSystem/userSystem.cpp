@@ -5,7 +5,7 @@
 // default constructor
 UserSystem::UserSystem()
 {
-    this->database = Database("../src/member.json");
+    this->database = Database("src/member.json");
 }
 
 // Load and save data
