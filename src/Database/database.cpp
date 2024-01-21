@@ -173,9 +173,7 @@ vector<Users::Admin> Database::loadAdminsFromFile(const string &filename)
         // Create new file if not found
         std::cerr << "Error: Unable to open file: " << filename << std::endl;
         std::cerr << "Creating new file: " << filename << std::endl;
-        std::string path = "src";
-        CreateDirectoryA(path.c_str(), NULL);        
-        std::ofstream newFile("src/admin.json");
+        std::ofstream newFile(filename);
         // Initialize the file with default admin account
         json adminData = {
             {"username", "admin"},
@@ -208,9 +206,7 @@ vector<Users::Member> Database::loadMembersFromFile(const string &filename)
         // Create new file if not found
         std::cerr << "Error: Unable to open file: " << filename << std::endl;
         std::cerr << "Creating new file: " << filename << std::endl;
-        std::string path = "src";
-        CreateDirectoryA(path.c_str(), NULL);  
-        std::ofstream newFile("src/member.json");
+        std::ofstream newFile(filename);
         // Initialize the file with empty value
         newFile << "[]" << std::endl;
         newFile.close();

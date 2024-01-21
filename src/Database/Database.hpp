@@ -2,7 +2,6 @@
 #include <string>
 #include <fstream>
 #include <iostream>
-#include <windows.h> 
 #include "../../nlohmann/json.hpp"
 
 using json = nlohmann::json;
@@ -21,7 +20,7 @@ class Database
 private:
     vector<Users::Member> members;
     vector<Users::Admin> admins;
-    string admin_file = "src/admin.json";
+    string admin_file = "admin.json";
     string member_file;
 
 public:
