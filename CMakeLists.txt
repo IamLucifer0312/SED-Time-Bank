@@ -1,7 +1,7 @@
 # CMakeLists.txt
 
 cmake_minimum_required(VERSION 3.12)
-project(SED)
+project(Group2_Program)
 
 # Specify the C++ standard
 set(CMAKE_CXX_STANDARD 11)
@@ -28,4 +28,4 @@ set(SOURCES
 )
 
 # Create executable
-add_executable(SED ${SOURCES})
+add_executable(Group2_Program ${SOURCES})
